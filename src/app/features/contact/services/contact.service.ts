@@ -6,6 +6,9 @@ import { environment } from '../../../../environments/environment';
 import { ContactFormValue, ContactResponse } from '../models/contact-form.model';
 
 export const CONTACT_ENDPOINT_NOT_CONFIGURED = 'CONTACT_ENDPOINT_NOT_CONFIGURED';
+export const CONTACT_NETWORK_BLOCKED = 'CONTACT_NETWORK_BLOCKED';
+export const CONTACT_PROVIDER_REJECTED = 'CONTACT_PROVIDER_REJECTED';
+export const CONTACT_SEND_FAILED = 'CONTACT_SEND_FAILED';
 
 type FormServiceResponse = Partial<Omit<ContactResponse, 'success'>> & {
   success?: boolean | string;
@@ -30,12 +33,9 @@ export class ContactService {
         }),
       })
       .pipe(
-        map((response) => ({
-          success: this.isSuccessResponse(response.success),
-          message: response.message ?? 'OK',
-        })),
+        map((response) => this.toContactResponse(response)),
         catchError((error: HttpErrorResponse) =>
-          throwError(() => new Error(error.message || 'CONTACT_SEND_FAILED')),
+          throwError(() => new Error(this.toContactError(error))),
         ),
       );
   }
@@ -61,11 +61,30 @@ export class ContactService {
     }).toString();
   }
 
+  private toContactResponse(response: FormServiceResponse): ContactResponse {
+    const success = this.isSuccessResponse(response.success);
+
+    const contactResponse: ContactResponse = {
+      success,
+      message: success ? (response.message ?? 'OK') : CONTACT_PROVIDER_REJECTED,
+    };
+
+    return success ? contactResponse : { ...contactResponse, fallbackToEmail: true };
+  }
+
   private isSuccessResponse(success: boolean | string | undefined): boolean {
     if (typeof success === 'string') {
       return success.toLowerCase() === 'true';
     }
 
-    return success ?? true;
+    return success === true;
+  }
+
+  private toContactError(error: HttpErrorResponse): string {
+    if (error.status === 0) {
+      return CONTACT_NETWORK_BLOCKED;
+    }
+
+    return CONTACT_SEND_FAILED;
   }
 }

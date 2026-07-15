@@ -13,7 +13,13 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { finalize } from 'rxjs';
 
 import { ContactFormValue, ContactResponse } from '../../models/contact-form.model';
-import { CONTACT_ENDPOINT_NOT_CONFIGURED, ContactService } from '../../services/contact.service';
+import { CONTACT_LINKS } from '../../../../core/constants/contact-links';
+import {
+  CONTACT_ENDPOINT_NOT_CONFIGURED,
+  CONTACT_NETWORK_BLOCKED,
+  CONTACT_PROVIDER_REJECTED,
+  ContactService,
+} from '../../services/contact.service';
 
 @Component({
   selector: 'app-contact-form',
@@ -43,6 +49,7 @@ export class ContactFormComponent {
 
   readonly isSubmitting = signal(false);
   readonly statusMessage = signal<ContactResponse | null>(null);
+  readonly contactEmail = CONTACT_LINKS.email;
 
   readonly requestTypes = [
     { value: 'website', labelKey: 'contact.form.requestTypes.website' },
@@ -96,7 +103,8 @@ export class ContactFormComponent {
     if (!response.success) {
       this.showMessage({
         success: false,
-        message: this.translateService.instant('contact.form.error'),
+        message: this.translateService.instant('contact.form.providerRejected'),
+        fallbackToEmail: true,
       });
       return;
     }
@@ -107,12 +115,41 @@ export class ContactFormComponent {
   }
 
   private handleError(error: unknown): void {
-    const message =
-      error instanceof Error && error.message === CONTACT_ENDPOINT_NOT_CONFIGURED
-        ? this.translateService.instant('contact.form.endpointMissing')
-        : this.translateService.instant('contact.form.error');
+    const errorCode = error instanceof Error ? error.message : undefined;
+    const message = this.getErrorMessage(errorCode);
 
-    this.showMessage({ success: false, message });
+    this.showMessage({ success: false, message, fallbackToEmail: true });
+  }
+
+  protected fallbackEmailHref(): string {
+    const payload = this.contactForm.getRawValue();
+    const subject =
+      payload.subject.trim() || this.translateService.instant('contact.form.mailFallbackSubject');
+    const body = [
+      `${this.translateService.instant('contact.mail.name')}: ${payload.fullName}`,
+      `${this.translateService.instant('contact.mail.email')}: ${payload.email}`,
+      `${this.translateService.instant('contact.form.requestType')}: ${payload.requestType}`,
+      '',
+      payload.message,
+    ].join('\n');
+
+    return `mailto:${this.contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  private getErrorMessage(errorCode: string | undefined): string {
+    if (errorCode === CONTACT_ENDPOINT_NOT_CONFIGURED) {
+      return this.translateService.instant('contact.form.endpointMissing');
+    }
+
+    if (errorCode === CONTACT_NETWORK_BLOCKED) {
+      return this.translateService.instant('contact.form.networkError');
+    }
+
+    if (errorCode === CONTACT_PROVIDER_REJECTED) {
+      return this.translateService.instant('contact.form.providerRejected');
+    }
+
+    return this.translateService.instant('contact.form.error');
   }
 
   private showMessage(response: ContactResponse): void {

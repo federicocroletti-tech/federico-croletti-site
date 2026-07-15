@@ -11,4 +11,5 @@ export interface ContactFormValue {
 export interface ContactResponse {
   success: boolean;
   message: string;
+  fallbackToEmail?: boolean;
 }

@@ -81,3 +81,25 @@
 
 - JSON i18n validato.
 - Build production completata con successo.
+
+## 2026-07-15 - Gestione coerente invio/errore form contatti
+
+### Cosa è stato fatto
+
+- Reso esplicito il contratto di successo del provider: il messaggio viene considerato inviato solo se la risposta contiene `success: true` o `success: "true"`.
+- Una risposta ambigua o senza conferma esplicita non mostra piu successo, ma errore coerente.
+- Gestito errore di rete/CORS/proxy con messaggio dedicato e fallback email visibile.
+- Aggiunto fallback `mailto:` precompilato solo nei casi di errore, senza usarlo come invio principale del form.
+- Aggiunti test unitari per risposta positiva, risposta provider ambigua e errore status 0.
+- Esteso Cypress E2E con scenario di errore e verifica del fallback email.
+
+### Diagnosi endpoint
+
+- Dalla rete corrente `formsubmit.co` continua a essere reindirizzato a `https://dnsblocknotice.capgemini.com`, quindi da questa rete il servizio esterno puo risultare bloccato anche se il frontend invia correttamente.
+
+### Validazioni
+
+- JSON i18n validato.
+- `npm run test -- --include=src/app/features/contact/services/contact.service.spec.ts`: 3 test passati.
+- `npm run build`: build production completata.
+- `npm run test:cypress`: 2 test E2E passati.

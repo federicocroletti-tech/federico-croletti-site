@@ -33,4 +33,38 @@ describe('Contact form', () => {
       'be.visible',
     );
   });
+
+  it('shows a coherent error and email fallback when the form service fails', () => {
+    cy.intercept('POST', 'https://formsubmit.co/ajax/federico.croletti@gmail.com', {
+      statusCode: 503,
+      body: { success: false, message: 'Service unavailable' },
+    }).as('contactSubmitFailure');
+
+    cy.visit('/contatti');
+    cy.contains('button', 'Rifiuta non necessari').click();
+
+    fillContactForm();
+    cy.get('[data-cy="contact-submit"]').click();
+
+    cy.wait('@contactSubmitFailure');
+    cy.contains('Non è stato possibile inviare il messaggio tramite il servizio esterno.').should(
+      'be.visible',
+    );
+    cy.get('[data-cy="contact-email-fallback"]')
+      .should('be.visible')
+      .and('have.attr', 'href')
+      .and('contain', 'mailto:federico.croletti@gmail.com');
+  });
 });
+
+function fillContactForm() {
+  cy.get('[data-cy="contact-full-name"]').type('Federico Croletti');
+  cy.get('[data-cy="contact-email"]').type('federico.croletti@gmail.com');
+  cy.get('[data-cy="contact-subject"]').type('Richiesta dal sito');
+  cy.get('[data-cy="contact-request-type"]').click();
+  cy.get('mat-option').contains('Sito web').click();
+  cy.get('[data-cy="contact-message"]').type(
+    'Vorrei parlare di una possibile collaborazione tecnica tramite il sito personale.',
+  );
+  cy.get('[data-cy="contact-privacy"] input[type="checkbox"]').check({ force: true });
+}

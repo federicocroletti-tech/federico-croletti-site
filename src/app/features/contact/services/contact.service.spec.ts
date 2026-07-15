@@ -4,7 +4,11 @@ import { TestBed } from '@angular/core/testing';
 
 import { environment } from '../../../../environments/environment';
 import { ContactResponse } from '../models/contact-form.model';
-import { ContactService } from './contact.service';
+import {
+  CONTACT_NETWORK_BLOCKED,
+  CONTACT_PROVIDER_REJECTED,
+  ContactService,
+} from './contact.service';
 
 describe('ContactService', () => {
   let httpMock: HttpTestingController;
@@ -63,5 +67,59 @@ describe('ContactService', () => {
     request.flush({ success: 'true', message: 'OK' });
 
     expect(result).toEqual({ success: true, message: 'OK' });
+  });
+
+  it('should not treat a response without explicit success as sent', () => {
+    let result: ContactResponse | undefined;
+
+    service
+      .sendMessage({
+        fullName: 'Federico Croletti',
+        email: 'federico.croletti@gmail.com',
+        subject: 'Collaborazione Angular',
+        requestType: 'website',
+        message:
+          'Vorrei parlare di una possibile collaborazione su un progetto Angular enterprise.',
+        privacyAccepted: true,
+        honeypot: '',
+      })
+      .subscribe((response) => {
+        result = response;
+      });
+
+    httpMock.expectOne(environment.contactEndpoint).flush({ message: 'OK' });
+
+    expect(result).toEqual({
+      success: false,
+      message: CONTACT_PROVIDER_REJECTED,
+      fallbackToEmail: true,
+    });
+  });
+
+  it('should expose a network-blocked error for status 0 failures', () => {
+    let errorMessage: string | undefined;
+
+    service
+      .sendMessage({
+        fullName: 'Federico Croletti',
+        email: 'federico.croletti@gmail.com',
+        subject: 'Collaborazione Angular',
+        requestType: 'website',
+        message:
+          'Vorrei parlare di una possibile collaborazione su un progetto Angular enterprise.',
+        privacyAccepted: true,
+        honeypot: '',
+      })
+      .subscribe({
+        error: (error: Error) => {
+          errorMessage = error.message;
+        },
+      });
+
+    httpMock
+      .expectOne(environment.contactEndpoint)
+      .error(new ProgressEvent('error'), { status: 0, statusText: 'Unknown Error' });
+
+    expect(errorMessage).toBe(CONTACT_NETWORK_BLOCKED);
   });
 });

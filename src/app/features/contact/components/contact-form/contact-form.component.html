@@ -117,15 +117,20 @@
       <p class="privacy-copy">{{ 'contact.form.privacyCopy' | translate }}</p>
 
       @if (statusMessage(); as status) {
-        <p
+        <div
           class="submission-message"
           [class.is-success]="status.success"
           [class.is-error]="!status.success"
           [attr.role]="status.success ? 'status' : 'alert'"
           aria-live="polite"
         >
-          {{ status.message }}
-        </p>
+          <p>{{ status.message }}</p>
+          @if (status.fallbackToEmail) {
+            <a mat-stroked-button [href]="fallbackEmailHref()" data-cy="contact-email-fallback">
+              {{ 'contact.form.emailFallbackCta' | translate }}
+            </a>
+          }
+        </div>
       }
 
       <button
