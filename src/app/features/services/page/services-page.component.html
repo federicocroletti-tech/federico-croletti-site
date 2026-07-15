@@ -1,0 +1,42 @@
+<section class="section services-page">
+  <div class="page-heading">
+    <p class="eyebrow">{{ 'services.eyebrow' | translate }}</p>
+    <h1>{{ 'services.title' | translate }}</h1>
+    <p class="lead">{{ 'services.intro' | translate }}</p>
+  </div>
+
+  <div class="service-category-list">
+    @for (category of serviceCategories; track category.id) {
+      <section class="service-category" [attr.aria-labelledby]="category.id + '-title'">
+        <div class="category-heading">
+          <span class="category-icon" aria-hidden="true">
+            <mat-icon fontSet="material-icons-outlined">{{ category.icon }}</mat-icon>
+          </span>
+          <div>
+            <h2 [id]="category.id + '-title'">{{ category.titleKey | translate }}</h2>
+            <p>{{ category.descriptionKey | translate }}</p>
+          </div>
+        </div>
+
+        <div class="grid grid--3 service-grid">
+          @for (service of category.services; track service.id) {
+            <mat-card class="site-card service-card">
+              <mat-card-header>
+                <mat-icon mat-card-avatar fontSet="material-icons-outlined" aria-hidden="true">{{
+                  service.icon
+                }}</mat-icon>
+                <mat-card-title>{{ service.titleKey | translate }}</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <p>{{ service.descriptionKey | translate }}</p>
+              </mat-card-content>
+              <mat-card-actions>
+                <a mat-button routerLink="/contatti">{{ 'services.requestInfoCta' | translate }}</a>
+              </mat-card-actions>
+            </mat-card>
+          }
+        </div>
+      </section>
+    }
+  </div>
+</section>

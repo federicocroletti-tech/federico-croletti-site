@@ -1,0 +1,123 @@
+<section class="section hero-section">
+  <div class="hero-copy">
+    <p class="eyebrow">{{ 'home.hero.eyebrow' | translate }}</p>
+    <h1>{{ 'home.hero.title' | translate }}</h1>
+    <p class="lead">{{ 'home.hero.subtitle' | translate }}</p>
+
+    <div class="cta-row" aria-label="Azioni principali">
+      <a mat-flat-button color="primary" routerLink="/servizi">{{
+        'home.hero.servicesCta' | translate
+      }}</a>
+      <a mat-stroked-button routerLink="/progetti">{{ 'home.hero.projectsCta' | translate }}</a>
+      <a mat-button routerLink="/contatti">{{ 'home.hero.contactCta' | translate }}</a>
+    </div>
+  </div>
+
+  <aside class="identity-panel" [attr.aria-label]="'home.hero.panelLabel' | translate">
+    <img
+      src="/assets/images/brand/federico-mark-wide.png"
+      [attr.alt]="'home.hero.logoAlt' | translate"
+    />
+    <div class="identity-panel__content">
+      <p class="eyebrow">Angular · Micro Frontend · Team Leadership</p>
+      <p>{{ 'home.hero.panelText' | translate }}</p>
+    </div>
+  </aside>
+</section>
+
+<section class="section section--compact" aria-labelledby="services-preview-title">
+  <div class="page-heading">
+    <p class="eyebrow">{{ 'home.servicesPreview.eyebrow' | translate }}</p>
+    <h2 id="services-preview-title">{{ 'home.servicesPreview.title' | translate }}</h2>
+    <p class="lead">{{ 'home.servicesPreview.body' | translate }}</p>
+  </div>
+
+  <div class="grid grid--3 card-grid">
+    @for (service of servicePreview; track service.id) {
+      <mat-card class="site-card service-preview-card">
+        <mat-card-header>
+          <mat-icon mat-card-avatar fontSet="material-icons-outlined" aria-hidden="true">{{
+            service.icon
+          }}</mat-icon>
+          <mat-card-title>{{ service.titleKey | translate }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ service.descriptionKey | translate }}</p>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+
+  <div class="cta-row section-cta">
+    <a mat-stroked-button routerLink="/servizi">{{ 'home.servicesPreview.cta' | translate }}</a>
+  </div>
+</section>
+
+<section class="section section--compact" aria-labelledby="skills-title">
+  <div class="page-heading">
+    <p class="eyebrow">{{ 'home.skills.eyebrow' | translate }}</p>
+    <h2 id="skills-title">{{ 'home.skills.title' | translate }}</h2>
+  </div>
+
+  <div class="grid grid--4 card-grid">
+    @for (skill of skillHighlights; track skill.titleKey) {
+      <mat-card class="site-card">
+        <mat-card-header>
+          <mat-card-title>{{ skill.titleKey | translate }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ skill.bodyKey ?? '' | translate }}</p>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</section>
+
+<div class="surface-band">
+  <section class="section help-section" aria-labelledby="help-title">
+    <div class="page-heading">
+      <p class="eyebrow">{{ 'home.help.eyebrow' | translate }}</p>
+      <h2 id="help-title">{{ 'home.help.title' | translate }}</h2>
+      <p class="lead">{{ 'home.help.body' | translate }}</p>
+    </div>
+
+    <div class="help-panel">
+      <p>{{ 'home.help.panel' | translate }}</p>
+      <a mat-flat-button color="primary" routerLink="/contatti">{{
+        'home.help.cta' | translate
+      }}</a>
+    </div>
+  </section>
+</div>
+
+<div class="surface-band">
+  <section class="section experience-section" aria-labelledby="experience-title">
+    <div class="page-heading">
+      <p class="eyebrow">{{ 'home.experience.eyebrow' | translate }}</p>
+      <h2 id="experience-title">{{ 'home.experience.title' | translate }}</h2>
+      <p class="lead">{{ 'home.experience.body' | translate }}</p>
+    </div>
+
+    <ul class="experience-list">
+      @for (point of experiencePoints; track point) {
+        <li>{{ point | translate }}</li>
+      }
+    </ul>
+  </section>
+</div>
+
+<section class="section section--compact" aria-labelledby="values-title">
+  <div class="page-heading">
+    <p class="eyebrow">{{ 'home.values.eyebrow' | translate }}</p>
+    <h2 id="values-title">{{ 'home.values.title' | translate }}</h2>
+  </div>
+
+  <div class="values-grid">
+    @for (value of values; track value) {
+      <article class="value-item">
+        <span aria-hidden="true"></span>
+        <h3>{{ value | translate }}</h3>
+      </article>
+    }
+  </div>
+</section>

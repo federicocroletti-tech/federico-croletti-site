@@ -1,0 +1,457 @@
+{
+  "common": {
+    "skipToContent": "Skip to main content"
+  },
+  "language": {
+    "label": "Select language"
+  },
+  "navigation": {
+    "label": "Main navigation",
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "footer": {
+    "description": "Senior Software Engineer and consultant for web development, digital support, AI automations and practical IT services.",
+    "copyright": "© {{ year }} Federico Croletti. All rights reserved."
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Senior Software Engineer · Web development · Digital support",
+      "title": "Hi, I am Federico Croletti. I create simple, modern and reliable digital solutions.",
+      "subtitle": "I am a Senior Software Engineer specialized in Angular and enterprise applications. I help companies, professionals and private clients build websites, solve IT problems and use digital tools better.",
+      "aboutCta": "About me",
+      "servicesCta": "Explore my services",
+      "projectsCta": "View projects",
+      "contactCta": "Contact me",
+      "panelLabel": "Professional identity",
+      "logoAlt": "Federico Croletti personal graphic mark",
+      "panelText": "I combine enterprise experience with practical support: I can work on complex Angular architectures and help with everyday digital problems."
+    },
+    "servicesPreview": {
+      "eyebrow": "How I can help",
+      "title": "Practical services for companies, professionals and private clients",
+      "body": "From web development to support for PCs, email, digital identity tools and AI: the goal is to make technology simpler and more useful.",
+      "cta": "See all services"
+    },
+    "skills": {
+      "eyebrow": "Quick skills",
+      "title": "Solid front-end, clear architecture and technical guidance",
+      "frontend": {
+        "title": "Modern front-end",
+        "body": "Angular, TypeScript, HTML, SCSS, Angular Material, RxJS, NgRx."
+      },
+      "architecture": {
+        "title": "Enterprise architecture",
+        "body": "Micro Frontend, Module Federation, shared libraries, federated routing, design systems."
+      },
+      "leadership": {
+        "title": "Technical leadership",
+        "body": "Team leading, mentoring, code review, clear priorities and stakeholder communication."
+      },
+      "aiCloud": {
+        "title": "AI and cloud mindset",
+        "body": "GitHub Copilot, applied AI tooling, AWS AI Practitioner, CI/CD, Docker, Kubernetes."
+      }
+    },
+    "experience": {
+      "eyebrow": "Experience highlight",
+      "title": "Experience on complex enterprise projects",
+      "body": "I have worked on financial, insurance, geospatial and document-management applications, contributing to front-end development and reusable architectural patterns.",
+      "points": {
+        "angular": "Enterprise Angular applications",
+        "microFrontend": "Micro frontends with Module Federation",
+        "maps": "Interactive maps based on Leaflet and WMS",
+        "auth": "Integration with authentication systems such as Keycloak",
+        "cicd": "CI/CD and containerized environments",
+        "uiLibraries": "Shared UI library development"
+      }
+    },
+    "values": {
+      "eyebrow": "How I work",
+      "title": "Why choose me",
+      "clarity": "Clarity",
+      "reliability": "Reliability",
+      "experience": "Technical experience",
+      "concreteSupport": "Concrete support",
+      "simpleSolutions": "Simple solutions"
+    },
+    "help": {
+      "eyebrow": "Support close to people",
+      "title": "Clear technology even when the problem is not technical on paper",
+      "body": "An account that does not work, an email box to configure, a PC to fix or a website to publish can block entire days. I help you understand the problem, choose a sensible path and solve it with order.",
+      "panel": "My approach is practical: I listen, translate the problem into clear steps and propose a sustainable solution without complicating what should remain simple.",
+      "cta": "Request information"
+    }
+  },
+  "about": {
+    "eyebrow": "Profile",
+    "title": "About",
+    "intro": {
+      "first": "I am Federico Croletti, a Senior Software Engineer experienced in designing and developing enterprise applications. I mainly work on Angular front-ends, modern architectures, micro frontends, i18n, interactive maps and code quality.",
+      "second": "I have worked across financial, insurance, geospatial and document-management contexts. Beyond development, I support Team Leadership and People Management, helping colleagues grow technically and organizing work in a clear and sustainable way."
+    },
+    "cv": {
+      "title": "Download my CV",
+      "body": "Want to learn more about my professional path, experience and technical skills? You can download my updated CV as a PDF.",
+      "cta": "Download CV",
+      "privacyNote": "On the public site I avoid showing full address, birth date and other sensitive personal details."
+    },
+    "profile": {
+      "eyebrow": "Professional profile",
+      "title": "A strong technical base with leadership responsibilities",
+      "points": {
+        "senior": "Senior Software Engineer / Senior Software Developer.",
+        "leader": "Team Leader and People Manager.",
+        "angular": "Angular front-end specialization.",
+        "enterprise": "Experience on enterprise applications.",
+        "microFrontend": "Experience with Micro Frontend, Module Federation and shared libraries.",
+        "maps": "Experience with Leaflet, WMS, MapServer and geospatial UX/UI.",
+        "quality": "Focus on performance, maintainability and scalability.",
+        "aws": "AWS Certified AI Practitioner certification."
+      }
+    },
+    "timeline": {
+      "eyebrow": "Experience",
+      "title": "Professional timeline",
+      "projectPeriod": "Project experience",
+      "peopleManager": {
+        "role": "Capgemini - People Manager",
+        "period": "02/2025 - Present",
+        "description": "Support for professional growth, periodic feedback, issue handling, training paths and collaboration on annual evaluations."
+      },
+      "teamLeader": {
+        "role": "Capgemini - Team Leader & Senior Consultant",
+        "period": "11/2024 - Present",
+        "description": "Enterprise platforms with Angular, Micro Frontend, Module Federation, shell application, shared libraries, centralized i18n, event bus, federated routing and CI/CD."
+      },
+      "esa": {
+        "role": "ESA Project - Interactive map",
+        "description": "Small-team coordination, complex front-end development, interactive maps with Leaflet/WMS, UX/UI optimization, AI tooling and internal training."
+      },
+      "findomestic": {
+        "role": "Capgemini - Senior Consultant Findomestic / BPER",
+        "period": "03/2024 - 12/2024",
+        "description": "Front-end development for loan, card and post-sale management applications."
+      },
+      "genegis": {
+        "role": "Genegis GI - Software Developer",
+        "period": "09/2017 - 03/2024",
+        "description": "Full-stack development with strong front-end focus: Angular, VueJS, Kendo UI, Java and Oracle databases. Enhancements, fixes, microservice integration and research projects."
+      },
+      "gesp": {
+        "role": "GESP Srl - Software Developer",
+        "period": "01/2017 - 07/2017",
+        "description": "Front-end development with KnockoutJS and Kendo UI, Java back-end and Oracle/PostgreSQL databases."
+      },
+      "miles": {
+        "role": "Miles 33 - Programmer internship",
+        "period": "05/2016 - 11/2016",
+        "description": "Internship as Java/JavaScript programmer, mobile app management, JSP, Bootstrap and jQuery."
+      }
+    },
+    "skills": {
+      "eyebrow": "Technical skills",
+      "title": "Stack and specialization areas",
+      "frontend": "Front-end",
+      "architecture": "Architecture",
+      "reactive": "State management and reactive programming",
+      "maps": "Maps and geospatial",
+      "devops": "DevOps and cloud",
+      "ai": "AI and productivity"
+    }
+  },
+  "services": {
+    "eyebrow": "IT services",
+    "title": "Clear digital solutions that fit your context",
+    "intro": "I help private clients, professionals, small businesses and companies with websites, IT support, digital tools, AI automations and technical consulting. Each service is explained clearly, so you immediately know what to expect.",
+    "requestInfoCta": "Request information",
+    "categories": {
+      "webPresence": {
+        "title": "Websites and online presence",
+        "description": "For a clean, responsive and easy-to-understand online presence built around your goals."
+      },
+      "itSupport": {
+        "title": "IT support",
+        "description": "Practical help for PCs, software, email, backups, reinstallations and common everyday IT problems."
+      },
+      "digitalIdentity": {
+        "title": "Digital identity, certified email and signatures",
+        "description": "Help configuring and using digital tools often needed for work, documents and online procedures."
+      },
+      "aiAutomation": {
+        "title": "AI and automations",
+        "description": "Practical use of AI tools to simplify activities, create documents, prototypes and faster procedures."
+      },
+      "technicalConsulting": {
+        "title": "Technical consulting",
+        "description": "Analysis of digital problems, tool selection, support for small web projects and front-end mentoring."
+      }
+    },
+    "items": {
+      "personalSites": {
+        "title": "Personal websites",
+        "description": "I create professional personal sites to present profile, skills, projects and contact channels clearly."
+      },
+      "showcaseSites": {
+        "title": "Showcase websites",
+        "description": "I build websites for professionals and small businesses, with clear messages, visible contacts and responsive structure."
+      },
+      "landingPages": {
+        "title": "Landing pages",
+        "description": "I create focused pages for services, campaigns, events or ideas to validate quickly online."
+      },
+      "seoBasic": {
+        "title": "Basic SEO",
+        "description": "I set title, description, copy, structure and content so the site is clearer for people and search engines."
+      },
+      "siteRestyling": {
+        "title": "Existing site restyling",
+        "description": "I improve layout, readability, performance and organization of websites already online."
+      },
+      "contactIntegration": {
+        "title": "Contacts and forms",
+        "description": "I integrate email, WhatsApp, contact forms and calls to action to make requests easier to receive."
+      },
+      "pcSupport": {
+        "title": "PC and software support",
+        "description": "I help diagnose and solve common problems with computers, software, accounts and devices."
+      },
+      "formatting": {
+        "title": "Formatting and reinstalling",
+        "description": "Support for operating system reinstallations and clean setup of essential applications."
+      },
+      "backup": {
+        "title": "Data backup",
+        "description": "I help save, recover where possible and reorganize important files more safely."
+      },
+      "emailSetup": {
+        "title": "Email configuration",
+        "description": "I configure mailboxes, email clients, accounts, calendars and connected tools."
+      },
+      "commonIssues": {
+        "title": "Common problems",
+        "description": "Support for slowdowns, errors, blocked access, settings and everyday digital issues."
+      },
+      "remoteSupport": {
+        "title": "Remote or on-site support",
+        "description": "We evaluate together the most suitable type of intervention, remote or on-site when possible."
+      },
+      "pec": {
+        "title": "Certified email setup",
+        "description": "I help configure, use and understand certified email on webmail, email clients and devices."
+      },
+      "spid": {
+        "title": "Digital identity support",
+        "description": "Support using digital identity tools for logins, online procedures and digital services."
+      },
+      "digitalSignature": {
+        "title": "Digital signature",
+        "description": "I help configure digital signature tools and use them with common documents."
+      },
+      "digitalDocuments": {
+        "title": "Documents and online procedures",
+        "description": "Support for digital documents, web portals, file uploads and online procedures."
+      },
+      "aiTools": {
+        "title": "Practical AI tools",
+        "description": "I help you use tools such as Copilot, ChatGPT and similar solutions in a useful and aware way."
+      },
+      "aiDocuments": {
+        "title": "Texts, documents and templates",
+        "description": "I create or improve texts, procedures, templates and documents using AI and human review."
+      },
+      "simpleAutomation": {
+        "title": "Simple automations",
+        "description": "I identify repetitive activities and suggest lightweight automations for work, productivity and organization."
+      },
+      "aiPrototypes": {
+        "title": "AI ideas and prototypes",
+        "description": "Support defining small AI-based digital prototypes, from the first idea to a demo."
+      },
+      "problemAnalysis": {
+        "title": "Digital problem analysis",
+        "description": "I help you understand a technical problem and evaluate priorities, cost and possible solutions."
+      },
+      "softwareAdvice": {
+        "title": "Tool and software advice",
+        "description": "Consulting on digital tools, cloud, basic security and productivity."
+      },
+      "smallWebProjects": {
+        "title": "Small web projects",
+        "description": "Technical support to set up, improve or publish small web projects."
+      },
+      "frontendMentoring": {
+        "title": "Front-end mentoring",
+        "description": "Basic support on Angular, TypeScript, code organization and front-end good practices."
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "Portfolio",
+    "title": "Projects",
+    "intro": "This section includes a selection of professional, personal and experimental projects. Some come from enterprise contexts, others from product ideas, study or prototyping.",
+    "roleLabel": "Role",
+    "technologyLabel": "Technologies",
+    "tagLabel": "Technical tags",
+    "privateNote": "Private repository or not publicly available.",
+    "filters": {
+      "label": "Filter projects",
+      "all": "All",
+      "angular": "Angular",
+      "microFrontend": "Micro Frontend",
+      "ai": "AI",
+      "maps": "Maps",
+      "product": "Personal product",
+      "enterprise": "Enterprise"
+    },
+    "status": {
+      "in-development": "In development",
+      "prototype": "Prototype",
+      "professional": "Professional experience",
+      "completed": "Completed"
+    },
+    "items": {
+      "personalSite": {
+        "title": "Federico Croletti personal site",
+        "description": "Personal site built with Angular, Angular Material, SCSS and i18n to present profile, projects, CV and contact channels.",
+        "role": "Ideation, UX, front-end development, architecture and deploy."
+      },
+      "motoSmart": {
+        "title": "Moto Smart / Officina Moto Smart",
+        "description": "Demo and future MVP to help motorcycle workshops manage client requests, interventions, WhatsApp contacts, calls and first-level support through an AI bot.",
+        "role": "Product ideation, functional analysis, front-end architecture, Angular prototyping and MVP roadmap."
+      },
+      "smartSales": {
+        "title": "Smart Sales - Micro Frontend Cart",
+        "description": "Micro Frontend dedicated to cart management in an Angular ecosystem with application shell and federated module architecture.",
+        "role": "Cart component development, shell integration, state management and front-end pattern definition."
+      },
+      "esaMap": {
+        "title": "ESA - Interactive WMS map",
+        "description": "Web application with interactive map based on Leaflet and WMS/MapServer services, used to visualize and manage geospatial data.",
+        "role": "Team coordination, front-end development, UX/UI optimization and map integration."
+      },
+      "microFrontend": {
+        "title": "Angular Micro Frontend Architecture",
+        "description": "Enterprise architecture based on a main shell, dynamically loaded micro frontends, shared library, centralized i18n, event bus and federated routing.",
+        "role": "Team Leader & Senior Consultant, architectural pattern development, team support and best-practice standardization."
+      },
+      "chatbot": {
+        "title": "AI chatbot with Node backend and Angular frontend",
+        "description": "AI chatbot prototype with Node backend and Angular frontend, designed for integrations with channels such as WhatsApp and external services.",
+        "role": "Full-stack development, repository setup, deploy and API integration."
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Let us talk",
+    "title": "Contact",
+    "intro": "Want to discuss a project, collaboration, job opportunity or technical consulting? Write to me: I will reply as soon as possible.",
+    "info": {
+      "title": "Public channels",
+      "emailCta": "Write me an email",
+      "linkedinCta": "Go to LinkedIn profile",
+      "githubCta": "View my GitHub",
+      "servicesTitle": "IT services",
+      "servicesBody": "Need a website, digital support or help with AI tools? You can describe the problem through the form.",
+      "servicesCta": "Request information about services",
+      "locationTitle": "Location"
+    },
+    "form": {
+      "title": "Send a request",
+      "fullName": "Full name",
+      "email": "Email",
+      "subject": "Subject",
+      "requestType": "Request type",
+      "message": "Message",
+      "honeypot": "Leave this field empty",
+      "privacy": "I accept the",
+      "privacyLink": "privacy policy",
+      "privacyCopy": "The data entered will only be used to reply to your request. It will not be used for newsletters or unsolicited commercial communication.",
+      "submit": "Send message",
+      "submitting": "Sending...",
+      "success": "Message sent successfully. I will reply as soon as possible.",
+      "error": "The message could not be sent. Please try again later or write to me directly by email.",
+      "endpointMissing": "The form service endpoint is not configured. Insert the real value in environment.contactEndpoint.",
+      "requestTypes": {
+        "website": "Website",
+        "itSupport": "IT support",
+        "digitalIdentity": "Certified email / digital identity / digital signature",
+        "aiAutomation": "AI and automations",
+        "technicalConsulting": "Technical consulting",
+        "jobOpportunity": "Job opportunity",
+        "other": "Other"
+      },
+      "errors": {
+        "required": "Required field.",
+        "fullNameMin": "Enter at least 2 characters.",
+        "email": "Enter a valid email address.",
+        "messageMin": "The message must contain at least 20 characters.",
+        "privacy": "Accept privacy to continue."
+      }
+    },
+    "mail": { "name": "Name", "email": "Email" }
+  },
+  "privacy": {
+    "eyebrow": "Privacy notice",
+    "title": "Privacy",
+    "intro": "This notice explains clearly how personal data collected through the site and contact form is processed.",
+    "sections": {
+      "owner": {
+        "title": "Owner",
+        "body": "The data controller is Federico Croletti, reachable at federico.croletti@gmail.com."
+      },
+      "data": {
+        "title": "Processed data",
+        "body": "The form may process full name, email, subject, request type, message, confirmation of the privacy notice and minimal technical data required by the external sending service. You should not submit sensitive data."
+      },
+      "purpose": {
+        "title": "Purpose",
+        "body": "Data is used exclusively to receive, manage and reply to requests sent through the form or by email, including IT services, collaborations, consulting or professional opportunities."
+      },
+      "legalBasis": {
+        "title": "Legal basis",
+        "body": "The legal basis is the performance of pre-contractual or contractual measures requested by the user and, where applicable, the legitimate interest in managing communications voluntarily received through the site."
+      },
+      "formProvider": {
+        "title": "External form service",
+        "body": "The site is prepared to use an external service compatible with static sites, such as Formspree, Web3Forms, Getform, Basin or equivalent. TODO: before publication, insert the actual service selected, its privacy policy link and any extra-EU transfer information."
+      },
+      "retention": {
+        "title": "Retention",
+        "body": "Received messages will be kept for the time needed to reply and manage the request, and in any case no longer than reasonably necessary for administrative, tax or rights-protection purposes."
+      },
+      "newsletter": {
+        "title": "Newsletter and marketing",
+        "body": "The site does not use data for newsletters or unsolicited commercial communication."
+      },
+      "cookiesAnalytics": {
+        "title": "Cookies and analytics",
+        "body": "The first version of the site does not use analytics, profiling or marketing cookies. Any technical services required for operation will be listed in this notice if introduced."
+      },
+      "security": {
+        "title": "Security",
+        "body": "Proportionate technical and organizational measures are adopted to limit unauthorized access, loss or misuse of data. The frontend code does not contain SMTP credentials, secret keys or private tokens."
+      },
+      "thirdParties": {
+        "title": "Third-party services",
+        "body": "External links to LinkedIn, GitHub or other services open third-party websites, subject to their own privacy notices. The external form service will process data as a technical provider according to the selected service terms."
+      },
+      "rights": {
+        "title": "Data subject rights",
+        "body": "You may request access, rectification, deletion, restriction, objection to processing and data portability where provided by the GDPR. You may also lodge a complaint with the competent supervisory authority."
+      },
+      "contact": {
+        "title": "Privacy contact",
+        "body": "For privacy-related requests you can write to federico.croletti@gmail.com."
+      },
+      "updates": {
+        "title": "Updates",
+        "body": "This notice may be updated if the site, the external form service or processing methods change. Last update: 14/07/2026."
+      }
+    }
+  }
+}

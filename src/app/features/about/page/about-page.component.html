@@ -1,0 +1,95 @@
+<section class="section about-hero">
+  <div class="page-heading">
+    <p class="eyebrow">{{ 'about.eyebrow' | translate }}</p>
+    <h1>{{ 'about.title' | translate }}</h1>
+    <p class="lead">{{ 'about.intro.first' | translate }}</p>
+    <p>{{ 'about.intro.second' | translate }}</p>
+  </div>
+
+  <mat-card class="site-card cv-card">
+    <mat-card-header>
+      <mat-card-title>{{ 'about.cv.title' | translate }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ 'about.cv.body' | translate }}</p>
+      <p class="privacy-note">{{ 'about.cv.privacyNote' | translate }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a
+        mat-flat-button
+        color="primary"
+        href="/assets/documents/cv/cv_federico_croletti.pdf"
+        download
+      >
+        {{ 'about.cv.cta' | translate }}
+      </a>
+    </mat-card-actions>
+  </mat-card>
+</section>
+
+<section class="section section--compact profile-grid" aria-labelledby="profile-title">
+  <div class="page-heading">
+    <p class="eyebrow">{{ 'about.profile.eyebrow' | translate }}</p>
+    <h2 id="profile-title">{{ 'about.profile.title' | translate }}</h2>
+  </div>
+
+  <ul class="profile-points">
+    @for (point of profilePoints; track point) {
+      <li>{{ point | translate }}</li>
+    }
+  </ul>
+</section>
+
+<div class="surface-band">
+  <section class="section" aria-labelledby="timeline-title">
+    <div class="page-heading">
+      <p class="eyebrow">{{ 'about.timeline.eyebrow' | translate }}</p>
+      <h2 id="timeline-title">{{ 'about.timeline.title' | translate }}</h2>
+    </div>
+
+    <ol class="timeline">
+      @for (item of timeline; track item.roleKey) {
+        <li>
+          <article>
+            <span class="timeline-marker" aria-hidden="true"></span>
+            <div>
+              <p class="timeline-period">
+                {{
+                  item.periodKey
+                    ? (item.periodKey | translate)
+                    : ('about.timeline.projectPeriod' | translate)
+                }}
+              </p>
+              <h3>{{ item.roleKey | translate }}</h3>
+              <p>{{ item.descriptionKey | translate }}</p>
+            </div>
+          </article>
+        </li>
+      }
+    </ol>
+  </section>
+</div>
+
+<section class="section section--compact" aria-labelledby="skills-title">
+  <div class="page-heading">
+    <p class="eyebrow">{{ 'about.skills.eyebrow' | translate }}</p>
+    <h2 id="skills-title">{{ 'about.skills.title' | translate }}</h2>
+  </div>
+
+  <div class="grid grid--3 skills-grid">
+    @for (group of skillGroups; track group.titleKey) {
+      <mat-card class="site-card">
+        <mat-card-header>
+          <mat-card-title>{{ group.titleKey | translate }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <ul class="pill-list">
+            @for (skill of group.skills; track skill) {
+              <li class="pill">{{ skill }}</li>
+            }
+          </ul>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</section>

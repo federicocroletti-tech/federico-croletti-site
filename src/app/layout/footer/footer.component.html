@@ -1,0 +1,18 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <p class="eyebrow">Federico Croletti</p>
+      <p class="footer-copy">{{ 'footer.description' | translate }}</p>
+    </div>
+
+    <div class="footer-links">
+      <a mat-button [href]="'mailto:' + contacts.email">Email</a>
+      <a mat-button [href]="contacts.linkedIn" target="_blank" rel="noopener noreferrer"
+        >LinkedIn</a
+      >
+      <a mat-button routerLink="/privacy">Privacy</a>
+    </div>
+  </div>
+
+  <p class="footer-meta">{{ 'footer.copyright' | translate: { year: currentYear } }}</p>
+</footer>

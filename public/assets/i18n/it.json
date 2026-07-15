@@ -1,0 +1,460 @@
+{
+  "common": {
+    "skipToContent": "Vai al contenuto principale"
+  },
+  "language": {
+    "label": "Seleziona lingua"
+  },
+  "navigation": {
+    "label": "Navigazione principale",
+    "home": "Home",
+    "about": "Chi sono",
+    "services": "Servizi",
+    "projects": "Progetti",
+    "contact": "Contatti"
+  },
+  "footer": {
+    "description": "Senior Software Engineer Angular e consulente per sviluppo web, assistenza digitale, automazioni AI e supporto informatico pratico.",
+    "copyright": "© {{ year }} Federico Croletti. Tutti i diritti riservati."
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Senior Software Engineer · Sviluppo web · Assistenza digitale",
+      "title": "Ciao, sono Federico Croletti. Creo soluzioni digitali semplici, moderne e affidabili.",
+      "subtitle": "Sono un Senior Software Engineer specializzato in Angular e applicazioni enterprise. Aiuto aziende, professionisti e privati a realizzare siti web, risolvere problemi informatici e usare meglio gli strumenti digitali.",
+      "aboutCta": "Scopri chi sono",
+      "servicesCta": "Scopri i miei servizi",
+      "projectsCta": "Guarda i progetti",
+      "contactCta": "Contattami",
+      "panelLabel": "Identità professionale",
+      "logoAlt": "Segno grafico personale di Federico Croletti",
+      "panelText": "Unisco esperienza enterprise e supporto concreto: posso lavorare su architetture Angular complesse e aiutare con problemi digitali quotidiani."
+    },
+    "servicesPreview": {
+      "eyebrow": "Come posso aiutarti",
+      "title": "Servizi pratici per aziende, professionisti e privati",
+      "body": "Dallo sviluppo di siti web all'assistenza su PC, email, SPID, PEC e strumenti AI: l'obiettivo è rendere la tecnologia più semplice e utile.",
+      "cta": "Vedi tutti i servizi"
+    },
+    "skills": {
+      "eyebrow": "Competenze rapide",
+      "title": "Front-end solido, architettura chiara e guida tecnica",
+      "frontend": {
+        "title": "Front-end moderno",
+        "body": "Angular, TypeScript, HTML, SCSS, Angular Material, RxJS, NgRx."
+      },
+      "architecture": {
+        "title": "Architetture enterprise",
+        "body": "Micro Frontend, Module Federation, librerie condivise, routing federato, design system."
+      },
+      "leadership": {
+        "title": "Leadership tecnica",
+        "body": "Team leading, mentoring, code review, priorità chiare e dialogo con stakeholder."
+      },
+      "aiCloud": {
+        "title": "AI e cloud mindset",
+        "body": "GitHub Copilot, AI applied tooling, AWS AI Practitioner, CI/CD, Docker, Kubernetes."
+      }
+    },
+    "experience": {
+      "eyebrow": "Esperienza in evidenza",
+      "title": "Esperienza su progetti enterprise complessi",
+      "body": "Ho lavorato su applicazioni in ambito finanziario, assicurativo, geo-spaziale e documentale, contribuendo sia allo sviluppo front-end sia alla definizione di pattern architetturali riutilizzabili.",
+      "points": {
+        "angular": "Applicazioni Angular enterprise",
+        "microFrontend": "Micro frontend con Module Federation",
+        "maps": "Mappe interattive basate su Leaflet e WMS",
+        "auth": "Integrazione con sistemi di autenticazione come Keycloak",
+        "cicd": "CI/CD e ambienti containerizzati",
+        "uiLibraries": "Sviluppo di librerie UI condivise"
+      }
+    },
+    "values": {
+      "eyebrow": "Come lavoro",
+      "title": "Perché scegliermi",
+      "clarity": "Chiarezza",
+      "reliability": "Affidabilità",
+      "experience": "Esperienza tecnica",
+      "concreteSupport": "Supporto concreto",
+      "simpleSolutions": "Soluzioni semplici"
+    },
+    "help": {
+      "eyebrow": "Supporto vicino alle persone",
+      "title": "Tecnologia chiara anche quando il problema non è tecnico sulla carta",
+      "body": "Un account che non funziona, una PEC da configurare, un PC da sistemare o un sito da mettere online possono bloccare giornate intere. Ti aiuto a capire il problema, scegliere una strada sensata e risolverlo con ordine.",
+      "panel": "Il mio approccio è pratico: ascolto, traduco il problema in passaggi chiari e propongo una soluzione sostenibile, senza complicare ciò che deve restare semplice.",
+      "cta": "Richiedi informazioni"
+    }
+  },
+  "about": {
+    "eyebrow": "Profilo",
+    "title": "Chi sono",
+    "intro": {
+      "first": "Sono Federico Croletti, Senior Software Engineer con esperienza nella progettazione e sviluppo di applicazioni enterprise. Mi occupo soprattutto di front-end Angular, architetture moderne, micro frontend, i18n, mappe interattive e qualità del codice.",
+      "second": "Nel mio percorso ho lavorato in ambiti finanziari, assicurativi, geo-spaziali e documentali. Oltre allo sviluppo, seguo attività di Team Leadership e People Management, aiutando i colleghi a crescere tecnicamente e organizzando il lavoro in modo chiaro e sostenibile."
+    },
+    "cv": {
+      "title": "Scarica il mio CV",
+      "body": "Vuoi approfondire il mio percorso professionale, le esperienze e le competenze tecniche? Puoi scaricare il mio CV aggiornato in formato PDF.",
+      "cta": "Scarica CV",
+      "privacyNote": "Nel sito pubblico evito di mostrare indirizzo completo, data di nascita e altri dati personali sensibili."
+    },
+    "profile": {
+      "eyebrow": "Profilo professionale",
+      "title": "Una base tecnica forte, con responsabilità di guida",
+      "points": {
+        "senior": "Senior Software Engineer / Senior Software Developer.",
+        "leader": "Team Leader e People Manager.",
+        "angular": "Specializzazione front-end Angular.",
+        "enterprise": "Esperienza su applicazioni enterprise.",
+        "microFrontend": "Esperienza con Micro Frontend, Module Federation e librerie condivise.",
+        "maps": "Esperienza con Leaflet, WMS, MapServer e UX/UI geospaziale.",
+        "quality": "Attenzione a performance, manutenibilità e scalabilità.",
+        "aws": "Certificazione AWS Certified AI Practitioner."
+      }
+    },
+    "timeline": {
+      "eyebrow": "Esperienza",
+      "title": "Timeline professionale",
+      "projectPeriod": "Esperienza progettuale",
+      "peopleManager": {
+        "role": "Capgemini - People Manager",
+        "period": "02/2025 - Attuale",
+        "description": "Supporto alla crescita professionale delle persone, feedback periodici, gestione criticità, percorsi formativi e collaborazione sulle valutazioni annuali."
+      },
+      "teamLeader": {
+        "role": "Capgemini - Team Leader & Senior Consultant",
+        "period": "11/2024 - Attuale",
+        "description": "Sviluppo di piattaforme enterprise con Angular, Micro Frontend, Module Federation, shell principale, librerie condivise, i18n centralizzato, event bus, routing federato e CI/CD."
+      },
+      "esa": {
+        "role": "Progetto ESA - Mappa interattiva",
+        "description": "Coordinamento di un piccolo team, sviluppo front-end complesso, mappe interattive con Leaflet/WMS, ottimizzazione UX/UI, uso di AI tool e formazione interna."
+      },
+      "findomestic": {
+        "role": "Capgemini - Senior Consultant Findomestic / BPER",
+        "period": "03/2024 - 12/2024",
+        "description": "Sviluppo front-end su applicazioni per gestione prestiti, carte e post-vendita."
+      },
+      "genegis": {
+        "role": "Genegis GI - Software Developer",
+        "period": "09/2017 - 03/2024",
+        "description": "Sviluppo full-stack con forte focus front-end: Angular, VueJS, Kendo UI, Java e database Oracle. Evolutive, correttive, integrazione con microservizi e progetti di ricerca."
+      },
+      "gesp": {
+        "role": "GESP Srl - Software Developer",
+        "period": "01/2017 - 07/2017",
+        "description": "Sviluppo front-end con KnockoutJS e Kendo UI, back-end Java e database Oracle/PostgreSQL."
+      },
+      "miles": {
+        "role": "Miles 33 - Stage Programmatore",
+        "period": "05/2016 - 11/2016",
+        "description": "Stage come programmatore Java/JavaScript, gestione app mobile, JSP, Bootstrap e jQuery."
+      }
+    },
+    "skills": {
+      "eyebrow": "Competenze tecniche",
+      "title": "Stack e aree di specializzazione",
+      "frontend": "Front-end",
+      "architecture": "Architettura",
+      "reactive": "State management e reactive programming",
+      "maps": "Mappe e geospaziale",
+      "devops": "DevOps e cloud",
+      "ai": "AI e produttività"
+    }
+  },
+  "services": {
+    "eyebrow": "Servizi informatici",
+    "title": "Soluzioni digitali chiare, utili e adatte al tuo contesto",
+    "intro": "Aiuto privati, professionisti, piccole attività e aziende con siti web, assistenza informatica, strumenti digitali, automazioni AI e consulenza tecnica. Ogni servizio è spiegato in modo semplice, così sai subito cosa aspettarti.",
+    "requestInfoCta": "Richiedi informazioni",
+    "categories": {
+      "webPresence": {
+        "title": "Siti web e presenza online",
+        "description": "Per presentarti online con un sito pulito, responsive, facile da aggiornare e costruito attorno ai tuoi obiettivi."
+      },
+      "itSupport": {
+        "title": "Assistenza informatica",
+        "description": "Supporto pratico per PC, software, email, backup, reinstallazioni e piccoli problemi informatici quotidiani."
+      },
+      "digitalIdentity": {
+        "title": "Digitale, PEC, SPID e firma digitale",
+        "description": "Aiuto nella configurazione e nell'uso di strumenti digitali spesso necessari per lavoro, documenti e procedure online."
+      },
+      "aiAutomation": {
+        "title": "AI e automazioni",
+        "description": "Uso concreto di strumenti AI per semplificare attività, creare documenti, prototipi e procedure più veloci."
+      },
+      "technicalConsulting": {
+        "title": "Consulenza tecnica",
+        "description": "Analisi di problemi digitali, scelta di strumenti, supporto per piccoli progetti web e mentoring front-end."
+      }
+    },
+    "items": {
+      "personalSites": {
+        "title": "Siti web personali",
+        "description": "Creo siti personali professionali per raccontare profilo, competenze, progetti e contatti in modo ordinato."
+      },
+      "showcaseSites": {
+        "title": "Siti vetrina",
+        "description": "Realizzo siti per professionisti e piccole attività, con messaggi chiari, contatti visibili e struttura responsive."
+      },
+      "landingPages": {
+        "title": "Landing page",
+        "description": "Creo pagine mirate per servizi, campagne, eventi o idee da validare rapidamente online."
+      },
+      "seoBasic": {
+        "title": "SEO base",
+        "description": "Imposto title, description, testi, struttura e contenuti per rendere il sito più comprensibile a utenti e motori di ricerca."
+      },
+      "siteRestyling": {
+        "title": "Restyling siti esistenti",
+        "description": "Miglioro layout, leggibilità, performance e organizzazione di siti già online."
+      },
+      "contactIntegration": {
+        "title": "Contatti e moduli",
+        "description": "Integro email, WhatsApp, moduli contatto e call to action per rendere semplice ricevere richieste."
+      },
+      "pcSupport": {
+        "title": "Supporto PC e software",
+        "description": "Aiuto a diagnosticare e risolvere problemi comuni su computer, programmi, account e dispositivi."
+      },
+      "formatting": {
+        "title": "Formattazione e reinstallazione",
+        "description": "Supporto nella reinstallazione del sistema operativo e nella riconfigurazione ordinata delle applicazioni essenziali."
+      },
+      "backup": {
+        "title": "Backup dati",
+        "description": "Aiuto a salvare, recuperare dove possibile e riorganizzare file importanti in modo più sicuro."
+      },
+      "emailSetup": {
+        "title": "Configurazione email",
+        "description": "Configuro caselle email, client di posta, account, calendari e strumenti collegati."
+      },
+      "commonIssues": {
+        "title": "Problemi comuni",
+        "description": "Supporto per rallentamenti, errori, accessi bloccati, impostazioni e piccoli intoppi digitali."
+      },
+      "remoteSupport": {
+        "title": "Supporto remoto o in presenza",
+        "description": "Valuto insieme il tipo di intervento più adatto, remoto o in presenza quando possibile."
+      },
+      "pec": {
+        "title": "Configurazione PEC",
+        "description": "Aiuto a configurare, usare e comprendere la PEC su webmail, client email e dispositivi."
+      },
+      "spid": {
+        "title": "Supporto SPID",
+        "description": "Supporto nell'uso dello SPID per accessi, procedure online e servizi digitali."
+      },
+      "digitalSignature": {
+        "title": "Firma digitale",
+        "description": "Aiuto a configurare strumenti di firma digitale e a usarli nei documenti più comuni."
+      },
+      "digitalDocuments": {
+        "title": "Documenti e procedure online",
+        "description": "Supporto per documenti digitali, portali web, caricamenti file e procedure online."
+      },
+      "aiTools": {
+        "title": "Uso pratico di strumenti AI",
+        "description": "Ti aiuto a usare strumenti come Copilot, ChatGPT e soluzioni simili in modo utile e consapevole."
+      },
+      "aiDocuments": {
+        "title": "Testi, documenti e template",
+        "description": "Creo o miglioro testi, procedure, modelli e documenti usando AI e revisione umana."
+      },
+      "simpleAutomation": {
+        "title": "Automazioni semplici",
+        "description": "Individuo attività ripetitive e propongo automazioni leggere per lavoro, produttività e organizzazione."
+      },
+      "aiPrototypes": {
+        "title": "Idee e prototipi AI",
+        "description": "Supporto nella definizione di piccoli prototipi digitali basati su AI, dalla prima idea alla demo."
+      },
+      "problemAnalysis": {
+        "title": "Analisi problemi digitali",
+        "description": "Ti aiuto a capire un problema tecnico, valutarne priorità, costi e possibili soluzioni."
+      },
+      "softwareAdvice": {
+        "title": "Scelta strumenti e software",
+        "description": "Consulenza su strumenti digitali, cloud, sicurezza base e produttività."
+      },
+      "smallWebProjects": {
+        "title": "Piccoli progetti web",
+        "description": "Supporto tecnico per impostare, migliorare o portare online piccoli progetti web."
+      },
+      "frontendMentoring": {
+        "title": "Mentoring front-end",
+        "description": "Supporto base su Angular, TypeScript, organizzazione del codice e buone pratiche front-end."
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "Portfolio",
+    "title": "Progetti",
+    "intro": "In questa sezione trovi una selezione di progetti professionali, personali e sperimentali. Alcuni nascono da contesti enterprise, altri da idee personali o attività di studio e prototipazione.",
+    "roleLabel": "Ruolo",
+    "technologyLabel": "Tecnologie",
+    "tagLabel": "Tag tecnici",
+    "privateNote": "Repository privato o non disponibile pubblicamente.",
+    "filters": {
+      "label": "Filtra progetti",
+      "all": "Tutti",
+      "angular": "Angular",
+      "microFrontend": "Micro Frontend",
+      "ai": "AI",
+      "maps": "Mappe",
+      "product": "Prodotto personale",
+      "enterprise": "Enterprise"
+    },
+    "status": {
+      "in-development": "In sviluppo",
+      "prototype": "Prototipo",
+      "professional": "Esperienza professionale",
+      "completed": "Completato"
+    },
+    "items": {
+      "personalSite": {
+        "title": "Sito personale Federico Croletti",
+        "description": "Sito personale sviluppato con Angular, Angular Material, SCSS e i18n, pensato per presentare profilo professionale, progetti, CV e contatti.",
+        "role": "Ideazione, UX, sviluppo front-end, architettura e deploy."
+      },
+      "motoSmart": {
+        "title": "Moto Smart / Officina Moto Smart",
+        "description": "Demo e futuro MVP per aiutare officine moto a gestire richieste clienti, interventi, contatti WhatsApp, chiamate e primo livello di supporto tramite bot AI.",
+        "role": "Ideazione prodotto, analisi funzionale, architettura front-end, prototipazione Angular e definizione roadmap MVP."
+      },
+      "smartSales": {
+        "title": "Smart Sales - Micro Frontend Cart",
+        "description": "Micro Frontend dedicato alla gestione del carrello in un ecosistema Angular con shell applicativa e architettura a moduli federati.",
+        "role": "Sviluppo componente carrello, integrazione con shell, gestione stato e definizione pattern front-end."
+      },
+      "esaMap": {
+        "title": "ESA - Mappa interattiva WMS",
+        "description": "Applicazione web con mappa interattiva basata su Leaflet e servizi WMS/MapServer, usata per visualizzare e gestire dati geospaziali.",
+        "role": "Team coordination, sviluppo front-end, ottimizzazione UX/UI e integrazione mappe."
+      },
+      "microFrontend": {
+        "title": "Architettura Micro Frontend Angular",
+        "description": "Architettura enterprise basata su shell principale, micro frontend caricati dinamicamente, libreria condivisa, i18n centralizzato, event bus e routing federato.",
+        "role": "Team Leader & Senior Consultant, sviluppo pattern architetturali, supporto al team e standardizzazione best practice."
+      },
+      "chatbot": {
+        "title": "Chatbot AI con backend Node e frontend Angular",
+        "description": "Prototipo di chatbot AI con backend Node e frontend Angular, pensato per integrazioni con canali come WhatsApp e servizi esterni.",
+        "role": "Sviluppo full-stack, configurazione repository, deploy e integrazione API."
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Parliamone",
+    "title": "Contatti",
+    "intro": "Vuoi parlare di un progetto, una collaborazione, un'opportunità lavorativa o una consulenza tecnica? Scrivimi: ti risponderò appena possibile.",
+    "info": {
+      "title": "Canali pubblici",
+      "emailCta": "Scrivimi una mail",
+      "linkedinCta": "Vai al profilo LinkedIn",
+      "githubCta": "Guarda il mio GitHub",
+      "servicesTitle": "Servizi informatici",
+      "servicesBody": "Hai bisogno di un sito, assistenza digitale o supporto su strumenti AI? Puoi descrivermi il problema dal form.",
+      "servicesCta": "Richiedi informazioni sui servizi",
+      "locationTitle": "Località"
+    },
+    "form": {
+      "title": "Invia una richiesta",
+      "fullName": "Nome e cognome",
+      "email": "Email",
+      "subject": "Oggetto",
+      "requestType": "Tipologia richiesta",
+      "message": "Messaggio",
+      "honeypot": "Lascia vuoto questo campo",
+      "privacy": "Accetto l'informativa",
+      "privacyLink": "privacy",
+      "privacyCopy": "I dati inseriti saranno usati solo per rispondere alla tua richiesta. Non saranno usati per newsletter o comunicazioni commerciali non richieste.",
+      "submit": "Invia messaggio",
+      "submitting": "Invio in corso...",
+      "success": "Messaggio inviato correttamente. Ti risponderò appena possibile.",
+      "error": "Non è stato possibile inviare il messaggio. Riprova più tardi oppure scrivimi direttamente via email.",
+      "endpointMissing": "Endpoint del servizio form non configurato. Inserisci il valore reale in environment.contactEndpoint.",
+      "requestTypes": {
+        "website": "Sito web",
+        "itSupport": "Assistenza informatica",
+        "digitalIdentity": "PEC / SPID / firma digitale",
+        "aiAutomation": "AI e automazioni",
+        "technicalConsulting": "Consulenza tecnica",
+        "jobOpportunity": "Opportunità lavorativa",
+        "other": "Altro"
+      },
+      "errors": {
+        "required": "Campo obbligatorio.",
+        "fullNameMin": "Inserisci almeno 2 caratteri.",
+        "email": "Inserisci un indirizzo email valido.",
+        "messageMin": "Il messaggio deve contenere almeno 20 caratteri.",
+        "privacy": "Accetta la privacy per continuare."
+      }
+    },
+    "mail": {
+      "name": "Nome",
+      "email": "Email"
+    }
+  },
+  "privacy": {
+    "eyebrow": "Informativa privacy",
+    "title": "Privacy",
+    "intro": "Questa informativa spiega in modo chiaro come vengono trattati i dati personali raccolti tramite il sito e il form contatti.",
+    "sections": {
+      "owner": {
+        "title": "Titolare",
+        "body": "Il titolare del trattamento è Federico Croletti, contattabile all'indirizzo federico.croletti@gmail.com."
+      },
+      "data": {
+        "title": "Dati trattati",
+        "body": "Attraverso il form possono essere trattati nome e cognome, email, oggetto, tipologia richiesta, messaggio, conferma di lettura dell'informativa e dati tecnici minimi necessari al funzionamento del servizio esterno di invio. Non è richiesto di inserire dati sensibili."
+      },
+      "purpose": {
+        "title": "Finalità",
+        "body": "I dati sono usati esclusivamente per ricevere, gestire e rispondere alla richiesta inviata tramite il form o tramite email, incluse richieste su servizi informatici, collaborazioni, consulenze o opportunità professionali."
+      },
+      "legalBasis": {
+        "title": "Base giuridica",
+        "body": "La base giuridica è l'esecuzione di misure precontrattuali o contrattuali richieste dall'interessato e, quando applicabile, il legittimo interesse a gestire comunicazioni ricevute volontariamente tramite il sito."
+      },
+      "formProvider": {
+        "title": "Servizio esterno per il form",
+        "body": "Il sito è predisposto per usare un servizio esterno compatibile con siti statici, ad esempio Formspree, Web3Forms, Getform, Basin o equivalente. TODO: prima della pubblicazione inserire qui il servizio effettivamente scelto, il link alla relativa privacy policy e indicare eventuali trasferimenti extra UE."
+      },
+      "retention": {
+        "title": "Conservazione",
+        "body": "I messaggi ricevuti saranno conservati per il tempo necessario a rispondere e gestire la richiesta, e comunque non oltre il periodo ragionevolmente necessario per finalità amministrative, fiscali o di tutela dei diritti."
+      },
+      "newsletter": {
+        "title": "Newsletter e marketing",
+        "body": "Il sito non usa i dati per newsletter o comunicazioni commerciali non richieste."
+      },
+      "cookiesAnalytics": {
+        "title": "Cookie e analytics",
+        "body": "La prima versione del sito non prevede analytics, profilazione o cookie di marketing. Eventuali servizi tecnici necessari al funzionamento saranno indicati in questa informativa se introdotti."
+      },
+      "security": {
+        "title": "Sicurezza",
+        "body": "Sono adottate misure tecniche e organizzative proporzionate per limitare accessi non autorizzati, perdita o uso improprio dei dati. Il sito non contiene credenziali SMTP, secret key o token privati nel codice frontend."
+      },
+      "thirdParties": {
+        "title": "Servizi terzi",
+        "body": "I link esterni verso LinkedIn, GitHub o altri servizi aprono siti di terze parti, soggetti alle rispettive informative privacy. Il servizio esterno per il form tratterà i dati come fornitore tecnico secondo le condizioni del servizio scelto."
+      },
+      "rights": {
+        "title": "Diritti dell'interessato",
+        "body": "Puoi chiedere accesso, rettifica, cancellazione, limitazione, opposizione al trattamento e portabilità dei dati nei casi previsti dal GDPR. Puoi inoltre proporre reclamo all'autorità di controllo competente."
+      },
+      "contact": {
+        "title": "Contatti privacy",
+        "body": "Per richieste relative alla privacy puoi scrivere a federico.croletti@gmail.com."
+      },
+      "updates": {
+        "title": "Aggiornamenti",
+        "body": "Questa informativa potrà essere aggiornata in caso di modifiche al sito, al servizio esterno del form o alle modalità di trattamento. Ultimo aggiornamento: 14/07/2026."
+      }
+    }
+  }
+}

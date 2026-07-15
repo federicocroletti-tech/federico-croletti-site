@@ -1,0 +1,29 @@
+<a class="skip-link" href="#main-content">{{ 'common.skipToContent' | translate }}</a>
+
+<header class="site-header">
+  <a class="brand" routerLink="/" [attr.aria-label]="'navigation.home' | translate">
+    <img
+      src="/assets/images/brand/federico-mark-primary.png"
+      alt=""
+      aria-hidden="true"
+      width="48"
+      height="32"
+    />
+    <span>Federico Croletti</span>
+  </a>
+
+  <nav class="navigation" [attr.aria-label]="'navigation.label' | translate">
+    @for (item of navigationItems; track item.path) {
+      <a
+        mat-button
+        [routerLink]="item.path"
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: item.path === '/' }"
+      >
+        {{ item.labelKey | translate }}
+      </a>
+    }
+  </nav>
+
+  <app-language-switcher />
+</header>

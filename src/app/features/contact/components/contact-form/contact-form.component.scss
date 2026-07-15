@@ -1,0 +1,48 @@
+.form-card form {
+  display: grid;
+  gap: 14px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.privacy-copy,
+.form-error,
+.submission-message {
+  font-size: 0.9rem;
+}
+
+.privacy-copy {
+  color: var(--color-muted);
+}
+
+.form-error,
+.submission-message.is-error {
+  color: #b3261e;
+  font-weight: 700;
+}
+
+.submission-message.is-success {
+  color: var(--color-accent);
+  font-weight: 800;
+}
+
+.honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+button[type='submit'] {
+  justify-self: start;
+}
+
+@media (max-width: 640px) {
+  button[type='submit'] {
+    width: 100%;
+  }
+}

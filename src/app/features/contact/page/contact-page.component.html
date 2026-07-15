@@ -1,0 +1,68 @@
+<section class="section contact-page">
+  <div class="page-heading">
+    <p class="eyebrow">{{ 'contact.eyebrow' | translate }}</p>
+    <h1>{{ 'contact.title' | translate }}</h1>
+    <p class="lead">{{ 'contact.intro' | translate }}</p>
+  </div>
+
+  <div class="contact-layout">
+    <aside class="contact-cards" aria-labelledby="contact-info-title">
+      <h2 id="contact-info-title">{{ 'contact.info.title' | translate }}</h2>
+
+      <mat-card class="site-card">
+        <mat-card-header>
+          <mat-card-title>Email</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ contacts.email }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <a mat-flat-button color="primary" [href]="'mailto:' + contacts.email">{{
+            'contact.info.emailCta' | translate
+          }}</a>
+        </mat-card-actions>
+      </mat-card>
+
+      <mat-card class="site-card">
+        <mat-card-header>
+          <mat-card-title>LinkedIn</mat-card-title>
+        </mat-card-header>
+        <mat-card-actions>
+          <a
+            mat-stroked-button
+            [href]="contacts.linkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ 'contact.info.linkedinCta' | translate }}
+          </a>
+        </mat-card-actions>
+      </mat-card>
+
+      <mat-card class="site-card">
+        <mat-card-header>
+          <mat-card-title>{{ 'contact.info.servicesTitle' | translate }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ 'contact.info.servicesBody' | translate }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <a mat-stroked-button routerLink="/servizi">{{
+            'contact.info.servicesCta' | translate
+          }}</a>
+        </mat-card-actions>
+      </mat-card>
+
+      <mat-card class="site-card">
+        <mat-card-header>
+          <mat-card-title>{{ 'contact.info.locationTitle' | translate }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ contacts.location }}</p>
+        </mat-card-content>
+      </mat-card>
+    </aside>
+
+    <app-contact-form />
+  </div>
+</section>

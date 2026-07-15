@@ -1,0 +1,16 @@
+:host {
+  display: inline-flex;
+}
+
+.language-switcher {
+  --mat-standard-button-toggle-height: 36px;
+  border: 1px solid rgb(216 224 232 / 88%);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+:host ::ng-deep .mat-button-toggle-label-content {
+  padding: 0 10px;
+  font-size: 0.78rem;
+  font-weight: 800;
+}

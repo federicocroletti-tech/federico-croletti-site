@@ -1,0 +1,71 @@
+<section class="section projects-page">
+  <div class="page-heading">
+    <p class="eyebrow">{{ 'projects.eyebrow' | translate }}</p>
+    <h1>{{ 'projects.title' | translate }}</h1>
+    <p class="lead">{{ 'projects.intro' | translate }}</p>
+  </div>
+
+  <div class="project-filters" role="list" [attr.aria-label]="'projects.filters.label' | translate">
+    @for (filter of filters; track filter.id) {
+      <button
+        mat-stroked-button
+        type="button"
+        role="listitem"
+        [class.is-active]="selectedFilter() === filter.id"
+        [attr.aria-pressed]="selectedFilter() === filter.id"
+        (click)="selectFilter(filter.id)"
+      >
+        {{ filter.labelKey | translate }}
+      </button>
+    }
+  </div>
+
+  <div class="grid grid--2 projects-grid">
+    @for (project of projects(); track project.id) {
+      <mat-card class="site-card project-card">
+        <mat-card-header>
+          <mat-card-title>{{ project.titleKey | translate }}</mat-card-title>
+          <mat-card-subtitle>{{
+            'projects.status.' + project.status | translate
+          }}</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p>{{ project.descriptionKey | translate }}</p>
+
+          <div class="project-role">
+            <strong>{{ 'projects.roleLabel' | translate }}</strong>
+            <span>{{ project.roleKey | translate }}</span>
+          </div>
+
+          <ul class="pill-list" [attr.aria-label]="'projects.technologyLabel' | translate">
+            @for (technology of project.technologies; track technology) {
+              <li class="pill">{{ technology }}</li>
+            }
+          </ul>
+
+          <ul class="tag-list" [attr.aria-label]="'projects.tagLabel' | translate">
+            @for (tag of project.tags; track tag) {
+              <li>{{ tag }}</li>
+            }
+          </ul>
+        </mat-card-content>
+
+        <mat-card-actions align="end">
+          @if (project.githubUrl) {
+            <a
+              mat-flat-button
+              color="primary"
+              [href]="project.githubUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+          } @else {
+            <span class="private-note">{{ 'projects.privateNote' | translate }}</span>
+          }
+        </mat-card-actions>
+      </mat-card>
+    }
+  </div>
+</section>

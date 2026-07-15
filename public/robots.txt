@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://federico-croletti-site.onrender.com/sitemap.xml

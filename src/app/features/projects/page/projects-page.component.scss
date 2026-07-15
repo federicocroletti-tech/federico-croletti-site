@@ -1,0 +1,54 @@
+.projects-page {
+  display: grid;
+  gap: 28px;
+}
+
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-filters button.is-active {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+  color: var(--color-primary-strong);
+}
+
+.projects-grid {
+  align-items: stretch;
+}
+
+.project-card mat-card-content {
+  display: grid;
+  gap: 18px;
+}
+
+.project-role {
+  display: grid;
+  gap: 4px;
+  padding: 14px;
+  border-radius: var(--radius-card);
+  background: var(--color-warm);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  color: var(--color-accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.private-note {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
