@@ -16,6 +16,7 @@ import { ContactFormValue, ContactResponse } from '../../models/contact-form.mod
 import { CONTACT_LINKS } from '../../../../core/constants/contact-links';
 import {
   CONTACT_ENDPOINT_NOT_CONFIGURED,
+  CONTACT_EMAIL_NOT_CONFIGURED,
   CONTACT_NETWORK_BLOCKED,
   CONTACT_PROVIDER_REJECTED,
   ContactService,
@@ -143,6 +144,10 @@ export class ContactFormComponent {
 
     if (errorCode === CONTACT_NETWORK_BLOCKED) {
       return this.translateService.instant('contact.form.networkError');
+    }
+
+    if (errorCode === CONTACT_EMAIL_NOT_CONFIGURED) {
+      return this.translateService.instant('contact.form.backendEmailMissing');
     }
 
     if (errorCode === CONTACT_PROVIDER_REJECTED) {

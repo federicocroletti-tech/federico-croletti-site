@@ -1,12 +1,15 @@
+const contactEndpoint = 'https://federico-croletti-api.onrender.com/api/contact';
+
 describe('Contact form', () => {
   it('submits the contact form through the configured HTTP endpoint', () => {
-    cy.intercept('POST', 'https://formsubmit.co/ajax/federico.croletti@gmail.com', (request) => {
+    cy.intercept('POST', contactEndpoint, (request) => {
       expect(request.headers['content-type']).to.contain('application/x-www-form-urlencoded');
       const body = new URLSearchParams(request.body);
-      expect(body.get('name')).to.eq('Federico Croletti');
+      expect(body.get('fullName')).to.eq('Federico Croletti');
       expect(body.get('email')).to.eq('federico.croletti@gmail.com');
       expect(body.get('requestType')).to.eq('website');
       expect(body.get('privacyAccepted')).to.eq('yes');
+      expect(body.get('honeypot')).to.eq('');
 
       request.reply({
         statusCode: 200,
@@ -35,9 +38,9 @@ describe('Contact form', () => {
   });
 
   it('shows a coherent error and email fallback when the form service fails', () => {
-    cy.intercept('POST', 'https://formsubmit.co/ajax/federico.croletti@gmail.com', {
+    cy.intercept('POST', contactEndpoint, {
       statusCode: 503,
-      body: { success: false, message: 'Service unavailable' },
+      body: { success: false, message: 'CONTACT_EMAIL_NOT_CONFIGURED' },
     }).as('contactSubmitFailure');
 
     cy.visit('/contatti');
@@ -47,9 +50,9 @@ describe('Contact form', () => {
     cy.get('[data-cy="contact-submit"]').click();
 
     cy.wait('@contactSubmitFailure');
-    cy.contains('Non è stato possibile inviare il messaggio tramite il servizio esterno.').should(
-      'be.visible',
-    );
+    cy.contains(
+      "Il backend è raggiungibile, ma l'invio email non è ancora configurato sul server.",
+    ).should('be.visible');
     cy.get('[data-cy="contact-email-fallback"]')
       .should('be.visible')
       .and('have.attr', 'href')

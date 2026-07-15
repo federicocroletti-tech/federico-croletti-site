@@ -428,6 +428,7 @@
       "error": "The message could not be sent through the external form service. Please try again later or write to me directly by email.",
       "endpointMissing": "The form service endpoint is not configured. Insert the real value in environment.contactEndpoint.",
       "networkError": "The form service is not reachable from this network or was blocked by the browser/proxy. The message was not sent.",
+      "backendEmailMissing": "The backend is reachable, but email delivery is not configured on the server yet. The message was not sent.",
       "providerRejected": "The form service did not explicitly confirm message delivery. For safety, the message is not considered sent.",
       "emailFallbackCta": "Write me by email",
       "mailFallbackSubject": "Request from personal site",

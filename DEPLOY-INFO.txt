@@ -78,15 +78,31 @@ Environment Variables
 No required environment variables for the current static version.
 
 Contact form note:
-The contact form uses FormSubmit AJAX endpoint configured in:
+The contact form uses the deployed backend API configured in:
 src/environments/environment.ts
 src/environments/environment.prod.ts
 
 Configured endpoint:
-https://formsubmit.co/ajax/federico.croletti@gmail.com
+https://federico-croletti-api.onrender.com/api/contact
 
-FormSubmit may require email confirmation on the first received submission.
-Do not expose secret keys in the frontend.
+Backend health check:
+https://federico-croletti-api.onrender.com/health
+
+Backend repository:
+https://github.com/federicocroletti-tech/federico-croletti-api-.git
+
+Backend Render environment variables required for real email delivery:
+CONTACT_TO_EMAIL
+SMTP_HOST
+SMTP_PORT
+SMTP_SECURE
+SMTP_USER
+SMTP_PASS
+SMTP_FROM_EMAIL
+CORS_ORIGINS=https://federico-croletti-site.onrender.com
+
+If SMTP is missing, the API returns CONTACT_EMAIL_NOT_CONFIGURED and the frontend shows an email fallback.
+Do not expose SMTP secrets in the frontend.
 
 Cookie consent and analytics:
 Plausible Analytics is configured but loaded only after the user accepts the Analytics category.

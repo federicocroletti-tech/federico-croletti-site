@@ -428,6 +428,7 @@
       "error": "Non è stato possibile inviare il messaggio tramite il servizio esterno. Puoi riprovare più tardi oppure scrivermi direttamente via email.",
       "endpointMissing": "Endpoint del servizio form non configurato. Inserisci il valore reale in environment.contactEndpoint.",
       "networkError": "Il servizio form non è raggiungibile da questa rete o è stato bloccato dal browser/proxy. Il messaggio non è stato inviato.",
+      "backendEmailMissing": "Il backend è raggiungibile, ma l'invio email non è ancora configurato sul server. Il messaggio non è stato inviato.",
       "providerRejected": "Il servizio form non ha confermato l'invio del messaggio. Per sicurezza il messaggio non viene considerato inviato.",
       "emailFallbackCta": "Scrivimi via email",
       "mailFallbackSubject": "Richiesta dal sito personale",

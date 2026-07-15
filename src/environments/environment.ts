@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
   siteUrl: 'https://federico-croletti-site.onrender.com',
-  contactEndpoint: 'https://formsubmit.co/ajax/federico.croletti@gmail.com',
+  contactEndpoint: 'https://federico-croletti-api.onrender.com/api/contact',
   analytics: {
     enabled: true,
     provider: 'Plausible',

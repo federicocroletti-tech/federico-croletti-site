@@ -9,6 +9,7 @@ export const CONTACT_ENDPOINT_NOT_CONFIGURED = 'CONTACT_ENDPOINT_NOT_CONFIGURED'
 export const CONTACT_NETWORK_BLOCKED = 'CONTACT_NETWORK_BLOCKED';
 export const CONTACT_PROVIDER_REJECTED = 'CONTACT_PROVIDER_REJECTED';
 export const CONTACT_SEND_FAILED = 'CONTACT_SEND_FAILED';
+export const CONTACT_EMAIL_NOT_CONFIGURED = 'CONTACT_EMAIL_NOT_CONFIGURED';
 
 type FormServiceResponse = Partial<Omit<ContactResponse, 'success'>> & {
   success?: boolean | string;
@@ -47,16 +48,13 @@ export class ContactService {
   private toFormSubmitPayload(payload: ContactFormValue): string {
     return new HttpParams({
       fromObject: {
-        name: payload.fullName,
+        fullName: payload.fullName,
         email: payload.email,
-        _replyto: payload.email,
-        _subject: payload.subject,
         subject: payload.subject,
         requestType: payload.requestType,
         message: payload.message,
         privacyAccepted: payload.privacyAccepted ? 'yes' : 'no',
-        _template: 'table',
-        _captcha: 'false',
+        honeypot: payload.honeypot ?? '',
       },
     }).toString();
   }
@@ -81,6 +79,10 @@ export class ContactService {
   }
 
   private toContactError(error: HttpErrorResponse): string {
+    if (error.error?.message === CONTACT_EMAIL_NOT_CONFIGURED) {
+      return CONTACT_EMAIL_NOT_CONFIGURED;
+    }
+
     if (error.status === 0) {
       return CONTACT_NETWORK_BLOCKED;
     }
