@@ -25,3 +25,16 @@
 
 - Build production da rieseguire dopo ogni modifica pre-pubblicazione.
 - Test unitari da eseguire prima di commit/push.
+
+## 2026-07-15 - Foto personale pagina Chi sono
+
+### Cosa è stato fatto
+
+- Aggiunta foto personale in `public/assets/images/profile/federico-croletti-profile.png`.
+- Integrata la foto nella pagina Chi sono con testo introduttivo, alt text e didascalia i18n IT/EN.
+- Aggiornati layout e stili responsive della sezione iniziale della pagina Chi sono.
+
+### Validazioni
+
+- JSON i18n validato.
+- Build production completata con successo.

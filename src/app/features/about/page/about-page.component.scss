@@ -5,9 +5,38 @@
   align-items: start;
 }
 
-.cv-card {
+.about-side-column {
   position: sticky;
   top: 118px;
+  display: grid;
+  gap: 18px;
+}
+
+.profile-photo-card {
+  display: grid;
+  gap: 12px;
+  padding: 10px;
+  margin: 0;
+  border: 1px solid rgb(216 224 232 / 84%);
+  border-radius: var(--radius-card);
+  background: #fff;
+}
+
+.profile-photo-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: calc(var(--radius-card) - 2px);
+  object-fit: cover;
+  object-position: 50% 38%;
+}
+
+.profile-photo-card figcaption {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.cv-card {
+  height: auto;
 }
 
 .privacy-note {
@@ -97,7 +126,7 @@
     grid-template-columns: 1fr;
   }
 
-  .cv-card {
+  .about-side-column {
     position: static;
   }
 }

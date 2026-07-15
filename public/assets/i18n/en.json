@@ -96,7 +96,12 @@
     "title": "About",
     "intro": {
       "first": "I am Federico Croletti, a Senior Software Engineer experienced in designing and developing enterprise applications. I mainly work on Angular front-ends, modern architectures, micro frontends, i18n, interactive maps and code quality.",
-      "second": "I have worked across financial, insurance, geospatial and document-management contexts. Beyond development, I support Team Leadership and People Management, helping colleagues grow technically and organizing work in a clear and sustainable way."
+      "second": "I have worked across financial, insurance, geospatial and document-management contexts. Beyond development, I support Team Leadership and People Management, helping colleagues grow technically and organizing work in a clear and sustainable way.",
+      "personal": "I like keeping technical skill and human connection on the same level: behind every project there are people, concrete goals and decisions that should become simpler. This photo gives a face to the story I share here, for clients, colleagues and followers who want to know me better."
+    },
+    "photo": {
+      "alt": "Federico Croletti in the mountains with an alpine landscape in the background",
+      "caption": "A face behind the code: I work with technical precision, but I always start by listening to people."
     },
     "cv": {
       "title": "Download my CV",

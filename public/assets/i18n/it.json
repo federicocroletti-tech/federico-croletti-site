@@ -96,7 +96,12 @@
     "title": "Chi sono",
     "intro": {
       "first": "Sono Federico Croletti, Senior Software Engineer con esperienza nella progettazione e sviluppo di applicazioni enterprise. Mi occupo soprattutto di front-end Angular, architetture moderne, micro frontend, i18n, mappe interattive e qualità del codice.",
-      "second": "Nel mio percorso ho lavorato in ambiti finanziari, assicurativi, geo-spaziali e documentali. Oltre allo sviluppo, seguo attività di Team Leadership e People Management, aiutando i colleghi a crescere tecnicamente e organizzando il lavoro in modo chiaro e sostenibile."
+      "second": "Nel mio percorso ho lavorato in ambiti finanziari, assicurativi, geo-spaziali e documentali. Oltre allo sviluppo, seguo attività di Team Leadership e People Management, aiutando i colleghi a crescere tecnicamente e organizzando il lavoro in modo chiaro e sostenibile.",
+      "personal": "Mi piace mettere competenza tecnica e relazione sullo stesso piano: dietro ogni progetto ci sono persone, obiettivi concreti e decisioni da rendere semplici. Questa foto aggiunge un volto al percorso che racconto qui, per clienti, colleghi e follower che vogliono conoscermi meglio."
+    },
+    "photo": {
+      "alt": "Federico Croletti in montagna con panorama alpino sullo sfondo",
+      "caption": "Un volto dietro il codice: lavoro con precisione tecnica, ma parto sempre dall'ascolto delle persone."
     },
     "cv": {
       "title": "Scarica il mio CV",
@@ -133,7 +138,7 @@
         "description": "Sviluppo di piattaforme enterprise con Angular, Micro Frontend, Module Federation, shell principale, librerie condivise, i18n centralizzato, event bus, routing federato e CI/CD."
       },
       "esa": {
-        "role": "Progetto ESA - Mappa interattiva",
+        "role": "Capgemini - Progetto ESA Mappa interattiva",
         "description": "Coordinamento di un piccolo team, sviluppo front-end complesso, mappe interattive con Leaflet/WMS, ottimizzazione UX/UI, uso di AI tool e formazione interna."
       },
       "findomestic": {
