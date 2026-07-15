@@ -19,11 +19,13 @@ const CONSENT_VERSION = 1;
 @Injectable({ providedIn: 'root' })
 export class CookieConsentService {
   readonly preferences = signal<CookiePreferences | null>(this.readStoredPreferences());
+  readonly analyticsDraft = signal(this.preferences()?.analytics ?? false);
   readonly preferencesPanelOpen = signal(false);
   readonly hasDecision = computed(() => this.preferences() !== null);
   readonly analyticsAccepted = computed(() => this.preferences()?.analytics ?? false);
 
   openPreferences(): void {
+    this.analyticsDraft.set(this.preferences()?.analytics ?? false);
     this.preferencesPanelOpen.set(true);
   }
 
@@ -49,6 +51,7 @@ export class CookieConsentService {
     };
 
     this.preferences.set(nextPreferences);
+    this.analyticsDraft.set(nextPreferences.analytics);
     this.preferencesPanelOpen.set(false);
     this.writeStoredPreferences(nextPreferences);
   }
