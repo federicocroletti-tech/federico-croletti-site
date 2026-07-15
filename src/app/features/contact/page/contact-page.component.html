@@ -39,6 +39,42 @@
         </mat-card-actions>
       </mat-card>
 
+      @if (contacts.github) {
+        <mat-card class="site-card">
+          <mat-card-header>
+            <mat-card-title>GitHub</mat-card-title>
+          </mat-card-header>
+          <mat-card-actions>
+            <a
+              mat-stroked-button
+              [href]="contacts.github"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ 'contact.info.githubCta' | translate }}
+            </a>
+          </mat-card-actions>
+        </mat-card>
+      }
+
+      @if (contacts.whatsApp) {
+        <mat-card class="site-card">
+          <mat-card-header>
+            <mat-card-title>WhatsApp</mat-card-title>
+          </mat-card-header>
+          <mat-card-actions>
+            <a
+              mat-stroked-button
+              [href]="contacts.whatsApp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ 'contact.info.whatsappCta' | translate }}
+            </a>
+          </mat-card-actions>
+        </mat-card>
+      }
+
       <mat-card class="site-card">
         <mat-card-header>
           <mat-card-title>{{ 'contact.info.servicesTitle' | translate }}</mat-card-title>

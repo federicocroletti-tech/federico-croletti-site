@@ -1,22 +1,25 @@
-# TODO endpoint form contatti
+# Endpoint form contatti
 
-Scegliere un servizio esterno compatibile con siti statici, ad esempio:
+Servizio scelto: FormSubmit endpoint AJAX.
 
-- Formspree
-- Web3Forms
-- Getform
-- Basin
+Endpoint configurato:
 
-Poi aggiornare:
+```txt
+https://formsubmit.co/ajax/federico.croletti@gmail.com
+```
+
+File aggiornati:
 
 ```ts
 // src/environments/environment.ts
-contactEndpoint: 'URL_ENDPOINT_REALE';
+contactEndpoint: 'https://formsubmit.co/ajax/federico.croletti@gmail.com';
 
 // src/environments/environment.prod.ts
-contactEndpoint: 'URL_ENDPOINT_REALE';
+contactEndpoint: 'https://formsubmit.co/ajax/federico.croletti@gmail.com';
 ```
 
 Non inserire nel frontend secret key, credenziali SMTP o token privati.
 
-Aggiornare anche la sezione privacy `privacy.sections.formProvider` indicando il servizio effettivamente scelto e il link alla sua privacy policy.
+La sezione privacy `privacy.sections.formProvider` indica il servizio scelto e il link alla privacy policy.
+
+Nota operativa: FormSubmit puo richiedere la conferma via email alla prima submission ricevuta per attivare l'indirizzo destinatario.

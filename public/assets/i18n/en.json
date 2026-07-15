@@ -15,6 +15,11 @@
   },
   "footer": {
     "description": "Senior Software Engineer and consultant for web development, digital support, AI automations and practical IT services.",
+    "email": "Email",
+    "emailAria": "Send an email to Federico Croletti",
+    "privacy": "Privacy Policy",
+    "cookiePolicy": "Cookie Policy",
+    "manageCookies": "Manage cookie preferences",
     "copyright": "© {{ year }} Federico Croletti. All rights reserved."
   },
   "home": {
@@ -355,6 +360,7 @@
       "emailCta": "Write me an email",
       "linkedinCta": "Go to LinkedIn profile",
       "githubCta": "View my GitHub",
+      "whatsappCta": "Write me on WhatsApp",
       "servicesTitle": "IT services",
       "servicesBody": "Need a website, digital support or help with AI tools? You can describe the problem through the form.",
       "servicesCta": "Request information about services",
@@ -397,32 +403,52 @@
   },
   "privacy": {
     "eyebrow": "Privacy notice",
-    "title": "Privacy",
-    "intro": "This notice explains clearly how personal data collected through the site and contact form is processed.",
+    "title": "Privacy Policy",
+    "intro": "This notice explains in plain language how personal data collected through the site and contact form is processed. The text is prepared according to privacy best practices and should be validated before final publication.",
     "sections": {
       "owner": {
         "title": "Owner",
-        "body": "The data controller is Federico Croletti, reachable at federico.croletti@gmail.com."
-      },
-      "data": {
-        "title": "Processed data",
-        "body": "The form may process full name, email, subject, request type, message, confirmation of the privacy notice and minimal technical data required by the external sending service. You should not submit sensitive data."
+        "body": "The data controller is Federico Croletti. For privacy-related requests you can write to federico.croletti@gmail.com. No professional address, certified email or VAT number is published because these details have not been indicated as public data."
       },
       "purpose": {
         "title": "Purpose",
-        "body": "Data is used exclusively to receive, manage and reply to requests sent through the form or by email, including IT services, collaborations, consulting or professional opportunities."
+        "body": "The site is used for professional presentation, portfolio, promotion of IT services and management of contacts received from users, companies, professionals or private clients interested in collaborations, consulting or support requests."
+      },
+      "data": {
+        "title": "Processed data",
+        "body": "The contact form may process full name, email, subject, request type, message, confirmation of the privacy notice and minimal technical data transmitted by the external sending service. You should not submit sensitive data or unnecessary information."
+      },
+      "mandatory": {
+        "title": "Mandatory and optional data",
+        "body": "The data requested by the form is necessary to understand and reply to the request. If it is not provided, the message may not be sent or managed. Any additional data voluntarily entered in the message is provided under the user's responsibility."
       },
       "legalBasis": {
         "title": "Legal basis",
-        "body": "The legal basis is the performance of pre-contractual or contractual measures requested by the user and, where applicable, the legitimate interest in managing communications voluntarily received through the site."
+        "body": "The legal basis is the user's request and the performance of pre-contractual or contractual measures. Where appropriate, legitimate interest in managing communications voluntarily received may also apply. Consent is requested where necessary, for example for non-technical analytics tools."
+      },
+      "processing": {
+        "title": "Processing methods",
+        "body": "Processing is carried out through IT tools, email, website hosting and the external form sending service. SMTP credentials, secret keys or private tokens are not used in the frontend code."
       },
       "formProvider": {
         "title": "External form service",
-        "body": "The site is prepared to use an external service compatible with static sites, such as Formspree, Web3Forms, Getform, Basin or equivalent. TODO: before publication, insert the actual service selected, its privacy policy link and any extra-EU transfer information."
+        "body": "The contact form uses FormSubmit, an external service compatible with static sites, to forward requests to the owner's email address without building a custom backend. FormSubmit may process the minimal technical data required to send the message; more information is available at https://formsubmit.co/privacy.pdf. On the first submission the service may require email confirmation of the recipient address."
+      },
+      "hosting": {
+        "title": "Hosting and publication",
+        "body": "The site is published as a static site on Render.com. Render.com may process technical data required to provide the service, such as technical logs, IP addresses and request data according to its own terms and notices."
       },
       "retention": {
         "title": "Retention",
-        "body": "Received messages will be kept for the time needed to reply and manage the request, and in any case no longer than reasonably necessary for administrative, tax or rights-protection purposes."
+        "body": "Received messages are kept only for the time needed to reply and manage the request. Expected operational period: maximum 12 months, unless further needs arise from obligations, rights protection or continuation of the professional relationship."
+      },
+      "recipients": {
+        "title": "Recipients and technical providers",
+        "body": "Data may be accessed by Federico Croletti and by technical providers strictly necessary for the site and form operation, including Render.com for hosting, FormSubmit for message forwarding, Google Fonts for typography resources and Plausible only if the user accepts analytics."
+      },
+      "transfers": {
+        "title": "Transfers outside the EU",
+        "body": "Some technical providers may process data outside the European Economic Area. The specific safeguards and transfer bases should be verified in each provider's notices before final publication."
       },
       "newsletter": {
         "title": "Newsletter and marketing",
@@ -430,15 +456,15 @@
       },
       "cookiesAnalytics": {
         "title": "Cookies and analytics",
-        "body": "The first version of the site does not use analytics, profiling or marketing cookies. Any technical services required for operation will be listed in this notice if introduced."
-      },
-      "security": {
-        "title": "Security",
-        "body": "Proportionate technical and organizational measures are adopted to limit unauthorized access, loss or misuse of data. The frontend code does not contain SMTP credentials, secret keys or private tokens."
+        "body": "The site stores cookie preferences locally as necessary technical data. Plausible analytics is disabled by default and is loaded only if the user gives consent. No marketing cookies or tools are configured."
       },
       "thirdParties": {
         "title": "Third-party services",
-        "body": "External links to LinkedIn, GitHub or other services open third-party websites, subject to their own privacy notices. The external form service will process data as a technical provider according to the selected service terms."
+        "body": "External links to LinkedIn and GitHub, Google Fonts loading and FormSubmit for the contact form are present. Google Analytics, Google Tag Manager, Microsoft Clarity, Meta Pixel, LinkedIn Insight Tag, embedded maps, YouTube videos, reCAPTCHA or embedded social widgets were not detected."
+      },
+      "security": {
+        "title": "Security",
+        "body": "Technical measures proportionate to a static website are adopted to reduce unauthorized access, loss or misuse of data. The frontend does not contain secret keys, private tokens or service credentials."
       },
       "rights": {
         "title": "Data subject rights",
@@ -450,7 +476,92 @@
       },
       "updates": {
         "title": "Updates",
-        "body": "This notice may be updated if the site, the external form service or processing methods change. Last update: 14/07/2026."
+        "body": "This notice may be updated if the site, external services or processing methods change. Last update: 15/07/2026."
+      },
+      "legalReview": {
+        "title": "Validation note",
+        "body": "This notice is prepared according to privacy best practices for a static personal website, but it is not legal advice. Before final publication it should be reviewed with a professional."
+      }
+    }
+  },
+  "cookieConsent": {
+    "banner": {
+      "title": "Cookie preferences",
+      "body": "We use technical cookies required for the site to work. With your consent we may also use Plausible for aggregated privacy-friendly statistics. You can accept, reject or manage your preferences.",
+      "privacyLink": "Privacy Policy",
+      "cookieLink": "Cookie Policy",
+      "reject": "Reject non-essential",
+      "manage": "Manage preferences",
+      "accept": "Accept all"
+    },
+    "preferences": {
+      "title": "Manage cookie preferences",
+      "intro": "You can choose which non-essential categories to enable. Necessary cookies remain active because they are required for the basic operation of the site.",
+      "close": "Close cookie preferences",
+      "reject": "Reject non-essential",
+      "save": "Save preferences",
+      "accept": "Accept all"
+    },
+    "categories": {
+      "necessary": {
+        "title": "Necessary",
+        "body": "Required for the basic operation of the site and to remember cookie preferences in the browser through localStorage. They do not require prior consent.",
+        "alwaysActive": "Always active"
+      },
+      "analytics": {
+        "title": "Analytics",
+        "body": "If accepted, Plausible is loaded for aggregated statistics about site usage. This category is disabled by default and is not loaded before consent."
+      },
+      "marketing": {
+        "title": "Marketing",
+        "body": "Marketing, profiling or advertising tools are not configured. This category remains disabled."
+      }
+    }
+  },
+  "cookiePolicy": {
+    "eyebrow": "Cookie notice",
+    "title": "Cookie Policy",
+    "intro": "This page explains which storage technologies or third-party services may be used by the site and how to manage consent.",
+    "sections": {
+      "what": {
+        "title": "What cookies are",
+        "body": "Cookies and similar technologies are small technical tools that allow a site to work, remember preferences or collect statistical information. Some preferences may also be saved in localStorage, which remains in the user's browser."
+      },
+      "technical": {
+        "title": "Technical and necessary cookies",
+        "body": "The site uses only technical data required for basic operation, including cookie preferences saved in localStorage. These tools are not used to profile users and do not require prior consent."
+      },
+      "preferences": {
+        "title": "Consent preferences",
+        "body": "The user's choice is saved in the browser to avoid showing the banner on every visit. The choice can always be changed from the Manage cookie preferences link in the footer."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "body": "The site may use Plausible Analytics only after user consent. Plausible is configured as a privacy-friendly analytics tool and is loaded dynamically only if the Analytics category is accepted."
+      },
+      "marketing": {
+        "title": "Marketing and profiling",
+        "body": "Marketing cookies, advertising pixels or profiling tools are not present. The Marketing category remains disabled and cannot be selected."
+      },
+      "thirdParties": {
+        "title": "Third-party services",
+        "body": "Detected services: Render.com for hosting, FormSubmit for form sending, Google Fonts/Material Icons for fonts and icons, Plausible only after analytics consent, external links to LinkedIn and GitHub. Embedded maps, YouTube videos, reCAPTCHA or embedded social widgets are not present."
+      },
+      "manage": {
+        "title": "How to change consent",
+        "body": "You can change or revoke consent at any time from the Manage cookie preferences button in the site footer. Rejecting non-essential cookies does not prevent navigation."
+      },
+      "browser": {
+        "title": "Browser settings",
+        "body": "You can also delete cookies and local data from your browser settings. Deleting local preferences will make the banner appear again on the next visit."
+      },
+      "updates": {
+        "title": "Updates",
+        "body": "This cookie policy may be updated if new technical tools, analytics or third-party services are added. Last update: 15/07/2026."
+      },
+      "legalReview": {
+        "title": "Validation note",
+        "body": "This cookie policy is prepared according to best practices for a static personal website, but it should be reviewed with a professional for final legal compliance."
       }
     }
   }

@@ -17,18 +17,24 @@ export class PrivacyPageComponent {
 
   readonly sections = [
     'privacy.sections.owner',
-    'privacy.sections.data',
     'privacy.sections.purpose',
+    'privacy.sections.data',
+    'privacy.sections.mandatory',
     'privacy.sections.legalBasis',
+    'privacy.sections.processing',
     'privacy.sections.formProvider',
+    'privacy.sections.hosting',
     'privacy.sections.retention',
+    'privacy.sections.recipients',
+    'privacy.sections.transfers',
     'privacy.sections.newsletter',
     'privacy.sections.cookiesAnalytics',
-    'privacy.sections.security',
     'privacy.sections.thirdParties',
+    'privacy.sections.security',
     'privacy.sections.rights',
     'privacy.sections.contact',
     'privacy.sections.updates',
+    'privacy.sections.legalReview',
   ] as const;
 
   constructor() {

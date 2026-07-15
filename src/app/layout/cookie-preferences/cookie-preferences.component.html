@@ -1,0 +1,67 @@
+@if (isOpen()) {
+  <div class="cookie-preferences-backdrop" (click)="close()" aria-hidden="true"></div>
+
+  <section
+    class="cookie-preferences"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cookie-preferences-title"
+  >
+    <div class="cookie-preferences__header">
+      <h2 id="cookie-preferences-title">{{ 'cookieConsent.preferences.title' | translate }}</h2>
+      <button
+        class="cookie-preferences__close"
+        type="button"
+        (click)="close()"
+        [attr.aria-label]="'cookieConsent.preferences.close' | translate"
+      >
+        x
+      </button>
+    </div>
+
+    <div class="cookie-preferences__content">
+      <p>{{ 'cookieConsent.preferences.intro' | translate }}</p>
+
+      <section class="cookie-category">
+        <div>
+          <h3>{{ 'cookieConsent.categories.necessary.title' | translate }}</h3>
+          <p>{{ 'cookieConsent.categories.necessary.body' | translate }}</p>
+        </div>
+        <span>{{ 'cookieConsent.categories.necessary.alwaysActive' | translate }}</span>
+      </section>
+
+      <section class="cookie-category">
+        <label class="cookie-category__control">
+          <input
+            type="checkbox"
+            [checked]="analyticsAccepted()"
+            [disabled]="!analyticsAvailable"
+            (change)="updateAnalytics($event)"
+          />
+          <span>{{ 'cookieConsent.categories.analytics.title' | translate }}</span>
+        </label>
+        <p>{{ 'cookieConsent.categories.analytics.body' | translate }}</p>
+      </section>
+
+      <section class="cookie-category is-disabled">
+        <label class="cookie-category__control">
+          <input type="checkbox" disabled />
+          <span>{{ 'cookieConsent.categories.marketing.title' | translate }}</span>
+        </label>
+        <p>{{ 'cookieConsent.categories.marketing.body' | translate }}</p>
+      </section>
+    </div>
+
+    <div class="cookie-preferences__actions">
+      <button mat-button type="button" (click)="rejectNonNecessary()">
+        {{ 'cookieConsent.preferences.reject' | translate }}
+      </button>
+      <button mat-stroked-button type="button" (click)="save()">
+        {{ 'cookieConsent.preferences.save' | translate }}
+      </button>
+      <button mat-flat-button color="primary" type="button" (click)="acceptAll()">
+        {{ 'cookieConsent.preferences.accept' | translate }}
+      </button>
+    </div>
+  </section>
+}

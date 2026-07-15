@@ -1,6 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
+import { environment } from '../../../environments/environment';
+
 interface SeoPageConfig {
   readonly title: string;
   readonly description: string;
@@ -12,7 +14,7 @@ interface SeoPageConfig {
 export class SeoService {
   private readonly titleService = inject(Title);
   private readonly meta = inject(Meta);
-  private readonly siteUrl = 'https://federico-croletti-site.onrender.com';
+  private readonly siteUrl = environment.siteUrl;
   private readonly fallbackImage = '/assets/images/og/federico-croletti-og.png';
 
   update(config: SeoPageConfig): void {

@@ -1,13 +1,21 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+import { CookieBannerComponent } from '../cookie-banner/cookie-banner.component';
+import { CookiePreferencesComponent } from '../cookie-preferences/cookie-preferences.component';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-shell',
   standalone: true,
-  imports: [FooterComponent, HeaderComponent, RouterOutlet],
+  imports: [
+    CookieBannerComponent,
+    CookiePreferencesComponent,
+    FooterComponent,
+    HeaderComponent,
+    RouterOutlet,
+  ],
   templateUrl: './app-shell.component.html',
   styleUrl: './app-shell.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

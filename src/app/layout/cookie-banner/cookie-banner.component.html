@@ -1,0 +1,28 @@
+@if (!consentService.hasDecision()) {
+  <section
+    class="cookie-banner"
+    role="region"
+    [attr.aria-label]="'cookieConsent.banner.title' | translate"
+  >
+    <div>
+      <p class="cookie-banner__title">{{ 'cookieConsent.banner.title' | translate }}</p>
+      <p>{{ 'cookieConsent.banner.body' | translate }}</p>
+      <p class="cookie-banner__links">
+        <a routerLink="/privacy">{{ 'cookieConsent.banner.privacyLink' | translate }}</a>
+        <a routerLink="/cookie-policy">{{ 'cookieConsent.banner.cookieLink' | translate }}</a>
+      </p>
+    </div>
+
+    <div class="cookie-banner__actions">
+      <button mat-button type="button" (click)="rejectNonNecessary()">
+        {{ 'cookieConsent.banner.reject' | translate }}
+      </button>
+      <button mat-stroked-button type="button" (click)="openPreferences()">
+        {{ 'cookieConsent.banner.manage' | translate }}
+      </button>
+      <button mat-flat-button color="primary" type="button" (click)="acceptAll()">
+        {{ 'cookieConsent.banner.accept' | translate }}
+      </button>
+    </div>
+  </section>
+}

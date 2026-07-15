@@ -7,6 +7,10 @@ import { ContactFormValue, ContactResponse } from '../models/contact-form.model'
 
 export const CONTACT_ENDPOINT_NOT_CONFIGURED = 'CONTACT_ENDPOINT_NOT_CONFIGURED';
 
+type FormServiceResponse = Partial<Omit<ContactResponse, 'success'>> & {
+  success?: boolean | string;
+};
+
 @Injectable({ providedIn: 'root' })
 export class ContactService {
   private readonly http = inject(HttpClient);
@@ -18,18 +22,45 @@ export class ContactService {
       return throwError(() => new Error(CONTACT_ENDPOINT_NOT_CONFIGURED));
     }
 
-    return this.http.post<Partial<ContactResponse>>(endpoint, payload).pipe(
-      map((response) => ({
-        success: response.success ?? true,
-        message: response.message ?? 'OK',
-      })),
-      catchError((error: HttpErrorResponse) =>
-        throwError(() => new Error(error.message || 'CONTACT_SEND_FAILED')),
-      ),
-    );
+    return this.http
+      .post<FormServiceResponse>(endpoint, this.toFormSubmitPayload(payload), {
+        headers: { Accept: 'application/json' },
+      })
+      .pipe(
+        map((response) => ({
+          success: this.isSuccessResponse(response.success),
+          message: response.message ?? 'OK',
+        })),
+        catchError((error: HttpErrorResponse) =>
+          throwError(() => new Error(error.message || 'CONTACT_SEND_FAILED')),
+        ),
+      );
   }
 
   private isEndpointConfigured(endpoint: string): boolean {
     return endpoint.length > 0 && !endpoint.includes('TODO');
+  }
+
+  private toFormSubmitPayload(payload: ContactFormValue): Record<string, string> {
+    return {
+      name: payload.fullName,
+      email: payload.email,
+      _replyto: payload.email,
+      _subject: payload.subject,
+      subject: payload.subject,
+      requestType: payload.requestType,
+      message: payload.message,
+      privacyAccepted: payload.privacyAccepted ? 'yes' : 'no',
+      _template: 'table',
+      _captcha: 'false',
+    };
+  }
+
+  private isSuccessResponse(success: boolean | string | undefined): boolean {
+    if (typeof success === 'string') {
+      return success.toLowerCase() === 'true';
+    }
+
+    return success ?? true;
   }
 }

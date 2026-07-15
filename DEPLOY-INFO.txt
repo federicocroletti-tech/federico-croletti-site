@@ -1,0 +1,123 @@
+BUILD AND DEPLOY INFO
+Generated: 2026-07-15
+
+Repository
+----------
+Provider: GitHub
+Repository URL: https://github.com/federicocroletti-tech/federico-croletti-site.git
+Branch: main
+Latest commit: 08489da Deploy Federico Croletti Angular site
+Root directory: repository root / leave empty
+
+Project
+-------
+Framework: Angular
+Angular CLI: 22.0.6
+App type: Static SPA, no SSR
+Package manager: npm
+Lockfile: package-lock.json
+
+Runtime
+-------
+Recommended Node.js version: 22.x
+Recommended npm version: 10.x
+
+Local versions used for successful production build:
+Node.js: v22.22.3
+npm: 10.9.8
+
+Optional environment variable for deploy platform:
+NODE_VERSION=22
+
+Build
+-----
+Install command:
+npm ci
+
+Build command:
+npm run build
+
+Single build command field, if required by the platform:
+npm ci && npm run build
+
+Fallback if npm ci is not supported:
+npm install && npm run build
+
+Publish / Output Directory
+--------------------------
+dist/federico-croletti-site/browser
+
+Important: with Angular 22 the static output is inside the browser subfolder.
+
+Render.com Static Site
+----------------------
+Service type: Static Site
+Build command: npm ci && npm run build
+Publish directory: dist/federico-croletti-site/browser
+Branch: main
+Auto deploy: enabled
+Start command: not needed for Static Site
+
+SPA Routing
+-----------
+The project includes:
+public/_redirects
+
+Redirect rule:
+/* /index.html 200
+
+This is required for Angular routes to work on page refresh, for example:
+/chi-sono
+/servizi
+/progetti
+/contatti
+/privacy
+
+Environment Variables
+---------------------
+No required environment variables for the current static version.
+
+Contact form note:
+The contact form uses FormSubmit AJAX endpoint configured in:
+src/environments/environment.ts
+src/environments/environment.prod.ts
+
+Configured endpoint:
+https://formsubmit.co/ajax/federico.croletti@gmail.com
+
+FormSubmit may require email confirmation on the first received submission.
+Do not expose secret keys in the frontend.
+
+Cookie consent and analytics:
+Plausible Analytics is configured but loaded only after the user accepts the Analytics category.
+Cookie preferences are saved locally in the browser through localStorage.
+No marketing or profiling tools are configured.
+
+SEO / Domain
+------------
+Current robots.txt and sitemap.xml use this base URL:
+https://federico-croletti-site.onrender.com
+
+If a custom domain is configured, update:
+public/robots.txt
+public/sitemap.xml
+
+Build Verification
+------------------
+Production build has already completed successfully locally.
+
+Expected output files include:
+index.html
+main-*.js
+styles-*.css
+assets/
+robots.txt
+sitemap.xml
+_redirects
+
+GitHub Access
+-------------
+The deploy platform must have read access to the GitHub repository via its GitHub App,
+OAuth connection, or a Personal Access Token configured in the deploy platform.
+
+Do not commit tokens or secrets into the repository.

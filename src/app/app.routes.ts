@@ -46,6 +46,13 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'cookie-policy',
+        loadComponent: () =>
+          import('./features/cookie-policy/page/cookie-policy-page.component').then(
+            (m) => m.CookiePolicyPageComponent,
+          ),
+      },
+      {
         path: '**',
         redirectTo: '',
       },

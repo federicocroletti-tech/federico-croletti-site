@@ -1,16 +1,20 @@
 # Sito personale Federico Croletti - Project Overview
 
 ## Obiettivo
+
 Creare un sito personale professionale, semplice, lineare e moderno per presentare Federico Croletti come Senior Software Engineer / Senior Software Developer, Team Leader e People Manager con forte specializzazione front-end Angular, architetture enterprise, micro frontend, i18n, CI/CD, cloud e AI applied tooling.
 
 Il sito deve essere pensato per:
+
 - recruiter e aziende;
 - clienti o consulenze freelance;
 - colleghi e community tecnica;
 - persone che vogliono conoscere progetti, competenze e contatti.
 
 ## Identità professionale da comunicare
+
 Federico è un professionista tecnico con esperienza in:
+
 - applicazioni enterprise in ambito finanziario, assicurativo e geo-spaziale;
 - front-end Angular moderno;
 - micro frontend con Module Federation;
@@ -22,7 +26,9 @@ Federico è un professionista tecnico con esperienza in:
 - cloud, CI/CD e soluzioni cloud-native.
 
 ## Tono del sito
+
 Il tono deve essere:
+
 - professionale ma umano;
 - diretto e semplice;
 - non troppo commerciale;
@@ -30,6 +36,7 @@ Il tono deve essere:
 - scritto in italiano, con predisposizione i18n per inglese futuro.
 
 ## Stack scelto
+
 - Angular aggiornato alla versione stabile più recente compatibile con il progetto.
 - Angular Material.
 - TypeScript.
@@ -41,12 +48,14 @@ Il tono deve essere:
 - Render.com per build e deploy.
 
 ## Pagine principali
+
 1. Home
 2. Chi sono
 3. Progetti
 4. Contatti
 
 ## File tecnici collegati
+
 - Architettura front-end
 - i18n
 - SEO, accessibilità e performance
@@ -55,6 +64,7 @@ Il tono deve essere:
 - Flusso Copilot / sviluppo / commit / push
 
 ## Regole generali di sviluppo
+
 - Componenti standalone dove possibile.
 - Separare smart/container component e presentational component.
 - Usare facade/service per orchestrare dati, stato e logica.
@@ -67,16 +77,20 @@ Il tono deve essere:
 - Nessun backend obbligatorio nella prima versione.
 
 ## Struttura consigliata delle route
+
 - `/` home
 - `/chi-sono` chi sono e CV
 - `/progetti` portfolio progetti
 - `/contatti` contatti e form
-- `/privacy` privacy policy minima
+- `/privacy` privacy policy
+- `/cookie-policy` cookie policy
 
 ## Asset iniziali
-- CV PDF scaricabile: `assets/documents/Federico_Croletti_CV_2026.pdf`
+
+- CV PDF scaricabile: `assets/documents/cv/Federico_Croletti_CV.pdf`
 - Foto profilo: `assets/images/federico-profile.webp` oppure placeholder iniziale.
 - Eventuali immagini progetto: `assets/images/projects/`.
 
 ## Output atteso da GitHub Copilot
+
 Copilot deve leggere questi file markdown e produrre codice Angular pulito, modulare, testabile e coerente con le best practice definite.

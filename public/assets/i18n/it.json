@@ -15,6 +15,11 @@
   },
   "footer": {
     "description": "Senior Software Engineer Angular e consulente per sviluppo web, assistenza digitale, automazioni AI e supporto informatico pratico.",
+    "email": "Email",
+    "emailAria": "Scrivi una email a Federico Croletti",
+    "privacy": "Privacy Policy",
+    "cookiePolicy": "Cookie Policy",
+    "manageCookies": "Gestisci preferenze cookie",
     "copyright": "© {{ year }} Federico Croletti. Tutti i diritti riservati."
   },
   "home": {
@@ -355,6 +360,7 @@
       "emailCta": "Scrivimi una mail",
       "linkedinCta": "Vai al profilo LinkedIn",
       "githubCta": "Guarda il mio GitHub",
+      "whatsappCta": "Scrivimi su WhatsApp",
       "servicesTitle": "Servizi informatici",
       "servicesBody": "Hai bisogno di un sito, assistenza digitale o supporto su strumenti AI? Puoi descrivermi il problema dal form.",
       "servicesCta": "Richiedi informazioni sui servizi",
@@ -400,32 +406,52 @@
   },
   "privacy": {
     "eyebrow": "Informativa privacy",
-    "title": "Privacy",
-    "intro": "Questa informativa spiega in modo chiaro come vengono trattati i dati personali raccolti tramite il sito e il form contatti.",
+    "title": "Privacy Policy",
+    "intro": "Questa informativa descrive in modo semplice come vengono trattati i dati personali raccolti tramite il sito e il form contatti. I testi sono predisposti secondo buone pratiche privacy e vanno validati prima della pubblicazione definitiva.",
     "sections": {
       "owner": {
         "title": "Titolare",
-        "body": "Il titolare del trattamento è Federico Croletti, contattabile all'indirizzo federico.croletti@gmail.com."
-      },
-      "data": {
-        "title": "Dati trattati",
-        "body": "Attraverso il form possono essere trattati nome e cognome, email, oggetto, tipologia richiesta, messaggio, conferma di lettura dell'informativa e dati tecnici minimi necessari al funzionamento del servizio esterno di invio. Non è richiesto di inserire dati sensibili."
+        "body": "Il titolare del trattamento è Federico Croletti. Per richieste relative alla privacy puoi scrivere a federico.croletti@gmail.com. Non sono pubblicati indirizzo professionale, PEC o Partita IVA perché al momento non sono stati indicati come dati pubblici."
       },
       "purpose": {
         "title": "Finalità",
-        "body": "I dati sono usati esclusivamente per ricevere, gestire e rispondere alla richiesta inviata tramite il form o tramite email, incluse richieste su servizi informatici, collaborazioni, consulenze o opportunità professionali."
+        "body": "Il sito ha finalità di presentazione professionale, portfolio, promozione di servizi informatici e gestione dei contatti ricevuti da utenti, aziende, professionisti o privati interessati a collaborazioni, consulenze o richieste di supporto."
+      },
+      "data": {
+        "title": "Dati trattati",
+        "body": "Attraverso il form contatti possono essere trattati nome e cognome, email, oggetto, tipologia richiesta, messaggio, conferma di accettazione dell'informativa privacy ed eventuali dati tecnici minimi trasmessi dal servizio esterno di invio. Non è richiesto di inserire dati sensibili o informazioni non necessarie."
+      },
+      "mandatory": {
+        "title": "Dati obbligatori e facoltativi",
+        "body": "I dati richiesti nel form sono necessari per comprendere la richiesta e rispondere. Il mancato conferimento può impedire l'invio o la gestione del messaggio. Dati ulteriori inseriti volontariamente nel testo del messaggio restano sotto la responsabilità dell'utente."
       },
       "legalBasis": {
         "title": "Base giuridica",
-        "body": "La base giuridica è l'esecuzione di misure precontrattuali o contrattuali richieste dall'interessato e, quando applicabile, il legittimo interesse a gestire comunicazioni ricevute volontariamente tramite il sito."
+        "body": "La base giuridica è la richiesta dell'utente e l'esecuzione di misure precontrattuali o contrattuali. Quando appropriato, può essere considerato anche il legittimo interesse a gestire comunicazioni ricevute volontariamente. Il consenso è richiesto dove necessario, ad esempio per strumenti analytics non tecnici."
+      },
+      "processing": {
+        "title": "Modalità del trattamento",
+        "body": "Il trattamento avviene con strumenti informatici, email, hosting del sito e servizio esterno per l'invio del form. Non vengono usate credenziali SMTP, secret key o token privati nel codice frontend."
       },
       "formProvider": {
         "title": "Servizio esterno per il form",
-        "body": "Il sito è predisposto per usare un servizio esterno compatibile con siti statici, ad esempio Formspree, Web3Forms, Getform, Basin o equivalente. TODO: prima della pubblicazione inserire qui il servizio effettivamente scelto, il link alla relativa privacy policy e indicare eventuali trasferimenti extra UE."
+        "body": "Il form contatti usa FormSubmit, servizio esterno compatibile con siti statici, per inoltrare le richieste all'indirizzo email del titolare senza costruire un backend proprietario. FormSubmit può trattare i dati tecnici minimi necessari all'invio; maggiori informazioni sono disponibili su https://formsubmit.co/privacy.pdf. Alla prima submission il servizio può richiedere conferma via email dell'indirizzo destinatario."
+      },
+      "hosting": {
+        "title": "Hosting e pubblicazione",
+        "body": "Il sito è pubblicato come static site su Render.com. Render.com può trattare dati tecnici necessari all'erogazione del servizio, come log tecnici, indirizzi IP e dati di richiesta secondo le proprie condizioni e informative."
       },
       "retention": {
         "title": "Conservazione",
-        "body": "I messaggi ricevuti saranno conservati per il tempo necessario a rispondere e gestire la richiesta, e comunque non oltre il periodo ragionevolmente necessario per finalità amministrative, fiscali o di tutela dei diritti."
+        "body": "I messaggi ricevuti sono conservati solo per il tempo necessario a rispondere e gestire la richiesta. Periodo operativo previsto: massimo 12 mesi, salvo necessità ulteriori legate a obblighi, tutela dei diritti o prosecuzione del rapporto professionale."
+      },
+      "recipients": {
+        "title": "Destinatari e fornitori tecnici",
+        "body": "I dati possono essere conosciuti da Federico Croletti e dai fornitori tecnici strettamente necessari al funzionamento del sito e del form, tra cui Render.com per hosting, FormSubmit per invio dei messaggi, Google Fonts per risorse tipografiche e Plausible solo se l'utente accetta gli analytics."
+      },
+      "transfers": {
+        "title": "Trasferimenti extra UE",
+        "body": "Alcuni fornitori tecnici potrebbero trattare dati fuori dallo Spazio Economico Europeo. Le specifiche garanzie e basi di trasferimento devono essere verificate nelle informative dei singoli fornitori prima della pubblicazione definitiva."
       },
       "newsletter": {
         "title": "Newsletter e marketing",
@@ -433,15 +459,15 @@
       },
       "cookiesAnalytics": {
         "title": "Cookie e analytics",
-        "body": "La prima versione del sito non prevede analytics, profilazione o cookie di marketing. Eventuali servizi tecnici necessari al funzionamento saranno indicati in questa informativa se introdotti."
-      },
-      "security": {
-        "title": "Sicurezza",
-        "body": "Sono adottate misure tecniche e organizzative proporzionate per limitare accessi non autorizzati, perdita o uso improprio dei dati. Il sito non contiene credenziali SMTP, secret key o token privati nel codice frontend."
+        "body": "Il sito salva localmente le preferenze cookie come dato tecnico necessario. Gli analytics Plausible sono disattivati di default e vengono caricati solo se l'utente presta consenso. Non sono configurati cookie o strumenti marketing."
       },
       "thirdParties": {
         "title": "Servizi terzi",
-        "body": "I link esterni verso LinkedIn, GitHub o altri servizi aprono siti di terze parti, soggetti alle rispettive informative privacy. Il servizio esterno per il form tratterà i dati come fornitore tecnico secondo le condizioni del servizio scelto."
+        "body": "Sono presenti link esterni verso LinkedIn e GitHub, caricamento font da Google Fonts e servizio FormSubmit per il form. Non sono stati rilevati Google Analytics, Google Tag Manager, Microsoft Clarity, Meta Pixel, LinkedIn Insight Tag, mappe incorporate, video YouTube, reCAPTCHA o widget social incorporati."
+      },
+      "security": {
+        "title": "Sicurezza",
+        "body": "Sono adottate misure tecniche proporzionate al sito statico per ridurre accessi non autorizzati, perdita o uso improprio dei dati. Il frontend non contiene secret key, token privati o credenziali di servizi."
       },
       "rights": {
         "title": "Diritti dell'interessato",
@@ -453,7 +479,92 @@
       },
       "updates": {
         "title": "Aggiornamenti",
-        "body": "Questa informativa potrà essere aggiornata in caso di modifiche al sito, al servizio esterno del form o alle modalità di trattamento. Ultimo aggiornamento: 14/07/2026."
+        "body": "Questa informativa potrà essere aggiornata in caso di modifiche al sito, ai servizi esterni o alle modalità di trattamento. Ultimo aggiornamento: 15/07/2026."
+      },
+      "legalReview": {
+        "title": "Nota di validazione",
+        "body": "Questa informativa è predisposta secondo buone pratiche privacy per un sito personale statico, ma non costituisce consulenza legale. Prima della pubblicazione definitiva è opportuno verificarla con un professionista."
+      }
+    }
+  },
+  "cookieConsent": {
+    "banner": {
+      "title": "Preferenze cookie",
+      "body": "Usiamo cookie tecnici necessari al funzionamento del sito. Con il tuo consenso possiamo usare anche Plausible per statistiche aggregate e rispettose della privacy. Puoi accettare, rifiutare o gestire le preferenze.",
+      "privacyLink": "Privacy Policy",
+      "cookieLink": "Cookie Policy",
+      "reject": "Rifiuta non necessari",
+      "manage": "Gestisci preferenze",
+      "accept": "Accetta tutti"
+    },
+    "preferences": {
+      "title": "Gestisci preferenze cookie",
+      "intro": "Puoi scegliere quali categorie non necessarie abilitare. I cookie necessari restano sempre attivi perché servono al funzionamento base del sito.",
+      "close": "Chiudi preferenze cookie",
+      "reject": "Rifiuta non necessari",
+      "save": "Salva preferenze",
+      "accept": "Accetta tutti"
+    },
+    "categories": {
+      "necessary": {
+        "title": "Necessari",
+        "body": "Servono per il funzionamento base del sito e per ricordare le preferenze cookie nel browser tramite localStorage. Non richiedono consenso preventivo.",
+        "alwaysActive": "Sempre attivi"
+      },
+      "analytics": {
+        "title": "Analytics",
+        "body": "Se accettati, viene caricato Plausible per statistiche aggregate sull'uso del sito. La categoria è disattivata di default e non viene caricata prima del consenso."
+      },
+      "marketing": {
+        "title": "Marketing",
+        "body": "Non sono configurati strumenti di marketing, profilazione o advertising. Questa categoria resta disattivata."
+      }
+    }
+  },
+  "cookiePolicy": {
+    "eyebrow": "Informativa cookie",
+    "title": "Cookie Policy",
+    "intro": "Questa pagina spiega quali tecnologie di memorizzazione o servizi di terze parti possono essere usati dal sito e come gestire il consenso.",
+    "sections": {
+      "what": {
+        "title": "Cosa sono i cookie",
+        "body": "I cookie e tecnologie simili sono piccoli strumenti tecnici che permettono a un sito di funzionare, ricordare preferenze o raccogliere informazioni statistiche. Alcune preferenze possono essere salvate anche in localStorage, che resta nel browser dell'utente."
+      },
+      "technical": {
+        "title": "Cookie tecnici e necessari",
+        "body": "Il sito usa solo dati tecnici necessari al funzionamento base, inclusa la preferenza cookie salvata in localStorage. Questi strumenti non servono a profilare l'utente e non richiedono consenso preventivo."
+      },
+      "preferences": {
+        "title": "Preferenze consenso",
+        "body": "La scelta dell'utente viene salvata nel browser per evitare di mostrare il banner a ogni visita. È sempre possibile modificare la scelta dal link Gestisci preferenze cookie nel footer."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "body": "Il sito può usare Plausible Analytics solo dopo consenso dell'utente. Plausible è configurato come strumento analytics privacy-friendly e viene caricato dinamicamente solo se la categoria Analytics viene accettata."
+      },
+      "marketing": {
+        "title": "Marketing e profilazione",
+        "body": "Non sono presenti cookie marketing, pixel pubblicitari o strumenti di profilazione. La categoria Marketing resta disattivata e non selezionabile."
+      },
+      "thirdParties": {
+        "title": "Servizi terzi",
+        "body": "Servizi rilevati: Render.com per hosting, FormSubmit per invio form, Google Fonts/Material Icons per font e icone, Plausible solo previo consenso analytics, link esterni a LinkedIn e GitHub. Non sono presenti mappe incorporate, video YouTube, reCAPTCHA o widget social incorporati."
+      },
+      "manage": {
+        "title": "Come modificare il consenso",
+        "body": "Puoi modificare o revocare il consenso in qualsiasi momento dal pulsante Gestisci preferenze cookie nel footer del sito. Il rifiuto dei cookie non necessari non impedisce la navigazione."
+      },
+      "browser": {
+        "title": "Impostazioni del browser",
+        "body": "Puoi cancellare cookie e dati locali anche dalle impostazioni del browser. La cancellazione delle preferenze locali farà ricomparire il banner alla visita successiva."
+      },
+      "updates": {
+        "title": "Aggiornamenti",
+        "body": "Questa cookie policy potrà essere aggiornata se verranno aggiunti nuovi strumenti tecnici, analytics o servizi terzi. Ultimo aggiornamento: 15/07/2026."
+      },
+      "legalReview": {
+        "title": "Nota di validazione",
+        "body": "Questa cookie policy è predisposta secondo buone pratiche per un sito personale statico, ma deve essere verificata con un professionista per la conformità legale definitiva."
       }
     }
   }

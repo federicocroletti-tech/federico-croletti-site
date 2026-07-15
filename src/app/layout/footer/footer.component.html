@@ -3,14 +3,36 @@
     <div>
       <p class="eyebrow">Federico Croletti</p>
       <p class="footer-copy">{{ 'footer.description' | translate }}</p>
+      <div class="footer-contact">
+        <a [href]="'mailto:' + contacts.email">{{ contacts.email }}</a>
+        <span>{{ contacts.location }}</span>
+      </div>
     </div>
 
     <div class="footer-links">
-      <a mat-button [href]="'mailto:' + contacts.email">Email</a>
-      <a mat-button [href]="contacts.linkedIn" target="_blank" rel="noopener noreferrer"
-        >LinkedIn</a
+      <a
+        mat-button
+        [href]="'mailto:' + contacts.email"
+        [attr.aria-label]="'footer.emailAria' | translate"
       >
-      <a mat-button routerLink="/privacy">Privacy</a>
+        {{ 'footer.email' | translate }}
+      </a>
+      @for (social of socialLinks; track social.id) {
+        <a
+          mat-button
+          [href]="social.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          [attr.aria-label]="social.ariaLabel"
+        >
+          {{ social.label }}
+        </a>
+      }
+      <a mat-button routerLink="/privacy">{{ 'footer.privacy' | translate }}</a>
+      <a mat-button routerLink="/cookie-policy">{{ 'footer.cookiePolicy' | translate }}</a>
+      <button mat-button type="button" (click)="openCookiePreferences()">
+        {{ 'footer.manageCookies' | translate }}
+      </button>
     </div>
   </div>
 
