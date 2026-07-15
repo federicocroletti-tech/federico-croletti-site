@@ -24,22 +24,23 @@ interface TextCard {
 export class HomePageComponent {
   private readonly seo = inject(SeoService);
 
-  readonly servicePreview = SERVICE_CATEGORIES.slice(0, 3);
+  readonly servicePreview = SERVICE_CATEGORIES;
 
   readonly skillHighlights: readonly TextCard[] = [
-    { titleKey: 'home.skills.frontend.title', bodyKey: 'home.skills.frontend.body' },
-    { titleKey: 'home.skills.architecture.title', bodyKey: 'home.skills.architecture.body' },
-    { titleKey: 'home.skills.leadership.title', bodyKey: 'home.skills.leadership.body' },
+    { titleKey: 'home.skills.webPractical.title', bodyKey: 'home.skills.webPractical.body' },
+    { titleKey: 'home.skills.digitalSupport.title', bodyKey: 'home.skills.digitalSupport.body' },
     { titleKey: 'home.skills.aiCloud.title', bodyKey: 'home.skills.aiCloud.body' },
+    { titleKey: 'home.skills.architecture.title', bodyKey: 'home.skills.architecture.body' },
   ];
 
   readonly experiencePoints = [
     'home.experience.points.angular',
+    'home.experience.points.websitesWordpress',
+    'home.experience.points.digitalServices',
+    'home.experience.points.backupEmailFormatting',
+    'home.experience.points.aiCertification',
     'home.experience.points.microFrontend',
     'home.experience.points.maps',
-    'home.experience.points.auth',
-    'home.experience.points.cicd',
-    'home.experience.points.uiLibraries',
   ] as const;
 
   readonly values = [
@@ -54,7 +55,7 @@ export class HomePageComponent {
     this.seo.update({
       title: 'Federico Croletti - Senior Software Engineer Angular',
       description:
-        'Federico Croletti, Senior Software Engineer Angular e consulente per sviluppo web, assistenza informatica, servizi digitali e automazioni AI.',
+        'Federico Croletti, Senior Software Engineer Angular e consulente per siti web, WordPress, assistenza informatica, SPID, PEC, firma digitale, backup, gestione email e AI.',
       path: '/',
     });
   }

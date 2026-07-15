@@ -20,10 +20,22 @@ export const SERVICE_CATEGORIES: readonly ServiceCategory[] = [
         icon: 'storefront',
       },
       {
+        id: 'wordpress-sites',
+        titleKey: 'services.items.wordpressSites.title',
+        descriptionKey: 'services.items.wordpressSites.description',
+        icon: 'dashboard_customize',
+      },
+      {
         id: 'landing-pages',
         titleKey: 'services.items.landingPages.title',
         descriptionKey: 'services.items.landingPages.description',
         icon: 'rocket_launch',
+      },
+      {
+        id: 'site-maintenance',
+        titleKey: 'services.items.siteMaintenance.title',
+        descriptionKey: 'services.items.siteMaintenance.description',
+        icon: 'construction',
       },
       {
         id: 'seo-basic',
@@ -70,10 +82,22 @@ export const SERVICE_CATEGORIES: readonly ServiceCategory[] = [
         icon: 'backup',
       },
       {
+        id: 'data-migration',
+        titleKey: 'services.items.dataMigration.title',
+        descriptionKey: 'services.items.dataMigration.description',
+        icon: 'drive_file_move',
+      },
+      {
         id: 'email-setup',
         titleKey: 'services.items.emailSetup.title',
         descriptionKey: 'services.items.emailSetup.description',
         icon: 'alternate_email',
+      },
+      {
+        id: 'email-management',
+        titleKey: 'services.items.emailManagement.title',
+        descriptionKey: 'services.items.emailManagement.description',
+        icon: 'mark_email_unread',
       },
       {
         id: 'common-issues',
@@ -140,6 +164,12 @@ export const SERVICE_CATEGORIES: readonly ServiceCategory[] = [
         icon: 'article',
       },
       {
+        id: 'ai-content',
+        titleKey: 'services.items.aiContent.title',
+        descriptionKey: 'services.items.aiContent.description',
+        icon: 'edit_note',
+      },
+      {
         id: 'simple-automation',
         titleKey: 'services.items.simpleAutomation.title',
         descriptionKey: 'services.items.simpleAutomation.description',
@@ -150,6 +180,12 @@ export const SERVICE_CATEGORIES: readonly ServiceCategory[] = [
         titleKey: 'services.items.aiPrototypes.title',
         descriptionKey: 'services.items.aiPrototypes.description',
         icon: 'tips_and_updates',
+      },
+      {
+        id: 'aws-ai-guidance',
+        titleKey: 'services.items.awsAiGuidance.title',
+        descriptionKey: 'services.items.awsAiGuidance.description',
+        icon: 'workspace_premium',
       },
     ],
   },

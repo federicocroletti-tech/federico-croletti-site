@@ -26,24 +26,32 @@
     "hero": {
       "eyebrow": "Senior Software Engineer · Sviluppo web · Assistenza digitale",
       "title": "Ciao, sono Federico Croletti. Creo soluzioni digitali semplici, moderne e affidabili.",
-      "subtitle": "Sono un Senior Software Engineer specializzato in Angular e applicazioni enterprise. Aiuto aziende, professionisti e privati a realizzare siti web, risolvere problemi informatici e usare meglio gli strumenti digitali.",
+      "subtitle": "Sono un Senior Software Engineer specializzato in Angular, ma aiuto anche professionisti, piccole attività e privati con siti web, WordPress, SPID, PEC, firma digitale, backup, gestione email, formattazioni e uso concreto dell'AI.",
       "aboutCta": "Scopri chi sono",
       "servicesCta": "Scopri i miei servizi",
       "projectsCta": "Guarda i progetti",
       "contactCta": "Contattami",
       "panelLabel": "Identità professionale",
       "logoAlt": "Segno grafico personale di Federico Croletti",
-      "panelText": "Unisco esperienza enterprise e supporto concreto: posso lavorare su architetture Angular complesse e aiutare con problemi digitali quotidiani."
+      "panelText": "Unisco esperienza enterprise e supporto concreto: posso lavorare su architetture Angular complesse, mettere online siti semplici e aiutare con problemi digitali quotidiani, anche usando AI e competenze certificate AWS AI Practitioner."
     },
     "servicesPreview": {
       "eyebrow": "Come posso aiutarti",
       "title": "Servizi pratici per aziende, professionisti e privati",
-      "body": "Dallo sviluppo di siti web all'assistenza su PC, email, SPID, PEC e strumenti AI: l'obiettivo è rendere la tecnologia più semplice e utile.",
+      "body": "Dallo sviluppo di siti Angular e WordPress all'assistenza su PC, formattazioni, backup, email, SPID, PEC, firma digitale e strumenti AI: l'obiettivo è rendere la tecnologia più semplice e utile.",
       "cta": "Vedi tutti i servizi"
     },
     "skills": {
       "eyebrow": "Competenze rapide",
-      "title": "Front-end solido, architettura chiara e guida tecnica",
+      "title": "Sviluppo, assistenza digitale e AI pratica",
+      "webPractical": {
+        "title": "Siti web e WordPress",
+        "body": "Siti personali, siti vetrina, landing page, restyling, moduli contatto e supporto alla pubblicazione online."
+      },
+      "digitalSupport": {
+        "title": "Assistenza digitale",
+        "body": "SPID, PEC, firma digitale, gestione email, backup dati, formattazione PC, configurazioni e problemi quotidiani."
+      },
       "frontend": {
         "title": "Front-end moderno",
         "body": "Angular, TypeScript, HTML, SCSS, Angular Material, RxJS, NgRx."
@@ -58,15 +66,19 @@
       },
       "aiCloud": {
         "title": "AI e cloud mindset",
-        "body": "GitHub Copilot, AI applied tooling, AWS AI Practitioner, CI/CD, Docker, Kubernetes."
+        "body": "Uso pratico di AI, GitHub Copilot, ChatGPT, automazioni leggere e certificazione AWS Certified AI Practitioner."
       }
     },
     "experience": {
       "eyebrow": "Esperienza in evidenza",
-      "title": "Esperienza su progetti enterprise complessi",
-      "body": "Ho lavorato su applicazioni in ambito finanziario, assicurativo, geo-spaziale e documentale, contribuendo sia allo sviluppo front-end sia alla definizione di pattern architetturali riutilizzabili.",
+      "title": "Esperienza enterprise e supporto digitale concreto",
+      "body": "Ho lavorato su applicazioni in ambito finanziario, assicurativo, geo-spaziale e documentale, ma porto lo stesso metodo anche su siti web, servizi digitali, supporto operativo, automazioni AI e problemi pratici di tutti i giorni.",
       "points": {
         "angular": "Applicazioni Angular enterprise",
+        "websitesWordpress": "Siti personali, siti vetrina, WordPress e pubblicazione online",
+        "digitalServices": "Supporto su SPID, PEC, firma digitale e procedure online",
+        "backupEmailFormatting": "Backup dati, gestione email, formattazioni e configurazioni PC",
+        "aiCertification": "AI applicata con certificazione AWS Certified AI Practitioner",
         "microFrontend": "Micro frontend con Module Federation",
         "maps": "Mappe interattive basate su Leaflet e WMS",
         "auth": "Integrazione con sistemi di autenticazione come Keycloak",
@@ -95,8 +107,8 @@
     "eyebrow": "Profilo",
     "title": "Chi sono",
     "intro": {
-      "first": "Sono Federico Croletti, Senior Software Engineer con esperienza nella progettazione e sviluppo di applicazioni enterprise. Mi occupo soprattutto di front-end Angular, architetture moderne, micro frontend, i18n, mappe interattive e qualità del codice.",
-      "second": "Nel mio percorso ho lavorato in ambiti finanziari, assicurativi, geo-spaziali e documentali. Oltre allo sviluppo, seguo attività di Team Leadership e People Management, aiutando i colleghi a crescere tecnicamente e organizzando il lavoro in modo chiaro e sostenibile.",
+      "first": "Sono Federico Croletti, Senior Software Engineer con esperienza nella progettazione e sviluppo di applicazioni enterprise. Mi occupo di Angular, architetture moderne, micro frontend, i18n, mappe interattive e qualità del codice, ma anche di servizi digitali concreti per persone e piccole attività.",
+      "second": "Nel mio percorso ho lavorato in ambiti finanziari, assicurativi, geo-spaziali e documentali. Oltre allo sviluppo, seguo attività di Team Leadership e People Management e porto lo stesso metodo su siti web, WordPress, SPID, PEC, firma digitale, backup, gestione email, formattazioni e strumenti AI.",
       "personal": "Mi piace mettere competenza tecnica e relazione sullo stesso piano: dietro ogni progetto ci sono persone, obiettivi concreti e decisioni da rendere semplici. Questa foto aggiunge un volto al percorso che racconto qui, per clienti, colleghi e follower che vogliono conoscermi meglio."
     },
     "photo": {
@@ -111,7 +123,7 @@
     },
     "profile": {
       "eyebrow": "Profilo professionale",
-      "title": "Una base tecnica forte, con responsabilità di guida",
+      "title": "Una base tecnica forte, con supporto pratico alle persone",
       "points": {
         "senior": "Senior Software Engineer / Senior Software Developer.",
         "leader": "Team Leader e People Manager.",
@@ -120,7 +132,10 @@
         "microFrontend": "Esperienza con Micro Frontend, Module Federation e librerie condivise.",
         "maps": "Esperienza con Leaflet, WMS, MapServer e UX/UI geospaziale.",
         "quality": "Attenzione a performance, manutenibilità e scalabilità.",
-        "aws": "Certificazione AWS Certified AI Practitioner."
+        "aws": "Certificazione AWS Certified AI Practitioner.",
+        "practicalSupport": "Supporto concreto su PC, backup, formattazione, configurazioni e gestione email.",
+        "digitalIdentity": "Esperienza nel supporto a SPID, PEC, firma digitale e procedure online.",
+        "websitesWordpress": "Realizzazione e miglioramento di siti web, WordPress, siti vetrina e landing page."
       }
     },
     "timeline": {
@@ -170,7 +185,8 @@
       "reactive": "State management e reactive programming",
       "maps": "Mappe e geospaziale",
       "devops": "DevOps e cloud",
-      "ai": "AI e produttività"
+      "ai": "AI e produttività",
+      "practicalDigital": "Servizi digitali pratici"
     }
   },
   "services": {
@@ -209,9 +225,17 @@
         "title": "Siti vetrina",
         "description": "Realizzo siti per professionisti e piccole attività, con messaggi chiari, contatti visibili e struttura responsive."
       },
+      "wordpressSites": {
+        "title": "WordPress e siti gestibili",
+        "description": "Supporto nella creazione, sistemazione o gestione di siti WordPress quando serve una soluzione semplice da aggiornare."
+      },
       "landingPages": {
         "title": "Landing page",
         "description": "Creo pagine mirate per servizi, campagne, eventi o idee da validare rapidamente online."
+      },
+      "siteMaintenance": {
+        "title": "Manutenzione siti",
+        "description": "Aiuto ad aggiornare contenuti, controllare link, sistemare piccoli problemi e rendere il sito piu chiaro e ordinato."
       },
       "seoBasic": {
         "title": "SEO base",
@@ -237,9 +261,17 @@
         "title": "Backup dati",
         "description": "Aiuto a salvare, recuperare dove possibile e riorganizzare file importanti in modo più sicuro."
       },
+      "dataMigration": {
+        "title": "Migrazione e riordino dati",
+        "description": "Supporto nello spostamento di file, foto, documenti e dati tra PC, dischi, cloud o nuovi dispositivi."
+      },
       "emailSetup": {
         "title": "Configurazione email",
         "description": "Configuro caselle email, client di posta, account, calendari e strumenti collegati."
+      },
+      "emailManagement": {
+        "title": "Gestione mail e account",
+        "description": "Aiuto a riordinare caselle, recuperare accessi dove possibile, configurare firme, filtri, calendari e strumenti collegati."
       },
       "commonIssues": {
         "title": "Problemi comuni",
@@ -273,6 +305,10 @@
         "title": "Testi, documenti e template",
         "description": "Creo o miglioro testi, procedure, modelli e documenti usando AI e revisione umana."
       },
+      "aiContent": {
+        "title": "Contenuti con supporto AI",
+        "description": "Uso strumenti AI per bozze, testi sito, idee, procedure e materiali di lavoro, sempre con controllo umano finale."
+      },
       "simpleAutomation": {
         "title": "Automazioni semplici",
         "description": "Individuo attività ripetitive e propongo automazioni leggere per lavoro, produttività e organizzazione."
@@ -280,6 +316,10 @@
       "aiPrototypes": {
         "title": "Idee e prototipi AI",
         "description": "Supporto nella definizione di piccoli prototipi digitali basati su AI, dalla prima idea alla demo."
+      },
+      "awsAiGuidance": {
+        "title": "AI e AWS AI Practitioner",
+        "description": "Porto basi certificate AWS AI Practitioner per ragionare in modo consapevole su casi d'uso, limiti e opportunità degli strumenti AI."
       },
       "problemAnalysis": {
         "title": "Analisi problemi digitali",

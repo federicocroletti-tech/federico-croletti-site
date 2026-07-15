@@ -190,6 +190,30 @@ p {
   -webkit-font-smoothing: antialiased;
 }
 
+.contact-request-type-panel.mat-mdc-select-panel {
+  padding: 8px !important;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card) !important;
+  background: #fff !important;
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-request-type-panel .mat-mdc-option {
+  min-height: 44px;
+  margin: 2px 0;
+  border-radius: 6px;
+}
+
+.contact-request-type-panel .mat-mdc-option:hover,
+.contact-request-type-panel .mat-mdc-option.mdc-list-item--selected {
+  background: var(--color-accent-soft) !important;
+}
+
+.contact-request-type-panel .mdc-list-item__primary-text {
+  color: var(--color-primary-strong);
+  font-weight: 700;
+}
+
 @media (max-width: 900px) {
   .grid--2,
   .grid--3,

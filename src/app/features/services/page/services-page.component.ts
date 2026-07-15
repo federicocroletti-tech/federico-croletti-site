@@ -25,7 +25,7 @@ export class ServicesPageComponent {
     this.seo.update({
       title: 'Servizi informatici - Federico Croletti',
       description:
-        'Servizi informatici pratici: siti web, assistenza PC, PEC, SPID, firma digitale, automazioni AI e consulenza tecnica.',
+        'Servizi informatici pratici: siti web, WordPress, assistenza PC, backup, formattazione, gestione email, PEC, SPID, firma digitale, automazioni AI e consulenza tecnica.',
       path: '/servizi',
     });
   }

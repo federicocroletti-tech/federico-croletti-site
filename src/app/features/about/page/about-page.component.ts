@@ -36,6 +36,9 @@ export class AboutPageComponent {
     'about.profile.points.maps',
     'about.profile.points.quality',
     'about.profile.points.aws',
+    'about.profile.points.practicalSupport',
+    'about.profile.points.digitalIdentity',
+    'about.profile.points.websitesWordpress',
   ] as const;
 
   readonly timeline: readonly ExperienceItem[] = [
@@ -115,9 +118,24 @@ export class AboutPageComponent {
       titleKey: 'about.skills.ai',
       skills: [
         'GitHub Copilot',
+        'ChatGPT',
         'Prompt engineering',
         'AWS Certified AI Practitioner',
-        'AI tooling enterprise',
+        'AI applied tooling',
+        'Prototipi AI',
+      ],
+    },
+    {
+      titleKey: 'about.skills.practicalDigital',
+      skills: [
+        'WordPress',
+        'Siti vetrina',
+        'SPID',
+        'PEC',
+        'Firma digitale',
+        'Backup dati',
+        'Formattazione PC',
+        'Gestione email',
       ],
     },
   ];
@@ -126,7 +144,7 @@ export class AboutPageComponent {
     this.seo.update({
       title: 'Chi sono - Federico Croletti',
       description:
-        'Scopri il percorso professionale di Federico Croletti, Senior Software Engineer specializzato in Angular, Micro Frontend, mappe interattive e leadership tecnica.',
+        'Scopri Federico Croletti: Senior Software Engineer Angular, consulente per siti web, WordPress, servizi digitali, SPID, PEC, firma digitale, backup, email e AI con certificazione AWS AI Practitioner.',
       path: '/chi-sono',
     });
   }

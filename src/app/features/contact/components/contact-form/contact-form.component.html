@@ -7,7 +7,12 @@
     <form [formGroup]="contactForm" (ngSubmit)="submitForm()" novalidate>
       <mat-form-field appearance="outline">
         <mat-label>{{ 'contact.form.fullName' | translate }}</mat-label>
-        <input matInput formControlName="fullName" autocomplete="name" data-cy="contact-full-name" />
+        <input
+          matInput
+          formControlName="fullName"
+          autocomplete="name"
+          data-cy="contact-full-name"
+        />
         @if (
           contactForm.controls.fullName.touched &&
           contactForm.controls.fullName.hasError('required')
@@ -24,7 +29,13 @@
 
       <mat-form-field appearance="outline">
         <mat-label>{{ 'contact.form.email' | translate }}</mat-label>
-        <input matInput formControlName="email" type="email" autocomplete="email" data-cy="contact-email" />
+        <input
+          matInput
+          formControlName="email"
+          type="email"
+          autocomplete="email"
+          data-cy="contact-email"
+        />
         @if (
           contactForm.controls.email.touched && contactForm.controls.email.hasError('required')
         ) {
@@ -47,7 +58,11 @@
 
       <mat-form-field appearance="outline">
         <mat-label>{{ 'contact.form.requestType' | translate }}</mat-label>
-        <mat-select formControlName="requestType" data-cy="contact-request-type">
+        <mat-select
+          formControlName="requestType"
+          panelClass="contact-request-type-panel"
+          data-cy="contact-request-type"
+        >
           @for (requestType of requestTypes; track requestType.value) {
             <mat-option [value]="requestType.value">{{
               requestType.labelKey | translate
@@ -113,7 +128,13 @@
         </p>
       }
 
-      <button mat-flat-button color="primary" type="submit" [disabled]="isSubmitting()" data-cy="contact-submit">
+      <button
+        mat-flat-button
+        color="primary"
+        type="submit"
+        [disabled]="isSubmitting()"
+        data-cy="contact-submit"
+      >
         {{ (isSubmitting() ? 'contact.form.submitting' : 'contact.form.submit') | translate }}
       </button>
     </form>

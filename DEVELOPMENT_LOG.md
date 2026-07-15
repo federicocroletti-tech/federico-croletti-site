@@ -61,3 +61,23 @@
 - `npm run build`: build production completata.
 - `npm run test:cypress`: 1 spec E2E passato.
 - `npm run test:full`: suite completa passata.
+
+## 2026-07-15 - Contenuti servizi, AI e UI dropdown contatti
+
+### Cosa è stato fatto
+
+- Migliorata la grafica del menu a tendina della tipologia richiesta nel form contatti, con panel dedicato, opzioni piu leggibili e stato hover/selezionato coerente col design.
+- Ampliati i contenuti della Home per raccontare anche servizi pratici: siti web, WordPress, SPID, PEC, firma digitale, backup, formattazione PC, gestione email e supporto digitale.
+- Ampliata la pagina Chi sono per bilanciare esperienza enterprise, servizi pratici e AI, con riferimenti alla certificazione AWS Certified AI Practitioner.
+- Estesa la pagina Servizi con nuove attivita: WordPress, manutenzione siti, migrazione dati, gestione mail/account, contenuti con AI e guida AI con basi AWS AI Practitioner.
+- Aggiornate meta description di Home, Chi sono e Servizi.
+
+### Fonti e limiti
+
+- Usate fonti locali gia presenti nel progetto: docs, contenuti sito, timeline e CV pubblicato come asset.
+- LinkedIn pubblico non e stato estraibile automaticamente senza login e il PDF CV non e stato leggibile con strumenti locali disponibili; per evitare dati inventati sono stati usati solo dati gia verificati nel progetto o forniti esplicitamente.
+
+### Validazioni
+
+- JSON i18n validato.
+- Build production completata con successo.

@@ -26,24 +26,32 @@
     "hero": {
       "eyebrow": "Senior Software Engineer · Web development · Digital support",
       "title": "Hi, I am Federico Croletti. I create simple, modern and reliable digital solutions.",
-      "subtitle": "I am a Senior Software Engineer specialized in Angular and enterprise applications. I help companies, professionals and private clients build websites, solve IT problems and use digital tools better.",
+      "subtitle": "I am a Senior Software Engineer specialized in Angular, and I also help professionals, small businesses and private clients with websites, WordPress, digital identity tools, certified email, digital signatures, backups, email management, PC formatting and practical AI usage.",
       "aboutCta": "About me",
       "servicesCta": "Explore my services",
       "projectsCta": "View projects",
       "contactCta": "Contact me",
       "panelLabel": "Professional identity",
       "logoAlt": "Federico Croletti personal graphic mark",
-      "panelText": "I combine enterprise experience with practical support: I can work on complex Angular architectures and help with everyday digital problems."
+      "panelText": "I combine enterprise experience with practical support: I can work on complex Angular architectures, publish simple websites and help with everyday digital problems, including AI usage backed by AWS Certified AI Practitioner knowledge."
     },
     "servicesPreview": {
       "eyebrow": "How I can help",
       "title": "Practical services for companies, professionals and private clients",
-      "body": "From web development to support for PCs, email, digital identity tools and AI: the goal is to make technology simpler and more useful.",
+      "body": "From Angular and WordPress websites to PC support, formatting, backups, email, digital identity, certified email, digital signatures and AI tools: the goal is to make technology simpler and more useful.",
       "cta": "See all services"
     },
     "skills": {
       "eyebrow": "Quick skills",
-      "title": "Solid front-end, clear architecture and technical guidance",
+      "title": "Development, digital support and practical AI",
+      "webPractical": {
+        "title": "Websites and WordPress",
+        "body": "Personal sites, showcase websites, landing pages, restyling, contact forms and support publishing online."
+      },
+      "digitalSupport": {
+        "title": "Digital support",
+        "body": "Digital identity, certified email, digital signatures, email management, data backup, PC formatting, configurations and everyday issues."
+      },
       "frontend": {
         "title": "Modern front-end",
         "body": "Angular, TypeScript, HTML, SCSS, Angular Material, RxJS, NgRx."
@@ -58,15 +66,19 @@
       },
       "aiCloud": {
         "title": "AI and cloud mindset",
-        "body": "GitHub Copilot, applied AI tooling, AWS AI Practitioner, CI/CD, Docker, Kubernetes."
+        "body": "Practical AI usage, GitHub Copilot, ChatGPT, lightweight automations and AWS Certified AI Practitioner certification."
       }
     },
     "experience": {
       "eyebrow": "Experience highlight",
-      "title": "Experience on complex enterprise projects",
-      "body": "I have worked on financial, insurance, geospatial and document-management applications, contributing to front-end development and reusable architectural patterns.",
+      "title": "Enterprise experience and concrete digital support",
+      "body": "I have worked on financial, insurance, geospatial and document-management applications, and I bring the same method to websites, digital services, operational support, AI automations and everyday technical problems.",
       "points": {
         "angular": "Enterprise Angular applications",
+        "websitesWordpress": "Personal sites, showcase websites, WordPress and online publishing",
+        "digitalServices": "Support for digital identity, certified email, digital signatures and online procedures",
+        "backupEmailFormatting": "Data backups, email management, PC formatting and setup",
+        "aiCertification": "Applied AI with AWS Certified AI Practitioner certification",
         "microFrontend": "Micro frontends with Module Federation",
         "maps": "Interactive maps based on Leaflet and WMS",
         "auth": "Integration with authentication systems such as Keycloak",
@@ -95,8 +107,8 @@
     "eyebrow": "Profile",
     "title": "About",
     "intro": {
-      "first": "I am Federico Croletti, a Senior Software Engineer experienced in designing and developing enterprise applications. I mainly work on Angular front-ends, modern architectures, micro frontends, i18n, interactive maps and code quality.",
-      "second": "I have worked across financial, insurance, geospatial and document-management contexts. Beyond development, I support Team Leadership and People Management, helping colleagues grow technically and organizing work in a clear and sustainable way.",
+      "first": "I am Federico Croletti, a Senior Software Engineer experienced in designing and developing enterprise applications. I work on Angular, modern architectures, micro frontends, i18n, interactive maps and code quality, but also on concrete digital services for people and small businesses.",
+      "second": "I have worked across financial, insurance, geospatial and document-management contexts. Beyond development, I support Team Leadership and People Management and bring the same method to websites, WordPress, digital identity, certified email, digital signatures, backups, email management, PC formatting and AI tools.",
       "personal": "I like keeping technical skill and human connection on the same level: behind every project there are people, concrete goals and decisions that should become simpler. This photo gives a face to the story I share here, for clients, colleagues and followers who want to know me better."
     },
     "photo": {
@@ -111,7 +123,7 @@
     },
     "profile": {
       "eyebrow": "Professional profile",
-      "title": "A strong technical base with leadership responsibilities",
+      "title": "A strong technical base with practical support for people",
       "points": {
         "senior": "Senior Software Engineer / Senior Software Developer.",
         "leader": "Team Leader and People Manager.",
@@ -120,7 +132,10 @@
         "microFrontend": "Experience with Micro Frontend, Module Federation and shared libraries.",
         "maps": "Experience with Leaflet, WMS, MapServer and geospatial UX/UI.",
         "quality": "Focus on performance, maintainability and scalability.",
-        "aws": "AWS Certified AI Practitioner certification."
+        "aws": "AWS Certified AI Practitioner certification.",
+        "practicalSupport": "Concrete support for PCs, backups, formatting, configurations and email management.",
+        "digitalIdentity": "Experience supporting digital identity, certified email, digital signatures and online procedures.",
+        "websitesWordpress": "Creation and improvement of websites, WordPress sites, showcase sites and landing pages."
       }
     },
     "timeline": {
@@ -170,7 +185,8 @@
       "reactive": "State management and reactive programming",
       "maps": "Maps and geospatial",
       "devops": "DevOps and cloud",
-      "ai": "AI and productivity"
+      "ai": "AI and productivity",
+      "practicalDigital": "Practical digital services"
     }
   },
   "services": {
@@ -209,9 +225,17 @@
         "title": "Showcase websites",
         "description": "I build websites for professionals and small businesses, with clear messages, visible contacts and responsive structure."
       },
+      "wordpressSites": {
+        "title": "WordPress and manageable sites",
+        "description": "Support creating, fixing or managing WordPress sites when you need a simple solution that can be updated easily."
+      },
       "landingPages": {
         "title": "Landing pages",
         "description": "I create focused pages for services, campaigns, events or ideas to validate quickly online."
+      },
+      "siteMaintenance": {
+        "title": "Website maintenance",
+        "description": "I help update content, check links, fix small issues and make an existing site clearer and better organized."
       },
       "seoBasic": {
         "title": "Basic SEO",
@@ -237,9 +261,17 @@
         "title": "Data backup",
         "description": "I help save, recover where possible and reorganize important files more safely."
       },
+      "dataMigration": {
+        "title": "Data migration and organization",
+        "description": "Support moving files, photos, documents and data across PCs, drives, cloud storage or new devices."
+      },
       "emailSetup": {
         "title": "Email configuration",
         "description": "I configure mailboxes, email clients, accounts, calendars and connected tools."
+      },
+      "emailManagement": {
+        "title": "Email and account management",
+        "description": "I help organize mailboxes, recover access where possible, configure signatures, filters, calendars and connected tools."
       },
       "commonIssues": {
         "title": "Common problems",
@@ -273,6 +305,10 @@
         "title": "Texts, documents and templates",
         "description": "I create or improve texts, procedures, templates and documents using AI and human review."
       },
+      "aiContent": {
+        "title": "AI-assisted content",
+        "description": "I use AI tools for drafts, website copy, ideas, procedures and work material, always with final human review."
+      },
       "simpleAutomation": {
         "title": "Simple automations",
         "description": "I identify repetitive activities and suggest lightweight automations for work, productivity and organization."
@@ -280,6 +316,10 @@
       "aiPrototypes": {
         "title": "AI ideas and prototypes",
         "description": "Support defining small AI-based digital prototypes, from the first idea to a demo."
+      },
+      "awsAiGuidance": {
+        "title": "AI and AWS AI Practitioner",
+        "description": "I bring AWS AI Practitioner certified foundations to reason clearly about AI use cases, limits and opportunities."
       },
       "problemAnalysis": {
         "title": "Digital problem analysis",
