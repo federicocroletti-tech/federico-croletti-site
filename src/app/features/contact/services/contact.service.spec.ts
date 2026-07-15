@@ -44,18 +44,21 @@ describe('ContactService', () => {
     const request = httpMock.expectOne(environment.contactEndpoint);
     expect(request.request.method).toBe('POST');
     expect(request.request.headers.get('Accept')).toBe('application/json');
-    expect(request.request.body).toEqual({
-      name: 'Federico Croletti',
-      email: 'federico.croletti@gmail.com',
-      _replyto: 'federico.croletti@gmail.com',
-      _subject: 'Collaborazione Angular',
-      subject: 'Collaborazione Angular',
-      requestType: 'website',
-      message: 'Vorrei parlare di una possibile collaborazione su un progetto Angular enterprise.',
-      privacyAccepted: 'yes',
-      _template: 'table',
-      _captcha: 'false',
-    });
+    expect(request.request.headers.get('Content-Type')).toBe('application/x-www-form-urlencoded');
+
+    const body = new URLSearchParams(request.request.body);
+    expect(body.get('name')).toBe('Federico Croletti');
+    expect(body.get('email')).toBe('federico.croletti@gmail.com');
+    expect(body.get('_replyto')).toBe('federico.croletti@gmail.com');
+    expect(body.get('_subject')).toBe('Collaborazione Angular');
+    expect(body.get('subject')).toBe('Collaborazione Angular');
+    expect(body.get('requestType')).toBe('website');
+    expect(body.get('message')).toBe(
+      'Vorrei parlare di una possibile collaborazione su un progetto Angular enterprise.',
+    );
+    expect(body.get('privacyAccepted')).toBe('yes');
+    expect(body.get('_template')).toBe('table');
+    expect(body.get('_captcha')).toBe('false');
 
     request.flush({ success: 'true', message: 'OK' });
 

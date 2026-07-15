@@ -9,11 +9,13 @@ import { ContactService } from '../services/contact.service';
 describe('ContactFormComponent', () => {
   let component: ContactFormComponent;
   let fixture: ComponentFixture<ContactFormComponent>;
-  const contactService = {
-    sendMessage: vi.fn(() => of({ success: true, message: 'OK' })),
-  };
+  let contactService: { sendMessage: ReturnType<typeof createSendMessageSpy> };
 
   beforeEach(async () => {
+    contactService = {
+      sendMessage: createSendMessageSpy(),
+    };
+
     await TestBed.configureTestingModule({
       imports: [ContactFormComponent],
       providers: [
@@ -23,7 +25,6 @@ describe('ContactFormComponent', () => {
       ],
     }).compileComponents();
 
-    contactService.sendMessage.mockClear();
     fixture = TestBed.createComponent(ContactFormComponent);
     component = fixture.componentInstance;
   });
@@ -60,3 +61,20 @@ describe('ContactFormComponent', () => {
     expect(contactService.sendMessage).not.toHaveBeenCalled();
   });
 });
+
+function createSendMessageSpy() {
+  const testGlobal = globalThis as typeof globalThis & {
+    vi?: { fn: (implementation: () => unknown) => unknown };
+    jasmine?: {
+      createSpy: (name: string) => { and: { returnValue: (value: unknown) => unknown } };
+    };
+  };
+
+  if (testGlobal.vi) {
+    return testGlobal.vi.fn(() => of({ success: true, message: 'OK' }));
+  }
+
+  const spy = testGlobal.jasmine?.createSpy('sendMessage');
+  spy?.and.returnValue(of({ success: true, message: 'OK' }));
+  return spy;
+}

@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { catchError, map, Observable, throwError } from 'rxjs';
 
@@ -24,7 +24,10 @@ export class ContactService {
 
     return this.http
       .post<FormServiceResponse>(endpoint, this.toFormSubmitPayload(payload), {
-        headers: { Accept: 'application/json' },
+        headers: new HttpHeaders({
+          Accept: 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
+        }),
       })
       .pipe(
         map((response) => ({
@@ -41,19 +44,21 @@ export class ContactService {
     return endpoint.length > 0 && !endpoint.includes('TODO');
   }
 
-  private toFormSubmitPayload(payload: ContactFormValue): Record<string, string> {
-    return {
-      name: payload.fullName,
-      email: payload.email,
-      _replyto: payload.email,
-      _subject: payload.subject,
-      subject: payload.subject,
-      requestType: payload.requestType,
-      message: payload.message,
-      privacyAccepted: payload.privacyAccepted ? 'yes' : 'no',
-      _template: 'table',
-      _captcha: 'false',
-    };
+  private toFormSubmitPayload(payload: ContactFormValue): string {
+    return new HttpParams({
+      fromObject: {
+        name: payload.fullName,
+        email: payload.email,
+        _replyto: payload.email,
+        _subject: payload.subject,
+        subject: payload.subject,
+        requestType: payload.requestType,
+        message: payload.message,
+        privacyAccepted: payload.privacyAccepted ? 'yes' : 'no',
+        _template: 'table',
+        _captcha: 'false',
+      },
+    }).toString();
   }
 
   private isSuccessResponse(success: boolean | string | undefined): boolean {

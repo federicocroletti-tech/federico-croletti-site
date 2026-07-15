@@ -38,3 +38,26 @@
 
 - JSON i18n validato.
 - Build production completata con successo.
+
+## 2026-07-15 - Fix form contatti e test completi
+
+### Cosa è stato fatto
+
+- Corretto il payload del form contatti da JSON a `application/x-www-form-urlencoded`, piu compatibile con FormSubmit AJAX e con CORS dei servizi form statici.
+- Aggiunti selettori `data-cy` ai campi del form per test E2E stabili.
+- Aggiunta configurazione Karma/Jasmine con builder `@angular/build:karma`.
+- Aggiunta configurazione Cypress E2E e test che compila il form, accetta privacy, intercetta la POST verso FormSubmit e verifica il payload.
+- Aggiunto runner `scripts/run-cypress.cjs` per avviare Angular su porta 4300, eseguire Cypress e chiudere il dev server su Windows senza dipendere da `wmic.exe`.
+
+### Diagnosi endpoint
+
+- Dalla rete corrente `formsubmit.co` viene reindirizzato a `https://dnsblocknotice.capgemini.com`; questo indica un blocco DNS/proxy locale verso il provider, non un errore Angular.
+- Il test Cypress intercetta la richiesta e conferma che il frontend invia correttamente la POST configurata.
+
+### Validazioni
+
+- `npm run test`: 4 file test, 6 test passati.
+- `npm run test:karma`: 6 test Jasmine/Karma passati in Chrome Headless.
+- `npm run build`: build production completata.
+- `npm run test:cypress`: 1 spec E2E passato.
+- `npm run test:full`: suite completa passata.
