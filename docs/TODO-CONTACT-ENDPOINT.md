@@ -1,8 +1,14 @@
 # Endpoint form contatti
 
-Servizio scelto: FormSubmit endpoint AJAX.
+Servizio fallback: FormSubmit endpoint AJAX.
 
-Endpoint configurato:
+Endpoint backend primario:
+
+```txt
+https://federico-croletti-api.onrender.com/api/contact
+```
+
+Endpoint pubblico di fallback:
 
 ```txt
 https://formsubmit.co/ajax/federico.croletti@gmail.com
@@ -12,10 +18,12 @@ File aggiornati:
 
 ```ts
 // src/environments/environment.ts
-contactEndpoint: 'https://formsubmit.co/ajax/federico.croletti@gmail.com';
+contactEndpoint: 'https://federico-croletti-api.onrender.com/api/contact';
+contactFallbackEndpoint: 'https://formsubmit.co/ajax/federico.croletti@gmail.com';
 
 // src/environments/environment.prod.ts
-contactEndpoint: 'https://formsubmit.co/ajax/federico.croletti@gmail.com';
+contactEndpoint: 'https://federico-croletti-api.onrender.com/api/contact';
+contactFallbackEndpoint: 'https://formsubmit.co/ajax/federico.croletti@gmail.com';
 ```
 
 Non inserire nel frontend secret key, credenziali SMTP o token privati.

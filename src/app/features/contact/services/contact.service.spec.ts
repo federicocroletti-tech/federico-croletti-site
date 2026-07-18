@@ -8,6 +8,7 @@ import {
   CONTACT_EMAIL_NOT_CONFIGURED,
   CONTACT_NETWORK_BLOCKED,
   CONTACT_PROVIDER_REJECTED,
+  CONTACT_SEND_FAILED,
   ContactService,
 } from './contact.service';
 
@@ -55,6 +56,10 @@ describe('ContactService', () => {
     expect(body.get('fullName')).toBe('Federico Croletti');
     expect(body.get('email')).toBe('federico.croletti@gmail.com');
     expect(body.get('subject')).toBe('Collaborazione Angular');
+    expect(body.get('_subject')).toBe('[Sito] Collaborazione Angular');
+    expect(body.get('_replyto')).toBe('federico.croletti@gmail.com');
+    expect(body.get('_template')).toBe('table');
+    expect(body.get('_captcha')).toBe('false');
     expect(body.get('requestType')).toBe('website');
     expect(body.get('message')).toBe(
       'Vorrei parlare di una possibile collaborazione su un progetto Angular enterprise.',
@@ -67,7 +72,7 @@ describe('ContactService', () => {
     expect(result).toEqual({ success: true, message: 'OK' });
   });
 
-  it('should not treat a response without explicit success as sent', () => {
+  it('should send through the public fallback when the backend fails', () => {
     let result: ContactResponse | undefined;
 
     service
@@ -85,16 +90,53 @@ describe('ContactService', () => {
         result = response;
       });
 
-    httpMock.expectOne(environment.contactEndpoint).flush({ message: 'OK' });
+    httpMock
+      .expectOne(environment.contactEndpoint)
+      .flush({ success: false, message: CONTACT_SEND_FAILED }, { status: 502, statusText: 'Bad Gateway' });
 
-    expect(result).toEqual({
-      success: false,
-      message: CONTACT_PROVIDER_REJECTED,
-      fallbackToEmail: true,
-    });
+    const fallbackRequest = httpMock.expectOne(environment.contactFallbackEndpoint);
+    expect(fallbackRequest.request.method).toBe('POST');
+    expect(fallbackRequest.request.headers.get('Content-Type')).toBe(
+      'application/x-www-form-urlencoded',
+    );
+
+    const fallbackBody = new URLSearchParams(fallbackRequest.request.body);
+    expect(fallbackBody.get('fullName')).toBe('Federico Croletti');
+    expect(fallbackBody.get('_subject')).toBe('[Sito] Collaborazione Angular');
+    expect(fallbackBody.get('_replyto')).toBe('federico.croletti@gmail.com');
+
+    fallbackRequest.flush({ success: 'true', message: 'OK' });
+
+    expect(result).toEqual({ success: true, message: 'OK' });
   });
 
-  it('should expose a network-blocked error for status 0 failures', () => {
+  it('should not treat a response without explicit success as sent', () => {
+    let errorMessage: string | undefined;
+
+    service
+      .sendMessage({
+        fullName: 'Federico Croletti',
+        email: 'federico.croletti@gmail.com',
+        subject: 'Collaborazione Angular',
+        requestType: 'website',
+        message:
+          'Vorrei parlare di una possibile collaborazione su un progetto Angular enterprise.',
+        privacyAccepted: true,
+        honeypot: '',
+      })
+      .subscribe({
+        error: (error: Error) => {
+          errorMessage = error.message;
+        },
+      });
+
+    httpMock.expectOne(environment.contactEndpoint).flush({ message: 'OK' });
+    httpMock.expectOne(environment.contactFallbackEndpoint).flush({ message: 'OK' });
+
+    expect(errorMessage).toBe(CONTACT_PROVIDER_REJECTED);
+  });
+
+  it('should expose a network-blocked error when both endpoints are blocked', () => {
     let errorMessage: string | undefined;
 
     service
@@ -117,12 +159,15 @@ describe('ContactService', () => {
     httpMock
       .expectOne(environment.contactEndpoint)
       .error(new ProgressEvent('error'), { status: 0, statusText: 'Unknown Error' });
+    httpMock
+      .expectOne(environment.contactFallbackEndpoint)
+      .error(new ProgressEvent('error'), { status: 0, statusText: 'Unknown Error' });
 
     expect(errorMessage).toBe(CONTACT_NETWORK_BLOCKED);
   });
 
-  it('should expose backend email configuration errors', () => {
-    let errorMessage: string | undefined;
+  it('should use the public fallback for backend email configuration errors', () => {
+    let result: ContactResponse | undefined;
 
     service
       .sendMessage({
@@ -135,10 +180,8 @@ describe('ContactService', () => {
         privacyAccepted: true,
         honeypot: '',
       })
-      .subscribe({
-        error: (error: Error) => {
-          errorMessage = error.message;
-        },
+      .subscribe((response) => {
+        result = response;
       });
 
     httpMock
@@ -148,6 +191,8 @@ describe('ContactService', () => {
         { status: 503, statusText: 'Service Unavailable' },
       );
 
-    expect(errorMessage).toBe(CONTACT_EMAIL_NOT_CONFIGURED);
+    httpMock.expectOne(environment.contactFallbackEndpoint).flush({ success: 'true', message: 'OK' });
+
+    expect(result).toEqual({ success: true, message: 'OK' });
   });
 });

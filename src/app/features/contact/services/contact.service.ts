@@ -20,12 +20,30 @@ export class ContactService {
   private readonly http = inject(HttpClient);
 
   sendMessage(payload: ContactFormValue): Observable<ContactResponse> {
-    const endpoint = environment.contactEndpoint.trim();
+    const endpoints = this.getContactEndpoints();
 
-    if (!this.isEndpointConfigured(endpoint)) {
+    if (endpoints.length === 0) {
       return throwError(() => new Error(CONTACT_ENDPOINT_NOT_CONFIGURED));
     }
 
+    const [primaryEndpoint, fallbackEndpoint] = endpoints;
+
+    return this.postMessage(primaryEndpoint, payload).pipe(
+      catchError((primaryError: unknown) => {
+        if (!fallbackEndpoint) {
+          return throwError(() => this.toContactPublicError(primaryError));
+        }
+
+        return this.postMessage(fallbackEndpoint, payload).pipe(
+          catchError((fallbackError: unknown) =>
+            throwError(() => this.toContactPublicError(fallbackError)),
+          ),
+        );
+      }),
+    );
+  }
+
+  private postMessage(endpoint: string, payload: ContactFormValue): Observable<ContactResponse> {
     return this.http
       .post<FormServiceResponse>(endpoint, this.toFormSubmitPayload(payload), {
         headers: new HttpHeaders({
@@ -34,10 +52,23 @@ export class ContactService {
         }),
       })
       .pipe(
-        map((response) => this.toContactResponse(response)),
-        catchError((error: HttpErrorResponse) =>
-          throwError(() => new Error(this.toContactError(error))),
-        ),
+        map((response) => {
+          const contactResponse = this.toContactResponse(response);
+
+          if (!contactResponse.success) {
+            throw new Error(CONTACT_PROVIDER_REJECTED);
+          }
+
+          return contactResponse;
+        }),
+      );
+  }
+
+  private getContactEndpoints(): string[] {
+    return [environment.contactEndpoint, environment.contactFallbackEndpoint]
+      .map((endpoint) => endpoint.trim())
+      .filter((endpoint, index, endpoints) =>
+        this.isEndpointConfigured(endpoint) && endpoints.indexOf(endpoint) === index,
       );
   }
 
@@ -51,6 +82,10 @@ export class ContactService {
         fullName: payload.fullName,
         email: payload.email,
         subject: payload.subject,
+        _subject: `[Sito] ${payload.subject}`,
+        _replyto: payload.email,
+        _template: 'table',
+        _captcha: 'false',
         requestType: payload.requestType,
         message: payload.message,
         privacyAccepted: payload.privacyAccepted ? 'yes' : 'no',
@@ -76,6 +111,18 @@ export class ContactService {
     }
 
     return success === true;
+  }
+
+  private toContactPublicError(error: unknown): Error {
+    if (error instanceof HttpErrorResponse) {
+      return new Error(this.toContactError(error));
+    }
+
+    if (error instanceof Error) {
+      return error;
+    }
+
+    return new Error(CONTACT_SEND_FAILED);
   }
 
   private toContactError(error: HttpErrorResponse): string {
