@@ -67,8 +67,9 @@ export class ContactService {
   private getContactEndpoints(): string[] {
     return [environment.contactEndpoint, environment.contactFallbackEndpoint]
       .map((endpoint) => endpoint.trim())
-      .filter((endpoint, index, endpoints) =>
-        this.isEndpointConfigured(endpoint) && endpoints.indexOf(endpoint) === index,
+      .filter(
+        (endpoint, index, endpoints) =>
+          this.isEndpointConfigured(endpoint) && endpoints.indexOf(endpoint) === index,
       );
   }
 

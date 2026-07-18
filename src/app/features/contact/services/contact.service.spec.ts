@@ -92,7 +92,10 @@ describe('ContactService', () => {
 
     httpMock
       .expectOne(environment.contactEndpoint)
-      .flush({ success: false, message: CONTACT_SEND_FAILED }, { status: 502, statusText: 'Bad Gateway' });
+      .flush(
+        { success: false, message: CONTACT_SEND_FAILED },
+        { status: 502, statusText: 'Bad Gateway' },
+      );
 
     const fallbackRequest = httpMock.expectOne(environment.contactFallbackEndpoint);
     expect(fallbackRequest.request.method).toBe('POST');
@@ -191,7 +194,9 @@ describe('ContactService', () => {
         { status: 503, statusText: 'Service Unavailable' },
       );
 
-    httpMock.expectOne(environment.contactFallbackEndpoint).flush({ success: 'true', message: 'OK' });
+    httpMock
+      .expectOne(environment.contactFallbackEndpoint)
+      .flush({ success: 'true', message: 'OK' });
 
     expect(result).toEqual({ success: true, message: 'OK' });
   });
