@@ -11,6 +11,16 @@
   gap: 22px;
 }
 
+.hero-whatsapp.mat-mdc-unelevated-button:not(:disabled) {
+  background-color: #25d366;
+  color: #062616;
+  box-shadow: 0 14px 28px rgb(37 211 102 / 28%);
+}
+
+.hero-whatsapp mat-icon {
+  margin-right: 8px;
+}
+
 .identity-panel {
   display: grid;
   gap: 22px;

@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 
+import { CONTACT_LINKS } from '../../../core/constants/contact-links';
 import { SeoService } from '../../../core/services/seo.service';
 import { SERVICE_CATEGORIES } from '../../services/data/services.data';
 
@@ -23,6 +24,8 @@ interface TextCard {
 })
 export class HomePageComponent {
   private readonly seo = inject(SeoService);
+
+  readonly whatsAppUrl = CONTACT_LINKS.whatsApp;
 
   readonly servicePreview = SERVICE_CATEGORIES;
 

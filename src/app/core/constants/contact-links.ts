@@ -2,7 +2,7 @@ export const CONTACT_LINKS = {
   email: 'federico.croletti@gmail.com',
   linkedIn: 'https://www.linkedin.com/in/federicocroletti/',
   github: 'https://github.com/fedecroletti/',
-  whatsApp: '',
+  whatsApp: 'https://wa.me/393894658277',
   location: 'Milano zona nord-ovest - Quarto Oggiaro',
 } as const;
 
