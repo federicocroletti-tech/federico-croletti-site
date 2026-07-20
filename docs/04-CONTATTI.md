@@ -43,7 +43,7 @@ CTA:
 
 ### Località
 
-Milano zona nord-ovest - Quarto Oggiaro.
+Milano.
 
 Nota:
 

@@ -3,7 +3,7 @@ export const CONTACT_LINKS = {
   linkedIn: 'https://www.linkedin.com/in/federicocroletti/',
   github: 'https://github.com/fedecroletti/',
   whatsApp: 'https://wa.me/393894658277',
-  location: 'Milano zona nord-ovest - Quarto Oggiaro',
+  location: 'Milano',
 } as const;
 
 export const SOCIAL_LINKS = [
