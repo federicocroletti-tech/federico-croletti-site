@@ -1,12 +1,12 @@
 export const environment = {
   production: true,
   siteUrl: 'https://federico-croletti-site.onrender.com',
-  contactEndpoint: 'https://federico-croletti-api.onrender.com/api/contact',
+  contactEndpoint: '',
   contactFallbackEndpoint: 'https://formsubmit.co/ajax/federico.croletti@gmail.com',
   emailJs: {
-    serviceId: '',
-    templateId: '',
-    publicKey: '',
+    serviceId: 'service_u4z63bo',
+    templateId: 'template_53z902r',
+    publicKey: '_iLOaTnT9EoMQQvSn',
   },
   analytics: {
     enabled: true,

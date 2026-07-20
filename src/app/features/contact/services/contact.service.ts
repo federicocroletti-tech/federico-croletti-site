@@ -29,44 +29,39 @@ export class ContactService {
   private readonly emailJsSend = inject(EMAILJS_SEND);
 
   sendMessage(payload: ContactFormValue): Observable<ContactResponse> {
-    const endpoints = this.getContactEndpoints();
+    const backendEndpoint = this.getConfiguredEndpoint(environment.contactEndpoint);
+    const publicFallbackEndpoint = this.getConfiguredEndpoint(environment.contactFallbackEndpoint);
 
-    if (endpoints.length === 0 && !this.isEmailJsConfigured()) {
+    if (!backendEndpoint && !publicFallbackEndpoint && !this.isEmailJsConfigured()) {
       return throwError(() => new Error(CONTACT_ENDPOINT_NOT_CONFIGURED));
     }
 
-    const [primaryEndpoint, fallbackEndpoint] = endpoints;
-
-    if (!primaryEndpoint) {
-      return this.sendEmailJsMessage(payload).pipe(
-        catchError((emailJsError: unknown) => {
-          if (!fallbackEndpoint) {
-            return throwError(() => this.toContactPublicError(emailJsError));
-          }
-
-          return this.postMessage(fallbackEndpoint, payload).pipe(
-            catchError((fallbackError: unknown) =>
-              throwError(() => this.toContactPublicError(fallbackError)),
-            ),
-          );
-        }),
-      );
+    if (!backendEndpoint) {
+      return this.sendEmailJsOrFallback(payload, publicFallbackEndpoint);
     }
 
-    return this.postMessage(primaryEndpoint, payload).pipe(
+    return this.postMessage(backendEndpoint, payload).pipe(
       catchError((primaryError: unknown) => {
-        return this.sendEmailJsMessage(payload).pipe(
-          catchError(() => {
-            if (!fallbackEndpoint) {
-              return throwError(() => this.toContactPublicError(primaryError));
-            }
+        return this.sendEmailJsOrFallback(payload, publicFallbackEndpoint, primaryError);
+      }),
+    );
+  }
 
-            return this.postMessage(fallbackEndpoint, payload).pipe(
-              catchError((fallbackError: unknown) =>
-                throwError(() => this.toContactPublicError(fallbackError)),
-              ),
-            );
-          }),
+  private sendEmailJsOrFallback(
+    payload: ContactFormValue,
+    fallbackEndpoint?: string,
+    originalError?: unknown,
+  ): Observable<ContactResponse> {
+    return this.sendEmailJsMessage(payload).pipe(
+      catchError((emailJsError: unknown) => {
+        if (!fallbackEndpoint) {
+          return throwError(() => this.toContactPublicError(originalError ?? emailJsError));
+        }
+
+        return this.postMessage(fallbackEndpoint, payload).pipe(
+          catchError((fallbackError: unknown) =>
+            throwError(() => this.toContactPublicError(fallbackError)),
+          ),
         );
       }),
     );
@@ -118,17 +113,12 @@ export class ContactService {
       );
   }
 
-  private getContactEndpoints(): string[] {
-    return [environment.contactEndpoint, environment.contactFallbackEndpoint]
-      .map((endpoint) => endpoint.trim())
-      .filter(
-        (endpoint, index, endpoints) =>
-          this.isEndpointConfigured(endpoint) && endpoints.indexOf(endpoint) === index,
-      );
-  }
+  private getConfiguredEndpoint(endpoint: string): string | undefined {
+    const trimmedEndpoint = endpoint.trim();
 
-  private isEndpointConfigured(endpoint: string): boolean {
-    return endpoint.length > 0 && !endpoint.includes('TODO');
+    return trimmedEndpoint.length > 0 && !trimmedEndpoint.includes('TODO')
+      ? trimmedEndpoint
+      : undefined;
   }
 
   private isEmailJsConfigured(): boolean {

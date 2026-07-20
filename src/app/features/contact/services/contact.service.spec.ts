@@ -1,9 +1,9 @@
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { provideHttpClient } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
 import { environment } from '../../../../environments/environment';
-import { ContactResponse } from '../models/contact-form.model';
+import { ContactFormValue, ContactResponse } from '../models/contact-form.model';
 import {
   CONTACT_EMAIL_NOT_CONFIGURED,
   CONTACT_NETWORK_BLOCKED,
@@ -17,6 +17,8 @@ describe('ContactService', () => {
   let httpMock: HttpTestingController;
   let service: ContactService;
   let emailJsSend: TestSpy;
+  const originalContactEndpoint = environment.contactEndpoint;
+  const originalFallbackEndpoint = environment.contactFallbackEndpoint;
   const originalEmailJsConfig = { ...environment.emailJs };
 
   beforeEach(() => {
@@ -36,88 +38,27 @@ describe('ContactService', () => {
 
   afterEach(() => {
     httpMock.verify();
+    environment.contactEndpoint = originalContactEndpoint;
+    environment.contactFallbackEndpoint = originalFallbackEndpoint;
     environment.emailJs.serviceId = originalEmailJsConfig.serviceId;
     environment.emailJs.templateId = originalEmailJsConfig.templateId;
     environment.emailJs.publicKey = originalEmailJsConfig.publicKey;
   });
 
-  it('should post a backend-compatible payload to the configured endpoint', () => {
-    let result: ContactResponse | undefined;
-
-    service
-      .sendMessage({
-        fullName: 'Federico Croletti',
-        email: 'federico.croletti@gmail.com',
-        subject: 'Collaborazione Angular',
-        requestType: 'website',
-        message:
-          'Vorrei parlare di una possibile collaborazione su un progetto Angular enterprise.',
-        privacyAccepted: true,
-        honeypot: '',
-      })
-      .subscribe((response) => {
-        result = response;
-      });
-
-    const request = httpMock.expectOne(environment.contactEndpoint);
-    expect(request.request.method).toBe('POST');
-    expect(request.request.headers.get('Accept')).toBe('application/json');
-    expect(request.request.headers.get('Content-Type')).toBe('application/x-www-form-urlencoded');
-
-    const body = new URLSearchParams(request.request.body);
-    expect(body.get('fullName')).toBe('Federico Croletti');
-    expect(body.get('email')).toBe('federico.croletti@gmail.com');
-    expect(body.get('subject')).toBe('Collaborazione Angular');
-    expect(body.get('_subject')).toBe('[Sito] Collaborazione Angular');
-    expect(body.get('_replyto')).toBe('federico.croletti@gmail.com');
-    expect(body.get('_template')).toBe('table');
-    expect(body.get('_captcha')).toBe('false');
-    expect(body.get('requestType')).toBe('website');
-    expect(body.get('message')).toBe(
-      'Vorrei parlare di una possibile collaborazione su un progetto Angular enterprise.',
-    );
-    expect(body.get('privacyAccepted')).toBe('yes');
-    expect(body.get('honeypot')).toBe('');
-
-    request.flush({ success: 'true', message: 'OK' });
-
-    expect(result).toEqual({ success: true, message: 'OK' });
-  });
-
-  it('should send through EmailJS when the backend fails', async () => {
-    environment.emailJs.serviceId = 'service_test';
-    environment.emailJs.templateId = 'template_test';
-    environment.emailJs.publicKey = 'public_test';
+  it('should send through EmailJS when the backend is disabled', async () => {
+    configureEmailJs();
     resolveSpy(emailJsSend, { status: 200, text: 'OK' });
     let result: ContactResponse | undefined;
 
-    service
-      .sendMessage({
-        fullName: 'Federico Croletti',
-        email: 'federico.croletti@gmail.com',
-        subject: 'Collaborazione Angular',
-        requestType: 'website',
-        message:
-          'Vorrei parlare di una possibile collaborazione su un progetto Angular enterprise.',
-        privacyAccepted: true,
-        honeypot: '',
-      })
-      .subscribe((response) => {
-        result = response;
-      });
-
-    httpMock
-      .expectOne(environment.contactEndpoint)
-      .flush(
-        { success: false, message: CONTACT_SEND_FAILED },
-        { status: 502, statusText: 'Bad Gateway' },
-      );
+    service.sendMessage(createPayload()).subscribe((response) => {
+      result = response;
+    });
 
     await Promise.resolve();
 
     expect(emailJsSend).toHaveBeenCalledWith(
       'service_test',
-      'template_test',
+      'template_53z902r',
       expect.objectContaining({
         fullName: 'Federico Croletti',
         email: 'federico.croletti@gmail.com',
@@ -125,33 +66,53 @@ describe('ContactService', () => {
         subject: 'Collaborazione Angular',
         toEmail: 'federico.croletti@gmail.com',
       }),
-      { publicKey: 'public_test' },
+      { publicKey: '_iLOaTnT9EoMQQvSn' },
     );
+    expect(result).toEqual({ success: true, message: 'OK' });
+  });
+
+  it('should send through the public fallback when EmailJS is not fully configured', () => {
+    environment.emailJs.serviceId = '';
+    let result: ContactResponse | undefined;
+
+    service.sendMessage(createPayload()).subscribe((response) => {
+      result = response;
+    });
+
+    const request = httpMock.expectOne(environment.contactFallbackEndpoint);
+    expectFormSubmitPayload(request.request.body);
+    request.flush({ success: 'true', message: 'OK' });
 
     expect(result).toEqual({ success: true, message: 'OK' });
   });
 
-  it('should send through the public fallback when the backend and EmailJS fail', async () => {
-    environment.emailJs.serviceId = 'service_test';
-    environment.emailJs.templateId = 'template_test';
-    environment.emailJs.publicKey = 'public_test';
-    rejectSpy(emailJsSend, new Error(CONTACT_SEND_FAILED));
+  it('should use the backend before EmailJS when a backend endpoint is configured', () => {
+    environment.contactEndpoint = 'https://backend.test/api/contact';
+    configureEmailJs();
     let result: ContactResponse | undefined;
 
-    service
-      .sendMessage({
-        fullName: 'Federico Croletti',
-        email: 'federico.croletti@gmail.com',
-        subject: 'Collaborazione Angular',
-        requestType: 'website',
-        message:
-          'Vorrei parlare di una possibile collaborazione su un progetto Angular enterprise.',
-        privacyAccepted: true,
-        honeypot: '',
-      })
-      .subscribe((response) => {
-        result = response;
-      });
+    service.sendMessage(createPayload()).subscribe((response) => {
+      result = response;
+    });
+
+    const request = httpMock.expectOne(environment.contactEndpoint);
+    expect(request.request.method).toBe('POST');
+    expectFormSubmitPayload(request.request.body);
+    request.flush({ success: 'true', message: 'OK' });
+
+    expect(emailJsSend).not.toHaveBeenCalled();
+    expect(result).toEqual({ success: true, message: 'OK' });
+  });
+
+  it('should send through EmailJS when the backend fails', async () => {
+    environment.contactEndpoint = 'https://backend.test/api/contact';
+    configureEmailJs();
+    resolveSpy(emailJsSend, { status: 200, text: 'OK' });
+    let result: ContactResponse | undefined;
+
+    service.sendMessage(createPayload()).subscribe((response) => {
+      result = response;
+    });
 
     httpMock
       .expectOne(environment.contactEndpoint)
@@ -159,74 +120,62 @@ describe('ContactService', () => {
         { success: false, message: CONTACT_SEND_FAILED },
         { status: 502, statusText: 'Bad Gateway' },
       );
+    await Promise.resolve();
 
+    expect(emailJsSend).toHaveBeenCalled();
+    expect(result).toEqual({ success: true, message: 'OK' });
+  });
+
+  it('should send through the public fallback when backend and EmailJS fail', async () => {
+    environment.contactEndpoint = 'https://backend.test/api/contact';
+    configureEmailJs();
+    rejectSpy(emailJsSend, new Error(CONTACT_SEND_FAILED));
+    let result: ContactResponse | undefined;
+
+    service.sendMessage(createPayload()).subscribe((response) => {
+      result = response;
+    });
+
+    httpMock
+      .expectOne(environment.contactEndpoint)
+      .flush(
+        { success: false, message: CONTACT_SEND_FAILED },
+        { status: 502, statusText: 'Bad Gateway' },
+      );
     await Promise.resolve();
 
     const fallbackRequest = httpMock.expectOne(environment.contactFallbackEndpoint);
-    expect(fallbackRequest.request.method).toBe('POST');
-    expect(fallbackRequest.request.headers.get('Content-Type')).toBe(
-      'application/x-www-form-urlencoded',
-    );
-
-    const fallbackBody = new URLSearchParams(fallbackRequest.request.body);
-    expect(fallbackBody.get('fullName')).toBe('Federico Croletti');
-    expect(fallbackBody.get('_subject')).toBe('[Sito] Collaborazione Angular');
-    expect(fallbackBody.get('_replyto')).toBe('federico.croletti@gmail.com');
-
+    expectFormSubmitPayload(fallbackRequest.request.body);
     fallbackRequest.flush({ success: 'true', message: 'OK' });
 
     expect(result).toEqual({ success: true, message: 'OK' });
   });
 
-  it('should not treat a response without explicit success as sent', () => {
+  it('should not treat a fallback response without explicit success as sent', () => {
+    environment.emailJs.serviceId = '';
     let errorMessage: string | undefined;
 
-    service
-      .sendMessage({
-        fullName: 'Federico Croletti',
-        email: 'federico.croletti@gmail.com',
-        subject: 'Collaborazione Angular',
-        requestType: 'website',
-        message:
-          'Vorrei parlare di una possibile collaborazione su un progetto Angular enterprise.',
-        privacyAccepted: true,
-        honeypot: '',
-      })
-      .subscribe({
-        error: (error: Error) => {
-          errorMessage = error.message;
-        },
-      });
+    service.sendMessage(createPayload()).subscribe({
+      error: (error: Error) => {
+        errorMessage = error.message;
+      },
+    });
 
-    httpMock.expectOne(environment.contactEndpoint).flush({ message: 'OK' });
     httpMock.expectOne(environment.contactFallbackEndpoint).flush({ message: 'OK' });
 
     expect(errorMessage).toBe(CONTACT_PROVIDER_REJECTED);
   });
 
-  it('should expose a network-blocked error when both endpoints are blocked', () => {
+  it('should expose a network-blocked error when the public fallback is blocked', () => {
+    environment.emailJs.serviceId = '';
     let errorMessage: string | undefined;
 
-    service
-      .sendMessage({
-        fullName: 'Federico Croletti',
-        email: 'federico.croletti@gmail.com',
-        subject: 'Collaborazione Angular',
-        requestType: 'website',
-        message:
-          'Vorrei parlare di una possibile collaborazione su un progetto Angular enterprise.',
-        privacyAccepted: true,
-        honeypot: '',
-      })
-      .subscribe({
-        error: (error: Error) => {
-          errorMessage = error.message;
-        },
-      });
+    service.sendMessage(createPayload()).subscribe({
+      error: (error: Error) => {
+        errorMessage = error.message;
+      },
+    });
 
-    httpMock
-      .expectOne(environment.contactEndpoint)
-      .error(new ProgressEvent('error'), { status: 0, statusText: 'Unknown Error' });
     httpMock
       .expectOne(environment.contactFallbackEndpoint)
       .error(new ProgressEvent('error'), { status: 0, statusText: 'Unknown Error' });
@@ -235,22 +184,13 @@ describe('ContactService', () => {
   });
 
   it('should use the public fallback for backend email configuration errors', () => {
+    environment.contactEndpoint = 'https://backend.test/api/contact';
+    environment.emailJs.serviceId = '';
     let result: ContactResponse | undefined;
 
-    service
-      .sendMessage({
-        fullName: 'Federico Croletti',
-        email: 'federico.croletti@gmail.com',
-        subject: 'Collaborazione Angular',
-        requestType: 'website',
-        message:
-          'Vorrei parlare di una possibile collaborazione su un progetto Angular enterprise.',
-        privacyAccepted: true,
-        honeypot: '',
-      })
-      .subscribe((response) => {
-        result = response;
-      });
+    service.sendMessage(createPayload()).subscribe((response) => {
+      result = response;
+    });
 
     httpMock
       .expectOne(environment.contactEndpoint)
@@ -275,6 +215,41 @@ type TestSpy = ((...args: unknown[]) => unknown) & {
     resolveTo?: (value: unknown) => unknown;
   };
 };
+
+function configureEmailJs(): void {
+  environment.emailJs.serviceId = 'service_test';
+  environment.emailJs.templateId = 'template_53z902r';
+  environment.emailJs.publicKey = '_iLOaTnT9EoMQQvSn';
+}
+
+function createPayload(): ContactFormValue {
+  return {
+    fullName: 'Federico Croletti',
+    email: 'federico.croletti@gmail.com',
+    subject: 'Collaborazione Angular',
+    requestType: 'website',
+    message: 'Vorrei parlare di una possibile collaborazione su un progetto Angular enterprise.',
+    privacyAccepted: true,
+    honeypot: '',
+  };
+}
+
+function expectFormSubmitPayload(requestBody: string): void {
+  const body = new URLSearchParams(requestBody);
+  expect(body.get('fullName')).toBe('Federico Croletti');
+  expect(body.get('email')).toBe('federico.croletti@gmail.com');
+  expect(body.get('subject')).toBe('Collaborazione Angular');
+  expect(body.get('_subject')).toBe('[Sito] Collaborazione Angular');
+  expect(body.get('_replyto')).toBe('federico.croletti@gmail.com');
+  expect(body.get('_template')).toBe('table');
+  expect(body.get('_captcha')).toBe('false');
+  expect(body.get('requestType')).toBe('website');
+  expect(body.get('message')).toBe(
+    'Vorrei parlare di una possibile collaborazione su un progetto Angular enterprise.',
+  );
+  expect(body.get('privacyAccepted')).toBe('yes');
+  expect(body.get('honeypot')).toBe('');
+}
 
 function createEmailJsSendSpy(): TestSpy {
   const testGlobal = globalThis as typeof globalThis & {
