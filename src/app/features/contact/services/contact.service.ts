@@ -1,6 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
-import { catchError, map, Observable, throwError } from 'rxjs';
+import { inject, Injectable, InjectionToken } from '@angular/core';
+import emailjs from '@emailjs/browser';
+import { catchError, from, map, Observable, throwError } from 'rxjs';
 
 import { environment } from '../../../../environments/environment';
 import { ContactFormValue, ContactResponse } from '../models/contact-form.model';
@@ -15,32 +16,85 @@ type FormServiceResponse = Partial<Omit<ContactResponse, 'success'>> & {
   success?: boolean | string;
 };
 
+type EmailJsSend = typeof emailjs.send;
+
+export const EMAILJS_SEND = new InjectionToken<EmailJsSend>('EMAILJS_SEND', {
+  providedIn: 'root',
+  factory: () => emailjs.send,
+});
+
 @Injectable({ providedIn: 'root' })
 export class ContactService {
   private readonly http = inject(HttpClient);
+  private readonly emailJsSend = inject(EMAILJS_SEND);
 
   sendMessage(payload: ContactFormValue): Observable<ContactResponse> {
     const endpoints = this.getContactEndpoints();
 
-    if (endpoints.length === 0) {
+    if (endpoints.length === 0 && !this.isEmailJsConfigured()) {
       return throwError(() => new Error(CONTACT_ENDPOINT_NOT_CONFIGURED));
     }
 
     const [primaryEndpoint, fallbackEndpoint] = endpoints;
 
+    if (!primaryEndpoint) {
+      return this.sendEmailJsMessage(payload).pipe(
+        catchError((emailJsError: unknown) => {
+          if (!fallbackEndpoint) {
+            return throwError(() => this.toContactPublicError(emailJsError));
+          }
+
+          return this.postMessage(fallbackEndpoint, payload).pipe(
+            catchError((fallbackError: unknown) =>
+              throwError(() => this.toContactPublicError(fallbackError)),
+            ),
+          );
+        }),
+      );
+    }
+
     return this.postMessage(primaryEndpoint, payload).pipe(
       catchError((primaryError: unknown) => {
-        if (!fallbackEndpoint) {
-          return throwError(() => this.toContactPublicError(primaryError));
-        }
+        return this.sendEmailJsMessage(payload).pipe(
+          catchError(() => {
+            if (!fallbackEndpoint) {
+              return throwError(() => this.toContactPublicError(primaryError));
+            }
 
-        return this.postMessage(fallbackEndpoint, payload).pipe(
-          catchError((fallbackError: unknown) =>
-            throwError(() => this.toContactPublicError(fallbackError)),
-          ),
+            return this.postMessage(fallbackEndpoint, payload).pipe(
+              catchError((fallbackError: unknown) =>
+                throwError(() => this.toContactPublicError(fallbackError)),
+              ),
+            );
+          }),
         );
       }),
     );
+  }
+
+  private sendEmailJsMessage(payload: ContactFormValue): Observable<ContactResponse> {
+    if (!this.isEmailJsConfigured()) {
+      return throwError(() => new Error(CONTACT_ENDPOINT_NOT_CONFIGURED));
+    }
+
+    return from(
+      this.emailJsSend(
+        environment.emailJs.serviceId,
+        environment.emailJs.templateId,
+        {
+          fullName: payload.fullName,
+          email: payload.email,
+          replyTo: payload.email,
+          subject: payload.subject,
+          requestType: payload.requestType,
+          message: payload.message,
+          privacyAccepted: payload.privacyAccepted ? 'yes' : 'no',
+          honeypot: payload.honeypot ?? '',
+          toEmail: 'federico.croletti@gmail.com',
+        },
+        { publicKey: environment.emailJs.publicKey },
+      ),
+    ).pipe(map(() => ({ success: true, message: 'OK' })));
   }
 
   private postMessage(endpoint: string, payload: ContactFormValue): Observable<ContactResponse> {
@@ -75,6 +129,17 @@ export class ContactService {
 
   private isEndpointConfigured(endpoint: string): boolean {
     return endpoint.length > 0 && !endpoint.includes('TODO');
+  }
+
+  private isEmailJsConfigured(): boolean {
+    return Boolean(
+      environment.emailJs.serviceId.trim() &&
+      environment.emailJs.templateId.trim() &&
+      environment.emailJs.publicKey.trim() &&
+      !environment.emailJs.serviceId.includes('TODO') &&
+      !environment.emailJs.templateId.includes('TODO') &&
+      !environment.emailJs.publicKey.includes('TODO'),
+    );
   }
 
   private toFormSubmitPayload(payload: ContactFormValue): string {

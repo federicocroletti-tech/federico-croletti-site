@@ -10,15 +10,24 @@ import {
   CONTACT_PROVIDER_REJECTED,
   CONTACT_SEND_FAILED,
   ContactService,
+  EMAILJS_SEND,
 } from './contact.service';
 
 describe('ContactService', () => {
   let httpMock: HttpTestingController;
   let service: ContactService;
+  let emailJsSend: TestSpy;
+  const originalEmailJsConfig = { ...environment.emailJs };
 
   beforeEach(() => {
+    emailJsSend = createEmailJsSendSpy();
     TestBed.configureTestingModule({
-      providers: [ContactService, provideHttpClient(), provideHttpClientTesting()],
+      providers: [
+        ContactService,
+        provideHttpClient(),
+        provideHttpClientTesting(),
+        { provide: EMAILJS_SEND, useValue: emailJsSend },
+      ],
     });
 
     httpMock = TestBed.inject(HttpTestingController);
@@ -27,6 +36,9 @@ describe('ContactService', () => {
 
   afterEach(() => {
     httpMock.verify();
+    environment.emailJs.serviceId = originalEmailJsConfig.serviceId;
+    environment.emailJs.templateId = originalEmailJsConfig.templateId;
+    environment.emailJs.publicKey = originalEmailJsConfig.publicKey;
   });
 
   it('should post a backend-compatible payload to the configured endpoint', () => {
@@ -72,7 +84,11 @@ describe('ContactService', () => {
     expect(result).toEqual({ success: true, message: 'OK' });
   });
 
-  it('should send through the public fallback when the backend fails', () => {
+  it('should send through EmailJS when the backend fails', async () => {
+    environment.emailJs.serviceId = 'service_test';
+    environment.emailJs.templateId = 'template_test';
+    environment.emailJs.publicKey = 'public_test';
+    resolveSpy(emailJsSend, { status: 200, text: 'OK' });
     let result: ContactResponse | undefined;
 
     service
@@ -96,6 +112,55 @@ describe('ContactService', () => {
         { success: false, message: CONTACT_SEND_FAILED },
         { status: 502, statusText: 'Bad Gateway' },
       );
+
+    await Promise.resolve();
+
+    expect(emailJsSend).toHaveBeenCalledWith(
+      'service_test',
+      'template_test',
+      expect.objectContaining({
+        fullName: 'Federico Croletti',
+        email: 'federico.croletti@gmail.com',
+        replyTo: 'federico.croletti@gmail.com',
+        subject: 'Collaborazione Angular',
+        toEmail: 'federico.croletti@gmail.com',
+      }),
+      { publicKey: 'public_test' },
+    );
+
+    expect(result).toEqual({ success: true, message: 'OK' });
+  });
+
+  it('should send through the public fallback when the backend and EmailJS fail', async () => {
+    environment.emailJs.serviceId = 'service_test';
+    environment.emailJs.templateId = 'template_test';
+    environment.emailJs.publicKey = 'public_test';
+    rejectSpy(emailJsSend, new Error(CONTACT_SEND_FAILED));
+    let result: ContactResponse | undefined;
+
+    service
+      .sendMessage({
+        fullName: 'Federico Croletti',
+        email: 'federico.croletti@gmail.com',
+        subject: 'Collaborazione Angular',
+        requestType: 'website',
+        message:
+          'Vorrei parlare di una possibile collaborazione su un progetto Angular enterprise.',
+        privacyAccepted: true,
+        honeypot: '',
+      })
+      .subscribe((response) => {
+        result = response;
+      });
+
+    httpMock
+      .expectOne(environment.contactEndpoint)
+      .flush(
+        { success: false, message: CONTACT_SEND_FAILED },
+        { status: 502, statusText: 'Bad Gateway' },
+      );
+
+    await Promise.resolve();
 
     const fallbackRequest = httpMock.expectOne(environment.contactFallbackEndpoint);
     expect(fallbackRequest.request.method).toBe('POST');
@@ -201,3 +266,39 @@ describe('ContactService', () => {
     expect(result).toEqual({ success: true, message: 'OK' });
   });
 });
+
+type TestSpy = ((...args: unknown[]) => unknown) & {
+  mockRejectedValue?: (value: unknown) => unknown;
+  mockResolvedValue?: (value: unknown) => unknown;
+  and?: {
+    rejectWith?: (value: unknown) => unknown;
+    resolveTo?: (value: unknown) => unknown;
+  };
+};
+
+function createEmailJsSendSpy(): TestSpy {
+  const testGlobal = globalThis as typeof globalThis & {
+    vi?: { fn: () => TestSpy };
+    jasmine?: { createSpy: (name: string) => TestSpy };
+  };
+
+  return testGlobal.vi?.fn() ?? testGlobal.jasmine?.createSpy('emailJsSend') ?? (() => undefined);
+}
+
+function resolveSpy(spy: TestSpy, value: unknown): void {
+  if (spy.mockResolvedValue) {
+    spy.mockResolvedValue(value);
+    return;
+  }
+
+  spy.and?.resolveTo?.(value);
+}
+
+function rejectSpy(spy: TestSpy, value: unknown): void {
+  if (spy.mockRejectedValue) {
+    spy.mockRejectedValue(value);
+    return;
+  }
+
+  spy.and?.rejectWith?.(value);
+}
