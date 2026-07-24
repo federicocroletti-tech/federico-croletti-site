@@ -14,7 +14,7 @@
     "contact": "Contatti"
   },
   "footer": {
-    "description": "Senior Software Engineer Angular e consulente per sviluppo web, assistenza digitale, automazioni AI e supporto informatico pratico.",
+    "description": "Tecnico informatico e consulente digitale a Milano per assistenza PC, PEC, SPID, sicurezza informatica, consulenza IT e sviluppo software.",
     "email": "Email",
     "emailAria": "Scrivi una email a Federico Croletti",
     "privacy": "Privacy Policy",
@@ -24,16 +24,16 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Senior Software Engineer · Sviluppo web · Assistenza digitale",
-      "title": "Ciao, sono Federico Croletti. Creo soluzioni digitali semplici, moderne e affidabili.",
-      "subtitle": "Sono un Senior Software Engineer specializzato in Angular, ma aiuto anche professionisti, piccole attività e privati con siti web, WordPress, SPID, PEC, firma digitale, backup, gestione email, formattazioni e uso concreto dell'AI.",
+      "eyebrow": "Tecnico informatico Milano · Consulenza digitale · Sviluppo software",
+      "title": "Federico Croletti - Supporto Informatico e Consulenza Digitale",
+      "subtitle": "Tecnico Informatico, Consulente Digitale e Sviluppatore Software a Milano.",
       "aboutCta": "Scopri chi sono",
       "servicesCta": "Scopri i miei servizi",
       "projectsCta": "Guarda i progetti",
       "contactCta": "Contattami",
       "panelLabel": "Identità professionale",
       "logoAlt": "Segno grafico personale di Federico Croletti",
-      "panelText": "Unisco esperienza enterprise e supporto concreto: posso lavorare su architetture Angular complesse, mettere online siti semplici e aiutare con problemi digitali quotidiani, anche usando AI e competenze certificate AWS AI Practitioner."
+      "panelText": "Assistenza PC, consulenza IT, siti web, SPID, PEC, firma digitale, sicurezza informatica e supporto digitale per Milano, Quarto Oggiaro, Certosa, Bovisa, Portello, Baranzate e Bollate."
     },
     "servicesPreview": {
       "eyebrow": "Come posso aiutarti",
@@ -345,6 +345,7 @@
     "roleLabel": "Ruolo",
     "technologyLabel": "Tecnologie",
     "tagLabel": "Tag tecnici",
+    "demoCta": "Vedi prodotto",
     "privateNote": "Repository privato o non disponibile pubblicamente.",
     "filters": {
       "label": "Filtra progetti",

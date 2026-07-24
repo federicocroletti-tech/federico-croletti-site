@@ -28,8 +28,9 @@ export const PROJECTS: readonly ProjectItem[] = [
     roleKey: 'projects.items.motoSmart.role',
     technologies: ['Angular', 'TypeScript', 'SCSS', 'Node', 'WhatsApp API', 'AI bot'],
     status: 'prototype',
+    demoUrl: 'https://moto-smart.onrender.com/',
     tags: ['Angular', 'AI', 'Prodotto personale'],
-    isPublic: false,
+    isPublic: true,
   },
   {
     id: 'smart-sales-cart',

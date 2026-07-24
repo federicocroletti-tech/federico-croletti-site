@@ -54,17 +54,29 @@
           </ul>
         </mat-card-content>
 
-        <mat-card-actions align="end">
-          @if (project.githubUrl) {
+        <mat-card-actions align="end" class="project-actions">
+          @if (project.demoUrl) {
             <a
               mat-flat-button
               color="primary"
+              [href]="project.demoUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{ 'projects.demoCta' | translate }}</a
+            >
+          }
+
+          @if (project.githubUrl) {
+            <a
+              mat-stroked-button
               [href]="project.githubUrl"
               target="_blank"
               rel="noopener noreferrer"
               >GitHub</a
             >
-          } @else {
+          }
+
+          @if (!project.demoUrl && !project.githubUrl) {
             <span class="private-note">{{ 'projects.privateNote' | translate }}</span>
           }
         </mat-card-actions>

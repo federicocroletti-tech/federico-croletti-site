@@ -14,7 +14,7 @@
     "contact": "Contact"
   },
   "footer": {
-    "description": "Senior Software Engineer and consultant for web development, digital support, AI automations and practical IT services.",
+    "description": "IT support and digital consulting in Milan for PC assistance, certified email, digital identity, cybersecurity, IT consulting and software development.",
     "email": "Email",
     "emailAria": "Send an email to Federico Croletti",
     "privacy": "Privacy Policy",
@@ -24,16 +24,16 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Senior Software Engineer · Web development · Digital support",
-      "title": "Hi, I am Federico Croletti. I create simple, modern and reliable digital solutions.",
-      "subtitle": "I am a Senior Software Engineer specialized in Angular, and I also help professionals, small businesses and private clients with websites, WordPress, digital identity tools, certified email, digital signatures, backups, email management, PC formatting and practical AI usage.",
+      "eyebrow": "IT support Milan · Digital consulting · Software development",
+      "title": "Federico Croletti - IT Support and Digital Consulting",
+      "subtitle": "IT Technician, Digital Consultant and Software Developer in Milan.",
       "aboutCta": "About me",
       "servicesCta": "Explore my services",
       "projectsCta": "View projects",
       "contactCta": "Contact me",
       "panelLabel": "Professional identity",
       "logoAlt": "Federico Croletti personal graphic mark",
-      "panelText": "I combine enterprise experience with practical support: I can work on complex Angular architectures, publish simple websites and help with everyday digital problems, including AI usage backed by AWS Certified AI Practitioner knowledge."
+      "panelText": "PC assistance, IT consulting, websites, digital identity, certified email, digital signatures, cybersecurity and digital support for Milan, Quarto Oggiaro, Certosa, Bovisa, Portello, Baranzate and Bollate."
     },
     "servicesPreview": {
       "eyebrow": "How I can help",
@@ -345,6 +345,7 @@
     "roleLabel": "Role",
     "technologyLabel": "Technologies",
     "tagLabel": "Technical tags",
+    "demoCta": "View product",
     "privateNote": "Private repository or not publicly available.",
     "filters": {
       "label": "Filter projects",
