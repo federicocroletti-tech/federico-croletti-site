@@ -1,21 +1,66 @@
+/* ==========================================================================
+   Premium Dark Design System — Federico Croletti
+   ========================================================================== */
+
 :root {
-  color-scheme: light;
-  --color-ink: #172331;
-  --color-muted: #5c6978;
-  --color-primary: #17324d;
-  --color-primary-strong: #0c2238;
-  --color-accent: #287c68;
-  --color-accent-soft: #d9f1ea;
-  --color-sky: #d8eaf5;
-  --color-warm: #fff7ed;
-  --color-surface: #ffffff;
-  --color-background: #f5f8fb;
-  --color-line: #d8e0e8;
-  --shadow-soft: 0 18px 45px rgb(23 35 49 / 10%);
-  --radius-card: 8px;
-  --radius-panel: 18px;
+  /* ── Color palette ────────────────────────────────────────── */
+  --color-bg: #0a0a0f;
+  --color-bg-gradient: linear-gradient(180deg, #0a0a0f 0%, #111118 40%, #0a0a0f 100%);
+  --color-surface: #111118;
+  --color-surface-2: #1a1a24;
+  --color-surface-3: #22222e;
+  --color-ink: #e5e5eb;
+  --color-ink-strong: #ffffff;
+  --color-muted: #8a8a9a;
+  --color-primary: #d4af37;
+  --color-primary-strong: #e8c46a;
+  --color-primary-soft: #d4af371a;
+  --color-secondary: #0d9488;
+  --color-secondary-strong: #13b8b8;
+  --color-secondary-soft: #0d94881f;
+  --color-accent: #d4af37;
+  --color-accent-strong: #e8c46a;
+  --color-accent-soft: #d4af371a;
+  --color-line: #2a2a3a;
+  --color-line-strong: #3a3a4e;
+  --color-gold: #d4af37;
+  --color-gold-soft: #d4af371a;
+  --color-panel: rgb(17 17 24 / 76%);
+  --color-panel-strong: rgb(26 26 36 / 88%);
+
+  /* ── Gradients ──────────────────────────────────────────── */
+  --gradient-hero: linear-gradient(135deg, #d4af37 0%, #e8c46a 50%, #0d9488 100%);
+  --gradient-accent: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-strong) 100%
+  );
+  --gradient-gold: linear-gradient(135deg, var(--color-gold) 0%, #b8860b 100%);
+  --gradient-card: linear-gradient(145deg, rgba(26, 26, 36, 0.85), rgba(34, 34, 46, 0.75));
+  --gradient-surface: linear-gradient(160deg, #111118 0%, #1a1a24 100%);
+  --gradient-text: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+
+  /* ── Shadows ────────────────────────────────────────────── */
+  --shadow-soft: 0 18px 45px rgb(0 0 0 / 20%);
+  --shadow-card: 0 10px 30px rgb(0 0 0 / 15%);
+  --shadow-strong: 0 25px 50px rgb(0 0 0 / 25%);
+  --shadow-inner: inset 0 4px 12px rgb(0 0 0 / 15%);
+  --shadow-gold: 0 0 30px rgb(212 175 55 / 15%);
+
+  /* ── Border radius ──────────────────────────────────────── */
+  --radius-card: 16px;
+  --radius-panel: 20px;
+  --radius-full: 999px;
+  --radius-sm: 8px;
+
+  /* ── Layout ─────────────────────────────────────────────── */
   --content-width: 1180px;
+  --transition-fast: 160ms ease;
+  --transition-base: 260ms ease;
+  --transition-slow: 480ms ease;
 }
+
+/* ── Reset & base ─────────────────────────────────────────── */
 
 * {
   box-sizing: border-box;
@@ -23,20 +68,22 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
   margin: 0;
-  background:
-    radial-gradient(circle at top left, rgb(216 234 245 / 62%), transparent 30rem),
-    linear-gradient(180deg, #f9fbfd 0%, var(--color-background) 52%, #ffffff 100%);
+  background: var(--color-bg-gradient);
   color: var(--color-ink);
-  font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 img {
@@ -44,52 +91,32 @@ img {
   max-width: 100%;
 }
 
+/* ── Focus ring ───────────────────────────────────────────── */
+
 :focus-visible {
-  outline: 3px solid #2c8fb8;
+  outline: 3px solid var(--color-primary);
   outline-offset: 4px;
 }
 
-.section {
-  width: min(100% - 32px, var(--content-width));
-  margin: 0 auto;
-  padding: clamp(48px, 7vw, 92px) 0;
-}
-
-.section--compact {
-  padding: clamp(32px, 5vw, 64px) 0;
-}
-
-.page-heading {
-  display: grid;
-  gap: 16px;
-  max-width: 820px;
-}
-
-.eyebrow {
-  margin: 0;
-  color: var(--color-accent);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
+/* ── Typography ─────────────────────────────────────────── */
 
 h1,
 h2,
 h3 {
   margin: 0;
-  color: var(--color-primary-strong);
+  color: var(--color-ink-strong);
   line-height: 1.08;
-}
-
-h1 {
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-size: clamp(2.45rem, 6vw, 5.1rem);
+  font-family: 'Playfair Display', Georgia, serif;
   font-weight: 700;
 }
 
+h1 {
+  font-size: clamp(2.5rem, 6vw, 5.2rem);
+  font-weight: 800;
+}
+
 h2 {
-  font-size: clamp(1.75rem, 3vw, 2.55rem);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
   font-weight: 800;
 }
 
@@ -105,6 +132,35 @@ p {
 .lead {
   color: var(--color-muted);
   font-size: clamp(1.03rem, 2vw, 1.24rem);
+  font-weight: 400;
+}
+
+/* ── Utility classes ──────────────────────────────────────── */
+
+.section {
+  width: min(100% - 32px, var(--content-width));
+  margin: 0 auto;
+  padding: clamp(48px, 7vw, 92px) 0;
+}
+
+.section--compact {
+  padding: clamp(32px, 5vw, 64px) 0;
+}
+
+.page-heading {
+  display: grid;
+  gap: 16px;
+  max-width: 820px;
+  margin-bottom: clamp(24px, 4vw, 48px);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .grid {
@@ -124,18 +180,35 @@ p {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+/* ── Premium card ─────────────────────────────────────────── */
+
 .mat-mdc-card.site-card {
-  height: 100%;
-  border: 1px solid rgb(216 224 232 / 84%);
+  border: 1px solid var(--color-line);
   border-radius: var(--radius-card);
-  background: rgb(255 255 255 / 92%);
-  box-shadow: none;
+  background: var(--gradient-card);
+  color: var(--color-ink);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.mat-mdc-card.site-card .mat-mdc-card-subtitle,
+.mat-mdc-card.site-card p,
+.mat-mdc-card.site-card li {
+  color: var(--color-muted);
 }
 
 .mat-mdc-card.site-card:hover {
-  border-color: rgb(40 124 104 / 38%);
-  box-shadow: var(--shadow-soft);
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-strong);
 }
+
+/* ── Pills ────────────────────────────────────────────────── */
 
 .pill-list {
   display: flex;
@@ -150,19 +223,33 @@ p {
   display: inline-flex;
   align-items: center;
   min-height: 30px;
-  padding: 5px 10px;
+  padding: 5px 14px;
   border: 1px solid var(--color-line);
-  border-radius: 999px;
-  background: #fff;
-  color: var(--color-primary);
+  border-radius: var(--radius-full);
+  background: var(--color-surface-2);
+  color: var(--color-ink);
   font-size: 0.82rem;
   font-weight: 700;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
 }
 
-.surface-band {
-  background: linear-gradient(135deg, #ffffff 0%, #eef6fa 100%);
-  border-block: 1px solid rgb(216 224 232 / 74%);
+.pill:hover {
+  background: var(--color-primary-soft);
+  border-color: var(--color-primary);
+  color: var(--color-primary-strong);
 }
+
+/* ── Surface band ─────────────────────────────────────────── */
+
+.surface-band {
+  background: var(--gradient-surface);
+  border-block: 1px solid var(--color-line);
+}
+
+/* ── CTA row ──────────────────────────────────────────────── */
 
 .cta-row {
   display: flex;
@@ -171,10 +258,31 @@ p {
   align-items: center;
 }
 
+/* ── Buttons ──────────────────────────────────────────────── */
+
 .mat-mdc-unelevated-button,
-.mat-mdc-outlined-button {
-  border-radius: 999px !important;
+.mat-mdc-outlined-button,
+.mat-mdc-stroked-button {
+  border-radius: var(--radius-full) !important;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
 }
+
+.mat-mdc-unelevated-button:hover,
+.mat-mdc-stroked-button:hover {
+  transform: translateY(-1px);
+}
+
+.mat-mdc-unelevated-button:active,
+.mat-mdc-stroked-button:active {
+  transform: translateY(0);
+}
+
+/* ── Material icons ───────────────────────────────────────── */
 
 .mat-icon.material-icons-outlined {
   font-family: 'Material Icons Outlined';
@@ -190,29 +298,105 @@ p {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ── Contact select panel ─────────────────────────────────── */
+
 .contact-request-type-panel.mat-mdc-select-panel {
   padding: 8px !important;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-card) !important;
-  background: #fff !important;
-  box-shadow: var(--shadow-soft);
+  background: var(--color-surface) !important;
+  box-shadow: var(--shadow-strong);
 }
 
 .contact-request-type-panel .mat-mdc-option {
   min-height: 44px;
   margin: 2px 0;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
 }
 
 .contact-request-type-panel .mat-mdc-option:hover,
 .contact-request-type-panel .mat-mdc-option.mdc-list-item--selected {
-  background: var(--color-accent-soft) !important;
+  background: var(--color-primary-soft) !important;
 }
 
 .contact-request-type-panel .mdc-list-item__primary-text {
-  color: var(--color-primary-strong);
+  color: var(--color-ink-strong);
   font-weight: 700;
 }
+
+/* ── Contact form Material states ─────────────────────────── */
+
+app-contact-form .mat-mdc-form-field {
+  --mdc-outlined-text-field-input-text-color: var(--color-ink-strong);
+  --mdc-outlined-text-field-label-text-color: var(--color-muted);
+  --mdc-outlined-text-field-hover-label-text-color: var(--color-ink);
+  --mdc-outlined-text-field-focus-label-text-color: var(--color-primary-strong);
+  --mdc-outlined-text-field-outline-color: var(--color-line);
+  --mdc-outlined-text-field-hover-outline-color: var(--color-primary);
+  --mdc-outlined-text-field-focus-outline-color: var(--color-primary);
+  --mdc-outlined-text-field-caret-color: var(--color-primary);
+  --mat-select-enabled-trigger-text-color: var(--color-ink-strong);
+  --mat-select-enabled-arrow-color: var(--color-muted);
+  --mat-select-focused-arrow-color: var(--color-primary-strong);
+}
+
+app-contact-form .mat-mdc-text-field-wrapper {
+  border-radius: var(--radius-card);
+  background-color: var(--color-panel) !important;
+}
+
+app-contact-form .mdc-notched-outline__leading,
+app-contact-form .mdc-notched-outline__notch,
+app-contact-form .mdc-notched-outline__trailing {
+  border-color: var(--color-line-strong) !important;
+}
+
+app-contact-form .mat-mdc-form-field:hover .mat-mdc-text-field-wrapper,
+app-contact-form .mat-mdc-form-field.mat-focused .mat-mdc-text-field-wrapper {
+  background-color: var(--color-panel-strong) !important;
+}
+
+app-contact-form .mat-mdc-form-field:hover .mdc-notched-outline__leading,
+app-contact-form .mat-mdc-form-field:hover .mdc-notched-outline__notch,
+app-contact-form .mat-mdc-form-field:hover .mdc-notched-outline__trailing,
+app-contact-form .mat-mdc-form-field.mat-focused .mdc-notched-outline__leading,
+app-contact-form .mat-mdc-form-field.mat-focused .mdc-notched-outline__notch,
+app-contact-form .mat-mdc-form-field.mat-focused .mdc-notched-outline__trailing {
+  border-color: var(--color-primary) !important;
+}
+
+app-contact-form .mdc-text-field__input,
+app-contact-form .mat-mdc-select-value {
+  color: var(--color-ink-strong) !important;
+  caret-color: var(--color-primary);
+}
+
+app-contact-form .mdc-text-field__input::placeholder,
+app-contact-form .mdc-floating-label,
+app-contact-form .mat-mdc-select-arrow {
+  color: var(--color-muted) !important;
+}
+
+app-contact-form .mdc-text-field--focused .mdc-floating-label,
+app-contact-form .mat-mdc-form-field.mat-focused .mat-mdc-select-arrow {
+  color: var(--color-primary-strong) !important;
+}
+
+app-contact-form .mat-mdc-form-field-error,
+app-contact-form .mat-mdc-form-field-hint {
+  color: var(--color-primary-strong);
+}
+
+app-contact-form .mat-mdc-checkbox label {
+  color: var(--color-ink);
+}
+
+app-contact-form .mat-mdc-checkbox a {
+  color: var(--color-primary-strong);
+  font-weight: 800;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
 
 @media (max-width: 900px) {
   .grid--2,

@@ -95,6 +95,15 @@ dist/federico-croletti-site/browser
 
 Se il nome progetto è diverso, aggiornare il path.
 
+Configurazione Render consigliata per questo repository:
+
+```txt
+Root directory: lascia vuoto se Render e collegato al repository frontend; usa federico-croletti-site solo se pubblichi da una monorepo superiore
+Build command: npm ci && npm run build
+Publish directory: dist/federico-croletti-site/browser
+Environment variables: nessuna obbligatoria per il frontend statico
+```
+
 ## Redirect SPA
 
 Per Angular serve redirect verso `index.html`.
@@ -109,13 +118,46 @@ Oppure configurare rewrite dal pannello Render.
 
 ## Variabili ambiente
 
-Per prima versione statica non servono.
+Per il frontend statico non servono variabili ambiente su Render: l'endpoint contatti e compilato in `src/environments/environment.prod.ts`.
 
-Se in futuro si usa servizio form:
+Endpoint attuale:
 
-- endpoint servizio contatti;
-- eventuale public key;
-- nessuna secret key nel frontend.
+```txt
+https://federico-croletti-api.onrender.com/api/contact
+```
+
+Backend Render `Web Service`:
+
+```txt
+Root directory: lascia vuoto se Render e collegato al repository backend; usa federico-croletti-contact-backend solo se pubblichi da una monorepo superiore
+Runtime: Node
+Build command: npm ci && npm run build
+Start command: npm run start
+Health check path: /health
+```
+
+Variabili ambiente backend:
+
+```txt
+NODE_VERSION=22
+CORS_ORIGINS=https://federico-croletti-site.onrender.com
+CONTACT_TO_EMAIL=federico.croletti@gmail.com
+CONTACT_DRY_RUN=false
+SMTP_HOST=<host smtp>
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=<utente smtp>
+SMTP_PASS=<password o app password smtp>
+SMTP_FROM_EMAIL=<mittente verificato dal provider smtp>
+SMTP_TIMEOUT_MS=10000
+```
+
+Note:
+
+- porta `587`: di solito `SMTP_SECURE=false`;
+- porta `465`: di solito `SMTP_SECURE=true`;
+- `SMTP_FROM_EMAIL` deve essere autorizzato dal provider SMTP;
+- nessuna secret key deve essere inserita nel frontend.
 
 ## Dominio custom
 

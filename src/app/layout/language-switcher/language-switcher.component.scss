@@ -4,13 +4,45 @@
 
 .language-switcher {
   --mat-standard-button-toggle-height: 36px;
-  border: 1px solid rgb(216 224 232 / 88%);
-  border-radius: 999px;
+  --mat-standard-button-toggle-background-color: var(--color-surface-2);
+  --mat-standard-button-toggle-selected-state-background-color: var(--color-primary);
+  --mat-standard-button-toggle-selected-state-text-color: var(--color-bg);
+  --mat-standard-button-toggle-text-color: var(--color-muted);
+  --mat-standard-button-toggle-divider-color: var(--color-line);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-full);
   overflow: hidden;
+  background: rgba(17, 17, 24, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.language-switcher:hover {
+  border-color: var(--color-primary);
+  background: rgba(17, 17, 24, 0.85);
+}
+
+:host ::ng-deep .mat-button-toggle {
+  border-color: var(--color-line);
+  background: var(--color-surface-2);
+  color: var(--color-muted);
+}
+
+:host ::ng-deep .mat-button-toggle:hover:not(.mat-button-toggle-checked) {
+  background: var(--color-panel-strong);
+  color: var(--color-ink-strong);
 }
 
 :host ::ng-deep .mat-button-toggle-label-content {
   padding: 0 10px;
   font-size: 0.78rem;
   font-weight: 800;
+}
+
+:host ::ng-deep .mat-button-toggle-checked {
+  background: var(--color-primary) !important;
+  color: var(--color-bg) !important;
 }

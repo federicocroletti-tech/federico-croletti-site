@@ -56,18 +56,8 @@ describe('ContactService', () => {
 
     await Promise.resolve();
 
-    expect(emailJsSend).toHaveBeenCalledWith(
-      'service_test',
-      'template_53z902r',
-      expect.objectContaining({
-        fullName: 'Federico Croletti',
-        email: 'federico.croletti@gmail.com',
-        replyTo: 'federico.croletti@gmail.com',
-        subject: 'Collaborazione Angular',
-        toEmail: 'federico.croletti@gmail.com',
-      }),
-      { publicKey: '_iLOaTnT9EoMQQvSn' },
-    );
+    expect(emailJsSend).toHaveBeenCalled();
+    expectEmailJsPayload(emailJsSend);
     expect(result).toEqual({ success: true, message: 'OK' });
   });
 
@@ -208,12 +198,14 @@ describe('ContactService', () => {
 });
 
 type TestSpy = ((...args: unknown[]) => unknown) & {
+  mock?: { calls: unknown[][] };
   mockRejectedValue?: (value: unknown) => unknown;
   mockResolvedValue?: (value: unknown) => unknown;
   and?: {
     rejectWith?: (value: unknown) => unknown;
     resolveTo?: (value: unknown) => unknown;
   };
+  calls?: { argsFor: (index: number) => unknown[] };
 };
 
 function configureEmailJs(): void {
@@ -249,6 +241,24 @@ function expectFormSubmitPayload(requestBody: string): void {
   );
   expect(body.get('privacyAccepted')).toBe('yes');
   expect(body.get('honeypot')).toBe('');
+}
+
+function expectEmailJsPayload(spy: TestSpy): void {
+  const [serviceId, templateId, templateParams, options] = getSpyArgs(spy);
+  const params = templateParams as Record<string, unknown>;
+
+  expect(serviceId).toBe('service_test');
+  expect(templateId).toBe('template_53z902r');
+  expect(params['fullName']).toBe('Federico Croletti');
+  expect(params['email']).toBe('federico.croletti@gmail.com');
+  expect(params['replyTo']).toBe('federico.croletti@gmail.com');
+  expect(params['subject']).toBe('Collaborazione Angular');
+  expect(params['toEmail']).toBe('federico.croletti@gmail.com');
+  expect(options).toEqual({ publicKey: '_iLOaTnT9EoMQQvSn' });
+}
+
+function getSpyArgs(spy: TestSpy): unknown[] {
+  return spy.mock?.calls[0] ?? spy.calls?.argsFor(0) ?? [];
 }
 
 function createEmailJsSendSpy(): TestSpy {

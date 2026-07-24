@@ -1,3 +1,11 @@
+.form-card {
+  border: 1px solid var(--color-line);
+  background: var(--gradient-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-strong);
+}
+
 .form-card form {
   display: grid;
   gap: 14px;
@@ -7,14 +15,18 @@ mat-form-field {
   width: 100%;
 }
 
+/* ── Privacy & error text ─────────────────────────────────── */
+
 .privacy-copy,
 .form-error,
 .submission-message {
   font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
 }
 
 .privacy-copy {
   color: var(--color-muted);
+  line-height: 1.6;
 }
 
 .form-error,
@@ -24,7 +36,7 @@ mat-form-field {
 }
 
 .submission-message.is-success {
-  color: var(--color-accent);
+  color: var(--color-primary);
   font-weight: 800;
 }
 
@@ -32,11 +44,26 @@ mat-form-field {
   display: grid;
   gap: 10px;
   align-items: start;
+  padding: 14px;
+  border-radius: var(--radius-card);
+  background: rgba(18, 25, 32, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.submission-message.is-success {
+  border: 1px solid var(--color-primary-soft);
+}
+
+.submission-message.is-error {
+  border: 1px solid #fecaca;
 }
 
 .submission-message a {
   justify-self: start;
 }
+
+/* ── Honeypot (hidden) ────────────────────────────────────── */
 
 .honeypot {
   position: absolute;
@@ -47,8 +74,24 @@ mat-form-field {
   white-space: nowrap;
 }
 
+/* ── Submit button ────────────────────────────────────────── */
+
 button[type='submit'] {
   justify-self: start;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+button[type='submit']:hover {
+  transform: translateY(-1px);
+}
+
+button[type='submit']:active {
+  transform: translateY(0);
 }
 
 @media (max-width: 640px) {

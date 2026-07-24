@@ -1,15 +1,17 @@
-const contactEndpoint = 'https://federico-croletti-api.onrender.com/api/contact';
+const emailJsEndpoint = 'https://api.emailjs.com/api/v1.0/email/send';
+const fallbackEndpoint = 'https://formsubmit.co/ajax/federico.croletti@gmail.com';
 
 describe('Contact form', () => {
-  it('submits the contact form through the configured HTTP endpoint', () => {
-    cy.intercept('POST', contactEndpoint, (request) => {
-      expect(request.headers['content-type']).to.contain('application/x-www-form-urlencoded');
-      const body = new URLSearchParams(request.body);
-      expect(body.get('fullName')).to.eq('Federico Croletti');
-      expect(body.get('email')).to.eq('federico.croletti@gmail.com');
-      expect(body.get('requestType')).to.eq('website');
-      expect(body.get('privacyAccepted')).to.eq('yes');
-      expect(body.get('honeypot')).to.eq('');
+  it('submits the contact form through the configured EmailJS endpoint', () => {
+    cy.intercept('POST', emailJsEndpoint, (request) => {
+      expect(request.headers['content-type']).to.contain('application/json');
+      expect(request.body.template_params).to.include({
+        fullName: 'Federico Croletti',
+        email: 'federico.croletti@gmail.com',
+        requestType: 'website',
+        privacyAccepted: 'yes',
+        honeypot: '',
+      });
 
       request.reply({
         statusCode: 200,
@@ -38,7 +40,11 @@ describe('Contact form', () => {
   });
 
   it('shows a coherent error and email fallback when the form service fails', () => {
-    cy.intercept('POST', contactEndpoint, {
+    cy.intercept('POST', emailJsEndpoint, {
+      statusCode: 500,
+      body: { message: 'EmailJS unavailable' },
+    }).as('emailJsFailure');
+    cy.intercept('POST', fallbackEndpoint, {
       statusCode: 503,
       body: { success: false, message: 'CONTACT_EMAIL_NOT_CONFIGURED' },
     }).as('contactSubmitFailure');
@@ -49,6 +55,7 @@ describe('Contact form', () => {
     fillContactForm();
     cy.get('[data-cy="contact-submit"]').click();
 
+    cy.wait('@emailJsFailure');
     cy.wait('@contactSubmitFailure');
     cy.contains(
       "Il backend è raggiungibile, ma l'invio email non è ancora configurato sul server.",

@@ -3,20 +3,63 @@
   gap: 28px;
 }
 
+/* ── Filters ──────────────────────────────────────────────── */
+
 .project-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 8px;
+}
+
+.project-filters button {
+  position: relative;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-full);
+  background: rgba(18, 25, 32, 0.6);
+  color: var(--color-muted);
+  font-weight: 700;
+  transition:
+    all var(--transition-fast),
+    background-color var(--transition-fast);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.project-filters button:hover {
+  border-color: var(--color-primary);
+  color: var(--color-ink-strong);
+  background: var(--color-primary-soft);
 }
 
 .project-filters button.is-active {
-  border-color: var(--color-accent);
-  background: var(--color-accent-soft);
-  color: var(--color-primary-strong);
+  border-color: var(--color-primary);
+  background: var(--gradient-accent);
+  color: var(--color-bg);
+  box-shadow: 0 8px 20px rgb(212 175 55 / 22%);
 }
+
+/* ── Projects grid ────────────────────────────────────────── */
 
 .projects-grid {
   align-items: stretch;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-line);
+  background: var(--gradient-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-strong);
 }
 
 .project-card mat-card-content {
@@ -24,13 +67,35 @@
   gap: 18px;
 }
 
+.project-card mat-card-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-ink-strong);
+}
+
+.project-card mat-card-subtitle {
+  color: var(--color-primary);
+  font-weight: 800;
+  font-size: 0.82rem;
+}
+
+/* ── Project role ─────────────────────────────────────────── */
+
 .project-role {
   display: grid;
   gap: 4px;
   padding: 14px;
   border-radius: var(--radius-card);
-  background: var(--color-warm);
+  background: var(--color-panel);
+  border: 1px solid var(--color-line);
 }
+
+.project-role strong {
+  color: var(--color-ink-strong);
+}
+
+/* ── Tags ─────────────────────────────────────────────────── */
 
 .tag-list {
   display: flex;
@@ -42,13 +107,23 @@
 }
 
 .tag-list li {
-  color: var(--color-accent);
+  color: var(--color-primary);
   font-size: 0.82rem;
   font-weight: 800;
 }
+
+/* ── Private note ─────────────────────────────────────────── */
 
 .private-note {
   color: var(--color-muted);
   font-size: 0.9rem;
   font-weight: 700;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .project-card mat-card-content {
+    gap: 14px;
+  }
 }
