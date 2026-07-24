@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -20,6 +20,7 @@ export class ServicesPageComponent {
   private readonly seo = inject(SeoService);
 
   readonly serviceCategories = SERVICE_CATEGORIES;
+  readonly expandedCategoryId = signal(this.serviceCategories[0]?.id ?? '');
 
   constructor() {
     this.seo.update({
@@ -28,5 +29,15 @@ export class ServicesPageComponent {
         'Servizi informatici pratici: siti web, WordPress, assistenza PC, backup, formattazione, gestione email, PEC, SPID, firma digitale, automazioni AI e consulenza tecnica.',
       path: '/servizi',
     });
+  }
+
+  isCategoryExpanded(categoryId: string): boolean {
+    return this.expandedCategoryId() === categoryId;
+  }
+
+  toggleCategory(categoryId: string): void {
+    this.expandedCategoryId.update((currentCategoryId) =>
+      currentCategoryId === categoryId ? '' : categoryId,
+    );
   }
 }

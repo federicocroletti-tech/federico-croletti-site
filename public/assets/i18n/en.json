@@ -118,8 +118,7 @@
     "cv": {
       "title": "Download my CV",
       "body": "Want to learn more about my professional path, experience and technical skills? You can download my updated CV as a PDF.",
-      "cta": "Download CV",
-      "privacyNote": "On the public site I avoid showing full address, birth date and other sensitive personal details."
+      "cta": "Download CV"
     },
     "profile": {
       "eyebrow": "Professional profile",
@@ -454,90 +453,90 @@
   "privacy": {
     "eyebrow": "Privacy notice",
     "title": "Privacy Policy",
-    "intro": "This notice explains in plain language how personal data collected through the site and contact form is processed. The text is prepared according to privacy best practices and should be validated before final publication.",
+    "intro": "This notice explains how Federico Croletti processes personal data collected through the website, contact channels, online form and technical tools required to operate the service.",
     "sections": {
       "owner": {
         "title": "Owner",
-        "body": "The data controller is Federico Croletti. For privacy-related requests you can write to federico.croletti@gmail.com. No professional address, certified email or VAT number is published because these details have not been indicated as public data."
+        "body": "The data controller is Federico Croletti, who can be contacted at federico.croletti@gmail.com. The website is personal and professional in nature and presents skills, projects, IT services and contact channels. A DPO has not been appointed because, at present, the GDPR conditions requiring one do not apply."
       },
       "purpose": {
         "title": "Purpose",
-        "body": "The site is used for professional presentation, portfolio, promotion of IT services and management of contacts received from users, companies, professionals or private clients interested in collaborations, consulting or support requests."
+        "body": "Data is processed to present professional activity, show projects and services, reply to requests sent through the form, email, WhatsApp or social channels, evaluate collaborations or job opportunities, manage possible pre-contractual or contractual relationships and keep the website secure and functional."
       },
       "data": {
         "title": "Processed data",
-        "body": "The contact form may process full name, email, subject, request type, message, confirmation of the privacy notice and minimal technical data transmitted by the external sending service. You should not submit sensitive data or unnecessary information."
+        "body": "The data processed may include full name, email address, subject, request type, message content, confirmation of having read the privacy notice, language and cookie preferences stored in the browser, technical browsing data processed by hosting and security providers, aggregated analytics data only with consent, and any data the user voluntarily sends through email, WhatsApp, LinkedIn or GitHub."
       },
       "mandatory": {
         "title": "Mandatory and optional data",
-        "body": "The data requested by the form is necessary to understand and reply to the request. If it is not provided, the message may not be sent or managed. Any additional data voluntarily entered in the message is provided under the user's responsibility."
+        "body": "Mandatory form fields are necessary to send and manage the request. If they are not provided, the message cannot be sent or properly answered. Users are asked not to include special categories of data under Article 9 GDPR, judicial data or unnecessary information; any excessive data will be processed only if necessary to reply or deleted if irrelevant."
       },
       "legalBasis": {
         "title": "Legal basis",
-        "body": "The legal basis is the user's request and the performance of pre-contractual or contractual measures. Where appropriate, legitimate interest in managing communications voluntarily received may also apply. Consent is requested where necessary, for example for non-technical analytics tools."
+        "body": "The legal bases are the performance of pre-contractual or contractual measures requested by the data subject, legitimate interest in managing voluntarily received communications and protecting the website, compliance with any legal obligations and consent for non-essential analytics tools. Consent can be withdrawn at any time through cookie preferences."
       },
       "processing": {
         "title": "Processing methods",
-        "body": "Processing is carried out through IT tools, email, website hosting and the external form sending service. SMTP credentials, secret keys or private tokens are not used in the frontend code."
+        "body": "Processing is carried out through IT and telematic tools, including a static website, hosting services, email, contact form, email delivery services and analytics tools loaded only after consent. The frontend code does not contain SMTP credentials or private secret keys; any public keys present are used only for integration with configured providers."
       },
       "formProvider": {
         "title": "External form service",
-        "body": "The contact form uses FormSubmit, an external service compatible with static sites, to forward requests to the owner's email address without building a custom backend. FormSubmit may process the minimal technical data required to send the message; more information is available at https://formsubmit.co/privacy.pdf. On the first submission the service may require email confirmation of the recipient address."
+        "body": "The contact form is configured to send messages through EmailJS, without a proprietary backend and without a public fallback to other form services. Data entered in the form is transmitted to EmailJS to deliver the message to the controller's email address, according to the provider's notice and terms."
       },
       "hosting": {
         "title": "Hosting and publication",
-        "body": "The site is published as a static site on Render.com. Render.com may process technical data required to provide the service, such as technical logs, IP addresses and request data according to its own terms and notices."
+        "body": "The site is published on Render.com. The hosting provider may process technical data required to provide the service, such as IP addresses, request logs, user agent, access date and time, requested URLs and security information, according to its own notices and terms."
       },
       "retention": {
         "title": "Retention",
-        "body": "Received messages are kept only for the time needed to reply and manage the request. Expected operational period: maximum 12 months, unless further needs arise from obligations, rights protection or continuation of the professional relationship."
+        "body": "Received messages are kept for the time necessary to reply and manage the request, normally no longer than 12 months if no professional relationship follows. In case of collaboration, assignment or administrative obligations, the necessary data may be retained for the period required by applicable law and for rights protection. Cookie preferences remain in the browser until deletion, withdrawal or consent version update."
       },
       "recipients": {
         "title": "Recipients and technical providers",
-        "body": "Data may be accessed by Federico Croletti and by technical providers strictly necessary for the site and form operation, including Render.com for hosting, FormSubmit for message forwarding, Google Fonts for typography resources and Plausible only if the user accepts analytics."
+        "body": "Data may be processed by Federico Croletti and by strictly necessary technical providers: Render.com for hosting, EmailJS for message delivery, Google Fonts and Material Icons for graphic and typography resources, Plausible for aggregated statistics only with consent, and the external services chosen by the user when opening links to email, WhatsApp, LinkedIn or GitHub."
       },
       "transfers": {
         "title": "Transfers outside the EU",
-        "body": "Some technical providers may process data outside the European Economic Area. The specific safeguards and transfer bases should be verified in each provider's notices before final publication."
+        "body": "Some technical providers may process data outside the European Economic Area. In such cases, processing takes place according to the safeguards indicated by the respective providers, such as adequacy decisions, standard contractual clauses or other tools provided by Articles 44 et seq. GDPR."
       },
       "newsletter": {
         "title": "Newsletter and marketing",
-        "body": "The site does not use data for newsletters or unsolicited commercial communication."
+        "body": "The site does not provide newsletter subscription, automated commercial communications, advertising profiling or disclosure of data to third parties for marketing purposes. Any commercial reply is limited to requests voluntarily sent by the user."
       },
       "cookiesAnalytics": {
         "title": "Cookies and analytics",
-        "body": "The site stores cookie preferences locally as necessary technical data. Plausible analytics is disabled by default and is loaded only if the user gives consent. No marketing cookies or tools are configured."
+        "body": "The site uses necessary local technologies, such as localStorage, to remember language and cookie preferences. Plausible Analytics is disabled by default and is loaded only after consent to the Analytics category. Google Analytics, advertising tools, retargeting pixels or marketing cookies are not configured."
       },
       "thirdParties": {
         "title": "Third-party services",
-        "body": "External links to LinkedIn and GitHub, Google Fonts loading and FormSubmit for the contact form are present. Google Analytics, Google Tag Manager, Microsoft Clarity, Meta Pixel, LinkedIn Insight Tag, embedded maps, YouTube videos, reCAPTCHA or embedded social widgets were not detected."
+        "body": "External links to email, WhatsApp, LinkedIn and GitHub are present. When the user opens those links, subsequent processing is governed by the respective services' notices. The site loads resources from Google Fonts/Material Icons and may load Plausible only after consent. Embedded maps, YouTube videos, reCAPTCHA, Google Tag Manager, Microsoft Clarity, Meta Pixel or embedded social widgets are not present."
       },
       "security": {
         "title": "Security",
-        "body": "Technical measures proportionate to a static website are adopted to reduce unauthorized access, loss or misuse of data. The frontend does not contain secret keys, private tokens or service credentials."
+        "body": "Technical measures proportionate to the nature of the website are adopted, including HTTPS publication, minimization of requested data, an anti-spam honeypot in the form and absence of private credentials in the frontend. No online system can guarantee absolute security, but processing is limited to what is necessary for the stated purposes."
       },
       "rights": {
         "title": "Data subject rights",
-        "body": "You may request access, rectification, deletion, restriction, objection to processing and data portability where provided by the GDPR. You may also lodge a complaint with the competent supervisory authority."
+        "body": "The data subject may exercise, within the limits provided by the GDPR, the rights of access, rectification, deletion, restriction, objection, portability and withdrawal of consent. A complaint may also be lodged with the Italian Data Protection Authority or the competent supervisory authority."
       },
       "contact": {
         "title": "Privacy contact",
-        "body": "For privacy-related requests you can write to federico.croletti@gmail.com."
+        "body": "For privacy requests, exercise of rights or withdrawal of consent, you can write to federico.croletti@gmail.com indicating Privacy in the subject. Requests will be handled within the time limits provided by applicable law."
       },
       "updates": {
         "title": "Updates",
-        "body": "This notice may be updated if the site, external services or processing methods change. Last update: 15/07/2026."
+        "body": "This notice may be updated if the site, external services, purposes or processing methods change. Last update: 24/07/2026."
       },
       "legalReview": {
-        "title": "Validation note",
-        "body": "This notice is prepared according to privacy best practices for a static personal website, but it is not legal advice. Before final publication it should be reviewed with a professional."
+        "title": "Scope of this notice",
+        "body": "This notice applies only to this website and the connected contact channels. It does not govern third-party websites, platforms or services reachable through external links, which remain autonomous controllers or processors according to their own terms."
       }
     }
   },
   "cookieConsent": {
     "banner": {
       "title": "Cookie preferences",
-      "body": "We use technical cookies required for the site to work. With your consent we may also use Plausible for aggregated privacy-friendly statistics. You can accept, reject or manage your preferences.",
+      "body": "We use essential cookies. With consent, Plausible helps measure visits without profiling. Accept, reject or manage preferences.",
       "privacyLink": "Privacy Policy",
       "cookieLink": "Cookie Policy",
       "reject": "Reject non-essential",
@@ -571,47 +570,47 @@
   "cookiePolicy": {
     "eyebrow": "Cookie notice",
     "title": "Cookie Policy",
-    "intro": "This page explains which storage technologies or third-party services may be used by the site and how to manage consent.",
+    "intro": "This page describes cookies, localStorage and external services used by the website, distinguishing between necessary tools and tools activated only with consent.",
     "sections": {
       "what": {
         "title": "What cookies are",
-        "body": "Cookies and similar technologies are small technical tools that allow a site to work, remember preferences or collect statistical information. Some preferences may also be saved in localStorage, which remains in the user's browser."
+        "body": "Cookies are small files saved by the browser. Similar technologies, such as localStorage, make it possible to store local preferences without necessarily sending information to a server on each request. In this policy, the term cookie is used broadly to include these technologies as well."
       },
       "technical": {
         "title": "Technical and necessary cookies",
-        "body": "The site uses only technical data required for basic operation, including cookie preferences saved in localStorage. These tools are not used to profile users and do not require prior consent."
+        "body": "The site uses tools necessary for operation and preference storage, including the localStorage key federico-croletti-cookie-consent-v1 for cookie consent and preferred-language for the selected language. These tools do not profile the user and do not require prior consent."
       },
       "preferences": {
         "title": "Consent preferences",
-        "body": "The user's choice is saved in the browser to avoid showing the banner on every visit. The choice can always be changed from the Manage cookie preferences link in the footer."
+        "body": "The user's choice is saved in the browser together with the consent version and update date. It is used to avoid showing the banner on every visit and to remember whether the Analytics category was accepted or rejected. The choice can be changed from the Manage cookie preferences button in the footer."
       },
       "analytics": {
         "title": "Analytics",
-        "body": "The site may use Plausible Analytics only after user consent. Plausible is configured as a privacy-friendly analytics tool and is loaded dynamically only if the Analytics category is accepted."
+        "body": "Plausible Analytics is disabled by default and is dynamically loaded from plausible.io only if the user accepts the Analytics category. The tool is used for aggregated statistics about site usage, such as visited pages and traffic trends, without advertising profiling purposes."
       },
       "marketing": {
         "title": "Marketing and profiling",
-        "body": "Marketing cookies, advertising pixels or profiling tools are not present. The Marketing category remains disabled and cannot be selected."
+        "body": "Marketing cookies, advertising pixels, retargeting, commercial profiling or advertising tools are not present. The Marketing category is kept disabled and is not used by the site."
       },
       "thirdParties": {
         "title": "Third-party services",
-        "body": "Detected services: Render.com for hosting, FormSubmit for form sending, Google Fonts/Material Icons for fonts and icons, Plausible only after analytics consent, external links to LinkedIn and GitHub. Embedded maps, YouTube videos, reCAPTCHA or embedded social widgets are not present."
+        "body": "The site uses Render.com for hosting, Google Fonts and Material Icons for fonts and icons, EmailJS for contact form delivery, and Plausible only after analytics consent. Links to email, WhatsApp, LinkedIn and GitHub are also present. Embedded maps, YouTube videos, reCAPTCHA, Google Tag Manager, Microsoft Clarity, Meta Pixel or embedded social widgets are not present."
       },
       "manage": {
         "title": "How to change consent",
-        "body": "You can change or revoke consent at any time from the Manage cookie preferences button in the site footer. Rejecting non-essential cookies does not prevent navigation."
+        "body": "You can change or revoke consent at any time from the Manage cookie preferences button in the site footer. Rejecting non-essential tools does not prevent navigation, use of the main pages or submission of the contact form."
       },
       "browser": {
         "title": "Browser settings",
-        "body": "You can also delete cookies and local data from your browser settings. Deleting local preferences will make the banner appear again on the next visit."
+        "body": "You can also delete cookies and local data from your browser settings. Deleting localStorage or site data removes saved preferences and will make the banner appear again on the next visit."
       },
       "updates": {
         "title": "Updates",
-        "body": "This cookie policy may be updated if new technical tools, analytics or third-party services are added. Last update: 15/07/2026."
+        "body": "This Cookie Policy may be updated if new technical tools, analytics, third-party services or different consent management methods are added. Last update: 24/07/2026."
       },
       "legalReview": {
-        "title": "Validation note",
-        "body": "This cookie policy is prepared according to best practices for a static personal website, but it should be reviewed with a professional for final legal compliance."
+        "title": "Relationship with the Privacy Policy",
+        "body": "For information about controller, purposes, legal bases, recipients, transfers and data subject rights, please also see the Privacy Policy. This Cookie Policy supplements the privacy notice for cookies, localStorage and similar tools."
       }
     }
   }

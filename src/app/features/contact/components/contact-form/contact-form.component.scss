@@ -1,10 +1,96 @@
+.form-card {
+  border-color: rgb(126 228 190 / 24%);
+  background:
+    radial-gradient(circle at 90% 0%, rgb(88 198 162 / 9%), transparent 18rem),
+    linear-gradient(145deg, rgb(255 255 255 / 7%), rgb(255 255 255 / 3%)),
+    var(--color-surface-strong);
+}
+
 .form-card form {
   display: grid;
-  gap: 14px;
+  gap: 20px;
 }
 
 mat-form-field {
   width: 100%;
+  --mdc-outlined-text-field-container-color: rgb(255 255 255 / 7%);
+  --mdc-outlined-text-field-input-text-color: var(--color-ink);
+  --mdc-outlined-text-field-hover-input-text-color: var(--color-ink);
+  --mdc-outlined-text-field-focus-input-text-color: var(--color-ink);
+  --mat-form-field-container-text-color: var(--color-ink);
+  --mat-select-enabled-trigger-text-color: var(--color-ink);
+}
+
+:host ::ng-deep .mat-mdc-text-field-wrapper {
+  min-height: 58px;
+  background: rgb(255 255 255 / 7%);
+  transition:
+    background-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+:host ::ng-deep .mat-mdc-form-field-infix {
+  min-height: 56px;
+  padding-top: 18px !important;
+  padding-bottom: 12px !important;
+}
+
+:host ::ng-deep textarea.mat-mdc-input-element {
+  min-height: 150px;
+}
+
+:host ::ng-deep .mat-mdc-form-field:hover .mat-mdc-text-field-wrapper,
+:host ::ng-deep .mat-mdc-form-field.mat-focused .mat-mdc-text-field-wrapper {
+  background: rgb(255 255 255 / 10%);
+  box-shadow: 0 0 0 1px rgb(126 228 190 / 12%);
+}
+
+:host ::ng-deep input.mat-mdc-input-element,
+:host ::ng-deep textarea.mat-mdc-input-element,
+:host ::ng-deep .mat-mdc-select-value-text,
+:host ::ng-deep .mat-mdc-select-min-line {
+  color: var(--color-ink) !important;
+  -webkit-text-fill-color: var(--color-ink) !important;
+}
+
+:host ::ng-deep input.mat-mdc-input-element:hover,
+:host ::ng-deep input.mat-mdc-input-element:focus,
+:host ::ng-deep textarea.mat-mdc-input-element:hover,
+:host ::ng-deep textarea.mat-mdc-input-element:focus {
+  color: var(--color-ink) !important;
+  -webkit-text-fill-color: var(--color-ink) !important;
+}
+
+:host ::ng-deep .mat-mdc-floating-label,
+:host ::ng-deep .mat-mdc-form-field-icon-suffix,
+:host ::ng-deep .mat-mdc-select-arrow {
+  color: var(--color-muted) !important;
+}
+
+:host ::ng-deep .mat-mdc-checkbox {
+  color: var(--color-ink);
+}
+
+:host ::ng-deep .mat-mdc-checkbox .mdc-label {
+  color: var(--color-ink) !important;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+:host ::ng-deep .mat-mdc-checkbox .mdc-form-field {
+  min-height: 44px;
+  align-items: center;
+}
+
+:host ::ng-deep .mat-mdc-checkbox .mdc-label a {
+  color: var(--color-accent-strong) !important;
+  text-decoration-color: rgb(126 228 190 / 56%);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+:host ::ng-deep .mat-mdc-checkbox .mdc-checkbox__background {
+  border-color: rgb(237 246 248 / 72%) !important;
 }
 
 .privacy-copy,
@@ -19,12 +105,12 @@ mat-form-field {
 
 .form-error,
 .submission-message.is-error {
-  color: #b3261e;
+  color: #ff9f9f;
   font-weight: 700;
 }
 
 .submission-message.is-success {
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
   font-weight: 800;
 }
 
@@ -32,6 +118,10 @@ mat-form-field {
   display: grid;
   gap: 10px;
   align-items: start;
+  padding: 14px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  background: rgb(255 255 255 / 6%);
 }
 
 .submission-message a {
@@ -49,9 +139,14 @@ mat-form-field {
 
 button[type='submit'] {
   justify-self: start;
+  min-width: 190px;
 }
 
 @media (max-width: 640px) {
+  .form-card form {
+    gap: 18px;
+  }
+
   button[type='submit'] {
     width: 100%;
   }

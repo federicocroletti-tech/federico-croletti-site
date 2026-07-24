@@ -2,7 +2,7 @@ export const environment = {
   production: false,
   siteUrl: 'https://federico-croletti-site.onrender.com',
   contactEndpoint: '',
-  contactFallbackEndpoint: 'https://formsubmit.co/ajax/federico.croletti@gmail.com',
+  contactFallbackEndpoint: '',
   emailJs: {
     serviceId: 'service_u4z63bo',
     templateId: 'template_53z902r',

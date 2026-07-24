@@ -45,8 +45,11 @@
           </ul>
 
           <ul class="tag-list" [attr.aria-label]="'projects.tagLabel' | translate">
-            @for (tag of project.tags; track tag) {
+            @for (tag of project.tags.slice(0, 4); track tag) {
               <li>{{ tag }}</li>
+            }
+            @if (project.tags.length > 4) {
+              <li class="tag-list__more">+{{ project.tags.length - 4 }}</li>
             }
           </ul>
         </mat-card-content>

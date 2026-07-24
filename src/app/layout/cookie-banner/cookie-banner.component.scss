@@ -1,26 +1,33 @@
 .cookie-banner {
   position: fixed;
-  right: 16px;
-  bottom: 16px;
-  left: 16px;
-  z-index: 1000;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  left: auto;
+  z-index: 1300;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 18px;
-  width: min(100% - 32px, 980px);
-  padding: 18px;
-  margin: 0 auto;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  width: min(100% - 32px, 520px);
+  padding: 16px;
   border: 1px solid var(--color-line);
-  border-radius: var(--radius-card);
-  background: rgb(255 255 255 / 98%);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 8% 0%, rgb(88 198 162 / 10%), transparent 18rem), rgb(14 30 41 / 96%);
   box-shadow: var(--shadow-soft);
   color: var(--color-ink);
+  backdrop-filter: blur(20px);
 }
 
 .cookie-banner__title {
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   color: var(--color-primary-strong);
   font-weight: 800;
+}
+
+.cookie-banner__body {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.48;
 }
 
 .cookie-banner__links,
@@ -32,21 +39,64 @@
 }
 
 .cookie-banner__links {
-  margin-top: 10px;
-  font-size: 0.92rem;
+  margin-top: 8px;
+  font-size: 0.9rem;
   font-weight: 700;
 }
 
+.cookie-banner__links a {
+  color: var(--color-accent-strong);
+}
+
 .cookie-banner__actions {
-  justify-content: flex-end;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, auto));
+  justify-content: flex-start;
+}
+
+.cookie-banner__actions .mat-mdc-button-base {
+  min-height: 44px;
+  padding: 0 14px;
+}
+
+.cookie-banner__button--accept {
+  min-width: 118px;
 }
 
 @media (max-width: 760px) {
   .cookie-banner {
+    right: max(10px, env(safe-area-inset-right));
+    bottom: max(10px, env(safe-area-inset-bottom));
+    left: max(10px, env(safe-area-inset-left));
     grid-template-columns: 1fr;
+    width: auto;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .cookie-banner__body,
+  .cookie-banner__links {
+    font-size: 0.86rem;
+  }
+
+  .cookie-banner__links {
+    margin-top: 6px;
+  }
+
+  .cookie-banner__actions {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
   }
 
   .cookie-banner__actions .mat-mdc-button-base {
     width: 100%;
+    min-height: 44px;
+    font-size: 0.78rem;
+  }
+
+  .cookie-banner__button--accept {
+    order: -1;
+    grid-column: 1 / -1;
   }
 }

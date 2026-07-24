@@ -94,7 +94,7 @@ export class ContactService {
 
   private postMessage(endpoint: string, payload: ContactFormValue): Observable<ContactResponse> {
     return this.http
-      .post<FormServiceResponse>(endpoint, this.toFormSubmitPayload(payload), {
+      .post<FormServiceResponse>(endpoint, this.toUrlEncodedPayload(payload), {
         headers: new HttpHeaders({
           Accept: 'application/json',
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -132,7 +132,7 @@ export class ContactService {
     );
   }
 
-  private toFormSubmitPayload(payload: ContactFormValue): string {
+  private toUrlEncodedPayload(payload: ContactFormValue): string {
     return new HttpParams({
       fromObject: {
         fullName: payload.fullName,

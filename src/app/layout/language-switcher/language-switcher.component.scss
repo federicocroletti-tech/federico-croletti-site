@@ -3,14 +3,28 @@
 }
 
 .language-switcher {
-  --mat-standard-button-toggle-height: 36px;
-  border: 1px solid rgb(216 224 232 / 88%);
+  --mat-standard-button-toggle-height: 44px;
+  border: 1px solid var(--color-line);
   border-radius: 999px;
+  background: rgb(255 255 255 / 4%);
   overflow: hidden;
 }
 
 :host ::ng-deep .mat-button-toggle-label-content {
-  padding: 0 10px;
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 0 12px;
   font-size: 0.78rem;
   font-weight: 800;
+}
+
+:host ::ng-deep .mat-button-toggle {
+  color: var(--color-muted);
+  background: transparent;
+}
+
+:host ::ng-deep .mat-button-toggle-checked {
+  color: #06110d;
+  background: var(--color-accent);
 }

@@ -6,8 +6,9 @@
   transform: translateY(-160%);
   padding: 10px 14px;
   border-radius: 999px;
-  background: var(--color-primary);
-  color: #fff;
+  background: var(--color-accent);
+  color: #06110d;
+  font-weight: 900;
   text-decoration: none;
   transition: transform 160ms ease;
 }
@@ -19,72 +20,190 @@
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   display: grid;
   grid-template-columns: auto 1fr auto;
-  gap: 18px;
+  gap: 14px;
   align-items: center;
   width: min(100% - 32px, var(--content-width));
-  margin: 16px auto 0;
-  padding: 10px 12px;
-  border: 1px solid rgb(216 224 232 / 78%);
+  margin: 14px auto 0;
+  padding: 10px;
+  border: 1px solid rgb(169 186 200 / 20%);
   border-radius: 999px;
-  background: rgb(255 255 255 / 88%);
-  box-shadow: 0 14px 32px rgb(23 35 49 / 8%);
-  backdrop-filter: blur(18px);
+  background: rgb(7 16 23 / 78%);
+  box-shadow: 0 22px 60px rgb(0 0 0 / 28%);
+  backdrop-filter: blur(22px);
 }
 
 .brand {
   display: inline-flex;
   gap: 10px;
   align-items: center;
+  min-height: 44px;
+  min-width: 0;
   color: var(--color-primary-strong);
   font-weight: 900;
+  letter-spacing: 0;
   text-decoration: none;
   white-space: nowrap;
 }
 
 .brand img {
+  flex: 0 0 auto;
   width: 48px;
   height: 32px;
   object-fit: contain;
+}
+
+.brand span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.nav-toggle-button {
+  display: none;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  padding: 10px;
+  border: 1px solid var(--color-line);
+  border-radius: 50%;
+  background: rgb(255 255 255 / 5%);
+  cursor: pointer;
+}
+
+.nav-toggle-button span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--color-primary-strong);
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease;
 }
 
 .navigation {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 4px;
+  gap: 6px;
 }
 
 .navigation a {
+  min-height: 44px;
+  color: var(--color-muted);
   font-weight: 800;
 }
 
 .navigation a.is-active {
-  background: var(--color-accent-soft);
-  color: var(--color-primary-strong);
+  background: rgb(88 198 162 / 16%);
+  color: var(--color-accent-strong);
+}
+
+.header-language {
+  justify-self: end;
+}
+
+.nav-language {
+  display: none;
 }
 
 @media (max-width: 820px) {
   .site-header {
-    grid-template-columns: 1fr auto;
-    border-radius: 24px;
+    position: sticky;
+    grid-template-columns: minmax(0, 1fr) auto;
+    border-radius: 26px;
+  }
+
+  .header-language {
+    display: none;
+  }
+
+  .nav-language {
+    display: inline-flex;
+    width: 100%;
+    padding-top: 10px;
+    margin-top: 4px;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .nav-toggle-button {
+    display: inline-grid;
+    gap: 4px;
+    flex: 0 0 auto;
   }
 
   .navigation {
-    grid-column: 1 / -1;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    left: 0;
+    display: grid;
+    max-height: 0;
+    padding: 0 10px;
+    overflow: hidden;
+    border: 1px solid transparent;
+    border-radius: 22px;
+    background: rgb(7 16 23 / 94%);
+    box-shadow: var(--shadow-soft);
+    opacity: 0;
+    transform: translateY(-8px);
+    transition:
+      max-height 220ms ease,
+      opacity 180ms ease,
+      transform 180ms ease,
+      padding 180ms ease,
+      border-color 180ms ease;
+  }
+
+  .navigation a {
     justify-content: flex-start;
-    overflow-x: auto;
+    min-height: 46px;
+  }
+
+  .nav-toggle:checked ~ .navigation {
+    max-height: 430px;
+    padding: 10px;
+    border-color: var(--color-line);
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-toggle:checked + .nav-toggle-button span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .nav-toggle:checked + .nav-toggle-button span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle:checked + .nav-toggle-button span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
   }
 }
 
 @media (max-width: 520px) {
   .site-header {
     width: min(100% - 20px, var(--content-width));
+    gap: 8px;
+    padding: 8px;
   }
 
   .brand span {
     font-size: 0.92rem;
+  }
+
+  .brand img {
+    width: 38px;
   }
 }

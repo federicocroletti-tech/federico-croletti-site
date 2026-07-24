@@ -43,10 +43,6 @@ Bottone:
 - Link: `/assets/documents/cv/Federico_Croletti_CV.pdf`
 - Attributo HTML: `download`
 
-Nota privacy:
-
-> Nel sito pubblico è meglio evitare di mostrare indirizzo completo, data di nascita e altri dati personali sensibili. Questi dati possono restare solo nel CV se realmente necessario.
-
 ## Timeline esperienza
 
 Creare una timeline semplice con Angular Material o layout custom SCSS.

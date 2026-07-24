@@ -1,13 +1,27 @@
 .contact-page {
   display: grid;
-  gap: 30px;
+  gap: clamp(24px, 4vw, 42px);
+}
+
+.contact-page .page-heading {
+  max-width: 940px;
+  padding: clamp(20px, 4vw, 34px);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-panel);
+  background:
+    radial-gradient(circle at 94% 0%, rgb(88 198 162 / 10%), transparent 18rem),
+    linear-gradient(145deg, rgb(255 255 255 / 7%), rgb(255 255 255 / 3%));
 }
 
 .contact-layout {
   display: grid;
-  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
-  gap: clamp(22px, 5vw, 48px);
+  grid-template-columns: minmax(260px, 0.58fr) minmax(0, 1.42fr);
+  gap: clamp(20px, 4vw, 42px);
   align-items: start;
+}
+
+.contact-layout app-contact-form {
+  min-width: 0;
 }
 
 .contact-cards {
@@ -19,8 +33,40 @@
   margin-bottom: 4px;
 }
 
+.contact-cards .site-card {
+  height: auto;
+}
+
+.contact-cards .site-card:first-of-type {
+  border-color: rgb(126 228 190 / 26%);
+  background:
+    linear-gradient(145deg, rgb(88 198 162 / 10%), rgb(255 255 255 / 5%)), var(--color-surface);
+}
+
+.contact-cards mat-card-actions {
+  padding-top: 0;
+}
+
+.contact-cards mat-card-header + mat-card-actions {
+  padding-top: 18px;
+}
+
+.contact-cards a {
+  margin-left: 0;
+}
+
 @media (max-width: 900px) {
   .contact-layout {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-page .page-heading {
+    padding: 18px;
+  }
+
+  .contact-cards {
+    gap: 12px;
   }
 }

@@ -17,6 +17,7 @@ describe('ContactService', () => {
   let httpMock: HttpTestingController;
   let service: ContactService;
   let emailJsSend: TestSpy;
+  const configuredFallbackEndpoint = 'https://forms.example.test/contact';
   const originalContactEndpoint = environment.contactEndpoint;
   const originalFallbackEndpoint = environment.contactFallbackEndpoint;
   const originalEmailJsConfig = { ...environment.emailJs };
@@ -59,7 +60,7 @@ describe('ContactService', () => {
     expect(emailJsSend).toHaveBeenCalledWith(
       'service_test',
       'template_53z902r',
-      expect.objectContaining({
+      objectContaining({
         fullName: 'Federico Croletti',
         email: 'federico.croletti@gmail.com',
         replyTo: 'federico.croletti@gmail.com',
@@ -71,7 +72,8 @@ describe('ContactService', () => {
     expect(result).toEqual({ success: true, message: 'OK' });
   });
 
-  it('should send through the public fallback when EmailJS is not fully configured', () => {
+  it('should send through the public fallback when explicitly configured and EmailJS is not fully configured', () => {
+    configureFallback();
     environment.emailJs.serviceId = '';
     let result: ContactResponse | undefined;
 
@@ -80,7 +82,7 @@ describe('ContactService', () => {
     });
 
     const request = httpMock.expectOne(environment.contactFallbackEndpoint);
-    expectFormSubmitPayload(request.request.body);
+    expectUrlEncodedPayload(request.request.body);
     request.flush({ success: 'true', message: 'OK' });
 
     expect(result).toEqual({ success: true, message: 'OK' });
@@ -97,7 +99,7 @@ describe('ContactService', () => {
 
     const request = httpMock.expectOne(environment.contactEndpoint);
     expect(request.request.method).toBe('POST');
-    expectFormSubmitPayload(request.request.body);
+    expectUrlEncodedPayload(request.request.body);
     request.flush({ success: 'true', message: 'OK' });
 
     expect(emailJsSend).not.toHaveBeenCalled();
@@ -126,7 +128,8 @@ describe('ContactService', () => {
     expect(result).toEqual({ success: true, message: 'OK' });
   });
 
-  it('should send through the public fallback when backend and EmailJS fail', async () => {
+  it('should send through the public fallback when explicitly configured and backend and EmailJS fail', async () => {
+    configureFallback();
     environment.contactEndpoint = 'https://backend.test/api/contact';
     configureEmailJs();
     rejectSpy(emailJsSend, new Error(CONTACT_SEND_FAILED));
@@ -145,13 +148,14 @@ describe('ContactService', () => {
     await Promise.resolve();
 
     const fallbackRequest = httpMock.expectOne(environment.contactFallbackEndpoint);
-    expectFormSubmitPayload(fallbackRequest.request.body);
+    expectUrlEncodedPayload(fallbackRequest.request.body);
     fallbackRequest.flush({ success: 'true', message: 'OK' });
 
     expect(result).toEqual({ success: true, message: 'OK' });
   });
 
   it('should not treat a fallback response without explicit success as sent', () => {
+    configureFallback();
     environment.emailJs.serviceId = '';
     let errorMessage: string | undefined;
 
@@ -167,6 +171,7 @@ describe('ContactService', () => {
   });
 
   it('should expose a network-blocked error when the public fallback is blocked', () => {
+    configureFallback();
     environment.emailJs.serviceId = '';
     let errorMessage: string | undefined;
 
@@ -184,6 +189,7 @@ describe('ContactService', () => {
   });
 
   it('should use the public fallback for backend email configuration errors', () => {
+    configureFallback();
     environment.contactEndpoint = 'https://backend.test/api/contact';
     environment.emailJs.serviceId = '';
     let result: ContactResponse | undefined;
@@ -222,6 +228,23 @@ function configureEmailJs(): void {
   environment.emailJs.publicKey = '_iLOaTnT9EoMQQvSn';
 }
 
+function configureFallback(): void {
+  environment.contactFallbackEndpoint = 'https://forms.example.test/contact';
+}
+
+function objectContaining<T extends Record<string, unknown>>(value: T): unknown {
+  const testGlobal = globalThis as typeof globalThis & {
+    expect?: { objectContaining?: (value: T) => unknown };
+    jasmine?: { objectContaining?: (value: T) => unknown };
+  };
+
+  return (
+    testGlobal.expect?.objectContaining?.(value) ??
+    testGlobal.jasmine?.objectContaining?.(value) ??
+    value
+  );
+}
+
 function createPayload(): ContactFormValue {
   return {
     fullName: 'Federico Croletti',
@@ -234,7 +257,7 @@ function createPayload(): ContactFormValue {
   };
 }
 
-function expectFormSubmitPayload(requestBody: string): void {
+function expectUrlEncodedPayload(requestBody: string): void {
   const body = new URLSearchParams(requestBody);
   expect(body.get('fullName')).toBe('Federico Croletti');
   expect(body.get('email')).toBe('federico.croletti@gmail.com');

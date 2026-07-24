@@ -45,10 +45,6 @@ CTA:
 
 Milano.
 
-Nota:
-
-> Non mostrare indirizzo completo di casa nel sito pubblico. È sufficiente indicare Milano, Italia.
-
 ### Telefono
 
 Telefono e WhatsApp non sono pubblicati finche non viene fornito un numero pubblico valido.

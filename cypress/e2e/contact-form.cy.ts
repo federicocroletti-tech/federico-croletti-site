@@ -1,19 +1,21 @@
-const contactEndpoint = 'https://federico-croletti-api.onrender.com/api/contact';
+const emailJsEndpoint = 'https://api.emailjs.com/api/v1.0/email/send';
 
 describe('Contact form', () => {
-  it('submits the contact form through the configured HTTP endpoint', () => {
-    cy.intercept('POST', contactEndpoint, (request) => {
-      expect(request.headers['content-type']).to.contain('application/x-www-form-urlencoded');
-      const body = new URLSearchParams(request.body);
-      expect(body.get('fullName')).to.eq('Federico Croletti');
-      expect(body.get('email')).to.eq('federico.croletti@gmail.com');
-      expect(body.get('requestType')).to.eq('website');
-      expect(body.get('privacyAccepted')).to.eq('yes');
-      expect(body.get('honeypot')).to.eq('');
+  it('submits the contact form through EmailJS', () => {
+    cy.intercept('POST', emailJsEndpoint, (request) => {
+      expect(request.headers['content-type']).to.contain('application/json');
+      const body = toEmailJsBody(request.body);
+      expect(body.service_id).to.eq('service_u4z63bo');
+      expect(body.template_id).to.eq('template_53z902r');
+      expect(body.template_params.fullName).to.eq('Federico Croletti');
+      expect(body.template_params.email).to.eq('federico.croletti@gmail.com');
+      expect(body.template_params.requestType).to.eq('website');
+      expect(body.template_params.privacyAccepted).to.eq('yes');
+      expect(body.template_params.honeypot).to.eq('');
 
       request.reply({
         statusCode: 200,
-        body: { success: 'true', message: 'OK' },
+        body: 'OK',
       });
     }).as('contactSubmit');
 
@@ -37,10 +39,10 @@ describe('Contact form', () => {
     );
   });
 
-  it('shows a coherent error and email fallback when the form service fails', () => {
-    cy.intercept('POST', contactEndpoint, {
+  it('shows a coherent error and email fallback when EmailJS fails', () => {
+    cy.intercept('POST', emailJsEndpoint, {
       statusCode: 503,
-      body: { success: false, message: 'CONTACT_EMAIL_NOT_CONFIGURED' },
+      body: 'CONTACT_SEND_FAILED',
     }).as('contactSubmitFailure');
 
     cy.visit('/contatti');
@@ -51,7 +53,7 @@ describe('Contact form', () => {
 
     cy.wait('@contactSubmitFailure');
     cy.contains(
-      "Il backend è raggiungibile, ma l'invio email non è ancora configurato sul server.",
+      'Non è stato possibile inviare il messaggio tramite il servizio esterno. Puoi riprovare più tardi oppure scrivermi direttamente via email.',
     ).should('be.visible');
     cy.get('[data-cy="contact-email-fallback"]')
       .should('be.visible')
@@ -70,4 +72,8 @@ function fillContactForm() {
     'Vorrei parlare di una possibile collaborazione tecnica tramite il sito personale.',
   );
   cy.get('[data-cy="contact-privacy"] input[type="checkbox"]').check({ force: true });
+}
+
+function toEmailJsBody(body: unknown) {
+  return typeof body === 'string' ? JSON.parse(body) : body;
 }

@@ -6,7 +6,7 @@
   >
     <div>
       <p class="cookie-banner__title">{{ 'cookieConsent.banner.title' | translate }}</p>
-      <p>{{ 'cookieConsent.banner.body' | translate }}</p>
+      <p class="cookie-banner__body">{{ 'cookieConsent.banner.body' | translate }}</p>
       <p class="cookie-banner__links">
         <a routerLink="/privacy">{{ 'cookieConsent.banner.privacyLink' | translate }}</a>
         <a routerLink="/cookie-policy">{{ 'cookieConsent.banner.cookieLink' | translate }}</a>
@@ -14,13 +14,29 @@
     </div>
 
     <div class="cookie-banner__actions">
-      <button mat-button type="button" (click)="rejectNonNecessary()">
+      <button
+        mat-button
+        class="cookie-banner__button cookie-banner__button--reject"
+        type="button"
+        (click)="rejectNonNecessary()"
+      >
         {{ 'cookieConsent.banner.reject' | translate }}
       </button>
-      <button mat-stroked-button type="button" (click)="openPreferences()">
+      <button
+        mat-stroked-button
+        class="cookie-banner__button cookie-banner__button--manage"
+        type="button"
+        (click)="openPreferences()"
+      >
         {{ 'cookieConsent.banner.manage' | translate }}
       </button>
-      <button mat-flat-button color="primary" type="button" (click)="acceptAll()">
+      <button
+        mat-flat-button
+        color="primary"
+        class="cookie-banner__button cookie-banner__button--accept"
+        type="button"
+        (click)="acceptAll()"
+      >
         {{ 'cookieConsent.banner.accept' | translate }}
       </button>
     </div>
