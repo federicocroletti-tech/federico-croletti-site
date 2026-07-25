@@ -384,6 +384,11 @@
         "description": "Piattaforma WebGIS in Angular per visualizzare qualità dell'aria e inquinamento urbano su mappa Leaflet, con poligoni GeoJSON, layer ambientali, dashboard e dati mock modificabili.",
         "role": "Ideazione, architettura GIS/front-end, sviluppo Angular, integrazione Leaflet, modellazione dati GeoJSON, dashboard e deploy Render."
       },
+      "radiciSanGiovanniLipioni": {
+        "title": "Radici San Giovanni Lipioni",
+        "description": "Guida digitale interattiva per esplorare il borgo con mappa, itinerari lenti, racconti dimostrativi, dati JSON e un chatbot basato su contenuti controllati.",
+        "role": "Ideazione, architettura front-end Angular, struttura contenuti, routing, UX responsive, gestione dati dimostrativi e deploy Render."
+      },
       "smartSales": {
         "title": "Smart Sales - Micro Frontend Cart",
         "description": "Micro Frontend dedicato alla gestione del carrello in un ecosistema Angular con shell applicativa e architettura a moduli federati.",

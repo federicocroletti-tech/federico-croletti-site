@@ -384,6 +384,11 @@
         "description": "Angular WebGIS platform for visualizing urban air quality and pollution on a Leaflet map, with GeoJSON polygons, environmental layers, dashboard views and editable mock data.",
         "role": "Product ideation, GIS/front-end architecture, Angular development, Leaflet integration, GeoJSON data modeling, dashboard work and Render deploy."
       },
+      "radiciSanGiovanniLipioni": {
+        "title": "Radici San Giovanni Lipioni",
+        "description": "Interactive digital guide to explore the village through a map, slow itineraries, demo stories, JSON data and a chatbot based on controlled content.",
+        "role": "Product ideation, Angular front-end architecture, content structure, routing, responsive UX, demo data management and Render deploy."
+      },
       "smartSales": {
         "title": "Smart Sales - Micro Frontend Cart",
         "description": "Micro Frontend dedicated to cart management in an Angular ecosystem with application shell and federated module architecture.",

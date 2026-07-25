@@ -74,6 +74,17 @@ export const PROJECTS: readonly ProjectItem[] = [
     isPublic: true,
   },
   {
+    id: 'radici-san-giovanni-lipioni',
+    titleKey: 'projects.items.radiciSanGiovanniLipioni.title',
+    descriptionKey: 'projects.items.radiciSanGiovanniLipioni.description',
+    roleKey: 'projects.items.radiciSanGiovanniLipioni.role',
+    technologies: ['Angular', 'TypeScript', 'SCSS', 'Angular Router', 'JSON', 'Render.com'],
+    status: 'prototype',
+    demoUrl: 'https://radici-san-giovanni-lipioni.onrender.com/',
+    tags: ['Angular', 'Mappe', 'AI', 'Prodotto personale'],
+    isPublic: true,
+  },
+  {
     id: 'smart-sales-cart',
     titleKey: 'projects.items.smartSales.title',
     descriptionKey: 'projects.items.smartSales.description',
