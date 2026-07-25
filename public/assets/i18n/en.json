@@ -374,6 +374,11 @@
         "description": "Demo and future MVP to help motorcycle workshops manage client requests, interventions, WhatsApp contacts, calls and first-level support through an AI bot.",
         "role": "Product ideation, functional analysis, front-end architecture, Angular prototyping and MVP roadmap."
       },
+      "airmapItalia": {
+        "title": "AIRMAP ITALIA - Air quality WebGIS",
+        "description": "Angular WebGIS platform for visualizing urban air quality and pollution on a Leaflet map, with GeoJSON polygons, environmental layers, dashboard views and editable mock data.",
+        "role": "Product ideation, GIS/front-end architecture, Angular development, Leaflet integration, GeoJSON data modeling, dashboard work and Render deploy."
+      },
       "smartSales": {
         "title": "Smart Sales - Micro Frontend Cart",
         "description": "Micro Frontend dedicated to cart management in an Angular ecosystem with application shell and federated module architecture.",

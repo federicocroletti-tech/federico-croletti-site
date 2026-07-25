@@ -374,6 +374,11 @@
         "description": "Demo e futuro MVP per aiutare officine moto a gestire richieste clienti, interventi, contatti WhatsApp, chiamate e primo livello di supporto tramite bot AI.",
         "role": "Ideazione prodotto, analisi funzionale, architettura front-end, prototipazione Angular e definizione roadmap MVP."
       },
+      "airmapItalia": {
+        "title": "AIRMAP ITALIA - WebGIS qualità dell'aria",
+        "description": "Piattaforma WebGIS in Angular per visualizzare qualità dell'aria e inquinamento urbano su mappa Leaflet, con poligoni GeoJSON, layer ambientali, dashboard e dati mock modificabili.",
+        "role": "Ideazione, architettura GIS/front-end, sviluppo Angular, integrazione Leaflet, modellazione dati GeoJSON, dashboard e deploy Render."
+      },
       "smartSales": {
         "title": "Smart Sales - Micro Frontend Cart",
         "description": "Micro Frontend dedicato alla gestione del carrello in un ecosistema Angular con shell applicativa e architettura a moduli federati.",
