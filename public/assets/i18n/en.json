@@ -374,6 +374,11 @@
         "description": "Demo and future MVP to help motorcycle workshops manage client requests, interventions, WhatsApp contacts, calls and first-level support through an AI bot.",
         "role": "Product ideation, functional analysis, front-end architecture, Angular prototyping and MVP roadmap."
       },
+      "fitCoachPro": {
+        "title": "Fit Coach Pro Website",
+        "description": "Modern personal trainer website with landing page, services, method, testimonials, booking form, privacy consent and granular cookie preferences.",
+        "role": "Angular scaffolding, standalone architecture, responsive UX/UI, base SEO, Open Graph, sitemap, robots.txt and demo GDPR flow."
+      },
       "airmapItalia": {
         "title": "AIRMAP ITALIA - Air quality WebGIS",
         "description": "Angular WebGIS platform for visualizing urban air quality and pollution on a Leaflet map, with GeoJSON polygons, environmental layers, dashboard views and editable mock data.",
