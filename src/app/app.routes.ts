@@ -32,6 +32,13 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'portfolio',
+        loadComponent: () =>
+          import('./features/projects/page/projects-page.component').then(
+            (m) => m.ProjectsPageComponent,
+          ),
+      },
+      {
         path: 'contatti',
         loadComponent: () =>
           import('./features/contact/page/contact-page.component').then(
