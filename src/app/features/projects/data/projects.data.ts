@@ -47,6 +47,7 @@ export const PROJECTS: readonly ProjectItem[] = [
       'GDPR',
     ],
     status: 'completed',
+    demoUrl: 'https://fit-coach-pro-website.onrender.com/',
     githubUrl: 'https://github.com/federicocroletti-tech/fit-coach-pro-website',
     tags: ['Angular', 'Prodotto personale'],
     isPublic: true,
