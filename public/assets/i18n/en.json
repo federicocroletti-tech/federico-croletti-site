@@ -379,6 +379,11 @@
         "description": "Modern personal trainer website with landing page, services, method, testimonials, booking form, privacy consent and granular cookie preferences.",
         "role": "Angular scaffolding, standalone architecture, responsive UX/UI, base SEO, Open Graph, sitemap, robots.txt and demo GDPR flow."
       },
+      "etfDipAlert": {
+        "title": "ETF Tracker / Dip Alert",
+        "description": "Python system that monitors a list of ETFs, downloads prices with yfinance, calculates daily changes and drawdowns across multiple time windows, and sends email alerts through Brevo when configured thresholds are met.",
+        "role": "Product ideation, repository setup, JSON configuration modeling, Python monitoring logic, ticker resolver, GitHub Actions workflow and Brevo email integration."
+      },
       "airmapItalia": {
         "title": "AIRMAP ITALIA - Air quality WebGIS",
         "description": "Angular WebGIS platform for visualizing urban air quality and pollution on a Leaflet map, with GeoJSON polygons, environmental layers, dashboard views and editable mock data.",

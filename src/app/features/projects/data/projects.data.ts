@@ -53,6 +53,16 @@ export const PROJECTS: readonly ProjectItem[] = [
     isPublic: true,
   },
   {
+    id: 'etf-dip-alert',
+    titleKey: 'projects.items.etfDipAlert.title',
+    descriptionKey: 'projects.items.etfDipAlert.description',
+    roleKey: 'projects.items.etfDipAlert.role',
+    technologies: ['Python', 'yfinance', 'Brevo', 'GitHub Actions', 'JSON', 'Email automation'],
+    status: 'completed',
+    tags: ['Prodotto personale', 'Python', 'Automazione', 'Finance'],
+    isPublic: false,
+  },
+  {
     id: 'airmap-italia-gis',
     titleKey: 'projects.items.airmapItalia.title',
     descriptionKey: 'projects.items.airmapItalia.description',
