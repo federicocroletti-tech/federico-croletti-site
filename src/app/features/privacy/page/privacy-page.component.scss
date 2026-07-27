@@ -12,3 +12,9 @@
 .privacy-list .site-card {
   height: auto;
 }
+
+@media (min-width: 901px) and (max-width: 1920px), (min-width: 901px) and (max-height: 820px) {
+  .privacy-page {
+    gap: 22px;
+  }
+}

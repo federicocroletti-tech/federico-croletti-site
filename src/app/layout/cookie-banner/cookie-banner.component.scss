@@ -63,6 +63,28 @@
   min-width: 118px;
 }
 
+@media (min-width: 901px) and (max-width: 1920px), (min-width: 901px) and (max-height: 820px) {
+  .cookie-banner {
+    width: min(100% - 32px, 440px);
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .cookie-banner__body {
+    font-size: 0.9rem;
+    line-height: 1.42;
+  }
+
+  .cookie-banner__actions {
+    gap: 8px;
+  }
+
+  .cookie-banner__actions .mat-mdc-button-base {
+    min-height: 40px;
+    padding: 0 12px;
+  }
+}
+
 @media (max-width: 760px) {
   .cookie-banner {
     right: max(10px, env(safe-area-inset-right));

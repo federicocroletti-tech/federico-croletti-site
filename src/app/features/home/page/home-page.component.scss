@@ -300,6 +300,56 @@
   background: linear-gradient(180deg, var(--color-accent-strong), var(--color-primary));
 }
 
+@media (min-width: 901px) and (max-width: 1920px), (min-width: 901px) and (max-height: 820px) {
+  .hero-section {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.78fr);
+    gap: clamp(24px, 4vw, 48px);
+    min-height: clamp(500px, calc(100vh - 148px), 600px);
+  }
+
+  .hero-section::before {
+    inset: clamp(22px, 5vw, 58px) -24px auto auto;
+    width: min(42vw, 420px);
+  }
+
+  .hero-copy {
+    gap: 18px;
+    max-width: 680px;
+  }
+
+  .hero-copy h1 {
+    max-width: 14.5ch;
+    font-size: clamp(2.35rem, 3.6vw, 3.75rem);
+  }
+
+  .identity-panel {
+    gap: 18px;
+    padding: clamp(20px, 2.8vw, 30px);
+  }
+
+  .identity-panel img {
+    width: min(100%, 340px);
+  }
+
+  .local-intent-section {
+    padding-top: clamp(22px, 2.6vw, 36px);
+  }
+
+  .reviews-panel {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .reviews-panel > a {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .help-section,
+  .experience-section {
+    gap: clamp(24px, 4vw, 46px);
+  }
+}
+
 @media (max-width: 900px) {
   .hero-section,
   .experience-section,

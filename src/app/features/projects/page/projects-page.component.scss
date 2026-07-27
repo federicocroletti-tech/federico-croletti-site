@@ -73,6 +73,16 @@
   font-weight: 700;
 }
 
+@media (min-width: 901px) and (max-width: 1920px), (min-width: 901px) and (max-height: 820px) {
+  .projects-page {
+    gap: 24px;
+  }
+
+  .project-card mat-card-content {
+    gap: 14px;
+  }
+}
+
 @media (max-width: 640px) {
   .project-filters {
     width: 100%;
