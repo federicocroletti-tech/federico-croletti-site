@@ -384,6 +384,11 @@
         "description": "Sistema Python per monitorare una lista di ETF, scaricare i prezzi con yfinance, calcolare variazioni e drawdown su più orizzonti temporali e inviare alert email tramite Brevo quando le soglie configurate vengono superate.",
         "role": "Ideazione, setup repository, modellazione configurazioni JSON, logica Python di monitoraggio, resolver ticker, workflow GitHub Actions e integrazione email Brevo."
       },
+      "taxiOpportunityRadar": {
+        "title": "Taxi Opportunity Radar",
+        "description": "Prodotto data-driven per tassisti e NCC che combina meteo e segnali eventi dal web per suggerire aree con maggiore domanda potenziale, con report giornaliero automatico via email.",
+        "role": "Ideazione prodotto, sviluppo TypeScript/Node, scoring domanda locale, integrazione Open-Meteo, parser eventi web (JSON-LD), automazione GitHub Actions e reportistica email con Brevo."
+      },
       "airmapItalia": {
         "title": "AIRMAP ITALIA - WebGIS qualità dell'aria",
         "description": "Piattaforma WebGIS in Angular per visualizzare qualità dell'aria e inquinamento urbano su mappa Leaflet, con poligoni GeoJSON, layer ambientali, dashboard e dati mock modificabili.",
