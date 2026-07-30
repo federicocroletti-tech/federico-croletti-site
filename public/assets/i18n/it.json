@@ -379,6 +379,16 @@
         "description": "Sito web moderno per personal trainer con landing page, servizi, metodo, testimonianze, form di prenotazione, consenso privacy e gestione cookie granulare.",
         "role": "Scaffolding Angular, architettura standalone, UX/UI responsive, SEO base, Open Graph, sitemap, robots.txt e flusso GDPR demo."
       },
+      "danielPantusoSite": {
+        "title": "Daniel Pantuso Giardiniere - Sito vetrina",
+        "description": "Sito vetrina professionale per attivita di giardinaggio a Milano, con contenuti SEO, contatto rapido e form che apre WhatsApp con messaggio precompilato.",
+        "role": "Analisi requisiti, sviluppo Angular standalone, UX responsive, ottimizzazione SEO tecnica e setup deploy statico."
+      },
+      "motoRoutePlanner": {
+        "title": "MotoRoute Planner",
+        "description": "Applicazione SPA in Vue 3 per pianificare itinerari moto, visualizzare percorsi su mappa Leaflet e gestire dashboard, mock data, i18n e feature flag.",
+        "role": "Progettazione architettura front-end, sviluppo Vue/TypeScript, integrazione mappe Leaflet e configurazione build/deploy statico."
+      },
       "etfDipAlert": {
         "title": "ETF Tracker / Dip Alert",
         "description": "Sistema Python per monitorare una lista di ETF, scaricare i prezzi con yfinance, calcolare variazioni e drawdown su più orizzonti temporali e inviare alert email tramite Brevo quando le soglie configurate vengono superate.",
@@ -388,6 +398,11 @@
         "title": "Taxi Opportunity Radar",
         "description": "Prodotto data-driven per tassisti e NCC che combina meteo e segnali eventi dal web per suggerire aree con maggiore domanda potenziale, con report giornaliero automatico via email.",
         "role": "Ideazione prodotto, sviluppo TypeScript/Node, scoring domanda locale, integrazione Open-Meteo, parser eventi web (JSON-LD), automazione GitHub Actions e reportistica email con Brevo."
+      },
+      "itLeadRadar": {
+        "title": "IT Lead Radar",
+        "description": "Monitor automatico Node.js + TypeScript che analizza fonti pubbliche per individuare lead IT e inviare alert email via Brevo con deduplica persistente.",
+        "role": "Ideazione prodotto, sviluppo pipeline di raccolta/scoring, automazione GitHub Actions e integrazione alert email."
       },
       "airmapItalia": {
         "title": "AIRMAP ITALIA - WebGIS qualità dell'aria",

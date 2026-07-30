@@ -379,6 +379,16 @@
         "description": "Modern personal trainer website with landing page, services, method, testimonials, booking form, privacy consent and granular cookie preferences.",
         "role": "Angular scaffolding, standalone architecture, responsive UX/UI, base SEO, Open Graph, sitemap, robots.txt and demo GDPR flow."
       },
+      "danielPantusoSite": {
+        "title": "Daniel Pantuso Gardener - Showcase Website",
+        "description": "Professional showcase website for gardening services in Milan, with SEO-focused content, quick contact options and a form that opens WhatsApp with a prefilled message.",
+        "role": "Requirements analysis, Angular standalone development, responsive UX, technical SEO optimization and static deployment setup."
+      },
+      "motoRoutePlanner": {
+        "title": "MotoRoute Planner",
+        "description": "Vue 3 SPA for planning motorcycle itineraries, visualizing routes on Leaflet maps and managing dashboard views, mock data, i18n and feature flags.",
+        "role": "Front-end architecture design, Vue/TypeScript development, Leaflet map integration and static build/deploy setup."
+      },
       "etfDipAlert": {
         "title": "ETF Tracker / Dip Alert",
         "description": "Python system that monitors a list of ETFs, downloads prices with yfinance, calculates daily changes and drawdowns across multiple time windows, and sends email alerts through Brevo when configured thresholds are met.",
@@ -388,6 +398,11 @@
         "title": "Taxi Opportunity Radar",
         "description": "Data-driven product for taxi and private-hire drivers that combines weather and web event signals to suggest areas with higher potential demand, with automatic daily email reports.",
         "role": "Product ideation, TypeScript/Node development, local-demand scoring, Open-Meteo integration, web event parsing (JSON-LD), GitHub Actions automation and Brevo email reporting."
+      },
+      "itLeadRadar": {
+        "title": "IT Lead Radar",
+        "description": "Automated Node.js + TypeScript monitor that scans public sources to identify IT leads and sends Brevo email alerts with persistent deduplication.",
+        "role": "Product ideation, collection/scoring pipeline development, GitHub Actions automation and email alert integration."
       },
       "airmapItalia": {
         "title": "AIRMAP ITALIA - Air quality WebGIS",
