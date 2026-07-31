@@ -384,6 +384,11 @@
         "description": "Professional showcase website for gardening services in Milan, with SEO-focused content, quick contact options and a form that opens WhatsApp with a prefilled message.",
         "role": "Requirements analysis, Angular standalone development, responsive UX, technical SEO optimization and static deployment setup."
       },
+      "menuSmartQr": {
+        "title": "Menu Smart QR",
+        "description": "Web app to digitize menus and catalogs through QR codes, with fast mobile consultation.",
+        "role": "Product ideation, Angular front-end development and deployment on Render."
+      },
       "motoRoutePlanner": {
         "title": "MotoRoute Planner",
         "description": "Vue 3 SPA for planning motorcycle itineraries, visualizing routes on Leaflet maps and managing dashboard views, mock data, i18n and feature flags.",

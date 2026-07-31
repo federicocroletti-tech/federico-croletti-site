@@ -384,6 +384,11 @@
         "description": "Sito vetrina professionale per attivita di giardinaggio a Milano, con contenuti SEO, contatto rapido e form che apre WhatsApp con messaggio precompilato.",
         "role": "Analisi requisiti, sviluppo Angular standalone, UX responsive, ottimizzazione SEO tecnica e setup deploy statico."
       },
+      "menuSmartQr": {
+        "title": "Menu Smart QR",
+        "description": "Applicazione web per digitalizzare menu e cataloghi tramite QR code, con consultazione veloce da smartphone.",
+        "role": "Ideazione prodotto, sviluppo front-end Angular e pubblicazione su Render."
+      },
       "motoRoutePlanner": {
         "title": "MotoRoute Planner",
         "description": "Applicazione SPA in Vue 3 per pianificare itinerari moto, visualizzare percorsi su mappa Leaflet e gestire dashboard, mock data, i18n e feature flag.",
