@@ -419,6 +419,26 @@
         "description": "Interactive digital guide to explore the village through a map, slow itineraries, demo stories, JSON data and a chatbot based on controlled content.",
         "role": "Product ideation, Angular front-end architecture, content structure, routing, responsive UX, demo data management and Render deploy."
       },
+      "regaliVicini": {
+        "title": "Regali Vicini - Facebook Catalog",
+        "description": "Local application for organizing Facebook posts offering free items: it imports links and text supplied by the user, recognizes keywords, removes duplicates, manages states and stores the catalog locally.",
+        "role": "Product ideation, React/Node full-stack development, authorized Meta and Gmail connector design, with a focus on privacy and security."
+      },
+      "personalInvestmentRadar": {
+        "title": "Personal Investment Radar",
+        "description": "Full-stack application for tracking personal portfolios, analyzing risk, drawdown and scenarios, importing Fineco snapshots, and managing watchlists and technical alerts with traceable data.",
+        "role": "Angular/NestJS full-stack architecture and development, PostgreSQL modeling with Prisma, financial-data integrations, application security and containerized deployment."
+      },
+      "cryptoDeepAlert": {
+        "title": "Crypto Deep Alert",
+        "description": "Python system that monitors cryptocurrencies, calculates drawdown, rallies, volatility, volume and momentum across multiple time frames, and sends email reports with quantitative alerts.",
+        "role": "Product ideation, Python monitoring-engine development, threshold configuration, HTML report generation and Brevo email integration."
+      },
+      "stockDeepAlert": {
+        "title": "Financial Instruments Daily Monitor",
+        "description": "Python system for daily monitoring of stocks and bonds, with price, fundamentals, yield, risk and drawdown analysis plus automated email reports.",
+        "role": "Product ideation, analysis and scoring engine development, financial-provider integration, HTML/PDF reporting and GitHub Actions automation."
+      },
       "smartSales": {
         "title": "Smart Sales - Micro Frontend Cart",
         "description": "Micro Frontend dedicated to cart management in an Angular ecosystem with application shell and federated module architecture.",
