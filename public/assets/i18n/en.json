@@ -369,6 +369,11 @@
         "description": "Personal site built with Angular, Angular Material, SCSS and i18n to present profile, projects, CV and contact channels.",
         "role": "Ideation, UX, front-end development, architecture and deploy."
       },
+      "contentCockpit": {
+        "title": "Content Cockpit",
+        "description": "Personal editorial assistant for organizing profiles, ideas, sources, verification work and workload across my Instagram projects.",
+        "role": "Product ideation, static Angular architecture, MVP development, local persistence, testing and Render deploy setup."
+      },
       "motoSmart": {
         "title": "Moto Smart / Officina Moto Smart",
         "description": "Demo and future MVP to help motorcycle workshops manage client requests, interventions, WhatsApp contacts, calls and first-level support through an AI bot.",
