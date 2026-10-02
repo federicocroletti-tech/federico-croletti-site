@@ -409,6 +409,11 @@
         "description": "Automated Node.js + TypeScript monitor that scans public sources to identify IT leads and sends Brevo email alerts with persistent deduplication.",
         "role": "Product ideation, collection/scoring pipeline development, GitHub Actions automation and email alert integration."
       },
+      "sendMailPromotore": {
+        "title": "Mail Promotore",
+        "description": "Full-stack application for managing recipient lists, email templates, send history, exclusions and controlled SMTP delivery with automatic duplicate blocking per campaign.",
+        "role": "Product ideation, React/Node development, JSON archive modeling, anti-duplicate rules, Render setup and focus on privacy and operational safety."
+      },
       "airmapItalia": {
         "title": "AIRMAP ITALIA - Air quality WebGIS",
         "description": "Angular WebGIS platform for visualizing urban air quality and pollution on a Leaflet map, with GeoJSON polygons, environmental layers, dashboard views and editable mock data.",

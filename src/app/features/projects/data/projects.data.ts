@@ -134,6 +134,18 @@ export const PROJECTS: readonly ProjectItem[] = [
     isPublic: true,
   },
   {
+    id: 'send-mail-promotore',
+    titleKey: 'projects.items.sendMailPromotore.title',
+    descriptionKey: 'projects.items.sendMailPromotore.description',
+    roleKey: 'projects.items.sendMailPromotore.role',
+    technologies: ['React', 'TypeScript', 'Vite', 'Express', 'Nodemailer', 'Render.com', 'JSON'],
+    status: 'prototype',
+    demoUrl: 'https://send-mail-promotore.onrender.com/',
+    githubUrl: 'https://github.com/federicocroletti-tech/send-mail-promotore',
+    tags: ['Prodotto personale', 'Automazione'],
+    isPublic: true,
+  },
+  {
     id: 'airmap-italia-gis',
     titleKey: 'projects.items.airmapItalia.title',
     descriptionKey: 'projects.items.airmapItalia.description',

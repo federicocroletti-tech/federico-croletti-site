@@ -409,6 +409,11 @@
         "description": "Monitor automatico Node.js + TypeScript che analizza fonti pubbliche per individuare lead IT e inviare alert email via Brevo con deduplica persistente.",
         "role": "Ideazione prodotto, sviluppo pipeline di raccolta/scoring, automazione GitHub Actions e integrazione alert email."
       },
+      "sendMailPromotore": {
+        "title": "Mail Promotore",
+        "description": "Applicazione full-stack per gestire liste di destinatari, template email, storico invii, esclusioni e invio SMTP controllato con blocco automatico dei doppioni per campagna.",
+        "role": "Ideazione prodotto, sviluppo React/Node, modellazione archivi JSON, regole anti-doppio, configurazione Render e attenzione a privacy e sicurezza operativa."
+      },
       "airmapItalia": {
         "title": "AIRMAP ITALIA - WebGIS qualità dell'aria",
         "description": "Piattaforma WebGIS in Angular per visualizzare qualità dell'aria e inquinamento urbano su mappa Leaflet, con poligoni GeoJSON, layer ambientali, dashboard e dati mock modificabili.",
