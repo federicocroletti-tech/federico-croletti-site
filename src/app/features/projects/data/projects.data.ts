@@ -22,6 +22,17 @@ export const PROJECTS: readonly ProjectItem[] = [
     isPublic: false,
   },
   {
+    id: 'content-cockpit',
+    titleKey: 'projects.items.contentCockpit.title',
+    descriptionKey: 'projects.items.contentCockpit.description',
+    roleKey: 'projects.items.contentCockpit.role',
+    technologies: ['Angular', 'TypeScript', 'SCSS', 'Angular Signals', 'localStorage', 'Render.com'],
+    status: 'in-development',
+    demoUrl: 'https://content-cockpit-auth.onrender.com',
+    tags: ['Angular', 'Prodotto personale'],
+    isPublic: true,
+  },
+  {
     id: 'moto-smart',
     titleKey: 'projects.items.motoSmart.title',
     descriptionKey: 'projects.items.motoSmart.description',
