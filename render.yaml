@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: federico-croletti-site
+    runtime: static
+    plan: free
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist/federico-croletti-site/browser
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
