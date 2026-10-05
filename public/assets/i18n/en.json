@@ -614,7 +614,7 @@
       },
       "recipients": {
         "title": "Recipients and technical providers",
-        "body": "Data may be processed by Federico Croletti and by strictly necessary technical providers: Render.com for hosting, EmailJS for message delivery, Google Fonts and Material Icons for graphic and typography resources, Plausible for aggregated statistics only with consent, and the external services chosen by the user when opening links to email, WhatsApp, LinkedIn or GitHub."
+        "body": "Data may be processed by Federico Croletti and by strictly necessary technical providers: Render.com for hosting, EmailJS for message delivery and Plausible for aggregated statistics only with consent, as well as by the external services chosen by the user when opening links to email, WhatsApp, LinkedIn, GitHub or Google Business. Site fonts and icons are served as local assets."
       },
       "transfers": {
         "title": "Transfers outside the EU",
@@ -630,7 +630,7 @@
       },
       "thirdParties": {
         "title": "Third-party services",
-        "body": "External links to email, WhatsApp, LinkedIn and GitHub are present. When the user opens those links, subsequent processing is governed by the respective services' notices. The site loads resources from Google Fonts/Material Icons and may load Plausible only after consent. Embedded maps, YouTube videos, reCAPTCHA, Google Tag Manager, Microsoft Clarity, Meta Pixel or embedded social widgets are not present."
+        "body": "External links to email, WhatsApp, LinkedIn, GitHub and Google Business/Profile on Google are present. When the user opens those links, subsequent processing is governed by the respective services' notices. The site may load Plausible only after Analytics consent. Embedded maps, YouTube videos, reCAPTCHA, Google Tag Manager, Microsoft Clarity, Meta Pixel or embedded social widgets are not present."
       },
       "security": {
         "title": "Security",
@@ -646,7 +646,7 @@
       },
       "updates": {
         "title": "Updates",
-        "body": "This notice may be updated if the site, external services, purposes or processing methods change. Last update: 24/07/2026."
+        "body": "This notice may be updated if the site, external services, purposes or processing methods change. Last update: 05/10/2026."
       },
       "legalReview": {
         "title": "Scope of this notice",
@@ -715,7 +715,7 @@
       },
       "thirdParties": {
         "title": "Third-party services",
-        "body": "The site uses Render.com for hosting, Google Fonts and Material Icons for fonts and icons, EmailJS for contact form delivery, and Plausible only after analytics consent. Links to email, WhatsApp, LinkedIn and GitHub are also present. Embedded maps, YouTube videos, reCAPTCHA, Google Tag Manager, Microsoft Clarity, Meta Pixel or embedded social widgets are not present."
+        "body": "The site uses Render.com for hosting, EmailJS for contact form delivery, and Plausible only after analytics consent. Fonts and icons are served as local assets. Links to email, WhatsApp, LinkedIn, GitHub and Google Business are also present. Embedded maps, YouTube videos, reCAPTCHA, Google Tag Manager, Microsoft Clarity, Meta Pixel or embedded social widgets are not present."
       },
       "manage": {
         "title": "How to change consent",
@@ -727,7 +727,7 @@
       },
       "updates": {
         "title": "Updates",
-        "body": "This Cookie Policy may be updated if new technical tools, analytics, third-party services or different consent management methods are added. Last update: 24/07/2026."
+        "body": "This Cookie Policy may be updated if new technical tools, analytics, third-party services or different consent management methods are added. Last update: 05/10/2026."
       },
       "legalReview": {
         "title": "Relationship with the Privacy Policy",

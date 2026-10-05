@@ -23,9 +23,9 @@ export class ContactPageComponent {
 
   constructor() {
     this.seo.update({
-      title: 'Contatti - Federico Croletti',
+      title: 'Contatti e recensioni Google - Federico Croletti',
       description:
-        'Contatta Federico Croletti per opportunita lavorative, collaborazioni, consulenze Angular, front-end enterprise e progetti web.',
+        'Contatta Federico Croletti, tecnico informatico a Milano. Telefono, WhatsApp, email, sito web ufficiale, profilo Google Business e recensioni Google.',
       path: '/contatti',
     });
   }

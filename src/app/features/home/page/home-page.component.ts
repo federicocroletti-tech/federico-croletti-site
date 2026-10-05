@@ -99,7 +99,7 @@ export class HomePageComponent {
 
   readonly googleReviewSummary = {
     rating: '5,0',
-    reviewCountLabel: 'Numero recensioni aggiornato sul profilo Google Business',
+    reviewCountLabel: '27 recensioni su Google Business',
   } as const;
 
   readonly skillHighlights: readonly TextCard[] = [
@@ -131,7 +131,7 @@ export class HomePageComponent {
     this.seo.update({
       title: 'Federico Croletti - Supporto Informatico e Consulenza Digitale a Milano',
       description:
-        'Tecnico informatico e consulente digitale a Milano. Assistenza PC, configurazione email, PEC, SPID, sicurezza informatica, consulenza IT e sviluppo software. Contatta Federico Croletti.',
+        'Federico Croletti, tecnico informatico a Milano. Assistenza PC, configurazione email, PEC, SPID, sicurezza informatica, consulenza IT, recensioni Google e sito web ufficiale.',
       path: '/',
     });
   }

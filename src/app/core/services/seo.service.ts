@@ -20,21 +20,30 @@ export class SeoService {
   private readonly fallbackImage = '/assets/images/og/federico-croletti-og.png';
 
   update(config: SeoPageConfig): void {
-    const image = config.image ?? this.fallbackImage;
+    const image = this.toAbsoluteUrl(config.image ?? this.fallbackImage);
     const url = `${this.siteUrl}${config.path}`;
 
     this.titleService.setTitle(config.title);
     this.meta.updateTag({ name: 'description', content: config.description });
     this.meta.updateTag({ name: 'robots', content: 'index, follow, max-image-preview:large' });
+    this.meta.updateTag({ name: 'author', content: 'Federico Croletti' });
+    this.meta.updateTag({ name: 'geo.region', content: 'IT-MI' });
+    this.meta.updateTag({ name: 'geo.placename', content: 'Milano' });
     this.meta.updateTag({ property: 'og:title', content: config.title });
     this.meta.updateTag({ property: 'og:description', content: config.description });
     this.meta.updateTag({ property: 'og:type', content: 'website' });
+    this.meta.updateTag({ property: 'og:site_name', content: 'Federico Croletti' });
     this.meta.updateTag({ property: 'og:url', content: url });
     this.meta.updateTag({ property: 'og:image', content: image });
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
     this.meta.updateTag({ name: 'twitter:title', content: config.title });
     this.meta.updateTag({ name: 'twitter:description', content: config.description });
+    this.meta.updateTag({ name: 'twitter:image', content: image });
     this.updateCanonical(url);
+  }
+
+  private toAbsoluteUrl(url: string): string {
+    return url.startsWith('http') ? url : `${this.siteUrl}${url}`;
   }
 
   private updateCanonical(url: string): void {

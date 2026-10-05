@@ -617,7 +617,7 @@
       },
       "recipients": {
         "title": "Destinatari e fornitori tecnici",
-        "body": "I dati possono essere trattati da Federico Croletti e da fornitori tecnici strettamente necessari: Render.com per hosting, EmailJS per l'invio dei messaggi, Google Fonts e Material Icons per risorse grafiche e tipografiche, Plausible per statistiche aggregate solo previo consenso, oltre ai servizi esterni scelti dall'utente quando apre link verso email, WhatsApp, LinkedIn o GitHub."
+        "body": "I dati possono essere trattati da Federico Croletti e da fornitori tecnici strettamente necessari: Render.com per hosting, EmailJS per l'invio dei messaggi e Plausible per statistiche aggregate solo previo consenso, oltre ai servizi esterni scelti dall'utente quando apre link verso email, WhatsApp, LinkedIn, GitHub o Google Business. I font e le icone del sito sono serviti come asset locali."
       },
       "transfers": {
         "title": "Trasferimenti extra UE",
@@ -633,7 +633,7 @@
       },
       "thirdParties": {
         "title": "Servizi terzi",
-        "body": "Sono presenti collegamenti esterni verso email, WhatsApp, LinkedIn e GitHub. Quando l'utente apre tali link, il trattamento successivo è regolato dalle informative dei rispettivi servizi. Il sito carica risorse da Google Fonts/Material Icons e può caricare Plausible solo dopo consenso. Non sono presenti mappe incorporate, video YouTube, reCAPTCHA, Google Tag Manager, Microsoft Clarity, Meta Pixel o widget social incorporati."
+        "body": "Sono presenti collegamenti esterni verso email, WhatsApp, LinkedIn, GitHub e Google Business/Profile Google. Quando l'utente apre tali link, il trattamento successivo è regolato dalle informative dei rispettivi servizi. Il sito può caricare Plausible solo dopo consenso Analytics. Non sono presenti mappe incorporate, video YouTube, reCAPTCHA, Google Tag Manager, Microsoft Clarity, Meta Pixel o widget social incorporati."
       },
       "security": {
         "title": "Sicurezza",
@@ -649,7 +649,7 @@
       },
       "updates": {
         "title": "Aggiornamenti",
-        "body": "Questa informativa potrà essere aggiornata in caso di modifiche al sito, ai servizi esterni, alle finalità o alle modalità di trattamento. Ultimo aggiornamento: 24/07/2026."
+        "body": "Questa informativa potrà essere aggiornata in caso di modifiche al sito, ai servizi esterni, alle finalità o alle modalità di trattamento. Ultimo aggiornamento: 05/10/2026."
       },
       "legalReview": {
         "title": "Ambito dell'informativa",
@@ -718,7 +718,7 @@
       },
       "thirdParties": {
         "title": "Servizi terzi",
-        "body": "Il sito usa Render.com per hosting, Google Fonts e Material Icons per font e icone, EmailJS per l'invio del form contatti e Plausible solo previo consenso analytics. Sono inoltre presenti link verso email, WhatsApp, LinkedIn e GitHub. Non sono presenti mappe incorporate, video YouTube, reCAPTCHA, Google Tag Manager, Microsoft Clarity, Meta Pixel o widget social incorporati."
+        "body": "Il sito usa Render.com per hosting, EmailJS per l'invio del form contatti e Plausible solo previo consenso analytics. Font e icone sono serviti come asset locali. Sono inoltre presenti link verso email, WhatsApp, LinkedIn, GitHub e Google Business. Non sono presenti mappe incorporate, video YouTube, reCAPTCHA, Google Tag Manager, Microsoft Clarity, Meta Pixel o widget social incorporati."
       },
       "manage": {
         "title": "Come modificare il consenso",
@@ -730,7 +730,7 @@
       },
       "updates": {
         "title": "Aggiornamenti",
-        "body": "Questa Cookie Policy potrà essere aggiornata se verranno aggiunti nuovi strumenti tecnici, analytics, servizi terzi o diverse modalità di gestione del consenso. Ultimo aggiornamento: 24/07/2026."
+        "body": "Questa Cookie Policy potrà essere aggiornata se verranno aggiunti nuovi strumenti tecnici, analytics, servizi terzi o diverse modalità di gestione del consenso. Ultimo aggiornamento: 05/10/2026."
       },
       "legalReview": {
         "title": "Rapporto con la Privacy Policy",

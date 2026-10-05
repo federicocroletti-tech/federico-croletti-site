@@ -24,9 +24,9 @@ export class ServicesPageComponent {
 
   constructor() {
     this.seo.update({
-      title: 'Servizi informatici - Federico Croletti',
+      title: 'Servizi informatici a Milano - Federico Croletti',
       description:
-        'Servizi informatici pratici: siti web, WordPress, assistenza PC, backup, formattazione, gestione email, PEC, SPID, firma digitale, automazioni AI e consulenza tecnica.',
+        'Servizi informatici a Milano con Federico Croletti: assistenza PC, backup, formattazione, gestione email, PEC, SPID, firma digitale, sicurezza online, siti web e consulenza IT.',
       path: '/servizi',
     });
   }
