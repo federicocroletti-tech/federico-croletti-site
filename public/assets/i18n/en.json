@@ -449,6 +449,51 @@
         "description": "Python system for daily monitoring of stocks and bonds, with price, fundamentals, yield, risk and drawdown analysis plus automated email reports.",
         "role": "Product ideation, analysis and scoring engine development, financial-provider integration, HTML/PDF reporting and GitHub Actions automation."
       },
+      "bankTransactionsDashboard": {
+        "title": "Bank Transactions Dashboard",
+        "description": "Angular dashboard for browsing and managing simulated bank account transactions, with balances, filters, sorting, pagination, detail views and new transaction entry.",
+        "role": "Angular front-end development, mock API modeling, application facade, Reactive Forms, local persistence and focused tests for core rules."
+      },
+      "finecoPortfolioImporter": {
+        "title": "Fineco Portfolio Importer",
+        "description": "Python utility that reads Fineco exports, normalizes positions and movements, and generates JSON files for asset allocation, tax analysis and tax-loss recovery opportunities.",
+        "role": "Product ideation, financial-data parsing, instrument classification, JSON output generation and operational documentation for personal use."
+      },
+      "localDemandRadar": {
+        "title": "Local Demand Radar",
+        "description": "Data-driven application for local businesses that combines weather, events, areas and inactive customers to generate demand scores, opportunities and email reports.",
+        "role": "Product ideation, data-signal definition, opportunity scoring and setup of the automated reporting flow."
+      },
+      "federicoItSupport": {
+        "title": "Federico IT Support",
+        "description": "Web project dedicated to IT support and Italian digital services for expats and residents in Italy.",
+        "role": "Offer definition, content structure, SEO positioning and prototyping of the informational experience."
+      },
+      "milanoCateringWeddingChatbot": {
+        "title": "Milano Catering Wedding - Consulting Chatbot",
+        "description": "Project base for a first-consultation assistant on the Milano Catering Wedding website, designed to qualify leads without inventing menus, prices or availability.",
+        "role": "Website analysis, conversational MVP definition, lead schema, static prototype, privacy documentation and WordPress integration options."
+      },
+      "whatsappBot": {
+        "title": "WhatsApp Bot with Meta API",
+        "description": "Node.js backend for a WhatsApp bot based on official Meta APIs, Express and OpenAI integration for controlled automated replies.",
+        "role": "Backend development, API configuration, webhook handling and preparation for AI service integration."
+      },
+      "whatsappChatFe": {
+        "title": "WhatsApp Chat Frontend",
+        "description": "Angular frontend for experimenting with a WhatsApp-like chat interface, designed as a support UI for conversational integrations and bots.",
+        "role": "Modern Angular scaffolding, front-end structure, routing and preparation of the UI layer for conversational flows."
+      },
+      "argoStudioMusic": {
+        "title": "Argo Studio Music",
+        "description": "Vue/Vuetify web application for a music project, with routing, internationalization and reusable UI components.",
+        "role": "Vue front-end development, TypeScript setup, Vuetify UI, validations and multilingual structure."
+      },
+      "progettoMultimedia": {
+        "title": "Progetto Multimedia",
+        "description": "Vue 3 project with routing, Vuex and Bootstrap, built as a multimedia application and SPA architecture learning path.",
+        "role": "Vue front-end development, view organization, router/store configuration and Bootstrap integration."
+      },
       "smartSales": {
         "title": "Smart Sales - Micro Frontend Cart",
         "description": "Micro Frontend dedicated to cart management in an Angular ecosystem with application shell and federated module architecture.",

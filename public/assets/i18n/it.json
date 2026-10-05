@@ -449,6 +449,51 @@
         "description": "Sistema Python per il monitoraggio quotidiano di azioni e obbligazioni, con analisi di prezzi, fondamentali, rendimento, rischio, drawdown e report email automatici.",
         "role": "Ideazione, sviluppo del motore di analisi e scoring, integrazione provider finanziari, reportistica HTML/PDF e automazione con GitHub Actions."
       },
+      "bankTransactionsDashboard": {
+        "title": "Bank Transactions Dashboard",
+        "description": "Dashboard Angular per consultare e gestire transazioni simulate di un conto corrente, con saldi, filtri, ordinamento, paginazione, dettaglio e inserimento operazioni.",
+        "role": "Sviluppo front-end Angular, modellazione mock API, facade applicativa, Reactive Forms, persistenza locale e test mirati sulle regole principali."
+      },
+      "finecoPortfolioImporter": {
+        "title": "Fineco Portfolio Importer",
+        "description": "Utility Python che legge esportazioni Fineco, normalizza posizioni e movimenti, genera JSON per asset allocation, analisi fiscale e opportunita di recupero minusvalenze.",
+        "role": "Ideazione, parsing dati finanziari, classificazione strumenti, generazione output JSON e documentazione operativa per uso personale."
+      },
+      "localDemandRadar": {
+        "title": "Local Demand Radar",
+        "description": "Applicazione data-driven per piccole attivita locali che combina meteo, eventi, aree e clienti inattivi per generare score di domanda, opportunita e report email.",
+        "role": "Ideazione prodotto, definizione segnali dati, scoring opportunita e impostazione del flusso di report automatici."
+      },
+      "federicoItSupport": {
+        "title": "Federico IT Support",
+        "description": "Progetto web dedicato a servizi di supporto informatico e servizi digitali italiani per expat e residenti in Italia.",
+        "role": "Definizione offerta, struttura contenuti, posizionamento SEO e prototipazione dell'esperienza informativa."
+      },
+      "milanoCateringWeddingChatbot": {
+        "title": "Milano Catering Wedding - Chatbot consulenza",
+        "description": "Base progettuale per un assistente di prima consulenza sul sito Milano Catering Wedding, pensato per qualificare lead senza inventare menu, prezzi o disponibilita.",
+        "role": "Analisi sito, definizione MVP conversazionale, schema lead, prototipo statico, documentazione privacy e opzioni di integrazione WordPress."
+      },
+      "whatsappBot": {
+        "title": "WhatsApp Bot con API Meta",
+        "description": "Backend Node.js per bot WhatsApp basato su API ufficiali Meta, Express e integrazione OpenAI per risposte automatiche controllate.",
+        "role": "Sviluppo backend, configurazione API, gestione webhook e preparazione integrazione con servizi AI esterni."
+      },
+      "whatsappChatFe": {
+        "title": "WhatsApp Chat Frontend",
+        "description": "Frontend Angular per sperimentare una chat WhatsApp-like, pensata come interfaccia di supporto per integrazioni conversazionali e bot.",
+        "role": "Scaffolding Angular moderno, struttura front-end, routing e preparazione del layer UI per flussi conversazionali."
+      },
+      "argoStudioMusic": {
+        "title": "Argo Studio Music",
+        "description": "Applicazione web Vue/Vuetify per un progetto musicale, con routing, internazionalizzazione e componenti UI riutilizzabili.",
+        "role": "Sviluppo front-end Vue, configurazione TypeScript, UI con Vuetify, validazioni e struttura multilingua."
+      },
+      "progettoMultimedia": {
+        "title": "Progetto Multimedia",
+        "description": "Progetto Vue 3 con routing, Vuex e Bootstrap nato come applicazione multimediale e percorso di studio su architettura SPA.",
+        "role": "Sviluppo front-end Vue, organizzazione delle viste, configurazione router/store e integrazione Bootstrap."
+      },
       "smartSales": {
         "title": "Smart Sales - Micro Frontend Cart",
         "description": "Micro Frontend dedicato alla gestione del carrello in un ecosistema Angular con shell applicativa e architettura a moduli federati.",
