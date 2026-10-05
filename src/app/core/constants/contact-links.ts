@@ -8,8 +8,7 @@ export const CONTACT_LINKS = {
   whatsApp: 'https://wa.me/393894658277',
   googleBusiness:
     'https://www.google.com/search?q=Federico+Croletti+-+Supporto+Informatico+e+Consulenza+Digitale+Milano',
-  googleReviews:
-    'https://www.google.com/search?q=Federico+Croletti+-+Supporto+Informatico+e+Consulenza+Digitale+Milano',
+  googleReviews: 'https://g.page/r/CVUvo9RO_7A1EBM/review',
   location: 'Milano (MI)',
   areaServed: ['Milano', 'Quarto Oggiaro', 'Certosa', 'Bovisa', 'Portello', 'Baranzate', 'Bollate'],
 } as const;
