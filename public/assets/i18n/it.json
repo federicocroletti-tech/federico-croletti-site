@@ -113,15 +113,6 @@
       "downloadCv": "Scarica CV",
       "contact": "Contattami"
     },
-    "target": {
-      "title": "Ricerca attiva"
-    },
-    "criteria": {
-      "salary": "RAL target: da 60.000 euro in su, da valutare con bonus, benefit e auto aziendale.",
-      "location": "Modalità: remoto o ibrido su Milano, con sede raggiungibile in modo sostenibile da Via Carlo Perini.",
-      "contract": "Preferenza: lavoro dipendente, contesti enterprise, consulting evoluta o prodotto digitale maturo.",
-      "direction": "Evoluzione: Tech Lead, Angular Lead, AI-enabled Frontend Lead, poi ruoli manageriali con meno codice operativo."
-    },
     "roles": {
       "eyebrow": "Ruoli target",
       "title": "Dove posso portare valore subito",

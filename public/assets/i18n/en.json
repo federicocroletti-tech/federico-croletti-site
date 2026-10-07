@@ -113,15 +113,6 @@
       "downloadCv": "Download CV",
       "contact": "Contact me"
     },
-    "target": {
-      "title": "Active search"
-    },
-    "criteria": {
-      "salary": "Target compensation: from 60,000 EUR upward, evaluated with bonus, benefits and company car where available.",
-      "location": "Mode: remote or hybrid in Milan, with an office sustainably reachable from Via Carlo Perini.",
-      "contract": "Preference: employee role in enterprise, evolved consulting or mature digital product contexts.",
-      "direction": "Growth path: Tech Lead, Angular Lead, AI-enabled Frontend Lead, then management roles with less operational coding."
-    },
     "roles": {
       "eyebrow": "Target roles",
       "title": "Where I can bring value immediately",
