@@ -24,7 +24,6 @@ export class HeaderComponent {
     { labelKey: 'navigation.home', path: '/' },
     { labelKey: 'navigation.about', path: '/chi-sono' },
     { labelKey: 'navigation.services', path: '/servizi' },
-    { labelKey: 'navigation.career', path: '/carriera' },
     { labelKey: 'navigation.projects', path: '/progetti' },
     { labelKey: 'navigation.contact', path: '/contatti' },
   ] as const;

@@ -18,9 +18,9 @@ interface TextCard {
 interface LocalServiceSection {
   readonly id: string;
   readonly icon: string;
-  readonly title: string;
-  readonly body: string;
-  readonly areaText: string;
+  readonly titleKey: string;
+  readonly bodyKey: string;
+  readonly areaTextKey: string;
 }
 
 @Component({
@@ -43,66 +43,57 @@ export class HomePageComponent {
     {
       id: 'assistenza-pc-notebook',
       icon: 'computer',
-      title: 'Assistenza PC e notebook',
-      body: 'Diagnosi di PC lenti, notebook bloccati, problemi software, periferiche e configurazioni quotidiane. Supporto informatico a Milano con attenzione a interventi chiari, documentati e sostenibili.',
-      areaText: 'Milano, Quarto Oggiaro, Certosa',
+      titleKey: 'home.localServices.items.pc.title',
+      bodyKey: 'home.localServices.items.pc.body',
+      areaTextKey: 'home.localServices.items.pc.areaText',
     },
     {
       id: 'configurazione-email-pec',
       icon: 'mark_email_read',
-      title: 'Configurazione email e PEC',
-      body: 'Configurazione di caselle email, PEC, client di posta, firme, calendari e account su PC e smartphone per professionisti, privati e piccole imprese.',
-      areaText: 'Milano, Bovisa, Portello',
+      titleKey: 'home.localServices.items.email.title',
+      bodyKey: 'home.localServices.items.email.body',
+      areaTextKey: 'home.localServices.items.email.areaText',
     },
     {
       id: 'spid-firma-digitale',
       icon: 'verified_user',
-      title: 'SPID e firma digitale',
-      body: 'Supporto pratico per accessi SPID, firma digitale, documenti online, portali pubblici e procedure digitali che richiedono ordine e attenzione.',
-      areaText: 'Milano, Baranzate, Bollate',
+      titleKey: 'home.localServices.items.digitalIdentity.title',
+      bodyKey: 'home.localServices.items.digitalIdentity.body',
+      areaTextKey: 'home.localServices.items.digitalIdentity.areaText',
     },
     {
       id: 'supporto-smartphone',
       icon: 'smartphone',
-      title: 'Supporto smartphone',
-      body: 'Aiuto su smartphone Android, account Google, posta, backup foto, sincronizzazione, app essenziali e passaggi tra dispositivi.',
-      areaText: 'Milano, Quarto Oggiaro, Certosa, Bovisa',
+      titleKey: 'home.localServices.items.smartphone.title',
+      bodyKey: 'home.localServices.items.smartphone.body',
+      areaTextKey: 'home.localServices.items.smartphone.areaText',
     },
     {
       id: 'sicurezza-informatica',
       icon: 'security',
-      title: 'Sicurezza informatica',
-      body: 'Controllo di impostazioni base, password sicure, riconoscimento phishing, backup, protezione account e buone pratiche per ridurre rischi digitali.',
-      areaText: 'Milano, Portello, Bovisa, Certosa',
+      titleKey: 'home.localServices.items.security.title',
+      bodyKey: 'home.localServices.items.security.body',
+      areaTextKey: 'home.localServices.items.security.areaText',
     },
     {
       id: 'sviluppo-software-siti-web',
       icon: 'code',
-      title: 'Sviluppo software e siti web',
-      body: 'Sviluppo software front-end, siti web, landing page, WordPress, integrazioni contatto e soluzioni digitali su misura con approccio tecnico e concreto.',
-      areaText: 'Milano, Portello, Navigli, Lambrate',
+      titleKey: 'home.localServices.items.software.title',
+      bodyKey: 'home.localServices.items.software.body',
+      areaTextKey: 'home.localServices.items.software.areaText',
     },
     {
       id: 'consulenza-it-professionisti-imprese',
       icon: 'business_center',
-      title: 'Consulenza IT per professionisti e piccole imprese',
-      body: 'Consulenza IT per scegliere strumenti, organizzare account, migliorare processi digitali, impostare piccoli progetti web e rendere la tecnologia piu semplice da gestire.',
-      areaText: 'Milano, Baranzate, Bollate e hinterland nord',
+      titleKey: 'home.localServices.items.consulting.title',
+      bodyKey: 'home.localServices.items.consulting.body',
+      areaTextKey: 'home.localServices.items.consulting.areaText',
     },
   ];
 
-  readonly entityKeywords = [
-    'supporto informatico',
-    'consulenza digitale',
-    'assistenza PC',
-    'consulenza IT',
-    'tecnico informatico Milano',
-    'sviluppo software',
-  ] as const;
-
   readonly googleReviewSummary = {
     rating: '5,0',
-    reviewCountLabel: '27 recensioni su Google Business',
+    reviewCountLabelKey: 'home.googleReviews.reviewCountLabel',
   } as const;
 
   readonly skillHighlights: readonly TextCard[] = [
@@ -114,11 +105,7 @@ export class HomePageComponent {
 
   readonly experiencePoints = [
     'home.experience.points.angular',
-    'home.experience.points.websitesWordpress',
-    'home.experience.points.digitalServices',
-    'home.experience.points.backupEmailFormatting',
     'home.experience.points.aiCertification',
-    'home.experience.points.microFrontend',
     'home.experience.points.maps',
   ] as const;
 

@@ -212,15 +212,6 @@
   line-height: 1.35;
 }
 
-.entity-section {
-  display: grid;
-  gap: 22px;
-}
-
-.entity-keywords {
-  max-width: 860px;
-}
-
 .help-section {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.8fr);

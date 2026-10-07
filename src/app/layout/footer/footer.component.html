@@ -1,11 +1,13 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div>
-      <p class="eyebrow">Federico Croletti - Supporto Informatico e Consulenza Digitale</p>
+      <p class="eyebrow">{{ 'footer.brandEyebrow' | translate }}</p>
       <p class="footer-copy">{{ 'footer.description' | translate }}</p>
       <div class="footer-contact">
-        <span>{{ contacts.location }}</span>
-        <a [href]="'tel:+39' + contacts.phone">Telefono: {{ contacts.phoneDisplay }}</a>
+        <span>{{ 'footer.location' | translate }}</span>
+        <a [href]="'tel:+39' + contacts.phone"
+          >{{ 'footer.phoneLabel' | translate }}: {{ contacts.phoneDisplay }}</a
+        >
         <a [href]="'mailto:' + contacts.email">Email: {{ contacts.email }}</a>
       </div>
     </div>
@@ -24,10 +26,10 @@
           [href]="social.url"
           target="_blank"
           rel="noopener noreferrer"
-          [attr.aria-label]="social.ariaLabel"
+          [attr.aria-label]="social.ariaLabelKey | translate"
           (click)="trackSocialClick(social.id)"
         >
-          {{ social.label }}
+          {{ social.labelKey | translate }}
         </a>
       }
       <a mat-button routerLink="/privacy">{{ 'footer.privacy' | translate }}</a>

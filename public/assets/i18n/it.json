@@ -10,18 +10,46 @@
     "home": "Home",
     "about": "Chi sono",
     "services": "Servizi",
-    "career": "Carriera",
     "projects": "Progetti",
     "contact": "Contatti"
   },
   "footer": {
+    "brandEyebrow": "Federico Croletti - Supporto Informatico e Consulenza Digitale",
     "description": "Tecnico informatico e consulente digitale a Milano per assistenza PC, PEC, SPID, sicurezza informatica, consulenza IT e sviluppo software.",
+    "location": "Milano (MI)",
+    "phoneLabel": "Telefono",
     "email": "Email",
     "emailAria": "Scrivi una email a Federico Croletti",
     "privacy": "Privacy Policy",
     "cookiePolicy": "Cookie Policy",
     "manageCookies": "Gestisci preferenze cookie",
     "copyright": "© {{ year }} Federico Croletti. Tutti i diritti riservati."
+  },
+  "social": {
+    "linkedin": {
+      "label": "LinkedIn",
+      "ariaLabel": "Vai al profilo LinkedIn di Federico Croletti"
+    },
+    "facebook": {
+      "label": "Facebook",
+      "ariaLabel": "Vai al profilo Facebook di Federico Croletti"
+    },
+    "googleBusiness": {
+      "label": "Google Business",
+      "ariaLabel": "Apri il profilo Google Business di Federico Croletti"
+    },
+    "googleReviews": {
+      "label": "Recensioni Google",
+      "ariaLabel": "Leggi le recensioni Google di Federico Croletti"
+    },
+    "github": {
+      "label": "GitHub",
+      "ariaLabel": "Vai al profilo GitHub di Federico Croletti"
+    },
+    "whatsapp": {
+      "label": "WhatsApp",
+      "ariaLabel": "Scrivi a Federico Croletti su WhatsApp"
+    }
   },
   "home": {
     "hero": {
@@ -34,12 +62,73 @@
       "contactCta": "Contattami",
       "panelLabel": "Identità professionale",
       "logoAlt": "Segno grafico personale di Federico Croletti",
-      "panelText": "Assistenza PC, consulenza IT, siti web, SPID, PEC, firma digitale, sicurezza informatica e supporto digitale per Milano e hinterland."
+      "panelEyebrow": "Interventi chiari, anche da remoto",
+      "panelText": "Milano e hinterland, con priorità a soluzioni semplici e sostenibili."
+    },
+    "actions": {
+      "primaryAria": "Azioni principali",
+      "callNow": "Chiama ora",
+      "requestSupport": "Richiedi assistenza",
+      "requestConsulting": "Richiedi consulenza"
+    },
+    "localServices": {
+      "eyebrow": "Servizi informatici a Milano",
+      "title": "Interventi locali e supporto remoto",
+      "body": "Federico Croletti opera su Milano e zone come Quarto Oggiaro, Certosa, Bovisa, Portello, Baranzate e Bollate per assistenza PC, consulenza IT, sicurezza informatica, sviluppo software e supporto digitale pratico.",
+      "navAria": "Collegamenti interni ai servizi",
+      "areaLabel": "Zone",
+      "actionsAria": "Azioni servizio",
+      "items": {
+        "pc": {
+          "title": "Assistenza PC e notebook",
+          "body": "Diagnosi di PC lenti, notebook bloccati, problemi software, periferiche e configurazioni quotidiane. Supporto informatico a Milano con attenzione a interventi chiari, documentati e sostenibili.",
+          "areaText": "Milano, Quarto Oggiaro, Certosa"
+        },
+        "email": {
+          "title": "Configurazione email e PEC",
+          "body": "Configurazione di caselle email, PEC, client di posta, firme, calendari e account su PC e smartphone per professionisti, privati e piccole imprese.",
+          "areaText": "Milano, Bovisa, Portello"
+        },
+        "digitalIdentity": {
+          "title": "SPID e firma digitale",
+          "body": "Supporto pratico per accessi SPID, firma digitale, documenti online, portali pubblici e procedure digitali che richiedono ordine e attenzione.",
+          "areaText": "Milano, Baranzate, Bollate"
+        },
+        "smartphone": {
+          "title": "Supporto smartphone",
+          "body": "Aiuto su smartphone Android, account Google, posta, backup foto, sincronizzazione, app essenziali e passaggi tra dispositivi.",
+          "areaText": "Milano, Quarto Oggiaro, Certosa, Bovisa"
+        },
+        "security": {
+          "title": "Sicurezza informatica",
+          "body": "Controllo di impostazioni base, password sicure, riconoscimento phishing, backup, protezione account e buone pratiche per ridurre rischi digitali.",
+          "areaText": "Milano, Portello, Bovisa, Certosa"
+        },
+        "software": {
+          "title": "Sviluppo software e siti web",
+          "body": "Sviluppo software front-end, siti web, landing page, WordPress, integrazioni contatto e soluzioni digitali su misura con approccio tecnico e concreto.",
+          "areaText": "Milano, Portello, Navigli, Lambrate"
+        },
+        "consulting": {
+          "title": "Consulenza IT per professionisti e piccole imprese",
+          "body": "Consulenza IT per scegliere strumenti, organizzare account, migliorare processi digitali, impostare piccoli progetti web e rendere la tecnologia piu semplice da gestire.",
+          "areaText": "Milano, Baranzate, Bollate e hinterland nord"
+        }
+      }
+    },
+    "googleReviews": {
+      "eyebrow": "Recensioni Google",
+      "title": "Recensioni Google per Federico Croletti",
+      "body": "Le recensioni rafforzano il collegamento tra sito web, profilo Google Business e servizi informatici locali a Milano.",
+      "scoreAria": "Media 5 stelle su Google",
+      "starsLabel": "stelle su Google",
+      "reviewCountLabel": "27 recensioni su Google Business",
+      "cta": "Leggi tutte le recensioni Google"
     },
     "servicesPreview": {
       "eyebrow": "Come posso aiutarti",
       "title": "Servizi pratici per aziende, professionisti e privati",
-      "body": "Dallo sviluppo di siti Angular e WordPress all'assistenza su PC, formattazioni, backup, email, SPID, PEC, firma digitale e strumenti AI: l'obiettivo è rendere la tecnologia più semplice e utile.",
+      "body": "Sviluppo siti, assistenza digitale e consulenza tecnica con un obiettivo semplice: rendere la tecnologia più utile e gestibile.",
       "cta": "Vedi tutti i servizi"
     },
     "skills": {
@@ -76,11 +165,7 @@
       "body": "Ho lavorato su applicazioni in ambito finanziario, assicurativo, geo-spaziale e documentale, ma porto lo stesso metodo anche su siti web, servizi digitali, supporto operativo, automazioni AI e problemi pratici di tutti i giorni.",
       "points": {
         "angular": "Applicazioni Angular enterprise",
-        "websitesWordpress": "Siti personali, siti vetrina, WordPress e pubblicazione online",
-        "digitalServices": "Supporto su SPID, PEC, firma digitale e procedure online",
-        "backupEmailFormatting": "Backup dati, gestione email, formattazioni e configurazioni PC",
         "aiCertification": "AI applicata con certificazione AWS Certified AI Practitioner",
-        "microFrontend": "Micro frontend con Module Federation",
         "maps": "Mappe interattive basate su Leaflet e WMS",
         "auth": "Integrazione con sistemi di autenticazione come Keycloak",
         "cicd": "CI/CD e ambienti containerizzati",
@@ -104,75 +189,12 @@
       "cta": "Richiedi informazioni"
     }
   },
-  "career": {
-    "eyebrow": "Obiettivo professionale",
-    "title": "Frontend Tech Lead e Angular Architect per team enterprise",
-    "lead": "Cerco ruoli dipendenti da 60k+ in area Milano, remoto o ibrido non troppo lontano da Via Carlo Perini, con responsabilità su Angular, architettura front-end, AI applicata e crescita del team.",
-    "body": "Il mio percorso unisce sviluppo Angular enterprise, Micro Frontend, Module Federation, leadership tecnica, People Management e uso pratico dell'AI. La direzione è evolvere verso ruoli manageriali e di delivery, riducendo il peso del codice operativo e aumentando impatto, responsabilità e valore generato.",
-    "actions": {
-      "downloadCv": "Scarica CV",
-      "contact": "Contattami"
-    },
-    "roles": {
-      "eyebrow": "Ruoli target",
-      "title": "Dove posso portare valore subito",
-      "frontendLead": {
-        "title": "Frontend Tech Lead",
-        "body": "Guida tecnica, standard di sviluppo, review, mentoring, qualità del codice e coordinamento operativo di team front-end."
-      },
-      "angularLead": {
-        "title": "Angular Tech Lead",
-        "body": "Architettura Angular, componenti condivisi, routing, state management, performance, i18n e integrazione con API enterprise."
-      },
-      "aiLead": {
-        "title": "AI-focused Frontend Lead",
-        "body": "Uso concreto di AI e GitHub Copilot per accelerare delivery, refactoring, documentazione tecnica, prototipi e qualità del lavoro del team."
-      },
-      "manager": {
-        "title": "Engineering / Delivery Manager",
-        "body": "Percorso verso responsabilità manageriali: priorità, persone, stakeholder, delivery, qualità e crescita del team con minore coinvolgimento nel coding quotidiano."
-      }
-    },
-    "positioning": {
-      "eyebrow": "Posizionamento",
-      "title": "Profilo senior tecnico con traiettoria manageriale",
-      "architecture": {
-        "title": "Architettura front-end",
-        "body": "Micro Frontend, Module Federation, librerie condivise, design system, routing federato e applicazioni Angular complesse."
-      },
-      "leadership": {
-        "title": "Leadership e mentoring",
-        "body": "Supporto a sviluppatori, code review, linee guida, collaborazione con stakeholder e gestione pragmatica della delivery."
-      },
-      "ai": {
-        "title": "AI applicata",
-        "body": "AWS Certified AI Practitioner, uso di Copilot e strumenti AI per produttività, qualità, analisi e accelerazione dei flussi tecnici."
-      },
-      "growth": {
-        "title": "Crescita manageriale",
-        "body": "Interesse per ruoli con responsabilità su persone, processo e risultati, non solo produzione individuale di codice."
-      }
-    },
-    "proof": {
-      "eyebrow": "Prove concrete",
-      "title": "Esperienza utile per aziende che vogliono scalare team e piattaforme front-end",
-      "body": "Il valore principale è trasformare complessità tecnica in direzione chiara: architetture mantenibili, team più autonomi, scelte sostenibili e comunicazione comprensibile anche fuori dal team tecnico.",
-      "points": {
-        "enterpriseAngular": "Esperienza su applicazioni Angular enterprise in ambiti finanziari, assicurativi, geospaziali e documentali.",
-        "microFrontend": "Esperienza con Micro Frontend, Module Federation, shell applicative e librerie condivise.",
-        "teamLeadership": "Guida tecnica, mentoring, code review e supporto alle decisioni architetturali.",
-        "peopleManagement": "Esperienza People Management: feedback, crescita, gestione criticità e collaborazione sulle valutazioni.",
-        "aiCertification": "Certificazione AWS Certified AI Practitioner e uso pratico di AI tool nello sviluppo software.",
-        "delivery": "Approccio orientato a delivery, qualità, sostenibilità del codice e relazione con stakeholder tecnici e funzionali."
-      }
-    }
-  },
   "about": {
     "eyebrow": "Profilo",
     "title": "Chi sono",
     "intro": {
       "first": "Sono Federico Croletti, Senior Software Engineer con esperienza nella progettazione e sviluppo di applicazioni enterprise. Mi occupo di Angular, architetture moderne, micro frontend, i18n, mappe interattive e qualità del codice, ma anche di servizi digitali concreti per persone e piccole attività.",
-      "second": "Nel mio percorso ho lavorato in ambiti finanziari, assicurativi, geo-spaziali e documentali. Oltre allo sviluppo, seguo attività di Team Leadership e People Management e porto lo stesso metodo su siti web, WordPress, SPID, PEC, firma digitale, backup, gestione email, formattazioni e strumenti AI.",
+      "second": "Nel mio percorso ho lavorato in ambiti finanziari, assicurativi, geo-spaziali e documentali. Oltre allo sviluppo, seguo attività di Team Leadership e People Management e applico lo stesso metodo ai servizi digitali pratici.",
       "personal": "Mi piace mettere competenza tecnica e relazione sullo stesso piano: dietro ogni progetto ci sono persone, obiettivi concreti e decisioni da rendere semplici. Questa foto aggiunge un volto al percorso che racconto qui, per clienti, colleghi e follower che vogliono conoscermi meglio."
     },
     "photo": {
@@ -593,7 +615,8 @@
       "servicesTitle": "Servizi informatici",
       "servicesBody": "Hai bisogno di un sito, assistenza digitale o supporto su strumenti AI? Puoi descrivermi il problema dal form.",
       "servicesCta": "Richiedi informazioni sui servizi",
-      "locationTitle": "Località"
+      "locationTitle": "Località",
+      "locationValue": "Milano (MI)"
     },
     "form": {
       "title": "Invia una richiesta",

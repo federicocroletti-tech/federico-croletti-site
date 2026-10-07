@@ -10,18 +10,46 @@
     "home": "Home",
     "about": "About",
     "services": "Services",
-    "career": "Career",
     "projects": "Projects",
     "contact": "Contact"
   },
   "footer": {
+    "brandEyebrow": "Federico Croletti - IT Support and Digital Consulting",
     "description": "IT support and digital consulting in Milan for PC assistance, certified email, digital identity, cybersecurity, IT consulting and software development.",
+    "location": "Milan (MI)",
+    "phoneLabel": "Phone",
     "email": "Email",
     "emailAria": "Send an email to Federico Croletti",
     "privacy": "Privacy Policy",
     "cookiePolicy": "Cookie Policy",
     "manageCookies": "Manage cookie preferences",
     "copyright": "© {{ year }} Federico Croletti. All rights reserved."
+  },
+  "social": {
+    "linkedin": {
+      "label": "LinkedIn",
+      "ariaLabel": "Go to Federico Croletti's LinkedIn profile"
+    },
+    "facebook": {
+      "label": "Facebook",
+      "ariaLabel": "Go to Federico Croletti's Facebook profile"
+    },
+    "googleBusiness": {
+      "label": "Google Business",
+      "ariaLabel": "Open Federico Croletti's Google Business profile"
+    },
+    "googleReviews": {
+      "label": "Google reviews",
+      "ariaLabel": "Read Federico Croletti's Google reviews"
+    },
+    "github": {
+      "label": "GitHub",
+      "ariaLabel": "Go to Federico Croletti's GitHub profile"
+    },
+    "whatsapp": {
+      "label": "WhatsApp",
+      "ariaLabel": "Write to Federico Croletti on WhatsApp"
+    }
   },
   "home": {
     "hero": {
@@ -34,12 +62,73 @@
       "contactCta": "Contact me",
       "panelLabel": "Professional identity",
       "logoAlt": "Federico Croletti personal graphic mark",
-      "panelText": "PC assistance, IT consulting, websites, digital identity, certified email, digital signatures, cybersecurity and digital support for Milan, Quarto Oggiaro, Certosa, Bovisa, Portello, Baranzate and Bollate."
+      "panelEyebrow": "Clear support, also remote",
+      "panelText": "Milan and surrounding areas, with priority on simple and sustainable solutions."
+    },
+    "actions": {
+      "primaryAria": "Main actions",
+      "callNow": "Call now",
+      "requestSupport": "Request support",
+      "requestConsulting": "Request consulting"
+    },
+    "localServices": {
+      "eyebrow": "IT services in Milan",
+      "title": "Local interventions and remote support",
+      "body": "Federico Croletti works in Milan and areas such as Quarto Oggiaro, Certosa, Bovisa, Portello, Baranzate and Bollate for PC assistance, IT consulting, cybersecurity, software development and practical digital support.",
+      "navAria": "Internal service links",
+      "areaLabel": "Areas",
+      "actionsAria": "Service actions",
+      "items": {
+        "pc": {
+          "title": "PC and notebook assistance",
+          "body": "Diagnosis of slow PCs, blocked notebooks, software problems, peripherals and everyday configurations. IT support in Milan with clear, documented and sustainable interventions.",
+          "areaText": "Milan, Quarto Oggiaro, Certosa"
+        },
+        "email": {
+          "title": "Email and certified email setup",
+          "body": "Configuration of mailboxes, certified email, email clients, signatures, calendars and accounts on PCs and smartphones for professionals, private clients and small businesses.",
+          "areaText": "Milan, Bovisa, Portello"
+        },
+        "digitalIdentity": {
+          "title": "Digital identity and digital signature",
+          "body": "Practical support for digital identity access, digital signatures, online documents, public portals and digital procedures that require order and attention.",
+          "areaText": "Milan, Baranzate, Bollate"
+        },
+        "smartphone": {
+          "title": "Smartphone support",
+          "body": "Help with Android smartphones, Google accounts, mail, photo backups, synchronization, essential apps and moving between devices.",
+          "areaText": "Milan, Quarto Oggiaro, Certosa, Bovisa"
+        },
+        "security": {
+          "title": "Cybersecurity",
+          "body": "Review of basic settings, secure passwords, phishing recognition, backups, account protection and good practices to reduce digital risks.",
+          "areaText": "Milan, Portello, Bovisa, Certosa"
+        },
+        "software": {
+          "title": "Software development and websites",
+          "body": "Front-end software development, websites, landing pages, WordPress, contact integrations and tailored digital solutions with a concrete technical approach.",
+          "areaText": "Milan, Portello, Navigli, Lambrate"
+        },
+        "consulting": {
+          "title": "IT consulting for professionals and small businesses",
+          "body": "IT consulting to choose tools, organize accounts, improve digital processes, set up small web projects and make technology easier to manage.",
+          "areaText": "Milan, Baranzate, Bollate and northern hinterland"
+        }
+      }
+    },
+    "googleReviews": {
+      "eyebrow": "Google reviews",
+      "title": "Google reviews for Federico Croletti",
+      "body": "Reviews strengthen the connection between the website, the Google Business profile and local IT services in Milan.",
+      "scoreAria": "Average 5-star rating on Google",
+      "starsLabel": "stars on Google",
+      "reviewCountLabel": "27 reviews on Google Business",
+      "cta": "Read all Google reviews"
     },
     "servicesPreview": {
       "eyebrow": "How I can help",
       "title": "Practical services for companies, professionals and private clients",
-      "body": "From Angular and WordPress websites to PC support, formatting, backups, email, digital identity, certified email, digital signatures and AI tools: the goal is to make technology simpler and more useful.",
+      "body": "Websites, digital support and technical consulting with one goal: making technology more useful and easier to manage.",
       "cta": "See all services"
     },
     "skills": {
@@ -76,11 +165,7 @@
       "body": "I have worked on financial, insurance, geospatial and document-management applications, and I bring the same method to websites, digital services, operational support, AI automations and everyday technical problems.",
       "points": {
         "angular": "Enterprise Angular applications",
-        "websitesWordpress": "Personal sites, showcase websites, WordPress and online publishing",
-        "digitalServices": "Support for digital identity, certified email, digital signatures and online procedures",
-        "backupEmailFormatting": "Data backups, email management, PC formatting and setup",
         "aiCertification": "Applied AI with AWS Certified AI Practitioner certification",
-        "microFrontend": "Micro frontends with Module Federation",
         "maps": "Interactive maps based on Leaflet and WMS",
         "auth": "Integration with authentication systems such as Keycloak",
         "cicd": "CI/CD and containerized environments",
@@ -104,75 +189,12 @@
       "cta": "Request information"
     }
   },
-  "career": {
-    "eyebrow": "Career target",
-    "title": "Frontend Tech Lead and Angular Architect for enterprise teams",
-    "lead": "I am targeting employee roles from 60k+ around Milan, remote or hybrid within a sustainable commute from Via Carlo Perini, with responsibility across Angular, frontend architecture, applied AI and team growth.",
-    "body": "My path combines enterprise Angular development, Micro Frontend, Module Federation, technical leadership, People Management and practical AI usage. The direction is to grow into management and delivery roles, reducing day-to-day coding load while increasing impact, responsibility and business value.",
-    "actions": {
-      "downloadCv": "Download CV",
-      "contact": "Contact me"
-    },
-    "roles": {
-      "eyebrow": "Target roles",
-      "title": "Where I can bring value immediately",
-      "frontendLead": {
-        "title": "Frontend Tech Lead",
-        "body": "Technical guidance, development standards, review, mentoring, code quality and operational coordination of frontend teams."
-      },
-      "angularLead": {
-        "title": "Angular Tech Lead",
-        "body": "Angular architecture, shared components, routing, state management, performance, i18n and enterprise API integration."
-      },
-      "aiLead": {
-        "title": "AI-focused Frontend Lead",
-        "body": "Practical use of AI and GitHub Copilot to accelerate delivery, refactoring, technical documentation, prototypes and team quality."
-      },
-      "manager": {
-        "title": "Engineering / Delivery Manager",
-        "body": "Path toward management responsibility: priorities, people, stakeholders, delivery, quality and team growth with less daily coding."
-      }
-    },
-    "positioning": {
-      "eyebrow": "Positioning",
-      "title": "Senior technical profile with a management trajectory",
-      "architecture": {
-        "title": "Frontend architecture",
-        "body": "Micro Frontend, Module Federation, shared libraries, design systems, federated routing and complex Angular applications."
-      },
-      "leadership": {
-        "title": "Leadership and mentoring",
-        "body": "Developer support, code review, guidelines, stakeholder collaboration and pragmatic delivery management."
-      },
-      "ai": {
-        "title": "Applied AI",
-        "body": "AWS Certified AI Practitioner, using Copilot and AI tools for productivity, quality, analysis and acceleration of technical workflows."
-      },
-      "growth": {
-        "title": "Management growth",
-        "body": "Interest in roles responsible for people, process and outcomes, not only individual code production."
-      }
-    },
-    "proof": {
-      "eyebrow": "Evidence",
-      "title": "Experience for companies scaling frontend teams and platforms",
-      "body": "The core value is turning technical complexity into clear direction: maintainable architectures, more autonomous teams, sustainable decisions and communication that works beyond the technical team.",
-      "points": {
-        "enterpriseAngular": "Experience on enterprise Angular applications across financial, insurance, geospatial and document-management domains.",
-        "microFrontend": "Experience with Micro Frontend, Module Federation, application shells and shared libraries.",
-        "teamLeadership": "Technical guidance, mentoring, code review and architectural decision support.",
-        "peopleManagement": "People Management experience: feedback, growth, issue handling and evaluation support.",
-        "aiCertification": "AWS Certified AI Practitioner and practical use of AI tools in software development.",
-        "delivery": "Delivery-oriented approach focused on quality, code sustainability and collaboration with technical and functional stakeholders."
-      }
-    }
-  },
   "about": {
     "eyebrow": "Profile",
     "title": "About",
     "intro": {
       "first": "I am Federico Croletti, a Senior Software Engineer experienced in designing and developing enterprise applications. I work on Angular, modern architectures, micro frontends, i18n, interactive maps and code quality, but also on concrete digital services for people and small businesses.",
-      "second": "I have worked across financial, insurance, geospatial and document-management contexts. Beyond development, I support Team Leadership and People Management and bring the same method to websites, WordPress, digital identity, certified email, digital signatures, backups, email management, PC formatting and AI tools.",
+      "second": "I have worked across financial, insurance, geospatial and document-management contexts. Beyond development, I support Team Leadership and People Management and apply the same method to practical digital services.",
       "personal": "I like keeping technical skill and human connection on the same level: behind every project there are people, concrete goals and decisions that should become simpler. This photo gives a face to the story I share here, for clients, colleagues and followers who want to know me better."
     },
     "photo": {
@@ -593,7 +615,8 @@
       "servicesTitle": "IT services",
       "servicesBody": "Need a website, digital support or help with AI tools? You can describe the problem through the form.",
       "servicesCta": "Request information about services",
-      "locationTitle": "Location"
+      "locationTitle": "Location",
+      "locationValue": "Milan (MI)"
     },
     "form": {
       "title": "Send a request",

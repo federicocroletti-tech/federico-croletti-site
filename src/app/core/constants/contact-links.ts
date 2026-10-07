@@ -17,9 +17,7 @@ export const WHATS_APP_LINKS = {
     'Ciao Federico, ho trovato i tuoi contatti sul sito e vorrei chiederti alcune informazioni.',
   ),
   localService: (serviceTitle: string): string =>
-    createWhatsAppUrl(
-      `Ciao Federico, ti contatto dal sito per informazioni su: ${serviceTitle}.`,
-    ),
+    createWhatsAppUrl(`Ciao Federico, ti contatto dal sito per informazioni su: ${serviceTitle}.`),
 } as const;
 
 export const CONTACT_LINKS = {
@@ -28,7 +26,7 @@ export const CONTACT_LINKS = {
   phoneDisplay: '389 465 8277',
   linkedIn: 'https://www.linkedin.com/in/federicocroletti/',
   facebook: 'https://www.facebook.com/federico.croletti',
-  github: 'https://github.com/fcrolett/',
+  github: 'https://github.com/federicocroletti-tech',
   whatsApp: WHATS_APP_LINKS.floating,
   googleBusiness: 'https://www.google.com/search?q=Federico+Croletti+azienda+informatica+Milano',
   googleReviews: 'https://g.page/r/CVUvo9RO_7A1EBM/review',
@@ -39,41 +37,41 @@ export const CONTACT_LINKS = {
 export const SOCIAL_LINKS = [
   {
     id: 'linkedin',
-    label: 'LinkedIn',
+    labelKey: 'social.linkedin.label',
     url: CONTACT_LINKS.linkedIn,
-    ariaLabel: 'Vai al profilo LinkedIn di Federico Croletti',
+    ariaLabelKey: 'social.linkedin.ariaLabel',
   },
   {
     id: 'facebook',
-    label: 'Facebook',
+    labelKey: 'social.facebook.label',
     url: CONTACT_LINKS.facebook,
-    ariaLabel: 'Vai al profilo Facebook di Federico Croletti',
+    ariaLabelKey: 'social.facebook.ariaLabel',
   },
   {
     id: 'google-business',
-    label: 'Google Business',
+    labelKey: 'social.googleBusiness.label',
     url: CONTACT_LINKS.googleBusiness,
-    ariaLabel: 'Apri il profilo Google Business di Federico Croletti',
+    ariaLabelKey: 'social.googleBusiness.ariaLabel',
   },
   {
     id: 'google-reviews',
-    label: 'Recensioni Google',
+    labelKey: 'social.googleReviews.label',
     url: CONTACT_LINKS.googleReviews,
-    ariaLabel: 'Leggi le recensioni Google di Federico Croletti',
+    ariaLabelKey: 'social.googleReviews.ariaLabel',
   },
   {
     id: 'github',
-    label: 'GitHub',
+    labelKey: 'social.github.label',
     url: CONTACT_LINKS.github,
-    ariaLabel: 'Vai al profilo GitHub di Federico Croletti',
+    ariaLabelKey: 'social.github.ariaLabel',
   },
   ...(CONTACT_LINKS.whatsApp
     ? [
         {
           id: 'whatsapp',
-          label: 'WhatsApp',
+          labelKey: 'social.whatsapp.label',
           url: WHATS_APP_LINKS.footer,
-          ariaLabel: 'Scrivi a Federico Croletti su WhatsApp',
+          ariaLabelKey: 'social.whatsapp.ariaLabel',
         },
       ]
     : []),
