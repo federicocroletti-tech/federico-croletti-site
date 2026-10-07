@@ -1,0 +1,104 @@
+.career-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: stretch;
+}
+
+.career-hero .page-heading,
+.career-target-card {
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-panel);
+  background:
+    radial-gradient(circle at 14% 10%, rgb(88 198 162 / 14%), transparent 20rem),
+    rgb(255 255 255 / 5%);
+}
+
+.career-hero .page-heading {
+  padding: clamp(22px, 4vw, 40px);
+}
+
+.career-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.career-target-card {
+  height: auto;
+}
+
+.target-list,
+.proof-list {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.target-list li,
+.proof-list li {
+  position: relative;
+  padding: 14px 16px 14px 34px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  background: rgb(255 255 255 / 5%);
+  color: var(--color-primary-strong);
+  font-weight: 700;
+}
+
+.target-list li::before,
+.proof-list li::before {
+  position: absolute;
+  top: 1.15rem;
+  left: 16px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  content: '';
+}
+
+.page-heading--narrow {
+  max-width: 760px;
+}
+
+.role-grid,
+.positioning-grid {
+  margin-top: 24px;
+}
+
+.role-card,
+.positioning-card {
+  height: 100%;
+}
+
+.positioning-card mat-card-header {
+  align-items: center;
+  gap: 10px;
+}
+
+.positioning-card mat-icon {
+  color: var(--color-accent-strong);
+}
+
+.role-card p,
+.positioning-card p,
+.proof-section .page-heading p:not(.eyebrow) {
+  color: var(--color-muted);
+}
+
+.proof-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1fr);
+  gap: clamp(24px, 5vw, 64px);
+}
+
+@media (max-width: 900px) {
+  .career-hero,
+  .proof-section {
+    grid-template-columns: 1fr;
+  }
+}

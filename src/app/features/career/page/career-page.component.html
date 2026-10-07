@@ -1,0 +1,85 @@
+<section class="section career-hero">
+  <div class="page-heading">
+    <p class="eyebrow">{{ 'career.eyebrow' | translate }}</p>
+    <h1>{{ 'career.title' | translate }}</h1>
+    <p class="lead">{{ 'career.lead' | translate }}</p>
+    <p>{{ 'career.body' | translate }}</p>
+
+    <div class="career-actions" aria-label="Azioni carriera">
+      <a mat-flat-button color="primary" href="/assets/documents/cv/Federico_Croletti_CV.pdf" download>
+        {{ 'career.actions.downloadCv' | translate }}
+      </a>
+      <a mat-stroked-button routerLink="/contatti">{{ 'career.actions.contact' | translate }}</a>
+    </div>
+  </div>
+
+  <mat-card class="site-card career-target-card">
+    <mat-card-header>
+      <mat-card-title>{{ 'career.target.title' | translate }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <ul class="target-list">
+        @for (criterion of searchCriteria; track criterion) {
+          <li>{{ criterion | translate }}</li>
+        }
+      </ul>
+    </mat-card-content>
+  </mat-card>
+</section>
+
+<section class="section section--compact" aria-labelledby="career-roles-title">
+  <div class="page-heading page-heading--narrow">
+    <p class="eyebrow">{{ 'career.roles.eyebrow' | translate }}</p>
+    <h2 id="career-roles-title">{{ 'career.roles.title' | translate }}</h2>
+  </div>
+
+  <div class="grid grid--4 role-grid">
+    @for (role of targetRoles; track role.titleKey) {
+      <mat-card class="site-card role-card">
+        <mat-card-header>
+          <mat-card-title>{{ role.titleKey | translate }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ role.bodyKey | translate }}</p>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</section>
+
+<div class="surface-band">
+  <section class="section" aria-labelledby="career-positioning-title">
+    <div class="page-heading page-heading--narrow">
+      <p class="eyebrow">{{ 'career.positioning.eyebrow' | translate }}</p>
+      <h2 id="career-positioning-title">{{ 'career.positioning.title' | translate }}</h2>
+    </div>
+
+    <div class="grid grid--4 positioning-grid">
+      @for (card of positioningCards; track card.titleKey) {
+        <mat-card class="site-card positioning-card">
+          <mat-card-header>
+            <mat-icon aria-hidden="true">{{ card.icon }}</mat-icon>
+            <mat-card-title>{{ card.titleKey | translate }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ card.bodyKey | translate }}</p>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  </section>
+</div>
+
+<section class="section proof-section" aria-labelledby="career-proof-title">
+  <div class="page-heading">
+    <p class="eyebrow">{{ 'career.proof.eyebrow' | translate }}</p>
+    <h2 id="career-proof-title">{{ 'career.proof.title' | translate }}</h2>
+    <p>{{ 'career.proof.body' | translate }}</p>
+  </div>
+
+  <ul class="proof-list">
+    @for (point of proofPoints; track point) {
+      <li>{{ point | translate }}</li>
+    }
+  </ul>
+</section>

@@ -10,6 +10,7 @@
     "home": "Home",
     "about": "Chi sono",
     "services": "Servizi",
+    "career": "Carriera",
     "projects": "Progetti",
     "contact": "Contatti"
   },
@@ -101,6 +102,78 @@
       "body": "Un account che non funziona, una PEC da configurare, un PC da sistemare o un sito da mettere online possono bloccare giornate intere. Ti aiuto a capire il problema, scegliere una strada sensata e risolverlo con ordine.",
       "panel": "Il mio approccio è pratico: ascolto, traduco il problema in passaggi chiari e propongo una soluzione sostenibile, senza complicare ciò che deve restare semplice.",
       "cta": "Richiedi informazioni"
+    }
+  },
+  "career": {
+    "eyebrow": "Obiettivo professionale",
+    "title": "Frontend Tech Lead e Angular Architect per team enterprise",
+    "lead": "Cerco ruoli dipendenti da 60k+ in area Milano, remoto o ibrido non troppo lontano da Via Carlo Perini, con responsabilità su Angular, architettura front-end, AI applicata e crescita del team.",
+    "body": "Il mio percorso unisce sviluppo Angular enterprise, Micro Frontend, Module Federation, leadership tecnica, People Management e uso pratico dell'AI. La direzione è evolvere verso ruoli manageriali e di delivery, riducendo il peso del codice operativo e aumentando impatto, responsabilità e valore generato.",
+    "actions": {
+      "downloadCv": "Scarica CV",
+      "contact": "Contattami"
+    },
+    "target": {
+      "title": "Ricerca attiva"
+    },
+    "criteria": {
+      "salary": "RAL target: da 60.000 euro in su, da valutare con bonus, benefit e auto aziendale.",
+      "location": "Modalità: remoto o ibrido su Milano, con sede raggiungibile in modo sostenibile da Via Carlo Perini.",
+      "contract": "Preferenza: lavoro dipendente, contesti enterprise, consulting evoluta o prodotto digitale maturo.",
+      "direction": "Evoluzione: Tech Lead, Angular Lead, AI-enabled Frontend Lead, poi ruoli manageriali con meno codice operativo."
+    },
+    "roles": {
+      "eyebrow": "Ruoli target",
+      "title": "Dove posso portare valore subito",
+      "frontendLead": {
+        "title": "Frontend Tech Lead",
+        "body": "Guida tecnica, standard di sviluppo, review, mentoring, qualità del codice e coordinamento operativo di team front-end."
+      },
+      "angularLead": {
+        "title": "Angular Tech Lead",
+        "body": "Architettura Angular, componenti condivisi, routing, state management, performance, i18n e integrazione con API enterprise."
+      },
+      "aiLead": {
+        "title": "AI-focused Frontend Lead",
+        "body": "Uso concreto di AI e GitHub Copilot per accelerare delivery, refactoring, documentazione tecnica, prototipi e qualità del lavoro del team."
+      },
+      "manager": {
+        "title": "Engineering / Delivery Manager",
+        "body": "Percorso verso responsabilità manageriali: priorità, persone, stakeholder, delivery, qualità e crescita del team con minore coinvolgimento nel coding quotidiano."
+      }
+    },
+    "positioning": {
+      "eyebrow": "Posizionamento",
+      "title": "Profilo senior tecnico con traiettoria manageriale",
+      "architecture": {
+        "title": "Architettura front-end",
+        "body": "Micro Frontend, Module Federation, librerie condivise, design system, routing federato e applicazioni Angular complesse."
+      },
+      "leadership": {
+        "title": "Leadership e mentoring",
+        "body": "Supporto a sviluppatori, code review, linee guida, collaborazione con stakeholder e gestione pragmatica della delivery."
+      },
+      "ai": {
+        "title": "AI applicata",
+        "body": "AWS Certified AI Practitioner, uso di Copilot e strumenti AI per produttività, qualità, analisi e accelerazione dei flussi tecnici."
+      },
+      "growth": {
+        "title": "Crescita manageriale",
+        "body": "Interesse per ruoli con responsabilità su persone, processo e risultati, non solo produzione individuale di codice."
+      }
+    },
+    "proof": {
+      "eyebrow": "Prove concrete",
+      "title": "Esperienza utile per aziende che vogliono scalare team e piattaforme front-end",
+      "body": "Il valore principale è trasformare complessità tecnica in direzione chiara: architetture mantenibili, team più autonomi, scelte sostenibili e comunicazione comprensibile anche fuori dal team tecnico.",
+      "points": {
+        "enterpriseAngular": "Esperienza su applicazioni Angular enterprise in ambiti finanziari, assicurativi, geospaziali e documentali.",
+        "microFrontend": "Esperienza con Micro Frontend, Module Federation, shell applicative e librerie condivise.",
+        "teamLeadership": "Guida tecnica, mentoring, code review e supporto alle decisioni architetturali.",
+        "peopleManagement": "Esperienza People Management: feedback, crescita, gestione criticità e collaborazione sulle valutazioni.",
+        "aiCertification": "Certificazione AWS Certified AI Practitioner e uso pratico di AI tool nello sviluppo software.",
+        "delivery": "Approccio orientato a delivery, qualità, sostenibilità del codice e relazione con stakeholder tecnici e funzionali."
+      }
     }
   },
   "about": {

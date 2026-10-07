@@ -25,6 +25,11 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'carriera',
+        loadComponent: () =>
+          import('./features/career/page/career-page.component').then((m) => m.CareerPageComponent),
+      },
+      {
         path: 'progetti',
         loadComponent: () =>
           import('./features/projects/page/projects-page.component').then(
