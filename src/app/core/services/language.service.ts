@@ -40,8 +40,7 @@ export class LanguageService {
       return storedLanguage;
     }
 
-    const browserLanguage = this.translateService.getBrowserLang();
-    return browserLanguage && this.isSupportedLanguage(browserLanguage) ? browserLanguage : 'it';
+    return 'it';
   }
 
   private readStoredLanguage(): string | null {
