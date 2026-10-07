@@ -65,9 +65,10 @@
           <mat-card-actions>
             <a
               mat-stroked-button
-              [href]="contacts.whatsApp"
+              [href]="whatsAppUrl"
               target="_blank"
               rel="noopener noreferrer"
+              (click)="trackWhatsAppClick()"
             >
               {{ 'contact.info.whatsappCta' | translate }}
             </a>

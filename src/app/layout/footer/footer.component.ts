@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 
 import { CONTACT_LINKS, SOCIAL_LINKS } from '../../core/constants/contact-links';
+import { AnalyticsService } from '../../core/services/analytics.service';
 import { CookieConsentService } from '../../core/services/cookie-consent.service';
 
 @Component({
@@ -15,6 +16,7 @@ import { CookieConsentService } from '../../core/services/cookie-consent.service
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterComponent {
+  private readonly analytics = inject(AnalyticsService);
   private readonly cookieConsentService = inject(CookieConsentService);
 
   readonly currentYear = new Date().getFullYear();
@@ -23,5 +25,11 @@ export class FooterComponent {
 
   openCookiePreferences(): void {
     this.cookieConsentService.openPreferences();
+  }
+
+  trackSocialClick(socialId: string): void {
+    if (socialId === 'whatsapp') {
+      this.analytics.trackEvent('WhatsApp Click', { source: 'footer' });
+    }
   }
 }

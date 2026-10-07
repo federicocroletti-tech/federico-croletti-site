@@ -6,7 +6,13 @@
 
     <div class="cta-row" aria-label="Azioni principali">
       <a mat-flat-button color="primary" [href]="'tel:+39' + contacts.phone">Chiama ora</a>
-      <a mat-stroked-button [href]="contacts.whatsApp" target="_blank" rel="noopener noreferrer">
+      <a
+        mat-stroked-button
+        [href]="whatsAppLinks.homeHero"
+        target="_blank"
+        rel="noopener noreferrer"
+        (click)="trackWhatsAppClick('home_hero')"
+      >
         WhatsApp
       </a>
       <a mat-button routerLink="/contatti">Richiedi assistenza</a>
@@ -60,9 +66,10 @@
           <a mat-flat-button color="primary" [href]="'tel:+39' + contacts.phone">Chiama ora</a>
           <a
             mat-stroked-button
-            [href]="contacts.whatsApp"
+            [href]="whatsAppLinks.localService(localService.title)"
             target="_blank"
             rel="noopener noreferrer"
+            (click)="trackWhatsAppClick('home_local_service_' + localService.id)"
           >
             WhatsApp
           </a>

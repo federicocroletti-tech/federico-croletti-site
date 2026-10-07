@@ -5,7 +5,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 
-import { CONTACT_LINKS } from '../../../core/constants/contact-links';
+import { CONTACT_LINKS, WHATS_APP_LINKS } from '../../../core/constants/contact-links';
+import { AnalyticsService } from '../../../core/services/analytics.service';
 import { SeoService } from '../../../core/services/seo.service';
 import { SERVICE_CATEGORIES } from '../../services/data/services.data';
 
@@ -31,9 +32,11 @@ interface LocalServiceSection {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePageComponent {
+  private readonly analytics = inject(AnalyticsService);
   private readonly seo = inject(SeoService);
 
   readonly contacts = CONTACT_LINKS;
+  readonly whatsAppLinks = WHATS_APP_LINKS;
   readonly servicePreview = SERVICE_CATEGORIES;
 
   readonly localServiceSections: readonly LocalServiceSection[] = [
@@ -126,6 +129,10 @@ export class HomePageComponent {
     'home.values.concreteSupport',
     'home.values.simpleSolutions',
   ] as const;
+
+  trackWhatsAppClick(source: string): void {
+    this.analytics.trackEvent('WhatsApp Click', { source });
+  }
 
   constructor() {
     this.seo.update({

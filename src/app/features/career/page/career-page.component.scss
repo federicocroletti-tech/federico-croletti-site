@@ -1,12 +1,8 @@
 .career-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
-  gap: clamp(24px, 5vw, 64px);
-  align-items: stretch;
+  display: block;
 }
 
-.career-hero .page-heading,
-.career-target-card {
+.career-hero .page-heading {
   border: 1px solid var(--color-line);
   border-radius: var(--radius-panel);
   background:
@@ -25,11 +21,6 @@
   margin-top: 28px;
 }
 
-.career-target-card {
-  height: auto;
-}
-
-.target-list,
 .proof-list {
   display: grid;
   gap: 12px;
@@ -38,7 +29,6 @@
   list-style: none;
 }
 
-.target-list li,
 .proof-list li {
   position: relative;
   padding: 14px 16px 14px 34px;
@@ -49,7 +39,6 @@
   font-weight: 700;
 }
 
-.target-list li::before,
 .proof-list li::before {
   position: absolute;
   top: 1.15rem;
@@ -97,7 +86,6 @@
 }
 
 @media (max-width: 900px) {
-  .career-hero,
   .proof-section {
     grid-template-columns: 1fr;
   }

@@ -7,7 +7,8 @@ import { CookieBannerComponent } from '../cookie-banner/cookie-banner.component'
 import { CookiePreferencesComponent } from '../cookie-preferences/cookie-preferences.component';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
-import { CONTACT_LINKS } from '../../core/constants/contact-links';
+import { WHATS_APP_LINKS } from '../../core/constants/contact-links';
+import { AnalyticsService } from '../../core/services/analytics.service';
 
 @Component({
   selector: 'app-shell',
@@ -24,6 +25,7 @@ import { CONTACT_LINKS } from '../../core/constants/contact-links';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppShellComponent {
+  private readonly analytics = inject(AnalyticsService);
   private readonly router = inject(Router);
   private readonly currentUrl = toSignal(
     this.router.events.pipe(
@@ -33,6 +35,10 @@ export class AppShellComponent {
     { initialValue: this.router.url },
   );
 
-  readonly whatsAppUrl = CONTACT_LINKS.whatsApp;
+  readonly whatsAppUrl = WHATS_APP_LINKS.floating;
   readonly showWhatsAppFloatingButton = computed(() => !this.currentUrl().startsWith('/contatti'));
+
+  trackWhatsAppClick(): void {
+    this.analytics.trackEvent('WhatsApp Click', { source: 'floating_button' });
+  }
 }

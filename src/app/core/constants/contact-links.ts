@@ -1,3 +1,27 @@
+const WHATS_APP_PHONE = '393894658277';
+
+const createWhatsAppUrl = (message: string): string =>
+  `https://wa.me/${WHATS_APP_PHONE}?text=${encodeURIComponent(message)}`;
+
+export const WHATS_APP_LINKS = {
+  homeHero: createWhatsAppUrl(
+    'Ciao Federico, ti contatto dal sito per assistenza informatica o consulenza digitale a Milano.',
+  ),
+  contactPage: createWhatsAppUrl(
+    'Ciao Federico, ti contatto dalla pagina Contatti del sito. Vorrei parlarti di una richiesta.',
+  ),
+  floating: createWhatsAppUrl(
+    'Ciao Federico, ti contatto dal sito. Ho bisogno di supporto informatico o consulenza digitale.',
+  ),
+  footer: createWhatsAppUrl(
+    'Ciao Federico, ho trovato i tuoi contatti sul sito e vorrei chiederti alcune informazioni.',
+  ),
+  localService: (serviceTitle: string): string =>
+    createWhatsAppUrl(
+      `Ciao Federico, ti contatto dal sito per informazioni su: ${serviceTitle}.`,
+    ),
+} as const;
+
 export const CONTACT_LINKS = {
   email: 'federico.croletti@gmail.com',
   phone: '3894658277',
@@ -5,9 +29,8 @@ export const CONTACT_LINKS = {
   linkedIn: 'https://www.linkedin.com/in/federicocroletti/',
   facebook: 'https://www.facebook.com/federico.croletti',
   github: 'https://github.com/fcrolett/',
-  whatsApp: 'https://wa.me/393894658277',
-  googleBusiness:
-    'https://www.google.com/search?q=Federico+Croletti+-+Supporto+Informatico+e+Consulenza+Digitale+Milano',
+  whatsApp: WHATS_APP_LINKS.floating,
+  googleBusiness: 'https://www.google.com/search?q=Federico+Croletti+azienda+informatica+Milano',
   googleReviews: 'https://g.page/r/CVUvo9RO_7A1EBM/review',
   location: 'Milano (MI)',
   areaServed: ['Milano', 'Quarto Oggiaro', 'Certosa', 'Bovisa', 'Portello', 'Baranzate', 'Bollate'],
@@ -49,7 +72,7 @@ export const SOCIAL_LINKS = [
         {
           id: 'whatsapp',
           label: 'WhatsApp',
-          url: CONTACT_LINKS.whatsApp,
+          url: WHATS_APP_LINKS.footer,
           ariaLabel: 'Scrivi a Federico Croletti su WhatsApp',
         },
       ]

@@ -14,7 +14,7 @@ import { filter } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { CookieConsentService } from './cookie-consent.service';
 
-type PlausibleEvent = (eventName: string) => void;
+type PlausibleEvent = (eventName: string, options?: { props?: Record<string, string> }) => void;
 
 interface AnalyticsWindow extends Window {
   plausible?: PlausibleEvent;
@@ -53,6 +53,14 @@ export class AnalyticsService {
     this.initializeRouterTracking();
   }
 
+  trackEvent(eventName: string, props?: Record<string, string>): void {
+    if (!environment.analytics.enabled || !this.consentService.analyticsAccepted()) {
+      return;
+    }
+
+    this.getWindow()?.plausible?.(eventName, props ? { props } : undefined);
+  }
+
   private initializeRouterTracking(): void {
     if (this.routerTrackingInitialized) {
       return;
@@ -62,9 +70,7 @@ export class AnalyticsService {
     this.router.events
       .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
       .subscribe(() => {
-        if (this.consentService.analyticsAccepted()) {
-          this.getWindow()?.plausible?.('pageview');
-        }
+        this.trackEvent('pageview');
       });
   }
 

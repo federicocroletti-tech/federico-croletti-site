@@ -68,13 +68,6 @@ export class CareerPageComponent {
     'career.proof.points.delivery',
   ] as const;
 
-  readonly searchCriteria = [
-    'career.criteria.salary',
-    'career.criteria.location',
-    'career.criteria.contract',
-    'career.criteria.direction',
-  ] as const;
-
   constructor() {
     this.seo.update({
       title: 'Federico Croletti - Frontend Tech Lead e Angular Architect a Milano',

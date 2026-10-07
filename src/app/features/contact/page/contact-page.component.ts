@@ -4,7 +4,8 @@ import { MatCardModule } from '@angular/material/card';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 
-import { CONTACT_LINKS } from '../../../core/constants/contact-links';
+import { CONTACT_LINKS, WHATS_APP_LINKS } from '../../../core/constants/contact-links';
+import { AnalyticsService } from '../../../core/services/analytics.service';
 import { SeoService } from '../../../core/services/seo.service';
 import { ContactFormComponent } from '../components/contact-form/contact-form.component';
 
@@ -17,9 +18,15 @@ import { ContactFormComponent } from '../components/contact-form/contact-form.co
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactPageComponent {
+  private readonly analytics = inject(AnalyticsService);
   private readonly seo = inject(SeoService);
 
   readonly contacts = CONTACT_LINKS;
+  readonly whatsAppUrl = WHATS_APP_LINKS.contactPage;
+
+  trackWhatsAppClick(): void {
+    this.analytics.trackEvent('WhatsApp Click', { source: 'contact_page' });
+  }
 
   constructor() {
     this.seo.update({
