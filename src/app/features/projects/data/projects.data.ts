@@ -40,6 +40,18 @@ export const PROJECTS: readonly ProjectItem[] = [
     isPublic: true,
   },
   {
+    id: 'impact-evidence-vault',
+    titleKey: 'projects.items.impactEvidenceVault.title',
+    descriptionKey: 'projects.items.impactEvidenceVault.description',
+    roleKey: 'projects.items.impactEvidenceVault.role',
+    technologies: ['React', 'TypeScript', 'Vite', 'localStorage', 'Render.com'],
+    status: 'in-development',
+    demoUrl: 'https://impact-evidence-vault-cro-dual-funnels.onrender.com/',
+    githubUrl: 'https://github.com/federicocroletti-tech/impact-evidence-vault',
+    tags: ['Prodotto personale', 'React', 'Career tooling'],
+    isPublic: true,
+  },
+  {
     id: 'moto-smart',
     titleKey: 'projects.items.motoSmart.title',
     descriptionKey: 'projects.items.motoSmart.description',
