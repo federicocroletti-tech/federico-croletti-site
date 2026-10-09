@@ -39,6 +39,13 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'newsletter',
+        loadComponent: () =>
+          import('./features/newsletter/page/newsletter-page.component').then(
+            (m) => m.NewsletterPageComponent,
+          ),
+      },
+      {
         path: 'contatti',
         loadComponent: () =>
           import('./features/contact/page/contact-page.component').then(

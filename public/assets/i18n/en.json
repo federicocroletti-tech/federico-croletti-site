@@ -11,6 +11,7 @@
     "about": "About",
     "services": "Services",
     "projects": "Projects",
+    "newsletter": "Newsletter",
     "contact": "Contact"
   },
   "footer": {
@@ -455,6 +456,11 @@
         "title": "Federico Croletti personal site",
         "description": "Personal site built with Angular, Angular Material, SCSS and i18n to present profile, projects, CV and contact channels.",
         "role": "Ideation, UX, front-end development, architecture and deploy."
+      },
+      "newsletterSegmentata": {
+        "title": "Segmented newsletter",
+        "description": "Newsletter plan connected to the personal site with distinct segments, separate consent, subscription confirmation, unsubscribe flow, preference management and at most one monthly communication per segment.",
+        "role": "Editorial design, consent UX, standalone Angular architecture and connection to the Projects section."
       },
       "contentCockpit": {
         "title": "Content Cockpit",

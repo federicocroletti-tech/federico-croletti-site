@@ -11,6 +11,7 @@
     "about": "Chi sono",
     "services": "Servizi",
     "projects": "Progetti",
+    "newsletter": "Newsletter",
     "contact": "Contatti"
   },
   "footer": {
@@ -455,6 +456,11 @@
         "title": "Sito personale Federico Croletti",
         "description": "Sito personale sviluppato con Angular, Angular Material, SCSS e i18n, pensato per presentare profilo professionale, progetti, CV e contatti.",
         "role": "Ideazione, UX, sviluppo front-end, architettura e deploy."
+      },
+      "newsletterSegmentata": {
+        "title": "Newsletter segmentata",
+        "description": "Piano newsletter collegato al sito personale con segmenti distinti, consenso separato, conferma iscrizione, disiscrizione, gestione preferenze e massimo una comunicazione mensile per segmento.",
+        "role": "Progettazione editoriale, UX del consenso, architettura Angular standalone e collegamento alla sezione Progetti."
       },
       "contentCockpit": {
         "title": "Content Cockpit",

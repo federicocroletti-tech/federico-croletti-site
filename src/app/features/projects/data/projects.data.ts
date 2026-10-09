@@ -22,6 +22,17 @@ export const PROJECTS: readonly ProjectItem[] = [
     isPublic: false,
   },
   {
+    id: 'newsletter-segmentata',
+    titleKey: 'projects.items.newsletterSegmentata.title',
+    descriptionKey: 'projects.items.newsletterSegmentata.description',
+    roleKey: 'projects.items.newsletterSegmentata.role',
+    technologies: ['Angular', 'Content strategy', 'GDPR', 'Email marketing', 'Render.com'],
+    status: 'in-development',
+    demoUrl: '/newsletter',
+    tags: ['Angular', 'Prodotto personale', 'Automazione'],
+    isPublic: true,
+  },
+  {
     id: 'content-cockpit',
     titleKey: 'projects.items.contentCockpit.title',
     descriptionKey: 'projects.items.contentCockpit.description',

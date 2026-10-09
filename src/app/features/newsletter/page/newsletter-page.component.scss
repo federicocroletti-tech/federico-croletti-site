@@ -1,0 +1,135 @@
+.newsletter-page {
+  display: grid;
+  gap: clamp(34px, 5vw, 64px);
+}
+
+.newsletter-principles,
+.newsletter-segments,
+.newsletter-flow,
+.sustainable-plan {
+  display: grid;
+  gap: 22px;
+}
+
+.principle-card mat-card-content p,
+.segment-card mat-card-content p,
+.newsletter-flow p,
+.plan-panel p {
+  color: var(--color-muted);
+}
+
+.segment-grid {
+  align-items: stretch;
+}
+
+.segment-card mat-card-content {
+  display: grid;
+  gap: 16px;
+}
+
+.segment-card .mat-mdc-card-subtitle {
+  color: var(--color-accent-strong);
+  font-weight: 800;
+}
+
+.segment-field {
+  display: grid;
+  gap: 5px;
+}
+
+.segment-field strong {
+  color: var(--color-primary-strong);
+}
+
+.segment-card ul,
+.operating-list {
+  display: grid;
+  gap: 10px;
+  padding-left: 1.2rem;
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.segment-card li::marker,
+.operating-list li::marker {
+  color: var(--color-accent-strong);
+  font-weight: 800;
+}
+
+.newsletter-flow {
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1fr);
+  align-items: start;
+  padding: clamp(18px, 3vw, 28px);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-panel);
+  background:
+    radial-gradient(circle at 8% 0%, rgb(88 198 162 / 12%), transparent 18rem),
+    linear-gradient(135deg, rgb(255 255 255 / 7%), rgb(255 255 255 / 3%));
+}
+
+.flow-copy {
+  display: grid;
+  gap: 14px;
+}
+
+.operating-list {
+  counter-reset: steps;
+  padding: 0;
+  list-style: none;
+}
+
+.operating-list li {
+  position: relative;
+  min-height: 48px;
+  padding: 12px 14px 12px 54px;
+  border: 1px solid rgb(126 228 190 / 16%);
+  border-radius: var(--radius-card);
+  background: rgb(255 255 255 / 4%);
+}
+
+.operating-list li::before {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  display: inline-grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: #06110d;
+  font-size: 0.82rem;
+  font-weight: 800;
+  content: counter(steps);
+  counter-increment: steps;
+}
+
+.plan-panel {
+  display: grid;
+  gap: 18px;
+  padding: clamp(18px, 3vw, 26px);
+  border: 1px solid rgb(255 190 116 / 18%);
+  border-radius: var(--radius-panel);
+  background: var(--color-warm);
+}
+
+@media (max-width: 900px) {
+  .newsletter-flow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .newsletter-page {
+    gap: 28px;
+  }
+
+  .newsletter-flow,
+  .plan-panel {
+    border-radius: var(--radius-card);
+  }
+
+  .operating-list li {
+    padding-right: 12px;
+  }
+}

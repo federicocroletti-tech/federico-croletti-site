@@ -1,0 +1,107 @@
+<section class="section newsletter-page">
+  <div class="page-heading">
+    <p class="eyebrow">Newsletter collegata al sito</p>
+    <h1>Una newsletter segmentata, sostenibile e basata sul consenso</h1>
+    <p class="lead">
+      Il progetto prevede canali tematici distinti, frequenza controllata e iscrizione solo su
+      richiesta esplicita. Ogni lettore sceglie cosa ricevere e puo cambiare idea in qualsiasi
+      momento.
+    </p>
+    <div class="cta-row" aria-label="Azioni newsletter">
+      <a mat-flat-button color="primary" routerLink="/contatti">Manifesto interesse</a>
+      <a mat-stroked-button href="#segmenti">Vedi i segmenti</a>
+    </div>
+  </div>
+
+  <section class="newsletter-principles" aria-labelledby="newsletter-principles-title">
+    <div>
+      <p class="eyebrow">Regole editoriali e privacy</p>
+      <h2 id="newsletter-principles-title">Prima viene la scelta della persona</h2>
+    </div>
+
+    <div class="grid grid--2">
+      @for (rule of consentRules; track rule.title) {
+        <mat-card class="site-card principle-card">
+          <mat-card-header>
+            <mat-card-title>{{ rule.title }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ rule.body }}</p>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  </section>
+
+  <section id="segmenti" class="newsletter-segments" aria-labelledby="newsletter-segments-title">
+    <div>
+      <p class="eyebrow">Segmenti distinti</p>
+      <h2 id="newsletter-segments-title">Cinque percorsi, nessun invio generico a tutti</h2>
+    </div>
+
+    <div class="grid grid--2 segment-grid">
+      @for (segment of segments; track segment.title) {
+        <mat-card class="site-card segment-card">
+          <mat-card-header>
+            <mat-card-title>{{ segment.title }}</mat-card-title>
+            <mat-card-subtitle>{{ segment.cadence }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="segment-field">
+              <strong>Destinatari</strong>
+              <p>{{ segment.audience }}</p>
+            </div>
+            <div class="segment-field">
+              <strong>Promessa editoriale</strong>
+              <p>{{ segment.promise }}</p>
+            </div>
+            <ul>
+              @for (example of segment.examples; track example) {
+                <li>{{ example }}</li>
+              }
+            </ul>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  </section>
+
+  <section class="newsletter-flow" aria-labelledby="newsletter-flow-title">
+    <div class="flow-copy">
+      <p class="eyebrow">Iscrizione corretta</p>
+      <h2 id="newsletter-flow-title">Conferma, preferenze e uscita sempre disponibili</h2>
+      <p>
+        Il flusso consigliato è double opt-in: richiesta dal sito, email di conferma e attivazione
+        solo dopo conferma. Ogni invio deve contenere un link di disiscrizione e un link per
+        aggiornare i segmenti scelti.
+      </p>
+    </div>
+
+    <ol class="operating-list">
+      @for (step of operatingSteps; track step) {
+        <li>{{ step }}</li>
+      }
+    </ol>
+  </section>
+
+  <section class="sustainable-plan" aria-labelledby="sustainable-plan-title">
+    <div>
+      <p class="eyebrow">Piano sostenibile</p>
+      <h2 id="sustainable-plan-title">Calendario leggero, massimo una comunicazione mensile per segmento</h2>
+    </div>
+
+    <div class="plan-panel">
+      <p>
+        Il calendario editoriale non deve inseguire la quantità: ogni segmento può ricevere al
+        massimo una newsletter al mese, solo quando esiste un contenuto utile. Se in un mese non c'è
+        nulla di rilevante per un segmento, quel segmento non riceve invii.
+      </p>
+      <ul class="pill-list" aria-label="Vincoli del piano newsletter">
+        <li class="pill">Massimo 1 invio mensile per segmento</li>
+        <li class="pill">Invii basati sulle preferenze</li>
+        <li class="pill">Nessun contenuto unico mandato a tutti</li>
+        <li class="pill">Disiscrizione in ogni email</li>
+      </ul>
+    </div>
+  </section>
+</section>
