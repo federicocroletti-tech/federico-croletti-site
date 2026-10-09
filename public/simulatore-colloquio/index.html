@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simulatore Colloquio Senior Frontend</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Senior Frontend Engineer / Frontend Tech Lead</p>
+          <h1 id="page-title">Simulatore di colloquio frontend</h1>
+          <p class="intro">Una domanda alla volta, feedback immediato e criteri da colloquio tecnico: correttezza, seniority, chiarezza, concretezza, rischi, esempi e decisioni.</p>
+        </div>
+        <aside class="score-panel" aria-label="Stato simulazione">
+          <div>
+            <span class="panel-label">Domanda</span>
+            <strong id="question-counter">1 / 18</strong>
+          </div>
+          <div>
+            <span class="panel-label">Area</span>
+            <strong id="area-label">Angular</strong>
+          </div>
+          <div>
+            <span class="panel-label">Media</span>
+            <strong id="average-score">-</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="workspace" aria-label="Simulatore">
+        <div class="interview-panel">
+          <div class="question-head">
+            <span id="difficulty-pill" class="pill">Scenario senior</span>
+            <span id="topic-pill" class="pill muted">Angular</span>
+          </div>
+          <h2 id="question-title">Caricamento domanda...</h2>
+          <p id="question-text" class="question-text"></p>
+          <label for="answer-input">La tua risposta</label>
+          <textarea id="answer-input" rows="10" placeholder="Rispondi come in colloquio: decisione, trade-off, esempio concreto e rischi."></textarea>
+          <div class="actions">
+            <button id="evaluate-btn" type="button">Valuta risposta</button>
+            <button id="next-btn" type="button" class="secondary" disabled>Prossima domanda</button>
+            <button id="restart-btn" type="button" class="ghost">Ricomincia</button>
+          </div>
+        </div>
+
+        <aside class="feedback-panel" aria-live="polite">
+          <div class="feedback-empty" id="feedback-empty">
+            <h2>Feedback</h2>
+            <p>Scrivi la risposta e premi “Valuta risposta”. Il simulatore mostrerà voto, punti forti, lacune, una risposta modello in quattro righe e un approfondimento tecnico.</p>
+          </div>
+          <div class="feedback-content hidden" id="feedback-content">
+            <div class="grade-row">
+              <span class="panel-label">Voto</span>
+              <strong id="grade-value">-</strong>
+            </div>
+            <section>
+              <h3>Punti forti</h3>
+              <ul id="strengths-list"></ul>
+            </section>
+            <section>
+              <h3>Lacune</h3>
+              <ul id="gaps-list"></ul>
+            </section>
+            <section>
+              <h3>Risposta da colloquio in quattro righe</h3>
+              <ol id="model-answer"></ol>
+            </section>
+            <section>
+              <h3>Approfondimento tecnico</h3>
+              <p id="technical-depth"></p>
+            </section>
+          </div>
+        </aside>
+      </section>
+
+      <section class="rubric" aria-label="Criteri di valutazione">
+        <h2>Criteri</h2>
+        <div class="rubric-grid">
+          <span>Correttezza</span>
+          <span>Seniority</span>
+          <span>Chiarezza</span>
+          <span>Concretezza</span>
+          <span>Rischi ignorati</span>
+          <span>Esempi</span>
+          <span>Capacità decisionale</span>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

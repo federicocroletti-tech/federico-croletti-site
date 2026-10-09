@@ -68,6 +68,7 @@
     "actions": {
       "primaryAria": "Main actions",
       "callNow": "Call now",
+      "interviewSimulator": "Interview simulator",
       "requestSupport": "Request support",
       "requestConsulting": "Request consulting"
     },

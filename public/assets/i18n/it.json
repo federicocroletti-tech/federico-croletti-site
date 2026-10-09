@@ -68,6 +68,7 @@
     "actions": {
       "primaryAria": "Azioni principali",
       "callNow": "Chiama ora",
+      "interviewSimulator": "Simulatore colloquio",
       "requestSupport": "Richiedi assistenza",
       "requestConsulting": "Richiedi consulenza"
     },
