@@ -467,6 +467,11 @@
         "description": "Assistente editoriale personale per organizzare profili, idee, fonti, verifiche e carico di lavoro dei miei progetti Instagram.",
         "role": "Ideazione prodotto, architettura Angular statica, sviluppo MVP, persistenza locale, test e configurazione deploy Render."
       },
+      "impactEvidenceVault": {
+        "title": "Impact Evidence Vault",
+        "description": "Applicazione privata per raccogliere prove di impatto professionale e trasformarle in aggiornamenti CV, storie STAR, review, richieste di promozione e portfolio anonimizzato senza inventare metriche.",
+        "role": "Ideazione prodotto, sviluppo React/TypeScript, modello dati locale, generatori evidence-based, segnalazione claim senza evidenza e configurazione deploy Render."
+      },
       "motoSmart": {
         "title": "Moto Smart / Officina Moto Smart",
         "description": "Demo e futuro MVP per aiutare officine moto a gestire richieste clienti, interventi, contatti WhatsApp, chiamate e primo livello di supporto tramite bot AI.",
