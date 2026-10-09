@@ -1,11 +1,16 @@
 services:
   - type: web
-    name: federico-croletti-site
-    runtime: static
+    name: impact-evidence-vault-cro-dual-funnels-analytics
+    runtime: node
     plan: free
     buildCommand: npm ci && npm run build
-    staticPublishPath: ./dist/federico-croletti-site/browser
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
+    startCommand: npm run start:secure
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: BASIC_AUTH_USERNAME
+        sync: false
+      - key: BASIC_AUTH_PASSWORD
+        sync: false
+      - key: AUTH_REALM
+        value: Impact Evidence Vault

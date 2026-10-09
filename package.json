@@ -4,9 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:secure": "node server/render-auth-server.cjs",
     "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "career:radar": "node scripts/career-radar.cjs",
+    "accessibility:check": "node scripts/accessibility-check.cjs",
     "test": "ng test --watch=false",
     "test:karma": "ng run federico-croletti-site:test-karma --watch=false --browsers=ChromeHeadlessNoSandbox",
     "test:cypress": "node scripts/run-cypress.cjs",
