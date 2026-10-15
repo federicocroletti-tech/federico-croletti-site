@@ -7,5 +7,26 @@ services:
     staticPublishPath: ./dist/federico-croletti-site/browser
     routes:
       - type: rewrite
+        source: /chi-sono
+        destination: /chi-sono/index.html
+      - type: rewrite
+        source: /servizi
+        destination: /servizi/index.html
+      - type: rewrite
+        source: /progetti
+        destination: /progetti/index.html
+      - type: rewrite
+        source: /portfolio
+        destination: /progetti/index.html
+      - type: rewrite
+        source: /contatti
+        destination: /contatti/index.html
+      - type: rewrite
+        source: /privacy
+        destination: /privacy/index.html
+      - type: rewrite
+        source: /cookie-policy
+        destination: /cookie-policy/index.html
+      - type: rewrite
         source: /*
         destination: /index.html

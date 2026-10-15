@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --configuration production",
+    "build": "ng build --configuration production && node scripts/generate-seo-pages.mjs",
     "watch": "ng build --watch --configuration development",
     "career:radar": "node scripts/career-radar.cjs",
     "check:study-lab-editorial": "node scripts/verify-study-lab-editorial.mjs",
