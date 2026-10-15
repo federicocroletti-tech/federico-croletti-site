@@ -427,6 +427,7 @@
   },
   "projects": {
     "eyebrow": "Portfolio",
+    "empty": "No visible projects match this filter.",
     "title": "Projects",
     "intro": "From enterprise architectures to personal products: explore projects by domain, discover what they do and dive into the technical choices.",
     "results": "{{count}} projects in {{collections}} collections",
@@ -467,158 +468,96 @@
     },
     "items": {
       "personalSite": {
-        "title": "Federico Croletti personal site",
-        "description": "Personal site built with Angular, Angular Material, SCSS and i18n to present profile, projects, CV and contact channels.",
         "role": "Ideation, UX, front-end development, architecture and deploy."
       },
       "contentCockpit": {
-        "title": "Content Cockpit",
-        "description": "Personal editorial assistant for organizing profiles, ideas, sources, verification work and workload across my Instagram projects.",
         "role": "Product ideation, static Angular architecture, MVP development, local persistence, testing and Render deploy setup."
       },
       "aiCertificationStudyLab": {
-        "title": "AI Certification Study Lab",
-        "description": "Independent, non-commercial prototype of a practical learning path for responsible AI use. Its initial reference to Claude Certified Associate – Foundations (CCAO-F) has not been verified by official sources; this is not an official course or exam simulator, and the simulator remains disabled.",
         "role": "Product ideation, static front-end development, official-source register, editorial safeguards and integration as a static Render demo."
       },
       "motoSmart": {
-        "title": "Moto Smart / Officina Moto Smart",
-        "description": "Demo and future MVP to help motorcycle workshops manage client requests, interventions, WhatsApp contacts, calls and first-level support through an AI bot.",
         "role": "Product ideation, functional analysis, front-end architecture, Angular prototyping and MVP roadmap."
       },
       "fitCoachPro": {
-        "title": "Fit Coach Pro Website",
-        "description": "Modern personal trainer website with landing page, services, method, testimonials, booking form, privacy consent and granular cookie preferences.",
         "role": "Angular scaffolding, standalone architecture, responsive UX/UI, base SEO, Open Graph, sitemap, robots.txt and demo GDPR flow."
       },
       "danielPantusoSite": {
-        "title": "Daniel Pantuso Gardener - Showcase Website",
-        "description": "Professional showcase website for gardening services in Milan, with SEO-focused content, quick contact options and a form that opens WhatsApp with a prefilled message.",
         "role": "Requirements analysis, Angular standalone development, responsive UX, technical SEO optimization and static deployment setup."
       },
       "menuSmartQr": {
-        "title": "Menu Smart QR",
-        "description": "Web app to digitize menus and catalogs through QR codes, with fast mobile consultation.",
         "role": "Product ideation, Angular front-end development and deployment on Render."
       },
       "motoRoutePlanner": {
-        "title": "MotoRoute Planner",
-        "description": "Vue 3 SPA for planning motorcycle itineraries, visualizing routes on Leaflet maps and managing dashboard views, mock data, i18n and feature flags.",
         "role": "Front-end architecture design, Vue/TypeScript development, Leaflet map integration and static build/deploy setup."
       },
       "etfDipAlert": {
-        "title": "ETF Tracker / Dip Alert",
-        "description": "Python system that monitors a list of ETFs, downloads prices with yfinance, calculates daily changes and drawdowns across multiple time windows, and sends email alerts through Brevo when configured thresholds are met.",
         "role": "Product ideation, repository setup, JSON configuration modeling, Python monitoring logic, ticker resolver, GitHub Actions workflow and Brevo email integration."
       },
       "taxiOpportunityRadar": {
-        "title": "Taxi Opportunity Radar",
-        "description": "Data-driven product for taxi and private-hire drivers that combines weather and web event signals to suggest areas with higher potential demand, with automatic daily email reports.",
         "role": "Product ideation, TypeScript/Node development, local-demand scoring, Open-Meteo integration, web event parsing (JSON-LD), GitHub Actions automation and Brevo email reporting."
       },
       "itLeadRadar": {
-        "title": "IT Lead Radar",
-        "description": "Automated Node.js + TypeScript monitor that scans public sources to identify IT leads and sends Brevo email alerts with persistent deduplication.",
         "role": "Product ideation, collection/scoring pipeline development, GitHub Actions automation and email alert integration."
       },
       "sendMailPromotore": {
-        "title": "Mail Promotore",
-        "description": "Full-stack application for managing recipient lists, email templates, send history, exclusions and controlled SMTP delivery with automatic duplicate blocking per campaign.",
         "role": "Product ideation, React/Node development, JSON archive modeling, anti-duplicate rules, Render setup and focus on privacy and operational safety."
       },
       "airmapItalia": {
-        "title": "AIRMAP ITALIA - Air quality WebGIS",
-        "description": "Angular WebGIS platform for visualizing urban air quality and pollution on a Leaflet map, with GeoJSON polygons, environmental layers, dashboard views and editable mock data.",
         "role": "Product ideation, GIS/front-end architecture, Angular development, Leaflet integration, GeoJSON data modeling, dashboard work and Render deploy."
       },
       "radiciSanGiovanniLipioni": {
-        "title": "Radici San Giovanni Lipioni",
-        "description": "Interactive digital guide to explore the village through a map, slow itineraries, demo stories, JSON data and a chatbot based on controlled content.",
         "role": "Product ideation, Angular front-end architecture, content structure, routing, responsive UX, demo data management and Render deploy."
       },
       "regaliVicini": {
-        "title": "Regali Vicini - Facebook Catalog",
-        "description": "Local application for organizing Facebook posts offering free items: it imports links and text supplied by the user, recognizes keywords, removes duplicates, manages states and stores the catalog locally.",
         "role": "Product ideation, React/Node full-stack development, authorized Meta and Gmail connector design, with a focus on privacy and security."
       },
       "personalInvestmentRadar": {
-        "title": "Personal Investment Radar",
-        "description": "Full-stack application for tracking personal portfolios, analyzing risk, drawdown and scenarios, importing Fineco snapshots, and managing watchlists and technical alerts with traceable data.",
         "role": "Angular/NestJS full-stack architecture and development, PostgreSQL modeling with Prisma, financial-data integrations, application security and containerized deployment."
       },
       "cryptoDeepAlert": {
-        "title": "Crypto Deep Alert",
-        "description": "Python system that monitors cryptocurrencies, calculates drawdown, rallies, volatility, volume and momentum across multiple time frames, and sends email reports with quantitative alerts.",
         "role": "Product ideation, Python monitoring-engine development, threshold configuration, HTML report generation and Brevo email integration."
       },
       "stockDeepAlert": {
-        "title": "Financial Instruments Daily Monitor",
-        "description": "Python system for daily monitoring of stocks and bonds, with price, fundamentals, yield, risk and drawdown analysis plus automated email reports.",
         "role": "Product ideation, analysis and scoring engine development, financial-provider integration, HTML/PDF reporting and GitHub Actions automation."
       },
       "bankTransactionsDashboard": {
-        "title": "Bank Transactions Dashboard",
-        "description": "Angular dashboard for browsing and managing simulated bank account transactions, with balances, filters, sorting, pagination, detail views and new transaction entry.",
         "role": "Angular front-end development, mock API modeling, application facade, Reactive Forms, local persistence and focused tests for core rules."
       },
       "finecoPortfolioImporter": {
-        "title": "Fineco Portfolio Importer",
-        "description": "Python utility that reads Fineco exports, normalizes positions and movements, and generates JSON files for asset allocation, tax analysis and tax-loss recovery opportunities.",
         "role": "Product ideation, financial-data parsing, instrument classification, JSON output generation and operational documentation for personal use."
       },
       "localDemandRadar": {
-        "title": "Local Demand Radar",
-        "description": "Data-driven application for local businesses that combines weather, events, areas and inactive customers to generate demand scores, opportunities and email reports.",
         "role": "Product ideation, data-signal definition, opportunity scoring and setup of the automated reporting flow."
       },
       "federicoItSupport": {
-        "title": "Federico IT Support",
-        "description": "Web project dedicated to IT support and Italian digital services for expats and residents in Italy.",
         "role": "Offer definition, content structure, SEO positioning and prototyping of the informational experience."
       },
       "milanoCateringWeddingChatbot": {
-        "title": "Milano Catering Wedding - Consulting Chatbot",
-        "description": "Project base for a first-consultation assistant on the Milano Catering Wedding website, designed to qualify leads without inventing menus, prices or availability.",
         "role": "Website analysis, conversational MVP definition, lead schema, static prototype, privacy documentation and WordPress integration options."
       },
       "whatsappBot": {
-        "title": "WhatsApp Bot with Meta API",
-        "description": "Node.js backend for a WhatsApp bot based on official Meta APIs, Express and OpenAI integration for controlled automated replies.",
         "role": "Backend development, API configuration, webhook handling and preparation for AI service integration."
       },
       "whatsappChatFe": {
-        "title": "WhatsApp Chat Frontend",
-        "description": "Angular frontend for experimenting with a WhatsApp-like chat interface, designed as a support UI for conversational integrations and bots.",
         "role": "Modern Angular scaffolding, front-end structure, routing and preparation of the UI layer for conversational flows."
       },
       "argoStudioMusic": {
-        "title": "Argo Studio Music",
-        "description": "Vue/Vuetify web application for a music project, with routing, internationalization and reusable UI components.",
         "role": "Vue front-end development, TypeScript setup, Vuetify UI, validations and multilingual structure."
       },
       "progettoMultimedia": {
-        "title": "Progetto Multimedia",
-        "description": "Vue 3 project with routing, Vuex and Bootstrap, built as a multimedia application and SPA architecture learning path.",
         "role": "Vue front-end development, view organization, router/store configuration and Bootstrap integration."
       },
       "smartSales": {
-        "title": "Smart Sales - Micro Frontend Cart",
-        "description": "Micro Frontend dedicated to cart management in an Angular ecosystem with application shell and federated module architecture.",
         "role": "Cart component development, shell integration, state management and front-end pattern definition."
       },
       "esaMap": {
-        "title": "ESA - Interactive WMS map",
-        "description": "Web application with interactive map based on Leaflet and WMS/MapServer services, used to visualize and manage geospatial data.",
         "role": "Team coordination, front-end development, UX/UI optimization and map integration."
       },
       "microFrontend": {
-        "title": "Angular Micro Frontend Architecture",
-        "description": "Enterprise architecture based on a main shell, dynamically loaded micro frontends, shared library, centralized i18n, event bus and federated routing.",
         "role": "Team Leader & Senior Consultant, architectural pattern development, team support and best-practice standardization."
       },
       "chatbot": {
-        "title": "AI chatbot with Node backend and Angular frontend",
-        "description": "AI chatbot prototype with Node backend and Angular frontend, designed for integrations with channels such as WhatsApp and external services.",
         "role": "Full-stack development, repository setup, deploy and API integration."
       }
     }

@@ -72,12 +72,12 @@
 
               <mat-card-header>
                 <mat-card-title>
-                  <h3 [id]="'project-' + project.id">{{ project.titleKey | translate }}</h3>
+                  <h3 [id]="'project-' + project.id">{{ project.title[language()] }}</h3>
                 </mat-card-title>
               </mat-card-header>
 
               <mat-card-content>
-                <p class="project-description">{{ project.descriptionKey | translate }}</p>
+                <p class="project-description">{{ project.description[language()] }}</p>
                 <ul
                   class="pill-list project-stack"
                   [attr.aria-label]="'projects.technologyLabel' | translate"
@@ -129,7 +129,7 @@
                     [attr.aria-label]="
                       ('projects.demoCta' | translate) +
                       ': ' +
-                      (project.titleKey | translate) +
+                      project.title[language()] +
                       ' (' +
                       ('projects.newTab' | translate) +
                       ')'
@@ -145,7 +145,7 @@
                     rel="noopener noreferrer"
                     [attr.aria-label]="
                       'GitHub: ' +
-                      (project.titleKey | translate) +
+                      project.title[language()] +
                       ' (' +
                       ('projects.newTab' | translate) +
                       ')'
@@ -162,5 +162,7 @@
         }
       </div>
     </section>
+  } @empty {
+    <p>{{ 'projects.empty' | translate }}</p>
   }
 </section>

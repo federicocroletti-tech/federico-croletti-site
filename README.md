@@ -28,10 +28,46 @@ ng generate --help
 
 ## Project portfolio
 
-The `/progetti` page groups every project into a curated domain collection while
-keeping technology filters available. Project metadata and collection order live
-in `src/app/features/projects/data/projects.data.ts`; Italian and English copy
-live in `public/assets/i18n`.
+The `/progetti` page groups visible projects into domain collections while keeping
+technology filters available.
+
+### Gestire titoli, descrizioni e visibilita
+
+Modifica **`src/app/features/projects/data/projects.config.ts`**. Ogni voce e
+identificata dall'ID stabile del progetto:
+
+```ts
+'content-cockpit': {
+  visible: true,
+  title: {
+    it: 'Content Cockpit',
+    en: 'Content Cockpit',
+  },
+  description: {
+    it: 'La descrizione italiana del prodotto.',
+    en: 'The English product description.',
+  },
+},
+```
+
+- `visible: true` mostra la scheda; `visible: false` la nasconde da tutti i
+  filtri, dalle raccolte e dai conteggi.
+- Compila sempre titolo e descrizione sia in `it` sia in `en`.
+- Non cambiare gli ID e non eliminare le voci per nasconderle: usa `visible`.
+- Le modifiche vengono applicate con la build e il successivo deploy, non
+  immediatamente sul sito online.
+- Nascondere una scheda non protegge dati riservati e non disabilita eventuali
+  pagine o demo raggiungibili direttamente tramite URL.
+- `isPublic` nei metadati non e il controllo di visibilita della scheda.
+
+Tutti i progetti esistenti restano visibili per impostazione iniziale. La
+configurazione viene verificata: ID sconosciuti, voci mancanti e testi vuoti
+generano un errore esplicito.
+
+Project metadata (links, technologies, cover, role) and collection order live in
+`src/app/features/projects/data/projects.data.ts`. Other Italian and English UI
+copy and role descriptions live in `public/assets/i18n`. Project titles and
+descriptions have a single source of truth in `projects.config.ts`.
 
 Every project has a dedicated, original SVG cover in `public/assets/images/projects`
 (960 x 600). These are conceptual illustrations, not product screenshots or client

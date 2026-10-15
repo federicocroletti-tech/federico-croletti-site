@@ -4,6 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { TranslatePipe } from '@ngx-translate/core';
 
 import { SeoService } from '../../../core/services/seo.service';
+import { LanguageService } from '../../../core/services/language.service';
 import { PROJECT_COLLECTIONS, PROJECT_FILTERS, PROJECTS } from '../data/projects.data';
 
 @Component({
@@ -16,6 +17,7 @@ import { PROJECT_COLLECTIONS, PROJECT_FILTERS, PROJECTS } from '../data/projects
 })
 export class ProjectsPageComponent {
   private readonly seo = inject(SeoService);
+  readonly language = inject(LanguageService).currentLanguage;
 
   readonly filters = PROJECT_FILTERS;
   readonly selectedFilter = signal('all');
@@ -23,10 +25,10 @@ export class ProjectsPageComponent {
     const selectedFilter = this.selectedFilter();
 
     if (selectedFilter === 'all') {
-      return PROJECTS;
+      return PROJECTS.filter((project) => project.visible);
     }
 
-    return PROJECTS.filter((project) => project.tags.includes(selectedFilter));
+    return PROJECTS.filter((project) => project.visible && project.tags.includes(selectedFilter));
   });
   readonly collections = computed(() =>
     PROJECT_COLLECTIONS.map((collection) => ({
