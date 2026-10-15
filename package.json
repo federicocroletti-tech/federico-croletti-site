@@ -7,6 +7,7 @@
     "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "career:radar": "node scripts/career-radar.cjs",
+    "check:study-lab-editorial": "node scripts/verify-study-lab-editorial.mjs",
     "test": "ng test --watch=false",
     "test:karma": "ng run federico-croletti-site:test-karma --watch=false --browsers=ChromeHeadlessNoSandbox",
     "test:cypress": "node scripts/run-cypress.cjs",

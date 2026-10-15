@@ -42,6 +42,16 @@ explicit dimensions and are lazy-loaded except for the first visible card.
 Role, full technology stack and tags remain available in each card's expandable
 details. Demo and repository links retain their original destinations.
 
+The independent AI Certification Study Lab prototype is served from
+`/ai-certification-study-lab/` as a static site asset. Its listing and UI
+explicitly state that the referenced CCAO-F certification is unverified; it is
+not an official course or exam simulator, and the simulator and commercial
+registration remain disabled.
+
+Run `npm run check:study-lab-editorial` to verify its source allowlist,
+publication declarations, disabled registration/sales, and absence of user
+content submission or upload paths.
+
 ## Building
 
 To build the project run:

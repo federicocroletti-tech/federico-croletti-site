@@ -476,6 +476,11 @@
         "description": "Personal editorial assistant for organizing profiles, ideas, sources, verification work and workload across my Instagram projects.",
         "role": "Product ideation, static Angular architecture, MVP development, local persistence, testing and Render deploy setup."
       },
+      "aiCertificationStudyLab": {
+        "title": "AI Certification Study Lab",
+        "description": "Independent, non-commercial prototype of a practical learning path for responsible AI use. Its initial reference to Claude Certified Associate – Foundations (CCAO-F) has not been verified by official sources; this is not an official course or exam simulator, and the simulator remains disabled.",
+        "role": "Product ideation, static front-end development, official-source register, editorial safeguards and integration as a static Render demo."
+      },
       "motoSmart": {
         "title": "Moto Smart / Officina Moto Smart",
         "description": "Demo and future MVP to help motorcycle workshops manage client requests, interventions, WhatsApp contacts, calls and first-level support through an AI bot.",

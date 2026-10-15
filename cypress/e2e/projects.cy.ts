@@ -7,8 +7,8 @@ describe('Project portfolio', () => {
   it('groups all projects and serves every original cover', () => {
     cy.viewport(1280, 900);
     cy.get('.project-collection').should('have.length', 6);
-    cy.get('.project-entry').should('have.length', 30);
-    cy.get('.project-results').should('contain.text', '30 progetti in 6 raccolte');
+    cy.get('.project-entry').should('have.length', 31);
+    cy.get('.project-results').should('contain.text', '31 progetti in 6 raccolte');
     cy.get('.project-cover img').each(($image) => {
       const source = $image.attr('src');
       expect(source).to.match(/^\/assets\/images\/projects\/[\w-]+\.svg$/);
@@ -42,7 +42,7 @@ describe('Project portfolio', () => {
     cy.contains('.project-filters button', 'Finanza').should('have.css', 'color', 'rgb(6, 17, 13)');
     cy.get('.collection-heading h2').should('have.text', 'Finanza e dati');
     cy.contains('.project-filters button', 'Tutti').click();
-    cy.get('.project-entry').should('have.length', 30);
+    cy.get('.project-entry').should('have.length', 31);
     cy.get('.project-collection').should('have.length', 6);
   });
 
@@ -98,11 +98,22 @@ describe('Project portfolio', () => {
   it('translates collections, filters and details into English', () => {
     cy.viewport(1280, 900);
     cy.contains('.header-language button', 'EN').click();
-    cy.get('.project-results').should('contain.text', '30 projects in 6 collections');
+    cy.get('.project-results').should('contain.text', '31 projects in 6 collections');
     cy.get('.collection-heading h2').first().should('have.text', 'Enterprise architectures');
     cy.get('.project-details summary').first().should('contain.text', 'Role and full tech stack');
     cy.contains('.project-filters button', 'Finance').click();
     cy.get('.project-entry').should('have.length', 6);
     cy.get('.collection-heading h2').should('have.text', 'Finance and data');
+  });
+
+  it('serves the independent study lab with its unverified-certification notice', () => {
+    cy.visit('/ai-certification-study-lab/');
+    cy.title().should('eq', 'AI Certification Study Lab');
+    cy.contains('CCAO-F non sono stati verificati nelle fonti ufficiali consultate').should('be.visible');
+    cy.contains('LEGAL_REVIEW_REQUIRED').should('be.visible');
+    cy.get('button[data-view="simulator"]').first().click();
+    cy.contains('La simulazione non è ancora attiva').should('be.visible');
+    cy.get('.nav-item[data-view="evidence"]').click();
+    cy.contains('10 APERTI · 2 RISOLTI').should('be.visible');
   });
 });
