@@ -53,17 +53,22 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "IT support Milan · Digital consulting · Software development",
-      "title": "Federico Croletti - IT Support and Digital Consulting",
-      "subtitle": "IT Technician, Digital Consultant and Software Developer in Milan.",
-      "aboutCta": "About me",
-      "servicesCta": "Explore my services",
-      "projectsCta": "View projects",
-      "contactCta": "Contact me",
-      "panelLabel": "Professional identity",
-      "logoAlt": "Federico Croletti personal graphic mark",
-      "panelEyebrow": "Clear support, also remote",
-      "panelText": "Milan and surrounding areas, with priority on simple and sustainable solutions."
+      "eyebrow": "Senior Software Engineer · Frontend Tech Lead · People Manager",
+      "title": "I make complex web applications easier to evolve.",
+      "subtitle": "I design and lead enterprise front-end solutions with Angular, Micro Frontends and modular architectures. I focus on quality, maintainability and collaboration across teams, turning complex technical problems into clear decisions and practical steps.",
+      "projectsCta": "Explore projects",
+      "cvCta": "Download my CV",
+      "linkedinCta": "LinkedIn profile",
+      "localPrompt": "Looking for IT support or digital services in Milan?",
+      "localCta": "Explore services",
+      "panelLabel": "Professional capabilities",
+      "panelEyebrow": "Technical expertise, clear decisions",
+      "panelText": "I bring together software architecture, sustainable delivery and a focus on people's growth.",
+      "highlights": {
+        "engineering": "Angular and TypeScript",
+        "leadership": "Micro Frontends and modular architectures",
+        "delivery": "Team leadership and people management"
+      }
     },
     "actions": {
       "primaryAria": "Main actions",
@@ -74,8 +79,9 @@
     },
     "localServices": {
       "eyebrow": "IT services in Milan",
-      "title": "Local interventions and remote support",
-      "body": "Federico Croletti works in Milan and areas such as Quarto Oggiaro, Certosa, Bovisa, Portello, Baranzate and Bollate for PC assistance, IT consulting, cybersecurity, software development and practical digital support.",
+      "title": "Digital services and IT support in Milan",
+      "body": "A dedicated path for individuals, professionals and small businesses: PC support, email and certified email, digital identity, websites and practical digital assistance, also remotely.",
+      "cta": "Explore all services",
       "navAria": "Internal service links",
       "areaLabel": "Areas",
       "actionsAria": "Service actions",
@@ -125,6 +131,64 @@
       "starsLabel": "stars on Google",
       "reviewCountLabel": "27 reviews on Google Business",
       "cta": "Read all Google reviews"
+    },
+    "engineering": {
+      "eyebrow": "Software engineering and leadership",
+      "title": "Solid architecture, evolving without losing sight of delivery",
+      "body": "I have worked on financial, insurance, geospatial and document-management applications. I bring front-end experience, a focus on quality and a pragmatic approach to technical decisions.",
+      "cta": "Explore my experience",
+      "capabilities": {
+        "frontend": {
+          "title": "Frontend engineering",
+          "body": "Angular, TypeScript and interface development for complex applications."
+        },
+        "architecture": {
+          "title": "Modular architectures",
+          "body": "Micro Frontends, Module Federation, shared libraries and internationalization."
+        },
+        "leadership": {
+          "title": "Leadership and collaboration",
+          "body": "Technical coordination, supporting people and working with stakeholders."
+        }
+      }
+    },
+    "work": {
+      "eyebrow": "Experience in practice",
+      "title": "Projects and tools that show how I work",
+      "body": "A selection across enterprise experience, geospatial interfaces and an interactive personal product.",
+      "samples": {
+        "enterprise": {
+          "title": "Enterprise platforms",
+          "body": "Experience with Angular applications, modular architectures, shared libraries and maintainability. Details of individual projects are shared only where permitted.",
+          "cta": "Professional profile"
+        },
+        "maps": {
+          "title": "Geospatial interfaces",
+          "body": "Experience with interactive maps based on Leaflet and WMS services, with attention to data visualization and usability.",
+          "cta": "Experience and skills"
+        },
+        "simulator": {
+          "title": "Frontend interview simulator",
+          "body": "A personal project for practicing technical scenarios through questions, evaluation criteria and structured feedback.",
+          "cta": "Try the simulator"
+        }
+      }
+    },
+    "signature": {
+      "eyebrow": "Personal project",
+      "title": "Practice for a senior Frontend interview",
+      "body": "Try the simulator: work through technical scenarios and get feedback on clarity, practical detail, decisions and trade-offs.",
+      "cta": "Try the simulator"
+    },
+    "contact": {
+      "eyebrow": "The next step",
+      "title": "What would you like to discuss?",
+      "professionalTitle": "Software engineering and collaboration",
+      "professionalBody": "For professional opportunities, technical collaborations or software projects.",
+      "professionalCta": "Let's talk",
+      "localTitle": "IT support and digital services",
+      "localBody": "For IT support, websites and digital consulting in Milan.",
+      "localCta": "Get in touch"
     },
     "servicesPreview": {
       "eyebrow": "How I can help",
@@ -435,12 +499,30 @@
     "moreTechnologies": "{{count}} more technologies in the details",
     "newTab": "opens in a new tab",
     "collections": {
-      "enterprise": { "title": "Enterprise architectures", "description": "Professional work across modular applications, GIS platforms and Micro Frontends." },
-      "web": { "title": "Web products and websites", "description": "Ideas turned into digital experiences: tools, services and business websites." },
-      "maps": { "title": "Maps and places", "description": "Routes, environmental data and places explored through geographic interfaces." },
-      "automation": { "title": "AI and automation", "description": "Conversational assistants, radars and automated workflows that simplify work." },
-      "finance": { "title": "Finance and data", "description": "Dashboards, monitoring and tools for understanding financial data and portfolios." },
-      "creative": { "title": "Creative experiences", "description": "Music and multimedia: projects focused on content and interaction." }
+      "enterprise": {
+        "title": "Enterprise architectures",
+        "description": "Professional work across modular applications, GIS platforms and Micro Frontends."
+      },
+      "web": {
+        "title": "Web products and websites",
+        "description": "Ideas turned into digital experiences: tools, services and business websites."
+      },
+      "maps": {
+        "title": "Maps and places",
+        "description": "Routes, environmental data and places explored through geographic interfaces."
+      },
+      "automation": {
+        "title": "AI and automation",
+        "description": "Conversational assistants, radars and automated workflows that simplify work."
+      },
+      "finance": {
+        "title": "Finance and data",
+        "description": "Dashboards, monitoring and tools for understanding financial data and portfolios."
+      },
+      "creative": {
+        "title": "Creative experiences",
+        "description": "Music and multimedia: projects focused on content and interaction."
+      }
     },
     "roleLabel": "Role",
     "technologyLabel": "Technologies",

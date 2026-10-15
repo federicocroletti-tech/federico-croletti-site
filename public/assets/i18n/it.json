@@ -53,17 +53,22 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Tecnico informatico Milano · Consulenza digitale · Sviluppo software",
-      "title": "Federico Croletti - Supporto Informatico e Consulenza Digitale",
-      "subtitle": "Tecnico Informatico, Consulente Digitale e Sviluppatore Software a Milano.",
-      "aboutCta": "Scopri chi sono",
-      "servicesCta": "Scopri i miei servizi",
-      "projectsCta": "Guarda i progetti",
-      "contactCta": "Contattami",
-      "panelLabel": "Identità professionale",
-      "logoAlt": "Segno grafico personale di Federico Croletti",
-      "panelEyebrow": "Interventi chiari, anche da remoto",
-      "panelText": "Milano e hinterland, con priorità a soluzioni semplici e sostenibili."
+      "eyebrow": "Senior Software Engineer · Frontend Tech Lead · People Manager",
+      "title": "Rendo più governabili le applicazioni web complesse.",
+      "subtitle": "Progetto e guido soluzioni front-end enterprise con Angular, Micro Frontend e architetture modulari. Mi occupo di qualità, manutenibilità e collaborazione tra persone e team, trasformando problemi tecnici complessi in decisioni comprensibili e passi concreti.",
+      "projectsCta": "Vedi progetti",
+      "cvCta": "Scarica il CV",
+      "linkedinCta": "Profilo LinkedIn",
+      "localPrompt": "Cerchi assistenza informatica o supporto digitale a Milano?",
+      "localCta": "Scopri i servizi",
+      "panelLabel": "Competenze professionali",
+      "panelEyebrow": "Competenza tecnica, decisioni chiare",
+      "panelText": "Unisco architettura software, delivery sostenibile e attenzione alla crescita delle persone.",
+      "highlights": {
+        "engineering": "Angular e TypeScript",
+        "leadership": "Micro Frontend e architetture modulari",
+        "delivery": "Team leadership e people management"
+      }
     },
     "actions": {
       "primaryAria": "Azioni principali",
@@ -74,8 +79,9 @@
     },
     "localServices": {
       "eyebrow": "Servizi informatici a Milano",
-      "title": "Interventi locali e supporto remoto",
-      "body": "Federico Croletti opera su Milano e zone come Quarto Oggiaro, Certosa, Bovisa, Portello, Baranzate e Bollate per assistenza PC, consulenza IT, sicurezza informatica, sviluppo software e supporto digitale pratico.",
+      "title": "Assistenza digitale e supporto informatico a Milano",
+      "body": "Un percorso dedicato a privati, professionisti e piccole attività: assistenza PC, email e PEC, SPID, siti web e supporto digitale pratico, anche da remoto.",
+      "cta": "Scopri tutti i servizi",
       "navAria": "Collegamenti interni ai servizi",
       "areaLabel": "Zone",
       "actionsAria": "Azioni servizio",
@@ -125,6 +131,64 @@
       "starsLabel": "stelle su Google",
       "reviewCountLabel": "27 recensioni su Google Business",
       "cta": "Leggi tutte le recensioni Google"
+    },
+    "engineering": {
+      "eyebrow": "Software engineering e leadership",
+      "title": "Architetture solide, evoluzione senza perdere di vista il delivery",
+      "body": "Ho lavorato su applicazioni in ambito finanziario, assicurativo, geospaziale e documentale. Porto nei team esperienza front-end, attenzione alla qualità e un approccio pragmatico alle decisioni tecniche.",
+      "cta": "Scopri il mio percorso",
+      "capabilities": {
+        "frontend": {
+          "title": "Frontend engineering",
+          "body": "Angular, TypeScript e sviluppo di interfacce per applicazioni articolate."
+        },
+        "architecture": {
+          "title": "Architetture modulari",
+          "body": "Micro Frontend, Module Federation, librerie condivise e internazionalizzazione."
+        },
+        "leadership": {
+          "title": "Leadership e collaborazione",
+          "body": "Coordinamento tecnico, supporto alle persone e confronto con gli stakeholder."
+        }
+      }
+    },
+    "work": {
+      "eyebrow": "Esperienza applicata",
+      "title": "Progetti e strumenti che mostrano come lavoro",
+      "body": "Una selezione tra esperienza enterprise, interfacce geospaziali e un prodotto personale interattivo.",
+      "samples": {
+        "enterprise": {
+          "title": "Piattaforme enterprise",
+          "body": "Esperienza su applicazioni Angular con architetture modulari, librerie condivise e attenzione alla manutenibilità. I dettagli dei singoli progetti sono condivisi solo nei limiti consentiti.",
+          "cta": "Profilo professionale"
+        },
+        "maps": {
+          "title": "Interfacce geospaziali",
+          "body": "Esperienza con mappe interattive basate su Leaflet e servizi WMS, curando visualizzazione dei dati e usabilità.",
+          "cta": "Esperienza e competenze"
+        },
+        "simulator": {
+          "title": "Simulatore di colloquio Frontend",
+          "body": "Un progetto personale per esercitarsi con scenari tecnici: domande, criteri di valutazione e feedback strutturato.",
+          "cta": "Prova il simulatore"
+        }
+      }
+    },
+    "signature": {
+      "eyebrow": "Progetto personale",
+      "title": "Allenati a un colloquio Frontend senior",
+      "body": "Prova il simulatore: affronta scenari tecnici e ricevi un feedback su chiarezza, concretezza, decisioni e trade-off.",
+      "cta": "Prova il simulatore"
+    },
+    "contact": {
+      "eyebrow": "Il prossimo passo",
+      "title": "Di cosa vuoi parlare?",
+      "professionalTitle": "Software engineering e collaborazione",
+      "professionalBody": "Per opportunità professionali, collaborazioni tecniche o progetti software.",
+      "professionalCta": "Parliamone",
+      "localTitle": "Assistenza e servizi digitali",
+      "localBody": "Per supporto informatico, siti web e consulenza digitale a Milano.",
+      "localCta": "Richiedi informazioni"
     },
     "servicesPreview": {
       "eyebrow": "Come posso aiutarti",
@@ -435,12 +499,30 @@
     "moreTechnologies": "Altre {{count}} tecnologie nei dettagli",
     "newTab": "si apre in una nuova scheda",
     "collections": {
-      "enterprise": { "title": "Architetture enterprise", "description": "Esperienze professionali tra applicazioni modulari, piattaforme GIS e Micro Frontend." },
-      "web": { "title": "Prodotti e siti web", "description": "Idee trasformate in esperienze digitali: strumenti, servizi e siti per attivita." },
-      "maps": { "title": "Mappe e territorio", "description": "Percorsi, dati ambientali e luoghi da esplorare attraverso interfacce geografiche." },
-      "automation": { "title": "AI e automazioni", "description": "Assistenti conversazionali, radar e flussi automatici per semplificare il lavoro." },
-      "finance": { "title": "Finanza e dati", "description": "Dashboard, monitoraggi e strumenti per leggere dati finanziari e portafogli." },
-      "creative": { "title": "Esperienze creative", "description": "Musica e multimedia: progetti dedicati a contenuti e interazione." }
+      "enterprise": {
+        "title": "Architetture enterprise",
+        "description": "Esperienze professionali tra applicazioni modulari, piattaforme GIS e Micro Frontend."
+      },
+      "web": {
+        "title": "Prodotti e siti web",
+        "description": "Idee trasformate in esperienze digitali: strumenti, servizi e siti per attivita."
+      },
+      "maps": {
+        "title": "Mappe e territorio",
+        "description": "Percorsi, dati ambientali e luoghi da esplorare attraverso interfacce geografiche."
+      },
+      "automation": {
+        "title": "AI e automazioni",
+        "description": "Assistenti conversazionali, radar e flussi automatici per semplificare il lavoro."
+      },
+      "finance": {
+        "title": "Finanza e dati",
+        "description": "Dashboard, monitoraggi e strumenti per leggere dati finanziari e portafogli."
+      },
+      "creative": {
+        "title": "Esperienze creative",
+        "description": "Musica e multimedia: progetti dedicati a contenuti e interazione."
+      }
     },
     "roleLabel": "Ruolo",
     "technologyLabel": "Tecnologie",
