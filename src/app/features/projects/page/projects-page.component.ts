@@ -4,7 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { TranslatePipe } from '@ngx-translate/core';
 
 import { SeoService } from '../../../core/services/seo.service';
-import { PROJECT_FILTERS, PROJECTS } from '../data/projects.data';
+import { PROJECT_COLLECTIONS, PROJECT_FILTERS, PROJECTS } from '../data/projects.data';
 
 @Component({
   selector: 'app-projects-page',
@@ -28,6 +28,12 @@ export class ProjectsPageComponent {
 
     return PROJECTS.filter((project) => project.tags.includes(selectedFilter));
   });
+  readonly collections = computed(() =>
+    PROJECT_COLLECTIONS.map((collection) => ({
+      ...collection,
+      projects: this.projects().filter((project) => project.category === collection.id),
+    })).filter((collection) => collection.projects.length > 0),
+  );
 
   constructor() {
     this.seo.update({

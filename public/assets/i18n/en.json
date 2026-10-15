@@ -428,7 +428,20 @@
   "projects": {
     "eyebrow": "Portfolio",
     "title": "Projects",
-    "intro": "This section includes a selection of professional, personal and experimental projects. Some come from enterprise contexts, others from product ideas, study or prototyping.",
+    "intro": "From enterprise architectures to personal products: explore projects by domain, discover what they do and dive into the technical choices.",
+    "results": "{{count}} projects in {{collections}} collections",
+    "collectionCount": "{{count}} projects in this collection",
+    "detailsCta": "Role and full tech stack",
+    "moreTechnologies": "{{count}} more technologies in the details",
+    "newTab": "opens in a new tab",
+    "collections": {
+      "enterprise": { "title": "Enterprise architectures", "description": "Professional work across modular applications, GIS platforms and Micro Frontends." },
+      "web": { "title": "Web products and websites", "description": "Ideas turned into digital experiences: tools, services and business websites." },
+      "maps": { "title": "Maps and places", "description": "Routes, environmental data and places explored through geographic interfaces." },
+      "automation": { "title": "AI and automation", "description": "Conversational assistants, radars and automated workflows that simplify work." },
+      "finance": { "title": "Finance and data", "description": "Dashboards, monitoring and tools for understanding financial data and portfolios." },
+      "creative": { "title": "Creative experiences", "description": "Music and multimedia: projects focused on content and interaction." }
+    },
     "roleLabel": "Role",
     "technologyLabel": "Technologies",
     "tagLabel": "Technical tags",
@@ -442,7 +455,9 @@
       "ai": "AI",
       "maps": "Maps",
       "product": "Personal product",
-      "enterprise": "Enterprise"
+      "enterprise": "Enterprise",
+      "automation": "Automation",
+      "finance": "Finance"
     },
     "status": {
       "in-development": "In development",

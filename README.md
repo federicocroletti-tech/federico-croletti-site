@@ -26,6 +26,22 @@ For a complete list of available schematics (such as `components`, `directives`,
 ng generate --help
 ```
 
+## Project portfolio
+
+The `/progetti` page groups every project into a curated domain collection while
+keeping technology filters available. Project metadata and collection order live
+in `src/app/features/projects/data/projects.data.ts`; Italian and English copy
+live in `public/assets/i18n`.
+
+Every project has a dedicated, original SVG cover in `public/assets/images/projects`
+(960 x 600). These are conceptual illustrations, not product screenshots or client
+assets. When adding a project, set its category and cover URL, add both translations,
+and provide a new cover. Covers are decorative next to the project title, have
+explicit dimensions and are lazy-loaded except for the first visible card.
+
+Role, full technology stack and tags remain available in each card's expandable
+details. Demo and repository links retain their original destinations.
+
 ## Building
 
 To build the project run:

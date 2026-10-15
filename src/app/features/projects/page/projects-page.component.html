@@ -5,82 +5,162 @@
     <p class="lead">{{ 'projects.intro' | translate }}</p>
   </div>
 
-  <div class="project-filters" role="list" [attr.aria-label]="'projects.filters.label' | translate">
-    @for (filter of filters; track filter.id) {
-      <button
-        mat-stroked-button
-        type="button"
-        role="listitem"
-        [class.is-active]="selectedFilter() === filter.id"
-        [attr.aria-pressed]="selectedFilter() === filter.id"
-        (click)="selectFilter(filter.id)"
-      >
-        {{ filter.labelKey | translate }}
-      </button>
-    }
+  <div class="project-browser">
+    <div
+      class="project-filters"
+      role="group"
+      [attr.aria-label]="'projects.filters.label' | translate"
+    >
+      @for (filter of filters; track filter.id) {
+        <button
+          mat-stroked-button
+          type="button"
+          [class.is-active]="selectedFilter() === filter.id"
+          [attr.aria-pressed]="selectedFilter() === filter.id"
+          (click)="selectFilter(filter.id)"
+        >
+          {{ filter.labelKey | translate }}
+        </button>
+      }
+    </div>
+    <p class="project-results" role="status" aria-live="polite" aria-atomic="true">
+      {{
+        'projects.results'
+          | translate: { count: projects().length, collections: collections().length }
+      }}
+    </p>
   </div>
 
-  <div class="grid grid--2 projects-grid">
-    @for (project of projects(); track project.id) {
-      <mat-card class="site-card project-card">
-        <mat-card-header>
-          <mat-card-title>{{ project.titleKey | translate }}</mat-card-title>
-          <mat-card-subtitle>{{
-            'projects.status.' + project.status | translate
-          }}</mat-card-subtitle>
-        </mat-card-header>
+  @for (collection of collections(); track collection.id; let collectionIndex = $index) {
+    <section class="project-collection" [attr.aria-labelledby]="'collection-' + collection.id">
+      <header class="collection-heading">
+        <span class="collection-index" aria-hidden="true">0{{ collectionIndex + 1 }}</span>
+        <div>
+          <h2 [id]="'collection-' + collection.id">{{ collection.titleKey | translate }}</h2>
+          <p>{{ collection.descriptionKey | translate }}</p>
+        </div>
+        <span
+          class="collection-count"
+          [attr.aria-label]="
+            'projects.collectionCount' | translate: { count: collection.projects.length }
+          "
+        >
+          {{ collection.projects.length }}
+        </span>
+      </header>
 
-        <mat-card-content>
-          <p>{{ project.descriptionKey | translate }}</p>
+      <div class="projects-grid">
+        @for (project of collection.projects; track project.id; let projectIndex = $index) {
+          <article class="project-entry" [attr.aria-labelledby]="'project-' + project.id">
+            <mat-card class="site-card project-card">
+              <div class="project-cover">
+                <img
+                  [src]="project.coverUrl"
+                  alt=""
+                  width="960"
+                  height="600"
+                  [attr.loading]="collectionIndex === 0 && projectIndex === 0 ? 'eager' : 'lazy'"
+                  decoding="async"
+                />
+                <span
+                  class="project-status"
+                  [class.project-status--professional]="project.status === 'professional'"
+                >
+                  {{ 'projects.status.' + project.status | translate }}
+                </span>
+              </div>
 
-          <div class="project-role">
-            <strong>{{ 'projects.roleLabel' | translate }}</strong>
-            <span>{{ project.roleKey | translate }}</span>
-          </div>
+              <mat-card-header>
+                <mat-card-title>
+                  <h3 [id]="'project-' + project.id">{{ project.titleKey | translate }}</h3>
+                </mat-card-title>
+              </mat-card-header>
 
-          <ul class="pill-list" [attr.aria-label]="'projects.technologyLabel' | translate">
-            @for (technology of project.technologies; track technology) {
-              <li class="pill">{{ technology }}</li>
-            }
-          </ul>
+              <mat-card-content>
+                <p class="project-description">{{ project.descriptionKey | translate }}</p>
+                <ul
+                  class="pill-list project-stack"
+                  [attr.aria-label]="'projects.technologyLabel' | translate"
+                >
+                  @for (technology of project.technologies.slice(0, 3); track technology) {
+                    <li class="pill">{{ technology }}</li>
+                  }
+                  @if (project.technologies.length > 3) {
+                    <li
+                      class="stack-more"
+                      [attr.aria-label]="
+                        'projects.moreTechnologies'
+                          | translate: { count: project.technologies.length - 3 }
+                      "
+                    >
+                      +{{ project.technologies.length - 3 }}
+                    </li>
+                  }
+                </ul>
 
-          <ul class="tag-list" [attr.aria-label]="'projects.tagLabel' | translate">
-            @for (tag of project.tags.slice(0, 4); track tag) {
-              <li>{{ tag }}</li>
-            }
-            @if (project.tags.length > 4) {
-              <li class="tag-list__more">+{{ project.tags.length - 4 }}</li>
-            }
-          </ul>
-        </mat-card-content>
+                <details class="project-details">
+                  <summary>
+                    {{ 'projects.detailsCta' | translate }}<span aria-hidden="true">+</span>
+                  </summary>
+                  <div class="project-details-content">
+                    <div class="project-role">
+                      <strong>{{ 'projects.roleLabel' | translate }}</strong>
+                      <p>{{ project.roleKey | translate }}</p>
+                    </div>
+                    <strong>{{ 'projects.technologyLabel' | translate }}</strong>
+                    <ul class="pill-list">
+                      @for (technology of project.technologies; track technology) {
+                        <li class="pill">{{ technology }}</li>
+                      }
+                    </ul>
+                    <p class="project-tags">{{ project.tags.join(' / ') }}</p>
+                  </div>
+                </details>
+              </mat-card-content>
 
-        <mat-card-actions align="end" class="project-actions">
-          @if (project.demoUrl) {
-            <a
-              mat-flat-button
-              color="primary"
-              [href]="project.demoUrl"
-              target="_blank"
-              rel="noopener noreferrer"
-              >{{ 'projects.demoCta' | translate }}</a
-            >
-          }
-
-          @if (project.githubUrl) {
-            <a
-              mat-stroked-button
-              [href]="project.githubUrl"
-              target="_blank"
-              rel="noopener noreferrer"
-              >GitHub</a
-            >
-          }
-
-          @if (!project.demoUrl && !project.githubUrl) {
-            <span class="private-note">{{ 'projects.privateNote' | translate }}</span>
-          }
-        </mat-card-actions>
-      </mat-card>
-    }
-  </div>
+              <mat-card-actions class="project-actions">
+                @if (project.demoUrl) {
+                  <a
+                    mat-flat-button
+                    color="primary"
+                    [href]="project.demoUrl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    [attr.aria-label]="
+                      ('projects.demoCta' | translate) +
+                      ': ' +
+                      (project.titleKey | translate) +
+                      ' (' +
+                      ('projects.newTab' | translate) +
+                      ')'
+                    "
+                    >{{ 'projects.demoCta' | translate }} <span aria-hidden="true">↗</span></a
+                  >
+                }
+                @if (project.githubUrl) {
+                  <a
+                    mat-stroked-button
+                    [href]="project.githubUrl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    [attr.aria-label]="
+                      'GitHub: ' +
+                      (project.titleKey | translate) +
+                      ' (' +
+                      ('projects.newTab' | translate) +
+                      ')'
+                    "
+                    >GitHub <span aria-hidden="true">↗</span></a
+                  >
+                }
+                @if (!project.demoUrl && !project.githubUrl) {
+                  <span class="private-note">{{ 'projects.privateNote' | translate }}</span>
+                }
+              </mat-card-actions>
+            </mat-card>
+          </article>
+        }
+      </div>
+    </section>
+  }
 </section>

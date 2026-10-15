@@ -1,7 +1,16 @@
 export type ProjectStatus = 'in-development' | 'prototype' | 'professional' | 'completed';
+export type ProjectCategory = 'enterprise' | 'web' | 'maps' | 'automation' | 'finance' | 'creative';
+
+export interface ProjectCollection {
+  readonly id: ProjectCategory;
+  readonly titleKey: string;
+  readonly descriptionKey: string;
+}
 
 export interface ProjectItem {
   readonly id: string;
+  readonly category: ProjectCategory;
+  readonly coverUrl: string;
   readonly titleKey: string;
   readonly descriptionKey: string;
   readonly roleKey: string;

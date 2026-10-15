@@ -1,4 +1,37 @@
-import { ProjectFilter, ProjectItem } from '../models/project-item.model';
+import { ProjectCollection, ProjectFilter, ProjectItem } from '../models/project-item.model';
+
+export const PROJECT_COLLECTIONS: readonly ProjectCollection[] = [
+  {
+    id: 'enterprise',
+    titleKey: 'projects.collections.enterprise.title',
+    descriptionKey: 'projects.collections.enterprise.description',
+  },
+  {
+    id: 'web',
+    titleKey: 'projects.collections.web.title',
+    descriptionKey: 'projects.collections.web.description',
+  },
+  {
+    id: 'maps',
+    titleKey: 'projects.collections.maps.title',
+    descriptionKey: 'projects.collections.maps.description',
+  },
+  {
+    id: 'automation',
+    titleKey: 'projects.collections.automation.title',
+    descriptionKey: 'projects.collections.automation.description',
+  },
+  {
+    id: 'finance',
+    titleKey: 'projects.collections.finance.title',
+    descriptionKey: 'projects.collections.finance.description',
+  },
+  {
+    id: 'creative',
+    titleKey: 'projects.collections.creative.title',
+    descriptionKey: 'projects.collections.creative.description',
+  },
+];
 
 export const PROJECT_FILTERS: readonly ProjectFilter[] = [
   { id: 'all', labelKey: 'projects.filters.all' },
@@ -8,11 +41,15 @@ export const PROJECT_FILTERS: readonly ProjectFilter[] = [
   { id: 'Mappe', labelKey: 'projects.filters.maps' },
   { id: 'Prodotto personale', labelKey: 'projects.filters.product' },
   { id: 'Enterprise', labelKey: 'projects.filters.enterprise' },
+  { id: 'Automazione', labelKey: 'projects.filters.automation' },
+  { id: 'Finance', labelKey: 'projects.filters.finance' },
 ];
 
 export const PROJECTS: readonly ProjectItem[] = [
   {
     id: 'personal-site',
+    category: 'web',
+    coverUrl: '/assets/images/projects/personal-site.svg',
     titleKey: 'projects.items.personalSite.title',
     descriptionKey: 'projects.items.personalSite.description',
     roleKey: 'projects.items.personalSite.role',
@@ -23,6 +60,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'content-cockpit',
+    category: 'web',
+    coverUrl: '/assets/images/projects/content-cockpit.svg',
     titleKey: 'projects.items.contentCockpit.title',
     descriptionKey: 'projects.items.contentCockpit.description',
     roleKey: 'projects.items.contentCockpit.role',
@@ -41,6 +80,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'moto-smart',
+    category: 'web',
+    coverUrl: '/assets/images/projects/moto-smart.svg',
     titleKey: 'projects.items.motoSmart.title',
     descriptionKey: 'projects.items.motoSmart.description',
     roleKey: 'projects.items.motoSmart.role',
@@ -52,6 +93,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'fit-coach-pro-website',
+    category: 'web',
+    coverUrl: '/assets/images/projects/fit-coach-pro-website.svg',
     titleKey: 'projects.items.fitCoachPro.title',
     descriptionKey: 'projects.items.fitCoachPro.description',
     roleKey: 'projects.items.fitCoachPro.role',
@@ -72,6 +115,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'daniel-pantuso-giardiniere-site',
+    category: 'web',
+    coverUrl: '/assets/images/projects/daniel-pantuso-giardiniere-site.svg',
     titleKey: 'projects.items.danielPantusoSite.title',
     descriptionKey: 'projects.items.danielPantusoSite.description',
     roleKey: 'projects.items.danielPantusoSite.role',
@@ -84,6 +129,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'menu-smart-qr',
+    category: 'web',
+    coverUrl: '/assets/images/projects/menu-smart-qr.svg',
     titleKey: 'projects.items.menuSmartQr.title',
     descriptionKey: 'projects.items.menuSmartQr.description',
     roleKey: 'projects.items.menuSmartQr.role',
@@ -95,6 +142,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'moto-route-planner',
+    category: 'maps',
+    coverUrl: '/assets/images/projects/moto-route-planner.svg',
     titleKey: 'projects.items.motoRoutePlanner.title',
     descriptionKey: 'projects.items.motoRoutePlanner.description',
     roleKey: 'projects.items.motoRoutePlanner.role',
@@ -106,6 +155,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'etf-dip-alert',
+    category: 'finance',
+    coverUrl: '/assets/images/projects/etf-dip-alert.svg',
     titleKey: 'projects.items.etfDipAlert.title',
     descriptionKey: 'projects.items.etfDipAlert.description',
     roleKey: 'projects.items.etfDipAlert.role',
@@ -116,6 +167,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'taxi-opportunity-radar',
+    category: 'automation',
+    coverUrl: '/assets/images/projects/taxi-opportunity-radar.svg',
     titleKey: 'projects.items.taxiOpportunityRadar.title',
     descriptionKey: 'projects.items.taxiOpportunityRadar.description',
     roleKey: 'projects.items.taxiOpportunityRadar.role',
@@ -135,6 +188,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'it-lead-radar',
+    category: 'automation',
+    coverUrl: '/assets/images/projects/it-lead-radar.svg',
     titleKey: 'projects.items.itLeadRadar.title',
     descriptionKey: 'projects.items.itLeadRadar.description',
     roleKey: 'projects.items.itLeadRadar.role',
@@ -153,6 +208,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'send-mail-promotore',
+    category: 'automation',
+    coverUrl: '/assets/images/projects/send-mail-promotore.svg',
     titleKey: 'projects.items.sendMailPromotore.title',
     descriptionKey: 'projects.items.sendMailPromotore.description',
     roleKey: 'projects.items.sendMailPromotore.role',
@@ -165,6 +222,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'airmap-italia-gis',
+    category: 'maps',
+    coverUrl: '/assets/images/projects/airmap-italia-gis.svg',
     titleKey: 'projects.items.airmapItalia.title',
     descriptionKey: 'projects.items.airmapItalia.description',
     roleKey: 'projects.items.airmapItalia.role',
@@ -186,6 +245,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'radici-san-giovanni-lipioni',
+    category: 'maps',
+    coverUrl: '/assets/images/projects/radici-san-giovanni-lipioni.svg',
     titleKey: 'projects.items.radiciSanGiovanniLipioni.title',
     descriptionKey: 'projects.items.radiciSanGiovanniLipioni.description',
     roleKey: 'projects.items.radiciSanGiovanniLipioni.role',
@@ -197,6 +258,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'regali-vicini',
+    category: 'automation',
+    coverUrl: '/assets/images/projects/regali-vicini.svg',
     titleKey: 'projects.items.regaliVicini.title',
     descriptionKey: 'projects.items.regaliVicini.description',
     roleKey: 'projects.items.regaliVicini.role',
@@ -216,6 +279,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'personal-investment-radar',
+    category: 'finance',
+    coverUrl: '/assets/images/projects/personal-investment-radar.svg',
     titleKey: 'projects.items.personalInvestmentRadar.title',
     descriptionKey: 'projects.items.personalInvestmentRadar.description',
     roleKey: 'projects.items.personalInvestmentRadar.role',
@@ -235,6 +300,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'crypto-deep-alert',
+    category: 'finance',
+    coverUrl: '/assets/images/projects/crypto-deep-alert.svg',
     titleKey: 'projects.items.cryptoDeepAlert.title',
     descriptionKey: 'projects.items.cryptoDeepAlert.description',
     roleKey: 'projects.items.cryptoDeepAlert.role',
@@ -245,6 +312,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'stock-deep-alert',
+    category: 'finance',
+    coverUrl: '/assets/images/projects/stock-deep-alert.svg',
     titleKey: 'projects.items.stockDeepAlert.title',
     descriptionKey: 'projects.items.stockDeepAlert.description',
     roleKey: 'projects.items.stockDeepAlert.role',
@@ -262,6 +331,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'bank-transactions-dashboard',
+    category: 'finance',
+    coverUrl: '/assets/images/projects/bank-transactions-dashboard.svg',
     titleKey: 'projects.items.bankTransactionsDashboard.title',
     descriptionKey: 'projects.items.bankTransactionsDashboard.description',
     roleKey: 'projects.items.bankTransactionsDashboard.role',
@@ -272,6 +343,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'fineco-portfolio-importer',
+    category: 'finance',
+    coverUrl: '/assets/images/projects/fineco-portfolio-importer.svg',
     titleKey: 'projects.items.finecoPortfolioImporter.title',
     descriptionKey: 'projects.items.finecoPortfolioImporter.description',
     roleKey: 'projects.items.finecoPortfolioImporter.role',
@@ -282,6 +355,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'local-demand-radar',
+    category: 'automation',
+    coverUrl: '/assets/images/projects/local-demand-radar.svg',
     titleKey: 'projects.items.localDemandRadar.title',
     descriptionKey: 'projects.items.localDemandRadar.description',
     roleKey: 'projects.items.localDemandRadar.role',
@@ -292,6 +367,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'federico-it-support',
+    category: 'web',
+    coverUrl: '/assets/images/projects/federico-it-support.svg',
     titleKey: 'projects.items.federicoItSupport.title',
     descriptionKey: 'projects.items.federicoItSupport.description',
     roleKey: 'projects.items.federicoItSupport.role',
@@ -302,6 +379,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'milano-catering-wedding-chatbot',
+    category: 'automation',
+    coverUrl: '/assets/images/projects/milano-catering-wedding-chatbot.svg',
     titleKey: 'projects.items.milanoCateringWeddingChatbot.title',
     descriptionKey: 'projects.items.milanoCateringWeddingChatbot.description',
     roleKey: 'projects.items.milanoCateringWeddingChatbot.role',
@@ -312,6 +391,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'whatsapp-bot',
+    category: 'automation',
+    coverUrl: '/assets/images/projects/whatsapp-bot.svg',
     titleKey: 'projects.items.whatsappBot.title',
     descriptionKey: 'projects.items.whatsappBot.description',
     roleKey: 'projects.items.whatsappBot.role',
@@ -323,6 +404,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'whatsapp-chat-fe',
+    category: 'automation',
+    coverUrl: '/assets/images/projects/whatsapp-chat-fe.svg',
     titleKey: 'projects.items.whatsappChatFe.title',
     descriptionKey: 'projects.items.whatsappChatFe.description',
     roleKey: 'projects.items.whatsappChatFe.role',
@@ -333,6 +416,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'argo-studio-music',
+    category: 'creative',
+    coverUrl: '/assets/images/projects/argo-studio-music.svg',
     titleKey: 'projects.items.argoStudioMusic.title',
     descriptionKey: 'projects.items.argoStudioMusic.description',
     roleKey: 'projects.items.argoStudioMusic.role',
@@ -343,6 +428,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'progetto-multimedia',
+    category: 'creative',
+    coverUrl: '/assets/images/projects/progetto-multimedia.svg',
     titleKey: 'projects.items.progettoMultimedia.title',
     descriptionKey: 'projects.items.progettoMultimedia.description',
     roleKey: 'projects.items.progettoMultimedia.role',
@@ -353,6 +440,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'smart-sales-cart',
+    category: 'enterprise',
+    coverUrl: '/assets/images/projects/smart-sales-cart.svg',
     titleKey: 'projects.items.smartSales.title',
     descriptionKey: 'projects.items.smartSales.description',
     roleKey: 'projects.items.smartSales.role',
@@ -363,6 +452,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'esa-map',
+    category: 'enterprise',
+    coverUrl: '/assets/images/projects/esa-map.svg',
     titleKey: 'projects.items.esaMap.title',
     descriptionKey: 'projects.items.esaMap.description',
     roleKey: 'projects.items.esaMap.role',
@@ -383,6 +474,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'micro-frontend-architecture',
+    category: 'enterprise',
+    coverUrl: '/assets/images/projects/micro-frontend-architecture.svg',
     titleKey: 'projects.items.microFrontend.title',
     descriptionKey: 'projects.items.microFrontend.description',
     roleKey: 'projects.items.microFrontend.role',
@@ -400,6 +493,8 @@ export const PROJECTS: readonly ProjectItem[] = [
   },
   {
     id: 'ai-chatbot',
+    category: 'automation',
+    coverUrl: '/assets/images/projects/ai-chatbot.svg',
     titleKey: 'projects.items.chatbot.title',
     descriptionKey: 'projects.items.chatbot.description',
     roleKey: 'projects.items.chatbot.role',

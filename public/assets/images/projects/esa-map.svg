@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600">
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#122840"/><stop offset="1" stop-color="#172438"/></linearGradient><radialGradient id="earth"><stop stop-color="#4c9b9e"/><stop offset="1" stop-color="#163d5c"/></radialGradient></defs>
+  <path fill="url(#bg)" d="M0 0h960v600H0z"/>
+  <g fill="#c5e7f4" opacity=".65"><circle cx="85" cy="98" r="2"/><circle cx="190" cy="210" r="3"/><circle cx="825" cy="90" r="3"/><circle cx="710" cy="510" r="2"/><circle cx="866" cy="398" r="2"/><circle cx="350" cy="58" r="2"/></g>
+  <circle cx="465" cy="320" r="191" fill="url(#earth)" stroke="#72d2d3" stroke-width="2"/>
+  <g fill="none" stroke="#86d7d0" opacity=".3"><ellipse cx="465" cy="320" rx="90" ry="191"/><ellipse cx="465" cy="320" rx="153" ry="191"/><ellipse cx="465" cy="320" rx="191" ry="73"/><ellipse cx="465" cy="320" rx="191" ry="140"/><path d="M274 320h382"/></g>
+  <path d="m385 199 51-24 52 34-10 43 39 21 17 57-34 29-21 66-36-21-15-71-51-30-35-42zM543 179l48 32 36 48-45 12-31-35z" fill="#83c7aa" opacity=".85"/>
+  <ellipse cx="468" cy="315" rx="305" ry="92" transform="rotate(-28 468 315)" fill="none" stroke="#b3d5ef" stroke-width="2" stroke-dasharray="9 10"/>
+  <g transform="translate(697 157) rotate(25)" stroke="#a9e5ef" stroke-width="3"><path fill="#437191" d="M-90-26h57v52h-57zM33-26h57v52H33z"/><rect x="-25" y="-33" width="50" height="66" rx="7" fill="#d7edf1"/><path d="M0-33v-28m-13 0h26M-90 0h57M33 0h57"/></g>
+  <circle cx="474" cy="282" r="9" fill="#f6d394"/><circle cx="474" cy="282" r="24" fill="none" stroke="#f6d394" stroke-width="3"/>
+</svg>

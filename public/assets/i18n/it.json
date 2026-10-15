@@ -428,7 +428,20 @@
   "projects": {
     "eyebrow": "Portfolio",
     "title": "Progetti",
-    "intro": "In questa sezione trovi una selezione di progetti professionali, personali e sperimentali. Alcuni nascono da contesti enterprise, altri da idee personali o attività di studio e prototipazione.",
+    "intro": "Dalle architetture enterprise ai prodotti personali: esplora i progetti per ambito, scopri cosa fanno e approfondisci le scelte tecniche.",
+    "results": "{{count}} progetti in {{collections}} raccolte",
+    "collectionCount": "{{count}} progetti nella raccolta",
+    "detailsCta": "Ruolo e stack completo",
+    "moreTechnologies": "Altre {{count}} tecnologie nei dettagli",
+    "newTab": "si apre in una nuova scheda",
+    "collections": {
+      "enterprise": { "title": "Architetture enterprise", "description": "Esperienze professionali tra applicazioni modulari, piattaforme GIS e Micro Frontend." },
+      "web": { "title": "Prodotti e siti web", "description": "Idee trasformate in esperienze digitali: strumenti, servizi e siti per attivita." },
+      "maps": { "title": "Mappe e territorio", "description": "Percorsi, dati ambientali e luoghi da esplorare attraverso interfacce geografiche." },
+      "automation": { "title": "AI e automazioni", "description": "Assistenti conversazionali, radar e flussi automatici per semplificare il lavoro." },
+      "finance": { "title": "Finanza e dati", "description": "Dashboard, monitoraggi e strumenti per leggere dati finanziari e portafogli." },
+      "creative": { "title": "Esperienze creative", "description": "Musica e multimedia: progetti dedicati a contenuti e interazione." }
+    },
     "roleLabel": "Ruolo",
     "technologyLabel": "Tecnologie",
     "tagLabel": "Tag tecnici",
@@ -442,7 +455,9 @@
       "ai": "AI",
       "maps": "Mappe",
       "product": "Prodotto personale",
-      "enterprise": "Enterprise"
+      "enterprise": "Enterprise",
+      "automation": "Automazioni",
+      "finance": "Finanza"
     },
     "status": {
       "in-development": "In sviluppo",
