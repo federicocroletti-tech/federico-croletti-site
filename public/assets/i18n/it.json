@@ -559,6 +559,9 @@
       },
       "chatbot": {
         "role": "Sviluppo full-stack, configurazione repository, deploy e integrazione API."
+      },
+      "supportoPersonale": {
+        "role": "Ideazione, shell Angular standalone con Nx, stato locale effimero e impostazione iniziale dell’accessibilità."
       }
     }
   },

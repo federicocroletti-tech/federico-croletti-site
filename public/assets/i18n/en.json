@@ -559,6 +559,9 @@
       },
       "chatbot": {
         "role": "Full-stack development, repository setup, deploy and API integration."
+      },
+      "supportoPersonale": {
+        "role": "Product ideation, standalone Angular shell with Nx, ephemeral local state and initial accessibility considerations."
       }
     }
   },

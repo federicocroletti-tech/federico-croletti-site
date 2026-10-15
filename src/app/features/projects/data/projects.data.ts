@@ -463,6 +463,16 @@ const PROJECT_METADATA: readonly ProjectItem[] = [
     tags: ['Angular', 'AI', 'Prodotto personale'],
     isPublic: false,
   },
+  {
+    id: 'supporto-personale',
+    category: 'web',
+    coverUrl: '/assets/images/projects/supporto-personale.svg',
+    roleKey: 'projects.items.supportoPersonale.role',
+    technologies: ['Angular', 'Nx', 'TypeScript', 'SCSS', 'Vitest'],
+    status: 'prototype',
+    tags: ['Angular', 'Prodotto personale'],
+    isPublic: false,
+  },
 ];
 
 export function configureProjects(

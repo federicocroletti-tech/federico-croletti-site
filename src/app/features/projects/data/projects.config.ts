@@ -343,4 +343,15 @@ export const PROJECT_CONFIG = {
       en: 'AI chatbot prototype with Node backend and Angular frontend, designed for integrations with channels such as WhatsApp and external services.',
     },
   },
+  'supporto-personale': {
+    visible: true,
+    title: {
+      it: 'Supporto personale',
+      en: 'Personal support',
+    },
+    description: {
+      it: 'Prototipo tecnico di una schermata di supporto personale. Non è un servizio clinico o di emergenza e non include account, backend o salvataggio dei dati.',
+      en: 'Technical prototype of a personal support screen. It is not a clinical or emergency service and has no accounts, backend or data persistence.',
+    },
+  },
 } satisfies Record<string, ProjectPublication>;
