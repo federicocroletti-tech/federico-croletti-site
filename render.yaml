@@ -6,27 +6,34 @@ services:
     buildCommand: npm ci && npm run build
     staticPublishPath: ./dist/federico-croletti-site/browser
     routes:
-      - type: rewrite
+      - type: redirect
         source: /chi-sono
-        destination: /chi-sono/index.html
-      - type: rewrite
+        destination: /chi-sono/
+        status: 301
+      - type: redirect
         source: /servizi
-        destination: /servizi/index.html
-      - type: rewrite
+        destination: /servizi/
+        status: 301
+      - type: redirect
         source: /progetti
-        destination: /progetti/index.html
-      - type: rewrite
+        destination: /progetti/
+        status: 301
+      - type: redirect
         source: /portfolio
-        destination: /progetti/index.html
-      - type: rewrite
+        destination: /progetti/
+        status: 301
+      - type: redirect
         source: /contatti
-        destination: /contatti/index.html
-      - type: rewrite
+        destination: /contatti/
+        status: 301
+      - type: redirect
         source: /privacy
-        destination: /privacy/index.html
-      - type: rewrite
+        destination: /privacy/
+        status: 301
+      - type: redirect
         source: /cookie-policy
-        destination: /cookie-policy/index.html
+        destination: /cookie-policy/
+        status: 301
       - type: rewrite
         source: /*
         destination: /index.html

@@ -21,7 +21,8 @@ export class SeoService {
 
   update(config: SeoPageConfig): void {
     const image = this.toAbsoluteUrl(config.image ?? this.fallbackImage);
-    const url = `${this.siteUrl}${config.path}`;
+    const path = config.path === '/' ? '/' : `${config.path.replace(/\/+$/, '')}/`;
+    const url = `${this.siteUrl}${path}`;
 
     this.titleService.setTitle(config.title);
     this.meta.updateTag({ name: 'description', content: config.description });

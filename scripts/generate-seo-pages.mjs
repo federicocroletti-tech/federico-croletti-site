@@ -85,7 +85,7 @@ function setMetaContent(html, attribute, name, content) {
 }
 
 for (const page of pages) {
-  const canonicalUrl = `${siteUrl}${page.path}`;
+  const canonicalUrl = `${siteUrl}${page.path}/`;
   let html = sourceHtml;
 
   html = replaceTag(html, /<title>[^<]*<\/title>/g, () => `<title>${page.title}</title>`, 'title');
