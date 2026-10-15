@@ -18,10 +18,36 @@ export const routes: Routes = [
           import('./features/about/page/about-page.component').then((m) => m.AboutPageComponent),
       },
       {
-        path: 'servizi',
+        path: 'esperienza',
         loadComponent: () =>
-          import('./features/services/page/services-page.component').then(
-            (m) => m.ServicesPageComponent,
+          import('./features/experience/page/experience-page.component').then(
+            (m) => m.ExperiencePageComponent,
+          ),
+      },
+      {
+        path: 'competenze',
+        loadComponent: () =>
+          import('./features/skills/page/skills-page.component').then(
+            (m) => m.SkillsPageComponent,
+          ),
+      },
+      {
+        path: 'servizi-frontend',
+        loadComponent: () =>
+          import('./features/frontend-services/page/frontend-services-page.component').then(
+            (m) => m.FrontendServicesPageComponent,
+          ),
+      },
+      {
+        path: 'servizi',
+        redirectTo: 'assistenza-informatica-milano',
+        pathMatch: 'full',
+      },
+      {
+        path: 'assistenza-informatica-milano',
+        loadComponent: () =>
+          import('./features/local-support/page/local-support-page.component').then(
+            (m) => m.LocalSupportPageComponent,
           ),
       },
       {
@@ -33,9 +59,21 @@ export const routes: Routes = [
       },
       {
         path: 'portfolio',
+        redirectTo: 'progetti',
+        pathMatch: 'full',
+      },
+      {
+        path: 'articoli',
         loadComponent: () =>
-          import('./features/projects/page/projects-page.component').then(
-            (m) => m.ProjectsPageComponent,
+          import('./features/articles/page/articles-page.component').then(
+            (m) => m.ArticlesPageComponent,
+          ),
+      },
+      {
+        path: 'articoli/:slug',
+        loadComponent: () =>
+          import('./features/articles/detail/article-detail-page.component').then(
+            (m) => m.ArticleDetailPageComponent,
           ),
       },
       {
@@ -43,6 +81,20 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./features/contact/page/contact-page.component').then(
             (m) => m.ContactPageComponent,
+          ),
+      },
+      {
+        path: 'grazie',
+        loadComponent: () =>
+          import('./features/thank-you/page/thank-you-page.component').then(
+            (m) => m.ThankYouPageComponent,
+          ),
+      },
+      {
+        path: 'dashboard-conversioni',
+        loadComponent: () =>
+          import('./features/conversion-dashboard/page/conversion-dashboard-page.component').then(
+            (m) => m.ConversionDashboardPageComponent,
           ),
       },
       {
@@ -60,8 +112,20 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'cookie',
+        redirectTo: 'cookie-policy',
+        pathMatch: 'full',
+      },
+      {
+        path: '404',
+        loadComponent: () =>
+          import('./features/not-found/page/not-found-page.component').then(
+            (m) => m.NotFoundPageComponent,
+          ),
+      },
+      {
         path: '**',
-        redirectTo: '',
+        redirectTo: '404',
       },
     ],
   },

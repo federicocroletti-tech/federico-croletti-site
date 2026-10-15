@@ -1,9 +1,9 @@
-<a class="skip-link" href="#main-content">{{ 'common.skipToContent' | translate }}</a>
+<a class="skip-link" href="#main-content">Vai al contenuto principale</a>
 
 <header class="site-header">
-  <a class="brand" routerLink="/" [attr.aria-label]="'navigation.home' | translate">
+  <a class="brand" routerLink="/" aria-label="Home">
     <img
-      src="/assets/images/brand/federico-mark-primary.png"
+      src="/assets/images/brand/federico-mark-primary-header.png"
       alt=""
       aria-hidden="true"
       width="48"
@@ -16,7 +16,7 @@
   <label
     class="nav-toggle-button"
     for="site-nav-toggle"
-    [attr.aria-label]="'navigation.label' | translate"
+    aria-label="Apri o chiudi la navigazione principale"
     aria-controls="site-navigation"
   >
     <span aria-hidden="true"></span>
@@ -24,7 +24,7 @@
     <span aria-hidden="true"></span>
   </label>
 
-  <nav id="site-navigation" class="navigation" [attr.aria-label]="'navigation.label' | translate">
+  <nav id="site-navigation" class="navigation" aria-label="Navigazione principale">
     @for (item of navigationItems; track item.path) {
       <a
         mat-button
@@ -32,7 +32,7 @@
         routerLinkActive="is-active"
         [routerLinkActiveOptions]="{ exact: item.path === '/' }"
       >
-        {{ item.labelKey | translate }}
+        {{ item.label }}
       </a>
     }
 

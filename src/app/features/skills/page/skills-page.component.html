@@ -1,0 +1,29 @@
+<section class="section" aria-labelledby="skills-title">
+  <div class="page-heading">
+    <p class="eyebrow">Competenze</p>
+    <h1 id="skills-title">Competenze tecniche, architetturali e di leadership</h1>
+    <p class="lead">
+      Una mappa sintetica delle competenze usate per progettare frontend enterprise manutenibili e supportare team tecnici.
+    </p>
+  </div>
+</section>
+
+<section class="section section--compact" aria-labelledby="skill-groups-title">
+  <h2 id="skill-groups-title" class="visually-hidden">Aree di competenza</h2>
+  <div class="grid grid--3 card-grid">
+    @for (group of groups; track group.title) {
+      <mat-card class="site-card">
+        <mat-card-header>
+          <mat-card-title>{{ group.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <ul class="pill-list">
+            @for (item of group.items; track item) {
+              <li class="pill">{{ item }}</li>
+            }
+          </ul>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</section>

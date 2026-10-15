@@ -1,59 +1,100 @@
-# FedericoCrolettiSite
+# Federico Croletti Site
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.6.
+Sito personale Angular di Federico Croletti. Il posizionamento principale e Senior Frontend Engineer specializzato in Angular, TypeScript, RxJS, Micro Frontend e applicazioni enterprise. La linea di assistenza informatica locale e separata nella landing `/assistenza-informatica-milano`.
 
-## Development server
+## Stack
 
-To start a local development server, run:
+- Angular 22 con standalone components e lazy loading via `loadComponent`.
+- TypeScript, SCSS, Angular Material, ngx-translate ancora presente per parti legacy.
+- SEO centralizzata tramite `SeoService` con title, description, canonical, Open Graph, Twitter Card e JSON-LD gestito per pagina.
+- Deploy statico su Render.
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Avvio locale
 
 ```bash
-ng generate component component-name
+npm ci
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+URL locale: `http://localhost:4200/`.
+
+## Build
 
 ```bash
-ng generate --help
+npm run build
 ```
 
-## Building
+Output produzione: `dist/federico-croletti-site/browser`.
 
-To build the project run:
+## Test
 
 ```bash
-ng build
+npm test
+npm run test:karma
+npm run test:cypress
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Il progetto non espone al momento uno script `lint` in `package.json`.
 
-## Running unit tests
+## Struttura principale
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+- `src/app/app.routes.ts`: routing pubblico.
+- `src/app/core`: servizi e costanti condivise.
+- `src/app/features/home`: homepage professionale.
+- `src/app/features/frontend-services`: consulenza Angular e frontend per aziende.
+- `src/app/features/local-support`: landing local SEO per assistenza informatica a Milano.
+- `src/app/features/articles`: elenco e dettaglio articoli.
+- `public/sitemap.xml` e `public/robots.txt`: indicizzazione.
+- `render.yaml`: deploy statico Render con fallback verso `index.html`.
 
-```bash
-ng test
+## Route pubbliche
+
+- `/`
+- `/esperienza`
+- `/competenze`
+- `/progetti`
+- `/servizi-frontend`
+- `/assistenza-informatica-milano`
+- `/articoli`
+- `/articoli/:slug`
+- `/contatti`
+- `/privacy`
+- `/cookie-policy`
+- `/404`
+
+La vecchia route `/servizi` reindirizza alla landing locale per evitare duplicazioni.
+
+## Deploy Render
+
+Configurazione corrente:
+
+```yaml
+buildCommand: npm ci && npm run build
+staticPublishPath: ./dist/federico-croletti-site/browser
+routes:
+	- type: rewrite
+		source: /*
+		destination: /index.html
 ```
 
-## Running end-to-end tests
+Il fallback e necessario per il routing Angular client-side.
 
-For end-to-end (e2e) testing, run:
+## Variabili e configurazioni
 
-```bash
-ng e2e
-```
+Le configurazioni runtime sono in `src/environments/`:
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- `siteUrl`
+- `contactEndpoint`
+- `contactFallbackEndpoint`
+- `emailJs`
+- `analytics`
 
-## Additional Resources
+Non inserire segreti nel codice. La chiave pubblica EmailJS presente e da trattare come configurazione client-side, non come segreto server.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Documentazione operativa
+
+- `docs/SEO.md`
+- `docs/GOOGLE_BUSINESS_PROFILE.md`
+- `docs/CONTENT_PLAN.md`
+- `docs/PRIVACY_CHECKLIST.md`
+- `docs/ONLINE_REPUTATION.md`

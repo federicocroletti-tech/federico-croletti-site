@@ -1,0 +1,29 @@
+<section class="section" aria-labelledby="articles-title">
+  <div class="page-heading">
+    <p class="eyebrow">Articoli</p>
+    <h1 id="articles-title">Contenuti tecnici e guide pratiche</h1>
+    <p class="lead">
+      Una sezione scalabile con contenuti frontend e articoli di assistenza informatica. I primi articoli sono completi e volutamente pochi.
+    </p>
+  </div>
+</section>
+
+<section class="section section--compact" aria-labelledby="article-list-title">
+  <h2 id="article-list-title" class="visually-hidden">Elenco articoli</h2>
+  <div class="grid grid--2 card-grid">
+    @for (article of articles; track article.slug) {
+      <mat-card class="site-card article-card">
+        <mat-card-header>
+          <mat-card-subtitle>{{ article.category }} · {{ article.readingTime }}</mat-card-subtitle>
+          <mat-card-title>{{ article.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ article.description }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <a routerLink="/articoli/{{ article.slug }}">Leggi l'articolo</a>
+        </mat-card-actions>
+      </mat-card>
+    }
+  </div>
+</section>

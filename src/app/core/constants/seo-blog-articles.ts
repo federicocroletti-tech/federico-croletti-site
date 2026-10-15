@@ -120,8 +120,8 @@ export const SEO_BLOG_ARTICLES: readonly SeoBlogArticle[] = [
       'Idee pratiche per professionisti che vogliono migliorare gestione file, email, sicurezza, sito web e processi digitali.',
   },
   {
-    title: 'Assistenza computer a Quarto Oggiaro, Certosa e Bovisa',
-    slug: 'assistenza-computer-quarto-oggiaro-certosa-bovisa',
+    title: 'Assistenza computer a Milano e zone effettivamente servite',
+    slug: 'assistenza-computer-milano-zone-servite',
     metaDescription:
       'Supporto informatico locale per Milano nord: PC, notebook, email, backup, smartphone e consulenza digitale.',
   },

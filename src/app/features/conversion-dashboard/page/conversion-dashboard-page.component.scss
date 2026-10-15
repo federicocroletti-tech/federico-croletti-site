@@ -1,0 +1,33 @@
+.dashboard-kpis .site-card {
+  display: grid;
+  gap: 10px;
+}
+
+.dashboard-kpis p {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 900;
+  color: var(--color-accent-strong);
+}
+
+.dashboard-table {
+  overflow-x: auto;
+  margin-top: 32px;
+}
+
+table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid var(--color-line);
+  text-align: left;
+}
+
+th {
+  color: var(--color-accent-strong);
+}

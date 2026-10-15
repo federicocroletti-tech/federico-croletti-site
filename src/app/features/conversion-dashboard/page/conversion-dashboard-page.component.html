@@ -1,0 +1,58 @@
+<section class="section dashboard-page" aria-labelledby="dashboard-title">
+  <div class="page-heading">
+    <p class="eyebrow">Misurazione locale</p>
+    <h1 id="dashboard-title">Dashboard conversioni aggregate</h1>
+    <p class="lead">
+      I conteggi sono salvati solo in locale, per evento, giorno, servizio e sorgente. Non vengono registrati nomi, email, messaggi o identificatori utente.
+    </p>
+  </div>
+
+  <div class="grid grid--4 dashboard-kpis" aria-label="Indicatori conversioni">
+    <mat-card class="site-card">
+      <mat-card-title>Eventi</mat-card-title>
+      <p>{{ summary().totalEvents }}</p>
+    </mat-card>
+    <mat-card class="site-card">
+      <mat-card-title>Conversioni</mat-card-title>
+      <p>{{ summary().conversions }}</p>
+    </mat-card>
+    <mat-card class="site-card">
+      <mat-card-title>Angular</mat-card-title>
+      <p>{{ summary().angularConversions }}</p>
+    </mat-card>
+    <mat-card class="site-card">
+      <mat-card-title>Milano</mat-card-title>
+      <p>{{ summary().localSupportConversions }}</p>
+    </mat-card>
+  </div>
+
+  <div class="dashboard-table" role="region" aria-labelledby="dashboard-table-title" tabindex="0">
+    <h2 id="dashboard-table-title">Aggregati principali</h2>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Data</th>
+          <th scope="col">Evento</th>
+          <th scope="col">Servizio</th>
+          <th scope="col">Sorgente</th>
+          <th scope="col">Conteggio</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (bucket of topBuckets(); track bucket.key) {
+          <tr>
+            <td>{{ bucket.date }}</td>
+            <td>{{ bucket.eventName }}</td>
+            <td>{{ bucket.service }}</td>
+            <td>{{ bucket.source }}</td>
+            <td>{{ bucket.count }}</td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="5">Nessun dato aggregato disponibile in questo browser.</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

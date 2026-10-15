@@ -10,8 +10,9 @@ export const environment = {
   },
   analytics: {
     enabled: true,
-    provider: 'Plausible',
+    provider: 'plausible',
     domain: 'federico-croletti-site.onrender.com',
     scriptUrl: 'https://plausible.io/js/script.js',
+    collectLocalAggregates: true,
   },
 };

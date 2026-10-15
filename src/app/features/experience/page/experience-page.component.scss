@@ -1,0 +1,12 @@
+.timeline,
+.result-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.result-list {
+  max-width: 860px;
+  padding-left: 22px;
+  color: var(--color-muted);
+}

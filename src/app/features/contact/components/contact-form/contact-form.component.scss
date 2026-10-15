@@ -103,6 +103,15 @@ mat-form-field {
   color: var(--color-muted);
 }
 
+.service-context {
+  margin: -8px 0 0;
+  padding: 12px 14px;
+  border: 1px solid rgb(126 228 190 / 24%);
+  border-radius: var(--radius-card);
+  color: var(--color-ink);
+  background: rgb(126 228 190 / 8%);
+}
+
 .form-error,
 .submission-message.is-error {
   color: #ff9f9f;

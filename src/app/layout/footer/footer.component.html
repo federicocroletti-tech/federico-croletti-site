@@ -1,12 +1,15 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div>
-      <p class="eyebrow">{{ 'footer.brandEyebrow' | translate }}</p>
-      <p class="footer-copy">{{ 'footer.description' | translate }}</p>
+      <p class="eyebrow">Federico Croletti - Senior Frontend Engineer</p>
+      <p class="footer-copy">
+        Consulenza Angular, architetture frontend e Micro Frontend. Linea separata per assistenza
+        informatica e consulenza digitale a Milano.
+      </p>
       <div class="footer-contact">
-        <span>{{ 'footer.location' | translate }}</span>
+        <span>{{ contacts.areaServed }}</span>
         <a [href]="'tel:+39' + contacts.phone"
-          >{{ 'footer.phoneLabel' | translate }}: {{ contacts.phoneDisplay }}</a
+          >Telefono: {{ contacts.phoneDisplay }}</a
         >
         <a [href]="'mailto:' + contacts.email">Email: {{ contacts.email }}</a>
       </div>
@@ -16,9 +19,9 @@
       <a
         mat-button
         [href]="'mailto:' + contacts.email"
-        [attr.aria-label]="'footer.emailAria' | translate"
+        aria-label="Scrivi una email a Federico Croletti"
       >
-        {{ 'footer.email' | translate }}
+        Email
       </a>
       @for (social of socialLinks; track social.id) {
         <a
@@ -26,19 +29,19 @@
           [href]="social.url"
           target="_blank"
           rel="noopener noreferrer"
-          [attr.aria-label]="social.ariaLabelKey | translate"
+          [attr.aria-label]="social.id"
           (click)="trackSocialClick(social.id)"
         >
-          {{ social.labelKey | translate }}
+          {{ social.id }}
         </a>
       }
-      <a mat-button routerLink="/privacy">{{ 'footer.privacy' | translate }}</a>
-      <a mat-button routerLink="/cookie-policy">{{ 'footer.cookiePolicy' | translate }}</a>
+      <a mat-button routerLink="/privacy">Privacy</a>
+      <a mat-button routerLink="/cookie-policy">Cookie</a>
       <button mat-button type="button" (click)="openCookiePreferences()">
-        {{ 'footer.manageCookies' | translate }}
+        Preferenze cookie
       </button>
     </div>
   </div>
 
-  <p class="footer-meta">{{ 'footer.copyright' | translate: { year: currentYear } }}</p>
+  <p class="footer-meta">© {{ currentYear }} Federico Croletti. Tutti i diritti riservati.</p>
 </footer>

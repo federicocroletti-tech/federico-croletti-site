@@ -1,0 +1,47 @@
+<section class="section" aria-labelledby="experience-title">
+  <div class="page-heading">
+    <p class="eyebrow">Esperienza</p>
+    <h1 id="experience-title">Responsabilita e risultati professionali</h1>
+    <p class="lead">
+      Un percorso centrato su frontend enterprise, Angular, architetture scalabili e leadership tecnica. Le informazioni sono limitate a quanto gia presente nei contenuti del repository.
+    </p>
+  </div>
+</section>
+
+<section class="section section--compact" aria-labelledby="timeline-title">
+  <div class="page-heading">
+    <p class="eyebrow">Timeline</p>
+    <h2 id="timeline-title">Esperienze principali</h2>
+  </div>
+
+  <div class="timeline">
+    @for (item of experiences; track item.role + item.period) {
+      <mat-card class="site-card">
+        <mat-card-header>
+          <mat-card-title>{{ item.role }}</mat-card-title>
+          @if (item.period) {
+            <mat-card-subtitle>{{ item.period }}</mat-card-subtitle>
+          }
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ item.description }}</p>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</section>
+
+<div class="surface-band">
+  <section class="section section--compact" aria-labelledby="results-title">
+    <div class="page-heading">
+      <p class="eyebrow">Risultati e responsabilita</p>
+      <h2 id="results-title">Aree ricorrenti</h2>
+    </div>
+
+    <ul class="result-list">
+      @for (area of resultAreas; track area) {
+        <li>{{ area }}</li>
+      }
+    </ul>
+  </section>
+</div>

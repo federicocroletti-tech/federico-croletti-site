@@ -27,6 +27,21 @@
         }
       </mat-form-field>
 
+      @if (
+        contactForm.controls.requestType.value === 'angular-architecture' ||
+        contactForm.controls.requestType.value === 'frontend-consulting'
+      ) {
+        <p class="service-context" data-cy="contact-service-context">
+          {{ 'contact.form.serviceContext.angularConsulting' | translate }}
+        </p>
+      }
+
+      @if (contactForm.controls.requestType.value === 'it-support') {
+        <p class="service-context" data-cy="contact-service-context">
+          {{ 'contact.form.serviceContext.milanoItSupport' | translate }}
+        </p>
+      }
+
       <mat-form-field appearance="outline">
         <mat-label>{{ 'contact.form.email' | translate }}</mat-label>
         <input

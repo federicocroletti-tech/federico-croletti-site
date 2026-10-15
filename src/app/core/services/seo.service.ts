@@ -9,6 +9,8 @@ interface SeoPageConfig {
   readonly description: string;
   readonly path: string;
   readonly image?: string;
+  readonly type?: 'website' | 'article' | 'profile';
+  readonly structuredData?: readonly Record<string, unknown>[];
 }
 
 @Injectable({ providedIn: 'root' })
@@ -31,7 +33,7 @@ export class SeoService {
     this.meta.updateTag({ name: 'geo.placename', content: 'Milano' });
     this.meta.updateTag({ property: 'og:title', content: config.title });
     this.meta.updateTag({ property: 'og:description', content: config.description });
-    this.meta.updateTag({ property: 'og:type', content: 'website' });
+    this.meta.updateTag({ property: 'og:type', content: config.type === 'article' ? 'article' : 'website' });
     this.meta.updateTag({ property: 'og:site_name', content: 'Federico Croletti' });
     this.meta.updateTag({ property: 'og:url', content: url });
     this.meta.updateTag({ property: 'og:image', content: image });
@@ -40,6 +42,7 @@ export class SeoService {
     this.meta.updateTag({ name: 'twitter:description', content: config.description });
     this.meta.updateTag({ name: 'twitter:image', content: image });
     this.updateCanonical(url);
+    this.updateStructuredData(config.structuredData ?? []);
   }
 
   private toAbsoluteUrl(url: string): string {
@@ -56,5 +59,19 @@ export class SeoService {
     }
 
     canonical.setAttribute('href', url);
+  }
+
+  private updateStructuredData(items: readonly Record<string, unknown>[]): void {
+    this.document
+      .querySelectorAll<HTMLScriptElement>('script[data-managed-json-ld="true"]')
+      .forEach((script) => script.remove());
+
+    items.forEach((item) => {
+      const script = this.document.createElement('script');
+      script.type = 'application/ld+json';
+      script.dataset['managedJsonLd'] = 'true';
+      script.text = JSON.stringify(item);
+      this.document.head.appendChild(script);
+    });
   }
 }

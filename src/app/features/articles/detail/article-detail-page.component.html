@@ -1,0 +1,30 @@
+@if (article) {
+  <article class="section article-detail">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a routerLink="/">Home</a>
+      <span aria-hidden="true">/</span>
+      <a routerLink="/articoli">Articoli</a>
+    </nav>
+
+    <header class="page-heading">
+      <p class="eyebrow">{{ article.category }} · {{ article.readingTime }}</p>
+      <h1>{{ article.title }}</h1>
+      <p class="lead">{{ article.description }}</p>
+    </header>
+
+    <div class="article-body">
+      @for (paragraph of article.paragraphs; track paragraph) {
+        <p>{{ paragraph }}</p>
+      }
+    </div>
+  </article>
+} @else {
+  <section class="section" aria-labelledby="article-not-found-title">
+    <div class="page-heading">
+      <p class="eyebrow">Articolo non trovato</p>
+      <h1 id="article-not-found-title">Questo contenuto non e disponibile</h1>
+      <p class="lead">Il link potrebbe essere cambiato o l'articolo potrebbe non essere ancora pubblicato.</p>
+      <a mat-flat-button color="primary" routerLink="/articoli">Torna agli articoli</a>
+    </div>
+  </section>
+}

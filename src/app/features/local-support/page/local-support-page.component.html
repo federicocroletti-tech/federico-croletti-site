@@ -1,0 +1,101 @@
+<section class="section local-hero" aria-labelledby="local-support-title">
+  <div class="page-heading">
+    <p class="eyebrow">Linea di servizio locale</p>
+    <h1 id="local-support-title">Assistenza informatica a Milano</h1>
+    <p class="lead">
+      Supporto informatico per privati, professionisti e piccole attivita, disponibile a Milano e nelle zone effettivamente servite. Gli interventi possono essere svolti in presenza oppure da remoto, quando il problema lo consente.
+    </p>
+    <div class="cta-row">
+      <a
+        mat-flat-button
+        color="primary"
+        routerLink="/contatti"
+        [queryParams]="funnel.contactQueryParams"
+        (click)="trackLocalContact('local_hero_contact')"
+      >Richiedi informazioni</a>
+      <a mat-stroked-button [href]="whatsAppUrl" target="_blank" rel="noopener noreferrer" (click)="trackLocalContact('local_hero_chat')">Chat WhatsApp</a>
+      <a mat-button [href]="'tel:+39' + contacts.phone" (click)="trackLocalContact('local_hero_phone')">Telefono</a>
+    </div>
+  </div>
+
+  <aside class="local-note" aria-label="Area servita">
+    <p class="eyebrow">Area servita</p>
+    <p>Milano e zone limitrofe effettivamente servite, con interventi su appuntamento.</p>
+  </aside>
+</section>
+
+<section class="section section--compact" aria-labelledby="local-services-title">
+  <div class="page-heading">
+    <p class="eyebrow">Servizi locali</p>
+    <h2 id="local-services-title">Supporto digitale pratico e prudente</h2>
+  </div>
+
+  <div class="grid grid--3 card-grid">
+    @for (group of serviceGroups; track group.title) {
+      <mat-card class="site-card">
+        <mat-card-header>
+          <mat-icon mat-card-avatar fontSet="material-icons-outlined" aria-hidden="true">{{ group.icon }}</mat-icon>
+          <mat-card-title>{{ group.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <ul>
+            @for (item of group.items; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</section>
+
+<div class="surface-band">
+  <section class="section section--compact" aria-labelledby="process-title">
+    <div class="page-heading">
+      <p class="eyebrow">Come funziona</p>
+      <h2 id="process-title">Un processo chiaro prima dell'intervento</h2>
+    </div>
+
+    <ol class="process-list">
+      @for (step of steps; track step) {
+        <li>{{ step }}</li>
+      }
+    </ol>
+  </section>
+</div>
+
+<section class="section section--compact" aria-labelledby="local-faq-title">
+  <div class="page-heading">
+    <p class="eyebrow">FAQ</p>
+    <h2 id="local-faq-title">Domande frequenti</h2>
+  </div>
+
+  <div class="faq-list">
+    @for (faq of faqs; track faq.question) {
+      <article>
+        <h3>{{ faq.question }}</h3>
+        <p>{{ faq.answer }}</p>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="section section--compact final-cta" aria-labelledby="local-cta-title">
+  <div class="page-heading">
+    <p class="eyebrow">Richiesta contatto</p>
+    <h2 id="local-cta-title">Descrivi brevemente il problema</h2>
+    <p class="lead">
+      Indica il modello del dispositivo, il problema riscontrato e se preferisci una valutazione da remoto o in presenza. Riceverai una prima valutazione sulla possibile modalita di intervento.
+    </p>
+    <div class="cta-row">
+      <a
+        mat-flat-button
+        color="primary"
+        routerLink="/contatti"
+        [queryParams]="funnel.contactQueryParams"
+        (click)="trackLocalContact('local_final_contact')"
+      >Vai ai contatti</a>
+      <a mat-stroked-button routerLink="/servizi-frontend">Cerchi consulenza Angular?</a>
+    </div>
+  </div>
+</section>

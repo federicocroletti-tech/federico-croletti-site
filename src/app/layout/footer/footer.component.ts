@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
-import { TranslatePipe } from '@ngx-translate/core';
 
 import { CONTACT_LINKS, SOCIAL_LINKS } from '../../core/constants/contact-links';
 import { AnalyticsService } from '../../core/services/analytics.service';
@@ -10,7 +9,7 @@ import { CookieConsentService } from '../../core/services/cookie-consent.service
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [MatButtonModule, RouterLink, TranslatePipe],
+  imports: [MatButtonModule, RouterLink],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

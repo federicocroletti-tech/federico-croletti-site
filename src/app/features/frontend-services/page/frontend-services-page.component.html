@@ -1,0 +1,75 @@
+<section class="section page-hero" aria-labelledby="frontend-services-title">
+  <div class="page-heading">
+    <p class="eyebrow">Servizi per aziende e team</p>
+    <h1 id="frontend-services-title">Consulenza Angular e architettura frontend</h1>
+    <p class="lead">
+      Supporto tecnico per progettare, evolvere e rendere piu manutenibili applicazioni frontend enterprise basate su Angular, TypeScript e architetture modulari.
+    </p>
+    <div class="cta-row">
+      <a
+        mat-flat-button
+        color="primary"
+        routerLink="/contatti"
+        [queryParams]="funnel.contactQueryParams"
+        (click)="trackCta('angular_hero')"
+      >Parliamo del progetto</a>
+      <a mat-stroked-button routerLink="/progetti">Guarda i progetti</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--compact" aria-labelledby="areas-title">
+  <div class="page-heading">
+    <p class="eyebrow">Aree di intervento</p>
+    <h2 id="areas-title">Dalla progettazione alla qualita del codice</h2>
+  </div>
+
+  <div class="grid grid--3 card-grid">
+    @for (area of serviceAreas; track area.title) {
+      <mat-card class="site-card">
+        <mat-card-header>
+          <mat-icon mat-card-avatar fontSet="material-icons-outlined" aria-hidden="true">{{ area.icon }}</mat-icon>
+          <mat-card-title>{{ area.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ area.description }}</p>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</section>
+
+<div class="surface-band">
+  <section class="section section--compact" aria-labelledby="when-title">
+    <div class="page-heading">
+      <p class="eyebrow">Quando posso aiutarti</p>
+      <h2 id="when-title">Casi concreti</h2>
+    </div>
+
+    <ul class="check-list">
+      @for (useCase of useCases; track useCase) {
+        <li>{{ useCase }}</li>
+      }
+    </ul>
+  </section>
+</div>
+
+<section class="section section--compact final-cta" aria-labelledby="frontend-cta-title">
+  <div class="page-heading">
+    <p class="eyebrow">Contatto qualificato</p>
+    <h2 id="frontend-cta-title">Raccontami contesto, stack e obiettivo tecnico</h2>
+    <p class="lead">
+      Il form distingue questa richiesta dalle richieste locali di assistenza informatica e salva solo eventi aggregati se hai dato consenso analytics.
+    </p>
+    <div class="cta-row">
+      <a
+        mat-flat-button
+        color="primary"
+        routerLink="/contatti"
+        [queryParams]="funnel.contactQueryParams"
+        (click)="trackCta('angular_final')"
+      >{{ funnel.contactCta }}</a>
+      <a mat-stroked-button routerLink="/assistenza-informatica-milano">Cerchi assistenza a Milano?</a>
+    </div>
+  </div>
+</section>

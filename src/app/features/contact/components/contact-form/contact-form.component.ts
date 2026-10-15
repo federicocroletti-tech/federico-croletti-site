@@ -8,12 +8,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { finalize } from 'rxjs';
 
 import { ContactFormValue, ContactResponse } from '../../models/contact-form.model';
 import { CONTACT_LINKS } from '../../../../core/constants/contact-links';
+import { ConversionFunnel, ConversionService } from '../../../../core/models/conversion-analytics.model';
+import { AnalyticsService } from '../../../../core/services/analytics.service';
 import {
   CONTACT_ENDPOINT_NOT_CONFIGURED,
   CONTACT_EMAIL_NOT_CONFIGURED,
@@ -47,14 +49,19 @@ export class ContactFormComponent {
   private readonly contactService = inject(ContactService);
   private readonly snackBar = inject(MatSnackBar);
   private readonly translateService = inject(TranslateService);
+  private readonly route = inject(ActivatedRoute);
+  private readonly router = inject(Router);
+  private readonly analytics = inject(AnalyticsService);
 
   readonly isSubmitting = signal(false);
   readonly statusMessage = signal<ContactResponse | null>(null);
   readonly contactEmail = CONTACT_LINKS.email;
 
   readonly requestTypes = [
-    { value: 'website', labelKey: 'contact.form.requestTypes.website' },
+    { value: 'frontend-consulting', labelKey: 'contact.form.requestTypes.frontendConsulting' },
+    { value: 'angular-architecture', labelKey: 'contact.form.requestTypes.angularArchitecture' },
     { value: 'it-support', labelKey: 'contact.form.requestTypes.itSupport' },
+    { value: 'website', labelKey: 'contact.form.requestTypes.website' },
     { value: 'digital-identity', labelKey: 'contact.form.requestTypes.digitalIdentity' },
     { value: 'ai-automation', labelKey: 'contact.form.requestTypes.aiAutomation' },
     { value: 'technical-consulting', labelKey: 'contact.form.requestTypes.technicalConsulting' },
@@ -72,11 +79,34 @@ export class ContactFormComponent {
     honeypot: [''],
   });
 
+  private currentFunnel: ConversionFunnel = 'general';
+  private currentSource = 'contact_page';
+
+  constructor() {
+    this.route.queryParamMap.pipe(takeUntilDestroyed(this.destroyRef)).subscribe((params) => {
+      const service = params.get('service');
+      const funnel = params.get('funnel');
+      const source = params.get('source');
+
+      if (this.isKnownRequestType(service)) {
+        this.contactForm.controls.requestType.setValue(service);
+      }
+
+      this.currentFunnel = this.toFunnel(funnel);
+      this.currentSource = source?.trim() || 'contact_page';
+    });
+  }
+
   submitForm(): void {
     this.statusMessage.set(null);
 
     if (this.contactForm.invalid) {
       this.contactForm.markAllAsTouched();
+      this.analytics.trackEvent('form_submit_error', {
+        funnel: this.currentFunnel,
+        source: this.currentSource,
+        step: 'validation',
+      });
       return;
     }
 
@@ -88,6 +118,12 @@ export class ContactFormComponent {
     }
 
     this.isSubmitting.set(true);
+    this.analytics.trackEvent('form_submit_attempt', {
+      service: this.toConversionService(payload.requestType),
+      funnel: this.currentFunnel,
+      source: this.currentSource,
+      step: 'contact_form',
+    });
     this.contactService
       .sendMessage(payload)
       .pipe(
@@ -111,8 +147,21 @@ export class ContactFormComponent {
     }
 
     const message = this.translateService.instant('contact.form.success');
+    const service = this.toConversionService(this.contactForm.controls.requestType.value);
+    this.analytics.trackEvent('conversion', {
+      service,
+      funnel: this.currentFunnel,
+      source: this.currentSource,
+      step: 'contact_form_sent',
+    });
     this.showMessage({ success: true, message });
     this.resetForm();
+    void this.router.navigate(['/grazie'], {
+      queryParams: {
+        service,
+        source: this.currentSource,
+      },
+    });
   }
 
   private handleError(error: unknown): void {
@@ -120,6 +169,11 @@ export class ContactFormComponent {
     const message = this.getErrorMessage(errorCode);
 
     this.showMessage({ success: false, message, fallbackToEmail: true });
+    this.analytics.trackEvent('form_submit_error', {
+      funnel: this.currentFunnel,
+      source: this.currentSource,
+      step: errorCode ?? 'unknown',
+    });
   }
 
   protected fallbackEmailHref(): string {
@@ -172,5 +226,29 @@ export class ContactFormComponent {
       privacyAccepted: false,
       honeypot: '',
     });
+  }
+
+  private isKnownRequestType(service: string | null): service is string {
+    return this.requestTypes.some((requestType) => requestType.value === service);
+  }
+
+  private toConversionService(requestType: string): ConversionService {
+    if (
+      requestType === 'angular-architecture' ||
+      requestType === 'frontend-consulting' ||
+      requestType === 'it-support'
+    ) {
+      return requestType;
+    }
+
+    return 'general';
+  }
+
+  private toFunnel(funnel: string | null): ConversionFunnel {
+    if (funnel === 'angular' || funnel === 'local-support') {
+      return funnel;
+    }
+
+    return 'general';
   }
 }

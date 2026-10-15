@@ -1,30 +1,25 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { TranslatePipe } from '@ngx-translate/core';
 
 import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [
-    LanguageSwitcherComponent,
-    MatButtonModule,
-    RouterLink,
-    RouterLinkActive,
-    TranslatePipe,
-  ],
+  imports: [LanguageSwitcherComponent, MatButtonModule, RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
   readonly navigationItems = [
-    { labelKey: 'navigation.home', path: '/' },
-    { labelKey: 'navigation.about', path: '/chi-sono' },
-    { labelKey: 'navigation.services', path: '/servizi' },
-    { labelKey: 'navigation.projects', path: '/progetti' },
-    { labelKey: 'navigation.contact', path: '/contatti' },
+    { label: 'Home', path: '/' },
+    { label: 'Esperienza', path: '/esperienza' },
+    { label: 'Competenze', path: '/competenze' },
+    { label: 'Servizi frontend', path: '/servizi-frontend' },
+    { label: 'Progetti', path: '/progetti' },
+    { label: 'Assistenza Milano', path: '/assistenza-informatica-milano' },
+    { label: 'Contatti', path: '/contatti' },
   ] as const;
 }
